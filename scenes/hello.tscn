@@ -49,12 +49,6 @@ position = Vector2(1037, 1091)
 position = Vector2(-60.5, 1)
 shape = SubResource("RectangleShape2D_d77ns")
 
-[node name="Imp" parent="." instance=ExtResource("5_yt62y")]
-position = Vector2(1340, 899)
-
-[node name="Imp2" parent="." instance=ExtResource("5_yt62y")]
-position = Vector2(362, 577)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PressEtoTalk" type="RichTextLabel" parent="CanvasLayer"]
@@ -77,6 +71,12 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 29
 text = "Press E to talk"
+
+[node name="Imp" parent="." instance=ExtResource("5_yt62y")]
+position = Vector2(1465, 752)
+
+[node name="Imp2" parent="." instance=ExtResource("5_yt62y")]
+position = Vector2(1635, 713)
 
 [connection signal="body_entered" from="CatDevil/Area2D" to="CatDevil" method="_show_tooltip"]
 [connection signal="body_exited" from="CatDevil/Area2D" to="CatDevil" method="_hide_tooltip"]
