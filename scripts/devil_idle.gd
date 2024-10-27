@@ -17,19 +17,18 @@ func randomize_movement():
 	move_direction = Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
 	move_time = randf_range(1,2)
 
-func _enter() -> void:
+func enter() -> void:
 	randomize_movement()
 
-func _process(delta: float) -> void:
+func update(delta: float) -> void:
 	if move_time > 0:
 		move_time -= delta
 	else:
 		randomize_movement()
 	var direction = player.global_position - devil.global_position
 	if direction.length() < follow_distance:
-		pass
-		#StateTransition.emit(self, "DevilFollow")
+		StateTransition.emit(self, "DevilFollow")
 	
-func _physics_process(delta: float) -> void:
+func physics_update(delta: float) -> void:
 	devil.velocity = move_direction * move_speed
 	

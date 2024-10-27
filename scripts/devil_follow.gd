@@ -11,16 +11,16 @@ var follow_distance: float = 500
 @onready
 var player = get_tree().get_nodes_in_group("player")[0]  
 
-func _enter() -> void:
+func enter() -> void:
 	pass
 
-func _exit() -> void:
+func exit() -> void:
 	pass
 	
-func _process(delta: float) -> void:
+func update(delta: float) -> void:
 	pass
 
-func _physics_process(delta: float) -> void:
+func physics_update(delta: float) -> void:
 	var direction = player.global_position - devil.global_position
 	if direction.length() < follow_distance:
 		devil.velocity = direction.normalized() * move_speed

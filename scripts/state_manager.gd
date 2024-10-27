@@ -13,24 +13,20 @@ func _ready() -> void:
 			states[child.name] = child
 			child.StateTransition.connect(_change_state)
 	current_state = initial_state
-	print(current_state.name)
 
 
 func _process(delta: float) -> void:
-	current_state._process(delta)
+	current_state.update(delta)
 
 func _physics_process(delta: float) -> void:
-	current_state._physics_process(delta)
+	current_state.physics_update(delta)
 	
 func _change_state(old_state, new_state_name):
 	if old_state != current_state:
 		return
-	print("still here")
 	if current_state:
-		current_state._exit()
-	print("and still")
+		current_state.exit()
 	var new_state = states[new_state_name]
-	print(new_state.name)
-	new_state._enter()
+	new_state.enter()
 	current_state = new_state
 	
