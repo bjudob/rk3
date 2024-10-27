@@ -75,5 +75,8 @@ text = "Press E to talk"
 [node name="Devil" parent="." instance=ExtResource("6_rv0h3")]
 position = Vector2(270, 785)
 
+[node name="Devil2" parent="." instance=ExtResource("6_rv0h3")]
+position = Vector2(1645, 499)
+
 [connection signal="body_entered" from="CatDevil/Area2D" to="CatDevil" method="_show_tooltip"]
 [connection signal="body_exited" from="CatDevil/Area2D" to="CatDevil" method="_hide_tooltip"]

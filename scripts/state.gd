@@ -9,7 +9,6 @@ func _enter() -> void:
 func _exit() -> void:
 	pass
 	
-
 func _process(delta: float) -> void:
 	pass
 

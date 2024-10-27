@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bksp8w60elsxv"]
+[gd_scene load_steps=16 format=3 uid="uid://bksp8w60elsxv"]
 
 [ext_resource type="Script" path="res://scenes/devil.gd" id="1_dkkfo"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="1_gljb1"]
@@ -7,10 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e0y0r"]
 [ext_resource type="Script" path="res://scenes/state_manager.gd" id="6_wxbu0"]
 [ext_resource type="Script" path="res://scenes/devil_idle.gd" id="7_tq2xx"]
+[ext_resource type="Script" path="res://scenes/devil_follow.gd" id="8_fggqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6taa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_50nyn"]
+resource_local_to_scene = true
 shader = ExtResource("1_gljb1")
 shader_parameter/hit_opacity = 0.0
 
@@ -90,8 +92,13 @@ offset_bottom = -98.0
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_wxbu0")
-initial_state = NodePath("DevilIdle")
+initial_state = NodePath("DevilFollow")
 
 [node name="DevilIdle" type="Node" parent="StateManager" node_paths=PackedStringArray("devil")]
 script = ExtResource("7_tq2xx")
 devil = NodePath("../..")
+
+[node name="DevilFollow" type="Node" parent="StateManager" node_paths=PackedStringArray("devil")]
+script = ExtResource("8_fggqt")
+devil = NodePath("../..")
+move_speed = 100.0

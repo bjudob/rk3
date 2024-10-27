@@ -22,6 +22,8 @@ func _physics_process(delta: float) -> void:
 	current_state._physics_process(delta)
 	
 func _change_state(old_state, new_state_name):
+	if old_state != current_state:
+		return
 	if current_state:
 		current_state._exit()
 	var new_state = states[new_state_name]

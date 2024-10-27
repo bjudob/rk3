@@ -244,7 +244,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_peev2"]
 size = Vector2(192.25, 149)
 
-[node name="Reki" type="CharacterBody2D"]
+[node name="Reki" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ht1dx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
