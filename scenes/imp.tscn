@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://wy3kywhdqcie"]
+
+[ext_resource type="Script" path="res://scripts/imp.gd" id="1_8pl6p"]
+[ext_resource type="Texture2D" uid="uid://bu0fvl4do6y0k" path="res://characters/imp.png" id="2_knj4v"]
+[ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="2_q8tg4"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_d226n"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e3cew"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_or83l"]
+resource_local_to_scene = true
+shader = ExtResource("2_q8tg4")
+shader_parameter/hit_opacity = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6re6"]
+size = Vector2(52, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8eota"]
+size = Vector2(257, 298)
+
+[sub_resource type="Animation" id="Animation_ibdxx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Imp:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2kej0"]
+resource_name = "hurt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Imp:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.8, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bmj4j"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3aw2e"]
+_data = {
+"RESET": SubResource("Animation_ibdxx"),
+"hurt": SubResource("Animation_2kej0"),
+"idle": SubResource("Animation_bmj4j")
+}
+
+[node name="Imp" type="RigidBody2D" node_paths=PackedStringArray("animator")]
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_8pl6p")
+animator = NodePath("AnimationPlayer")
+
+[node name="Imp" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_or83l")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_knj4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 11.5)
+shape = SubResource("RectangleShape2D_d6re6")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_d226n")
+
+[node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(5.5, 1)
+shape = SubResource("RectangleShape2D_8eota")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3aw2e")
+}
+
+[node name="HealthBar" parent="." instance=ExtResource("5_e3cew")]
+offset_left = -68.0
+offset_top = -173.0
+offset_right = 82.0
+offset_bottom = -163.0

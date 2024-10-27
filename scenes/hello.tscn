@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://begl8pmauyax2"]
+
+[ext_resource type="Texture2D" uid="uid://dyqg7pfvvg61m" path="res://backgrounds/hells_gate.jpg" id="1_kux6v"]
+[ext_resource type="Script" path="res://scripts/cat_devil.gd" id="2_d6yjd"]
+[ext_resource type="Texture2D" uid="uid://uo1xvahj3c2r" path="res://characters/cat_devil.png" id="3_issr1"]
+[ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="4_u7sfb"]
+[ext_resource type="PackedScene" uid="uid://wy3kywhdqcie" path="res://scenes/imp.tscn" id="5_yt62y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sfkr"]
+size = Vector2(91, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbo55"]
+size = Vector2(432, 434)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d77ns"]
+size = Vector2(1923, 46)
+
+[node name="Hell" type="Node2D"]
+
+[node name="HellsGate" type="Sprite2D" parent="."]
+position = Vector2(968.5, 551.5)
+scale = Vector2(3.03906, 1.72344)
+texture = ExtResource("1_kux6v")
+
+[node name="CatDevil" type="StaticBody2D" parent="."]
+position = Vector2(960, 664)
+script = ExtResource("2_d6yjd")
+
+[node name="CatDevil" type="Sprite2D" parent="CatDevil"]
+scale = Vector2(0.530738, 0.421722)
+texture = ExtResource("3_issr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatDevil"]
+shape = SubResource("RectangleShape2D_2sfkr")
+
+[node name="Area2D" type="Area2D" parent="CatDevil"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatDevil/Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_kbo55")
+
+[node name="Reki" parent="." instance=ExtResource("4_u7sfb")]
+position = Vector2(474, 983)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(1037, 1091)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-60.5, 1)
+shape = SubResource("RectangleShape2D_d77ns")
+
+[node name="Imp" parent="." instance=ExtResource("5_yt62y")]
+position = Vector2(1340, 899)
+
+[node name="Imp2" parent="." instance=ExtResource("5_yt62y")]
+position = Vector2(362, 577)
