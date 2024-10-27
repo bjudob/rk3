@@ -1,10 +1,15 @@
 class_name State
 extends Node
 
+signal StateTransition
 
-func _ready() -> void:
+func _enter() -> void:
+	pass
+
+func _exit() -> void:
 	pass
 	
+
 func _process(delta: float) -> void:
 	pass
 

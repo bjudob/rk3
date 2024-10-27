@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bksp8w60elsxv"]
+[gd_scene load_steps=15 format=3 uid="uid://bksp8w60elsxv"]
 
 [ext_resource type="Script" path="res://scenes/devil.gd" id="1_dkkfo"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="1_gljb1"]
 [ext_resource type="Texture2D" uid="uid://bu0fvl4do6y0k" path="res://characters/imp.png" id="2_ydb40"]
 [ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_sd4bx"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e0y0r"]
+[ext_resource type="Script" path="res://scenes/state_manager.gd" id="6_wxbu0"]
+[ext_resource type="Script" path="res://scenes/devil_idle.gd" id="7_tq2xx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6taa"]
 
@@ -85,3 +87,11 @@ offset_left = -75.0
 offset_top = -108.0
 offset_right = 75.0
 offset_bottom = -98.0
+
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("6_wxbu0")
+initial_state = NodePath("DevilIdle")
+
+[node name="DevilIdle" type="Node" parent="StateManager" node_paths=PackedStringArray("devil")]
+script = ExtResource("7_tq2xx")
+devil = NodePath("../..")
