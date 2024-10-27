@@ -4,11 +4,10 @@ extends State
 @export
 var devil: CharacterBody2D
 @export
-var move_speed: float = 10
+var move_speed: float = 100
 @export
 var follow_distance: float = 500
 
-#var player: CharacterBody2D
 @onready
 var player = get_tree().get_nodes_in_group("player")[0]  
 

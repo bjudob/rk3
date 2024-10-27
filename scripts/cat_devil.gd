@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 func _show_tooltip(body: Node2D) -> void:
 	if body is not Reki:
 		return
-	print("not ok")
 	tooltip.visible = true
 
 

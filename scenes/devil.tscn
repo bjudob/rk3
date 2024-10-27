@@ -92,13 +92,13 @@ offset_bottom = -98.0
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("6_wxbu0")
-initial_state = NodePath("DevilFollow")
+initial_state = NodePath("DevilIdle")
 
 [node name="DevilIdle" type="Node" parent="StateManager" node_paths=PackedStringArray("devil")]
 script = ExtResource("7_tq2xx")
 devil = NodePath("../..")
+move_speed = 20.0
 
 [node name="DevilFollow" type="Node" parent="StateManager" node_paths=PackedStringArray("devil")]
 script = ExtResource("8_fggqt")
 devil = NodePath("../..")
-move_speed = 100.0
