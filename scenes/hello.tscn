@@ -10,7 +10,7 @@
 size = Vector2(91, 164)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbo55"]
-size = Vector2(432, 434)
+size = Vector2(470, 638)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d77ns"]
 size = Vector2(1923, 46)
@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_2sfkr")
 [node name="Area2D" type="Area2D" parent="CatDevil"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatDevil/Area2D"]
-position = Vector2(0, 3)
+position = Vector2(6, 105)
 shape = SubResource("RectangleShape2D_kbo55")
 
 [node name="Reki" parent="." instance=ExtResource("4_u7sfb")]
@@ -54,3 +54,29 @@ position = Vector2(1340, 899)
 
 [node name="Imp2" parent="." instance=ExtResource("5_yt62y")]
 position = Vector2(362, 577)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PressEtoTalk" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -100.0
+offset_right = 104.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 29
+text = "Press E to talk"
+
+[connection signal="body_entered" from="CatDevil/Area2D" to="CatDevil" method="_show_tooltip"]
+[connection signal="body_exited" from="CatDevil/Area2D" to="CatDevil" method="_hide_tooltip"]

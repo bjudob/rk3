@@ -1,11 +1,26 @@
 extends StaticBody2D
 
+@onready
+var tooltip = $"../CanvasLayer/PressEtoTalk"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Dialogic.start("hello_to_hell")
+	tooltip.visible = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("talk") and Dialogic.current_timeline == null:
+		Dialogic.start("hello_to_hell")
+		tooltip.visible = false
+
+
+func _show_tooltip(body: Node2D) -> void:
+	if body is not Reki:
+		return
+	print("not ok")
+	tooltip.visible = true
+
+
+func _hide_tooltip(body: Node2D) -> void:
+	if body is not Reki:
+		return
+	tooltip.visible = false
