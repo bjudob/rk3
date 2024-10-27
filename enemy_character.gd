@@ -1,5 +1,5 @@
-class_name Enemy
-extends RigidBody2D
+class_name EnemyCharacter
+extends CharacterBody2D
 
 @export
 var max_hp = 100

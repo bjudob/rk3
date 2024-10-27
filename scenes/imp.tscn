@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://wy3kywhdqcie"]
+[gd_scene load_steps=14 format=3 uid="uid://wy3kywhdqcie"]
 
 [ext_resource type="Script" path="res://scripts/imp.gd" id="1_8pl6p"]
 [ext_resource type="Texture2D" uid="uid://bu0fvl4do6y0k" path="res://characters/imp.png" id="2_knj4v"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="2_q8tg4"]
 [ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_d226n"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e3cew"]
+[ext_resource type="Script" path="res://scripts/state.gd" id="6_ltdl3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_or83l"]
 resource_local_to_scene = true
@@ -62,6 +63,7 @@ _data = {
 mass = 0.001
 gravity_scale = 0.0
 script = ExtResource("1_8pl6p")
+max_hp = null
 animator = NodePath("AnimationPlayer")
 
 [node name="Imp" type="Sprite2D" parent="."]
@@ -90,3 +92,6 @@ offset_left = -68.0
 offset_top = -173.0
 offset_right = 82.0
 offset_bottom = -163.0
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("6_ltdl3")

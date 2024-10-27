@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://bksp8w60elsxv"]
+
+[ext_resource type="Script" path="res://scenes/devil.gd" id="1_dkkfo"]
+[ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="1_gljb1"]
+[ext_resource type="Texture2D" uid="uid://bu0fvl4do6y0k" path="res://characters/imp.png" id="2_ydb40"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_sd4bx"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e0y0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6taa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50nyn"]
+shader = ExtResource("1_gljb1")
+shader_parameter/hit_opacity = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7bmu"]
+size = Vector2(159, 201)
+
+[sub_resource type="Animation" id="Animation_u4rmj"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_3l7fn"]
+resource_name = "hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.8, 0.0, 0.9, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jmcpe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_67jse"]
+_data = {
+"RESET": SubResource("Animation_jmcpe"),
+"hurt": SubResource("Animation_3l7fn"),
+"idle": SubResource("Animation_u4rmj")
+}
+
+[node name="Devil" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
+script = ExtResource("1_dkkfo")
+animator = NodePath("AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h6taa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_50nyn")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ydb40")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_sd4bx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0.5, -2.5)
+shape = SubResource("RectangleShape2D_g7bmu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_67jse")
+}
+
+[node name="HealthBar" parent="." instance=ExtResource("5_e0y0r")]
+offset_left = -75.0
+offset_top = -108.0
+offset_right = 75.0
+offset_bottom = -98.0
