@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5trro8h3gomr"
-path="res://.godot/imported/dudu_cursor.png-41347740b828719d768deb262b468f8b.ctex"
+uid="uid://dct07i14nggxs"
+path="res://.godot/imported/cursor_mochi.png-ce26ff1a10b425e56930a7b4a5757743.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/dudu_cursor.png"
-dest_files=["res://.godot/imported/dudu_cursor.png-41347740b828719d768deb262b468f8b.ctex"]
+source_file="res://ui/cursor_mochi.png"
+dest_files=["res://.godot/imported/cursor_mochi.png-ce26ff1a10b425e56930a7b4a5757743.ctex"]
 
 [params]
 
