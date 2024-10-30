@@ -20,27 +20,27 @@ func _on_exit_gui_input(event: InputEvent) -> void:
 
 
 func _on_play_mouse_entered() -> void:
-	play_button.texture =  load("res://objects/winter_button_play_hover.png")
+	play_button.texture =  load("res://ui/winter_button_play_hover.png")
 	hover_sound.play()
 
 
 func _on_play_mouse_exited() -> void:
-	play_button.texture =  load("res://objects/winter_button_play.png")
+	play_button.texture =  load("res://ui/winter_button_play.png")
 
 
 func _on_load_mouse_entered() -> void:
-	load_button.texture =  load("res://objects/winter_button_load_hover.png")
+	load_button.texture =  load("res://ui/winter_button_load_hover.png")
 	hover_sound.play()
 
 
 func _on_load_mouse_exited() -> void:
-	load_button.texture =  load("res://objects/winter_button_load.png")
+	load_button.texture =  load("res://ui/winter_button_load.png")
 
 
 func _on_exit_mouse_entered() -> void:
-	exit_button.texture =  load("res://objects/winter_button_exit_hover.png")
+	exit_button.texture =  load("res://ui/winter_button_exit_hover.png")
 	hover_sound.play()
 
 
 func _on_exit_mouse_exited() -> void:
-	exit_button.texture =  load("res://objects/winter_button_exit.png")
+	exit_button.texture =  load("res://ui/winter_button_exit.png")

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_y5v3v"]
 [ext_resource type="Texture2D" uid="uid://byv1dw25bx231" path="res://backgrounds/christmas_tree.jpg" id="2_nwbm2"]
-[ext_resource type="Texture2D" uid="uid://jautd1th120v" path="res://objects/winter_button_play.png" id="3_vitcw"]
-[ext_resource type="Texture2D" uid="uid://chwdn2lbyv4k6" path="res://objects/winter_button_load.png" id="4_08266"]
-[ext_resource type="Texture2D" uid="uid://dw7jm4xj8hbe" path="res://objects/winter_button_exit.png" id="5_g8eol"]
+[ext_resource type="Texture2D" uid="uid://jautd1th120v" path="res://ui/winter_button_play.png" id="3_vitcw"]
+[ext_resource type="Texture2D" uid="uid://chwdn2lbyv4k6" path="res://ui/winter_button_load.png" id="4_08266"]
+[ext_resource type="Texture2D" uid="uid://dw7jm4xj8hbe" path="res://ui/winter_button_exit.png" id="5_g8eol"]
 [ext_resource type="AudioStream" uid="uid://knto1fh4opug" path="res://audio/menu_button_hover.mp3" id="6_3x22s"]
 
 [node name="MainMenu" type="Control"]

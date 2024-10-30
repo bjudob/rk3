@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw7jm4xj8hbe"
-path="res://.godot/imported/winter_button_exit.png-1e2cd17bb7dcfe7ed636ed620b963ab0.ctex"
+uid="uid://chwdn2lbyv4k6"
+path="res://.godot/imported/winter_button_load.png-1580ab8b815ed40a3ef37b98390a0612.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/winter_button_exit.png"
-dest_files=["res://.godot/imported/winter_button_exit.png-1e2cd17bb7dcfe7ed636ed620b963ab0.ctex"]
+source_file="res://ui/winter_button_load.png"
+dest_files=["res://.godot/imported/winter_button_load.png-1580ab8b815ed40a3ef37b98390a0612.ctex"]
 
 [params]
 

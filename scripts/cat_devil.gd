@@ -1,25 +1,25 @@
 extends StaticBody2D
 
-@onready
-var tooltip = $"../CanvasLayer/PressEtoTalk"
+@export var game_ui: GameUI
+@onready var tooltip = game_ui.tooltip
 
 func _ready() -> void:
-	tooltip.visible = false
+	pass
 
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("talk") and Dialogic.current_timeline == null:
 		Dialogic.start("hello_to_hell")
-		tooltip.visible = false
+		tooltip.hide_tooltip()
 
 
 func _show_tooltip(body: Node2D) -> void:
 	if body is not Reki:
 		return
-	tooltip.visible = true
+	tooltip.show_tooltip("Press E to talk")
 
 
 func _hide_tooltip(body: Node2D) -> void:
 	if body is not Reki:
 		return
-	tooltip.visible = false
+	tooltip.hide_tooltip()

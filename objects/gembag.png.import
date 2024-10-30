@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdw370scjwfcf"
-path="res://.godot/imported/winter_button_exit_hover.png-9225f3bc92af4f12165d3ff6d25a1748.ctex"
+uid="uid://bspb7f4y31xje"
+path="res://.godot/imported/gembag.png-8f3fdf1946874cbed519a91fa3a2e342.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/winter_button_exit_hover.png"
-dest_files=["res://.godot/imported/winter_button_exit_hover.png-9225f3bc92af4f12165d3ff6d25a1748.ctex"]
+source_file="res://objects/gembag.png"
+dest_files=["res://.godot/imported/gembag.png-8f3fdf1946874cbed519a91fa3a2e342.ctex"]
 
 [params]
 

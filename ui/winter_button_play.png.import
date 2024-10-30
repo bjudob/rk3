@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chsru3ahu46lf"
-path="res://.godot/imported/winter_button.png-c0e735a8033d35fe949ec004e3226205.ctex"
+uid="uid://jautd1th120v"
+path="res://.godot/imported/winter_button_play.png-2bb941abbf4e973457eaaa8494f1b243.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/winter_button.png"
-dest_files=["res://.godot/imported/winter_button.png-c0e735a8033d35fe949ec004e3226205.ctex"]
+source_file="res://ui/winter_button_play.png"
+dest_files=["res://.godot/imported/winter_button_play.png-2bb941abbf4e973457eaaa8494f1b243.ctex"]
 
 [params]
 
