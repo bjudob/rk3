@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjpuj2oo4aydb"]
+
+[ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/hello.tscn" id="1_ft6hw"]
+[ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/main_menu.tscn" id="1_x7eno"]
+
+[node name="Main" type="Node2D"]
+
+[node name="MainMenu" parent="." instance=ExtResource("1_x7eno")]
+
+[node name="Hell" parent="." instance=ExtResource("1_ft6hw")]

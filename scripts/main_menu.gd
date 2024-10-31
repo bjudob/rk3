@@ -1,10 +1,10 @@
 extends Control
 
-@onready var play_button = $MarginContainer/VBoxContainer/Play
-@onready var load_button = $MarginContainer/VBoxContainer/Load
-@onready var exit_button = $MarginContainer/VBoxContainer/Exit
+@onready var play_button = $CanvasLayer/MarginContainer/VBoxContainer/Play
+@onready var load_button = $CanvasLayer/MarginContainer/VBoxContainer/Load
+@onready var exit_button = $CanvasLayer/MarginContainer/VBoxContainer/Exit
 
-@onready var hover_sound = $MarginContainer/HoverSound
+@onready var hover_sound = $CanvasLayer/MarginContainer/HoverSound
 
 func _on_play_gui_input(event: InputEvent) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
