@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=14 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scenes/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://dyqg7pfvvg61m" path="res://backgrounds/hells_gate.jpg" id="1_kux6v"]
@@ -6,11 +6,9 @@
 [ext_resource type="Script" path="res://scripts/cat_devil.gd" id="2_d6yjd"]
 [ext_resource type="Texture2D" uid="uid://uo1xvahj3c2r" path="res://characters/cat_devil.png" id="3_issr1"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="4_u7sfb"]
-[ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="5_dt83k"]
 [ext_resource type="Texture2D" uid="uid://clx6lvekle6nv" path="res://objects/fire.png" id="6_bc1el"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/devil.tscn" id="6_rv0h3"]
-[ext_resource type="Script" path="res://scripts/game_ui.gd" id="7_8bpks"]
-[ext_resource type="Script" path="res://scripts/tooltip.gd" id="9_5e5q1"]
+[ext_resource type="Texture2D" uid="uid://depxatwglbkb7" path="res://objects/santa_bag.png" id="10_p5srv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htxgr"]
 size = Vector2(111, 121)
@@ -47,10 +45,9 @@ texture = ExtResource("6_bc1el")
 position = Vector2(-4.5, -4.5)
 shape = SubResource("RectangleShape2D_htxgr")
 
-[node name="CatDevil" type="StaticBody2D" parent="." node_paths=PackedStringArray("game_ui")]
+[node name="CatDevil" type="StaticBody2D" parent="."]
 position = Vector2(960, 664)
 script = ExtResource("2_d6yjd")
-game_ui = NodePath("../GameUI")
 
 [node name="CatDevil" type="Sprite2D" parent="CatDevil"]
 scale = Vector2(0.530738, 0.421722)
@@ -67,85 +64,6 @@ shape = SubResource("RectangleShape2D_kbo55")
 
 [node name="Reki" parent="." instance=ExtResource("4_u7sfb")]
 position = Vector2(474, 983)
-
-[node name="GameUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("tooltip")]
-script = ExtResource("7_8bpks")
-tooltip = NodePath("Tooltip")
-
-[node name="Inventory" type="MarginContainer" parent="GameUI"]
-z_index = 10
-custom_minimum_size = Vector2(1200, 150)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -600.0
-offset_right = 602.0
-offset_bottom = 167.0
-grow_horizontal = 2
-theme_override_constants/margin_top = 50
-
-[node name="Background" type="ColorRect" parent="GameUI/Inventory"]
-layout_mode = 2
-color = Color(0.100209, 0.115518, 0.109102, 1)
-
-[node name="Items" type="HBoxContainer" parent="GameUI/Inventory"]
-layout_mode = 2
-
-[node name="ItemContainer1" type="MarginContainer" parent="GameUI/Inventory/Items"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ColorRect" type="ColorRect" parent="GameUI/Inventory/Items/ItemContainer1"]
-layout_mode = 2
-color = Color(0.485845, 0.46489, 0.462109, 1)
-
-[node name="Item1" type="TextureRect" parent="GameUI/Inventory/Items/ItemContainer1"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = ExtResource("6_bc1el")
-expand_mode = 4
-
-[node name="ItemContainer2" type="MarginContainer" parent="GameUI/Inventory/Items"]
-layout_direction = 2
-layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ColorRect" type="ColorRect" parent="GameUI/Inventory/Items/ItemContainer2"]
-layout_mode = 2
-color = Color(0.486275, 0.466667, 0.462745, 1)
-
-[node name="Item2" type="TextureRect" parent="GameUI/Inventory/Items/ItemContainer2"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = ExtResource("5_dt83k")
-expand_mode = 4
-
-[node name="Tooltip" type="RichTextLabel" parent="GameUI"]
-visible = false
-custom_minimum_size = Vector2(100, 0)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -100.0
-offset_right = 104.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/normal_font_size = 29
-text = "Press E to talk"
-script = ExtResource("9_5e5q1")
 
 [node name="Devil" parent="." instance=ExtResource("6_rv0h3")]
 position = Vector2(270, 785)
@@ -178,6 +96,11 @@ position = Vector2(1037, 1091)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-60.5, 1)
 shape = SubResource("RectangleShape2D_d77ns")
+
+[node name="SantaBag" type="Sprite2D" parent="."]
+position = Vector2(1434, 928)
+scale = Vector2(0.549628, 0.390951)
+texture = ExtResource("10_p5srv")
 
 [connection signal="input_event" from="Item/Area2D" to="Item" method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Item/Area2D" to="Item" method="_on_area_2d_mouse_entered"]

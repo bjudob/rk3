@@ -1,6 +1,4 @@
-extends Control
-
-@export var main: Main
+extends Level
 
 @onready var play_button = $CanvasLayer/MarginContainer/VBoxContainer/Play
 @onready var load_button = $CanvasLayer/MarginContainer/VBoxContainer/Load

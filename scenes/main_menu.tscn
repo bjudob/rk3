@@ -7,13 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dw7jm4xj8hbe" path="res://ui/winter_button_exit.png" id="5_g8eol"]
 [ext_resource type="AudioStream" uid="uid://knto1fh4opug" path="res://audio/menu_button_hover.mp3" id="6_3x22s"]
 
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameMenu" type="Node2D"]
 script = ExtResource("1_y5v3v")
 
 [node name="christmas_background" type="Sprite2D" parent="."]

@@ -1,6 +1,4 @@
-extends Node2D
-
-@export var main: Main
+extends Level
 
 func _ready() -> void:
 	pass

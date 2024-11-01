@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://6f51xk42nxsm"]
+
+[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
+[ext_resource type="Texture2D" uid="uid://clx6lvekle6nv" path="res://objects/fire.png" id="2_ei67o"]
+[ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="3_thcxr"]
+[ext_resource type="Script" path="res://scripts/tooltip.gd" id="4_6kthd"]
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_wtv2t")
+
+[node name="Inventory" type="MarginContainer" parent="."]
+z_index = 10
+custom_minimum_size = Vector2(1200, 150)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -600.0
+offset_right = 602.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 50
+
+[node name="Background" type="ColorRect" parent="Inventory"]
+layout_mode = 2
+color = Color(0.100209, 0.115518, 0.109102, 1)
+
+[node name="Items" type="HBoxContainer" parent="Inventory"]
+layout_mode = 2
+
+[node name="ItemContainer1" type="MarginContainer" parent="Inventory/Items"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemContainer1"]
+layout_mode = 2
+color = Color(0.485845, 0.46489, 0.462109, 1)
+
+[node name="Item1" type="TextureRect" parent="Inventory/Items/ItemContainer1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_ei67o")
+expand_mode = 4
+
+[node name="ItemContainer2" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemContainer2"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item2" type="TextureRect" parent="Inventory/Items/ItemContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("3_thcxr")
+expand_mode = 4
+
+[node name="Tooltip" type="RichTextLabel" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -100.0
+offset_right = 104.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 29
+text = "Press E to talk"
+script = ExtResource("4_6kthd")
