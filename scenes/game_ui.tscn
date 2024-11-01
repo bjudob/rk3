@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://6f51xk42nxsm"]
+[gd_scene load_steps=5 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
 [ext_resource type="Script" path="res://scenes/inventory.gd" id="2_bi3r5"]
+[ext_resource type="Script" path="res://scenes/item_slot.gd" id="3_qnija"]
 [ext_resource type="Script" path="res://scripts/tooltip.gd" id="4_6kthd"]
 
 [node name="GameUI" type="CanvasLayer"]
@@ -24,165 +25,175 @@ script = ExtResource("2_bi3r5")
 layout_mode = 2
 color = Color(0.100209, 0.115518, 0.109102, 1)
 
-[node name="Items" type="HBoxContainer" parent="Inventory"]
+[node name="ItemsSlots" type="HBoxContainer" parent="Inventory"]
 layout_mode = 2
 
-[node name="ItemSlot1" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot1" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot1"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot1"]
 layout_mode = 2
 color = Color(0.485845, 0.46489, 0.462109, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot1"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot1"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot2" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot2" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot2"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot2"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot2"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot3" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot3" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot3"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot3"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot3"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot3"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot4" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot4" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot4"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot4"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot4"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot4"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot5" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot5" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot5"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot5"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot5"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot5"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot6" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot6" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot6"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot6"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot6"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot6"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot7" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot7" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot7"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot7"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot7"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot7"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot8" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot8" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot8"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot8"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot8"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot8"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot9" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot9" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot9"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot9"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot9"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot9"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4
 
-[node name="ItemSlot10" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot10" type="MarginContainer" parent="Inventory/ItemsSlots"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("3_qnija")
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot10"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/ItemsSlots/ItemSlot10"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot10"]
+[node name="Item" type="TextureRect" parent="Inventory/ItemsSlots/ItemSlot10"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 expand_mode = 4

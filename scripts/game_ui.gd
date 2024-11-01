@@ -6,12 +6,9 @@ extends CanvasLayer
 @export var main: Main
 
 @onready var tooltip = $Tooltip
+@onready var inventory = $Inventory
 
 func _ready() -> void:
-	pass
-
-
-func _process(delta: float) -> void:
 	pass
 
 func show_tooltip(text: String):
@@ -19,3 +16,6 @@ func show_tooltip(text: String):
 
 func hide_tooltip():
 	tooltip.hide_tooltip()
+
+func add_item(item: Item):
+	inventory.add_item(item)

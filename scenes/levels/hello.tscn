@@ -77,6 +77,7 @@ hue_variation_max = 0.07
 [node name="Item" type="Node2D" parent="."]
 position = Vector2(1679, 922)
 script = ExtResource("2_arq4p")
+image = ExtResource("6_bc1el")
 
 [node name="Sprite2D" type="Sprite2D" parent="Item"]
 scale = Vector2(0.257317, 0.231319)
