@@ -1,6 +1,10 @@
 class_name GameUI
 extends CanvasLayer
 
+@export var reki: Reki
+@export var game_ui: GameUI
+@export var main: Main
+
 @onready var tooltip = $Tooltip
 
 func _ready() -> void:

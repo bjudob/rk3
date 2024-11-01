@@ -13,12 +13,17 @@ script = ExtResource("1_euyya")
 z_index = 1
 position = Vector2(513, 998)
 
-[node name="GameUI" parent="." instance=ExtResource("2_wen8c")]
+[node name="GameUI" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("2_wen8c")]
+reki = NodePath("../Reki")
+game_ui = NodePath(".")
+main = NodePath("..")
 
-[node name="MainMenu" parent="." node_paths=PackedStringArray("game_ui", "main") instance=ExtResource("1_x7eno")]
+[node name="MainMenu" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("1_x7eno")]
+reki = NodePath("../Reki")
 game_ui = NodePath("../GameUI")
 main = NodePath("..")
 
-[node name="Hell" parent="." node_paths=PackedStringArray("game_ui", "main") instance=ExtResource("1_ft6hw")]
+[node name="Hell" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("1_ft6hw")]
+reki = NodePath("../Reki")
 game_ui = NodePath("../GameUI")
 main = NodePath("..")

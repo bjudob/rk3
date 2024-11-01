@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://6f51xk42nxsm"]
+[gd_scene load_steps=4 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
-[ext_resource type="Texture2D" uid="uid://clx6lvekle6nv" path="res://objects/fire.png" id="2_ei67o"]
-[ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="3_thcxr"]
+[ext_resource type="Script" path="res://scenes/inventory.gd" id="2_bi3r5"]
 [ext_resource type="Script" path="res://scripts/tooltip.gd" id="4_6kthd"]
 
 [node name="GameUI" type="CanvasLayer"]
@@ -19,6 +18,7 @@ offset_right = 602.0
 offset_bottom = 167.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 50
+script = ExtResource("2_bi3r5")
 
 [node name="Background" type="ColorRect" parent="Inventory"]
 layout_mode = 2
@@ -27,38 +27,164 @@ color = Color(0.100209, 0.115518, 0.109102, 1)
 [node name="Items" type="HBoxContainer" parent="Inventory"]
 layout_mode = 2
 
-[node name="ItemContainer1" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot1" type="MarginContainer" parent="Inventory/Items"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemContainer1"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot1"]
 layout_mode = 2
 color = Color(0.485845, 0.46489, 0.462109, 1)
 
-[node name="Item1" type="TextureRect" parent="Inventory/Items/ItemContainer1"]
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot1"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("2_ei67o")
 expand_mode = 4
 
-[node name="ItemContainer2" type="MarginContainer" parent="Inventory/Items"]
+[node name="ItemSlot2" type="MarginContainer" parent="Inventory/Items"]
 layout_direction = 2
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemContainer2"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot2"]
 layout_mode = 2
 color = Color(0.486275, 0.466667, 0.462745, 1)
 
-[node name="Item2" type="TextureRect" parent="Inventory/Items/ItemContainer2"]
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("3_thcxr")
+expand_mode = 4
+
+[node name="ItemSlot3" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot3"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 4
+
+[node name="ItemSlot4" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot4"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 4
+
+[node name="ItemSlot5" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot5"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 4
+
+[node name="ItemSlot6" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot6"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot6"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 4
+
+[node name="ItemSlot7" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot7"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot7"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 4
+
+[node name="ItemSlot8" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot8"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot8"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 4
+
+[node name="ItemSlot9" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot9"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot9"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 4
+
+[node name="ItemSlot10" type="MarginContainer" parent="Inventory/Items"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="Inventory/Items/ItemSlot10"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 1)
+
+[node name="Item" type="TextureRect" parent="Inventory/Items/ItemSlot10"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
 expand_mode = 4
 
 [node name="Tooltip" type="RichTextLabel" parent="."]
