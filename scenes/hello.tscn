@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=16 format=3 uid="uid://begl8pmauyax2"]
 
+[ext_resource type="Script" path="res://scenes/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://dyqg7pfvvg61m" path="res://backgrounds/hells_gate.jpg" id="1_kux6v"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="2_arq4p"]
 [ext_resource type="Script" path="res://scripts/cat_devil.gd" id="2_d6yjd"]
@@ -24,6 +25,7 @@ size = Vector2(470, 638)
 size = Vector2(1923, 46)
 
 [node name="Hell" type="Node2D"]
+script = ExtResource("1_7hytu")
 
 [node name="HellsGate" type="Sprite2D" parent="."]
 z_index = -3

@@ -1,14 +1,15 @@
 extends Control
 
+@export var main: Main
+
 @onready var play_button = $CanvasLayer/MarginContainer/VBoxContainer/Play
 @onready var load_button = $CanvasLayer/MarginContainer/VBoxContainer/Load
 @onready var exit_button = $CanvasLayer/MarginContainer/VBoxContainer/Exit
-
 @onready var hover_sound = $CanvasLayer/MarginContainer/HoverSound
 
 func _on_play_gui_input(event: InputEvent) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
-		get_tree().change_scene_to_file("res://scenes/hello.tscn")
+		main.change_scene(main.Scene.HELL)
 
 func _on_load_gui_input(event: InputEvent) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
