@@ -2,7 +2,7 @@ class_name Reki
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -800.0
+const JUMP_VELOCITY = -900.0
 var facing_right = true
 
 @onready

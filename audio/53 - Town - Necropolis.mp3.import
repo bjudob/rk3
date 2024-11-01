@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://br4v1hxgeq7xf"
+path="res://.godot/imported/53 - Town - Necropolis.mp3-da8ef6b9070549423290d60c65180f9a.mp3str"
+
+[deps]
+
+source_file="res://audio/53 - Town - Necropolis.mp3"
+dest_files=["res://.godot/imported/53 - Town - Necropolis.mp3-da8ef6b9070549423290d60c65180f9a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

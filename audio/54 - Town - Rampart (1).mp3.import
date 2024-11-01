@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf8jg2f6jwy7o"
+path="res://.godot/imported/54 - Town - Rampart (1).mp3-8ab5e44034e012f2fbc7c5c11d297da7.mp3str"
+
+[deps]
+
+source_file="res://audio/54 - Town - Rampart (1).mp3"
+dest_files=["res://.godot/imported/54 - Town - Rampart (1).mp3-8ab5e44034e012f2fbc7c5c11d297da7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

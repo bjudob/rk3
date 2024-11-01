@@ -61,6 +61,8 @@ _data = {
 }
 
 [node name="Devil" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_dkkfo")
 animator = NodePath("AnimationPlayer")
 

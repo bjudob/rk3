@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5q1dprcio28i"
+path="res://.godot/imported/55 - Town - Stronghold.mp3-0c4a32d1604708fd405474bf42debe85.mp3str"
+
+[deps]
+
+source_file="res://audio/55 - Town - Stronghold.mp3"
+dest_files=["res://.godot/imported/55 - Town - Stronghold.mp3-0c4a32d1604708fd405474bf42debe85.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkcfdiqgsxtqh"]
+
+[ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
+
+[node name="HeavensGate" type="Node2D"]
+
+[node name="GatesOfHeaven" type="Sprite2D" parent="."]
+position = Vector2(947, 533)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("1_i4iw1")

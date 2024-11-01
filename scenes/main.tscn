@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=6 format=3 uid="uid://cjpuj2oo4aydb"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_euyya"]
-[ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/hello.tscn" id="1_ft6hw"]
-[ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/main_menu.tscn" id="1_x7eno"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
+[ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
+[ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
+[ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/game_ui.tscn" id="2_wen8c"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_euyya")
+
+[node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
+z_index = 1
+position = Vector2(513, 998)
 
 [node name="GameUI" parent="." instance=ExtResource("2_wen8c")]
 
