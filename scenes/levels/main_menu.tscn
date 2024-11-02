@@ -54,6 +54,7 @@ texture = ExtResource("5_g8eol")
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="CanvasLayer/MarginContainer"]
 stream = ExtResource("6_3x22s")
 
+[connection signal="finished" from="BackgroundMusic" to="." method="_on_background_music_finished"]
 [connection signal="gui_input" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_gui_input"]
 [connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_exited"]

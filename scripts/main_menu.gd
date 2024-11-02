@@ -43,3 +43,7 @@ func _on_exit_mouse_entered() -> void:
 
 func _on_exit_mouse_exited() -> void:
 	exit_button.texture =  load("res://ui/winter_button_exit.png")
+
+
+func _on_background_music_finished() -> void:
+	$BackgroundMusic.play()
