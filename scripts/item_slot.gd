@@ -43,7 +43,6 @@ func _on_mouse_exited() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
-		print(current_item)
 		inventory.select_item(self, current_item)
 
 func select_item():
