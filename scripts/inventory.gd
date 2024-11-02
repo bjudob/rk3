@@ -3,6 +3,7 @@ extends MarginContainer
 
 var items = []
 var item_slots = []
+var selected_item = null
 
 func _ready() -> void:
 	_load_item_slots()
@@ -15,6 +16,17 @@ func _load_item_slots():
 func add_item(item: Item):
 	items.append(item)
 	refresh_ui()
+
+func select_item(item_slot: ItemSlot, item: Item):
+	selected_item = item
+	item_slot.select_item()
+	for slot in item_slots:
+		if slot != item_slot:
+			slot.deselect_item()
+	
+func deselect_item(item_slot: ItemSlot, item: Item):
+	selected_item = null
+	item_slot.deselect_item()
 
 func refresh_ui():
 	var i = 0

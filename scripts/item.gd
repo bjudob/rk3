@@ -19,4 +19,4 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
 		owner.game_ui.add_item(self)
 		Input.set_custom_mouse_cursor(default_cursor)
-		queue_free()
+		get_parent().remove_child(self)

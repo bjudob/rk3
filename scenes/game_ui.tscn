@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
-[ext_resource type="Script" path="res://scenes/inventory.gd" id="2_bi3r5"]
-[ext_resource type="Script" path="res://scenes/item_slot.gd" id="3_qnija"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="2_bi3r5"]
+[ext_resource type="Script" path="res://scripts/item_slot.gd" id="3_qnija"]
 [ext_resource type="Script" path="res://scripts/tooltip.gd" id="4_6kthd"]
 
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_wtv2t")
 
-[node name="Inventory" type="MarginContainer" parent="."]
+[node name="Inventory" type="MarginContainer" parent="." groups=["inventory"]]
 z_index = 10
 custom_minimum_size = Vector2(1200, 150)
 anchors_preset = 5
