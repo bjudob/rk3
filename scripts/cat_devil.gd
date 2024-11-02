@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Itemable
 
 var in_talk_range = false
 
@@ -23,8 +23,3 @@ func _hide_tooltip(body: Node2D) -> void:
 		return
 	in_talk_range = false
 	owner.game_ui.hide_tooltip()
-
-
-func _on_itemable_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
-		print("item used")

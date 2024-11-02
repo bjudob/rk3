@@ -24,6 +24,7 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_jrhig")
 
 [node name="CatDevil" parent="." instance=ExtResource("4_mhwqj")]
+item_needed = "fire"
 
 [node name="Item" parent="." instance=ExtResource("7_jt7wp")]
 position = Vector2(1625, 930)
