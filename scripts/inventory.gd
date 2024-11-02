@@ -5,7 +5,7 @@ var items = []
 var item_slots = []
 var selected_item = null
 
-@onready var selected_item_follow = $"../SelectedItemFollow"
+@onready var item_follow = $"../ItemFollow"
 
 func _ready() -> void:
 	_load_item_slots()
@@ -23,7 +23,7 @@ func select_item(item_slot: ItemSlot, item: Item):
 	if not item:
 		return
 	selected_item = item
-	selected_item_follow.select_image(item.image)
+	item_follow.select_item(item)
 	item_slot.select_item()
 	for slot in item_slots:
 		if slot != item_slot:
@@ -31,7 +31,7 @@ func select_item(item_slot: ItemSlot, item: Item):
 	
 func deselect_item():
 	selected_item = null
-	selected_item_follow.deselect_image()
+	item_follow.deselect_item()
 	for item_slot in item_slots:
 		item_slot.deselect_item()
 

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bel8o63enp2y4"]
+
+[ext_resource type="Script" path="res://scripts/cat_devil.gd" id="1_ag8th"]
+[ext_resource type="Texture2D" uid="uid://cf7jdibnkp8i3" path="res://characters/cat_satan-transparent.png" id="2_s4fye"]
+[ext_resource type="Texture2D" uid="uid://clx6lvekle6nv" path="res://objects/fire.png" id="3_q7j6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sfkr"]
+size = Vector2(77, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbo55"]
+size = Vector2(348, 438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orsjk"]
+size = Vector2(144, 200)
+
+[node name="CatDevil" type="StaticBody2D"]
+position = Vector2(960, 855)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ag8th")
+
+[node name="CatDevil" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_s4fye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+shape = SubResource("RectangleShape2D_2sfkr")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-2, 13)
+shape = SubResource("RectangleShape2D_kbo55")
+
+[node name="ItemableArea" type="Area2D" parent="." groups=["itemable"]]
+position = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_orsjk")
+
+[node name="Flames" type="CPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(-4, 29)
+amount = 100
+texture = ExtResource("3_q7j6c")
+emission_shape = 3
+emission_rect_extents = Vector2(150, 30)
+direction = Vector2(30, -70)
+spread = 104.95
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.12
+initial_velocity_max = 136.39
+angular_velocity_min = -3.0
+angular_velocity_max = 6.1
+scale_amount_min = 0.01
+scale_amount_max = 0.1
+hue_variation_min = -0.03
+hue_variation_max = 0.07
+
+[connection signal="body_entered" from="TalkArea" to="." method="_show_tooltip"]
+[connection signal="body_exited" from="TalkArea" to="." method="_hide_tooltip"]
+[connection signal="input_event" from="ItemableArea" to="." method="_on_itemable_area_input_event"]

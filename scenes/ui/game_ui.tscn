@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="2_bi3r5"]
 [ext_resource type="Script" path="res://scripts/item_slot.gd" id="3_qnija"]
 [ext_resource type="Script" path="res://scripts/tooltip.gd" id="4_6kthd"]
-[ext_resource type="Script" path="res://scenes/selected_item_follow.gd" id="6_kj5ed"]
+[ext_resource type="Script" path="res://scripts/item_follow.gd" id="6_kj5ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2ev"]
 size = Vector2(50, 50)
@@ -224,18 +224,18 @@ theme_override_font_sizes/normal_font_size = 29
 text = "Press E to talk"
 script = ExtResource("4_6kthd")
 
-[node name="SelectedItemFollow" type="Sprite2D" parent="."]
+[node name="ItemFollow" type="Sprite2D" parent="." groups=["item_follow"]]
 z_index = 11
 script = ExtResource("6_kj5ed")
 
-[node name="Area2D" type="Area2D" parent="SelectedItemFollow"]
+[node name="Area2D" type="Area2D" parent="ItemFollow"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectedItemFollow/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemFollow/Area2D"]
 shape = SubResource("RectangleShape2D_yh2ev")
 
-[node name="Timer" type="Timer" parent="SelectedItemFollow"]
+[node name="Timer" type="Timer" parent="ItemFollow"]
 wait_time = 0.1
 one_shot = true
 
-[connection signal="input_event" from="SelectedItemFollow/Area2D" to="SelectedItemFollow" method="_on_area_2d_input_event"]
-[connection signal="timeout" from="SelectedItemFollow/Timer" to="SelectedItemFollow" method="_on_timer_timeout"]
+[connection signal="input_event" from="ItemFollow/Area2D" to="ItemFollow" method="_on_area_2d_input_event"]
+[connection signal="timeout" from="ItemFollow/Timer" to="ItemFollow" method="_on_timer_timeout"]

@@ -1,21 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=9 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="AudioStream" uid="uid://ccydnuj4hef3n" path="res://audio/52 - Town - Inferno.mp3" id="2_4ybbx"]
-[ext_resource type="Script" path="res://scripts/cat_devil.gd" id="2_d6yjd"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="2_jrhig"]
-[ext_resource type="Texture2D" uid="uid://clx6lvekle6nv" path="res://objects/fire.png" id="6_bc1el"]
-[ext_resource type="Texture2D" uid="uid://cf7jdibnkp8i3" path="res://characters/cat_satan-transparent.png" id="6_mvx3p"]
+[ext_resource type="PackedScene" uid="uid://bel8o63enp2y4" path="res://scenes/npc/cat_devil.tscn" id="4_mhwqj"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_rv0h3"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_jt7wp"]
 [ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="9_mt5es"]
 [ext_resource type="Texture2D" uid="uid://depxatwglbkb7" path="res://objects/santa_bag.png" id="10_p5srv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sfkr"]
-size = Vector2(91, 164)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbo55"]
-size = Vector2(348, 438)
 
 [node name="Hell" type="Node2D"]
 script = ExtResource("1_7hytu")
@@ -31,43 +23,7 @@ position = Vector2(957, 532)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_jrhig")
 
-[node name="CatDevil" type="StaticBody2D" parent="."]
-position = Vector2(960, 855)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("2_d6yjd")
-
-[node name="CatDevil" type="Sprite2D" parent="CatDevil"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_mvx3p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CatDevil"]
-shape = SubResource("RectangleShape2D_2sfkr")
-
-[node name="Area2D" type="Area2D" parent="CatDevil"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CatDevil/Area2D"]
-position = Vector2(1, 5)
-shape = SubResource("RectangleShape2D_kbo55")
-
-[node name="Flames" type="CPUParticles2D" parent="CatDevil"]
-z_index = -1
-position = Vector2(-4, 29)
-amount = 100
-texture = ExtResource("6_bc1el")
-emission_shape = 3
-emission_rect_extents = Vector2(150, 30)
-direction = Vector2(30, -70)
-spread = 104.95
-gravity = Vector2(0, 0)
-initial_velocity_min = 60.12
-initial_velocity_max = 136.39
-angular_velocity_min = -3.0
-angular_velocity_max = 6.1
-scale_amount_min = 0.01
-scale_amount_max = 0.1
-hue_variation_min = -0.03
-hue_variation_max = 0.07
+[node name="CatDevil" parent="." instance=ExtResource("4_mhwqj")]
 
 [node name="Item" parent="." instance=ExtResource("7_jt7wp")]
 position = Vector2(1625, 930)
@@ -93,6 +49,3 @@ visible = false
 position = Vector2(1434, 928)
 scale = Vector2(0.549628, 0.390951)
 texture = ExtResource("10_p5srv")
-
-[connection signal="body_entered" from="CatDevil/Area2D" to="CatDevil" method="_show_tooltip"]
-[connection signal="body_exited" from="CatDevil/Area2D" to="CatDevil" method="_hide_tooltip"]

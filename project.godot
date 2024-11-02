@@ -71,6 +71,8 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 player=""
 inventory=""
+itemable=""
+item_follow=""
 
 [input]
 
