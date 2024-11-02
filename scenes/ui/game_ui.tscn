@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://6f51xk42nxsm"]
+[gd_scene load_steps=7 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="2_bi3r5"]
 [ext_resource type="Script" path="res://scripts/item_slot.gd" id="3_qnija"]
 [ext_resource type="Script" path="res://scripts/tooltip.gd" id="4_6kthd"]
-[ext_resource type="Texture2D" uid="uid://clx6lvekle6nv" path="res://objects/fire.png" id="5_r228g"]
 [ext_resource type="Script" path="res://scenes/selected_item_follow.gd" id="6_kj5ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2ev"]
@@ -227,7 +226,6 @@ script = ExtResource("4_6kthd")
 
 [node name="SelectedItemFollow" type="Sprite2D" parent="."]
 z_index = 11
-texture = ExtResource("5_r228g")
 script = ExtResource("6_kj5ed")
 
 [node name="Area2D" type="Area2D" parent="SelectedItemFollow"]
@@ -236,7 +234,7 @@ script = ExtResource("6_kj5ed")
 shape = SubResource("RectangleShape2D_yh2ev")
 
 [node name="Timer" type="Timer" parent="SelectedItemFollow"]
-wait_time = 0.5
+wait_time = 0.1
 one_shot = true
 
 [connection signal="input_event" from="SelectedItemFollow/Area2D" to="SelectedItemFollow" method="_on_area_2d_input_event"]

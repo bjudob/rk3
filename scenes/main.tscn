@@ -1,17 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=7 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
 [ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
-[ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/game_ui.tscn" id="2_wen8c"]
+[ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jgk"]
+size = Vector2(3635.5, 42)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_euyya")
 
 [node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
 z_index = 1
-position = Vector2(513, 998)
+position = Vector2(507, 979)
 
 [node name="GameUI" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("2_wen8c")]
 reki = NodePath("../Reki")
@@ -27,3 +30,10 @@ main = NodePath("..")
 reki = NodePath("../Reki")
 game_ui = NodePath("../GameUI")
 main = NodePath("..")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(986, 1099)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-12, -4)
+shape = SubResource("RectangleShape2D_g5jgk")
