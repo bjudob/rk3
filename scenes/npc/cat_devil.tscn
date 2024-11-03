@@ -41,6 +41,7 @@ position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_orsjk")
 
 [node name="Flames" type="CPUParticles2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(-4, 29)
 amount = 100

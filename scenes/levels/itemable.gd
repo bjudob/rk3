@@ -17,5 +17,9 @@ func _on_itemable_area_input_event(viewport: Node, event: InputEvent, shape_idx:
 			return
 		var item = item_follow.selected_item
 		if item.id == item_needed:
+			_on_item_correct(item)
 			if item.destroy_on_use:
 				inventory.remove_item(item)
+				
+func _on_item_correct(item):
+	pass
