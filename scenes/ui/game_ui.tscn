@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://6f51xk42nxsm"]
+[gd_scene load_steps=9 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="2_bi3r5"]
 [ext_resource type="Script" path="res://scripts/item_slot.gd" id="3_qnija"]
 [ext_resource type="Script" path="res://scripts/tooltip.gd" id="4_6kthd"]
 [ext_resource type="Script" path="res://scripts/item_follow.gd" id="6_kj5ed"]
+[ext_resource type="Texture2D" uid="uid://clhp4wabvkxgh" path="res://ui/soul_black.png" id="6_sbjri"]
+[ext_resource type="Texture2D" uid="uid://dcrlqlqwu13jv" path="res://ui/soul_white.png" id="7_n367u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2ev"]
 size = Vector2(50, 50)
@@ -27,7 +29,7 @@ script = ExtResource("2_bi3r5")
 
 [node name="Background" type="ColorRect" parent="Inventory"]
 layout_mode = 2
-color = Color(0.100209, 0.115518, 0.109102, 1)
+color = Color(0.101961, 0.113725, 0.109804, 0.784314)
 
 [node name="ItemsSlots" type="HBoxContainer" parent="Inventory"]
 layout_mode = 2
@@ -236,6 +238,96 @@ shape = SubResource("RectangleShape2D_yh2ev")
 [node name="Timer" type="Timer" parent="ItemFollow"]
 wait_time = 0.1
 one_shot = true
+
+[node name="DemonSouls" type="MarginContainer" parent="."]
+offset_right = 265.0
+offset_bottom = 123.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="ColorRect" type="ColorRect" parent="DemonSouls"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 0.588235)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DemonSouls"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DemonSouls/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="DemonSouls/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("6_sbjri")
+expand_mode = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="DemonSouls/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DemonSouls/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(170, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[center] 2450"
+
+[node name="AngelSouls" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -304.0
+offset_bottom = 130.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 0
+
+[node name="ColorRect" type="ColorRect" parent="AngelSouls"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 0.588235)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AngelSouls"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="AngelSouls/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AngelSouls/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(170, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[center] 2450"
+
+[node name="MarginContainer" type="MarginContainer" parent="AngelSouls/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="AngelSouls/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_n367u")
+expand_mode = 4
 
 [connection signal="input_event" from="ItemFollow/Area2D" to="ItemFollow" method="_on_area_2d_input_event"]
 [connection signal="timeout" from="ItemFollow/Timer" to="ItemFollow" method="_on_timer_timeout"]

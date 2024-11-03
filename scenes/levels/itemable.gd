@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_itemable_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
-		if not item_follow.is_active():
+		if not item_follow.is_active() or not item_follow.selected_item:
 			return
 		var item = item_follow.selected_item
 		if item.id == item_needed:

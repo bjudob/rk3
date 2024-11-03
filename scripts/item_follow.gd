@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	position = get_global_mouse_position()
 
 func select_item(item: Item):
+	area_2d.visible = false
 	selected_item = item
 	texture = item.image
 	scale.x = width/texture.get_width()

@@ -4,13 +4,15 @@ extends Node2D
 enum Level {
 	MAIN_MENU,
 	HELL,
-	HEAVEN,
+	HELL_ROME,
+	HEAVENS_GATE,
 }
 
 @onready var level_to_node = {
 	Level.MAIN_MENU: $MainMenu,
 	Level.HELL: $Hell,
-	Level.HEAVEN: $HeavensGate,
+	Level.HELL_ROME: $HellRome,
+	Level.HEAVENS_GATE: $HeavensGate,
 }
 
 @onready var game_ui = $GameUI

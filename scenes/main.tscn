@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=12 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
 [ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
+[ext_resource type="PackedScene" uid="uid://bdj2birsloe50" path="res://scripts/hell_rome.tscn" id="6_gqyg1"]
 [ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
 [ext_resource type="Script" path="res://scenes/go_left.gd" id="6_tef7d"]
 [ext_resource type="Script" path="res://scenes/go_right.gd" id="7_77xbi"]
@@ -37,8 +38,13 @@ reki = NodePath("../Reki")
 game_ui = NodePath("../GameUI")
 main = NodePath("..")
 right = 2
+left = 3
+
+[node name="HellRome" parent="." instance=ExtResource("6_gqyg1")]
+right = 3
 
 [node name="HeavensGate" parent="." instance=ExtResource("6_n247f")]
+left = 2
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(986, 1099)
