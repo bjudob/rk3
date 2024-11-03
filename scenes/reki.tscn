@@ -257,6 +257,7 @@ libraries = {
 }
 
 [node name="RekiSprites" type="Sprite2D" parent="."]
+z_index = 8
 
 [node name="Jek4All" type="Sprite2D" parent="RekiSprites"]
 texture_filter = 1

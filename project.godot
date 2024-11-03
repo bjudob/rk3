@@ -73,6 +73,7 @@ player=""
 inventory=""
 itemable=""
 item_follow=""
+game_ui=""
 
 [input]
 

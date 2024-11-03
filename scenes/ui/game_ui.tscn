@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2ev"]
 size = Vector2(50, 50)
 
-[node name="GameUI" type="CanvasLayer"]
+[node name="GameUI" type="CanvasLayer" groups=["game_ui"]]
 script = ExtResource("1_wtv2t")
 
 [node name="Inventory" type="MarginContainer" parent="." groups=["inventory"]]
