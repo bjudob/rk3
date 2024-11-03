@@ -7,8 +7,8 @@ extends CanvasLayer
 
 @onready var tooltip = $Tooltip
 @onready var inventory = $Inventory
-@onready var demon_souls_display = $DemonSouls/HBoxContainer/MarginContainer2/RichTextLabel
-@onready var angel_souls_display = $AngelSouls/HBoxContainer/MarginContainer2/RichTextLabel
+@onready var demon_souls_display = $DemonSouls/HBoxContainer/MarginContainer2/Label
+@onready var angel_souls_display = $AngelSouls/HBoxContainer/MarginContainer2/Label
 
 var demon_souls = 0
 var angel_souls = 0

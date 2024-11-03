@@ -274,13 +274,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DemonSouls/HBoxContainer/MarginContainer2"]
-custom_minimum_size = Vector2(170, 50)
+[node name="Label" type="Label" parent="DemonSouls/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 35
-bbcode_enabled = true
-text = "[center] 2450"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "1234"
+vertical_alignment = 1
 
 [node name="AngelSouls" type="MarginContainer" parent="."]
 anchors_preset = 1
@@ -300,6 +300,7 @@ color = Color(0.486275, 0.466667, 0.462745, 0.588235)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AngelSouls"]
 layout_mode = 2
+alignment = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="AngelSouls/HBoxContainer"]
 layout_mode = 2
@@ -308,13 +309,14 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="RichTextLabel" type="RichTextLabel" parent="AngelSouls/HBoxContainer/MarginContainer2"]
-custom_minimum_size = Vector2(170, 50)
+[node name="Label" type="Label" parent="AngelSouls/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 35
-bbcode_enabled = true
-text = "[center] 2450"
+theme_override_font_sizes/font_size = 35
+text = "1234
+"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="AngelSouls/HBoxContainer"]
 layout_mode = 2
