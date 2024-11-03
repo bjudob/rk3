@@ -1,20 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=11 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
 [ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
+[ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
+[ext_resource type="Script" path="res://scenes/go_left.gd" id="6_tef7d"]
+[ext_resource type="Script" path="res://scenes/go_right.gd" id="7_77xbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jgk"]
 size = Vector2(3635.5, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6f12"]
+size = Vector2(64, 1066)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_euyya")
 
 [node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
 z_index = 1
-position = Vector2(507, 979)
+position = Vector2(1677, 957)
 
 [node name="GameUI" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("2_wen8c")]
 reki = NodePath("../Reki")
@@ -30,6 +36,9 @@ main = NodePath("..")
 reki = NodePath("../Reki")
 game_ui = NodePath("../GameUI")
 main = NodePath("..")
+right = 2
+
+[node name="HeavensGate" parent="." instance=ExtResource("6_n247f")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(986, 1099)
@@ -37,3 +46,22 @@ position = Vector2(986, 1099)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-12, -4)
 shape = SubResource("RectangleShape2D_g5jgk")
+
+[node name="GoLeft" type="Area2D" parent="."]
+position = Vector2(-147, 866)
+script = ExtResource("6_tef7d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoLeft"]
+position = Vector2(25, -351)
+shape = SubResource("RectangleShape2D_y6f12")
+
+[node name="GoRight" type="Area2D" parent="."]
+position = Vector2(1988, 852)
+script = ExtResource("7_77xbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoRight"]
+position = Vector2(33, -325)
+shape = SubResource("RectangleShape2D_y6f12")
+
+[connection signal="body_entered" from="GoLeft" to="GoLeft" method="_on_body_entered"]
+[connection signal="body_entered" from="GoRight" to="GoRight" method="_on_body_entered"]

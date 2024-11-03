@@ -1,3 +1,4 @@
+class_name HellsCat
 extends Level
 
 func _ready() -> void:

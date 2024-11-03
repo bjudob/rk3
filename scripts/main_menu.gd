@@ -7,7 +7,7 @@ extends Level
 
 func _on_play_gui_input(event: InputEvent) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
-		main.change_scene(main.Scene.HELL)
+		main.change_scene(main.Level.HELL)
 
 func _on_load_gui_input(event: InputEvent) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
