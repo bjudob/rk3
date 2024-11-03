@@ -35,6 +35,17 @@ func deselect_item():
 	for item_slot in item_slots:
 		item_slot.deselect_item()
 
+func remove_item(item: Item):
+	for item_slot in item_slots:
+		item_slot.deselect_item()
+	var index_to_remove = null
+	for i in len(items):
+		if items[i] == item:
+			index_to_remove = i
+	items.remove_at(index_to_remove)
+	refresh_ui()
+		
+
 func refresh_ui():
 	var i = 0
 	for item_slot in item_slots:
