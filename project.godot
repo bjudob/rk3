@@ -27,6 +27,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
+"miku_2": "res://dialogic/miku_2.dtl",
 "miku_hello": "res://dialogic/miku_hello.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]

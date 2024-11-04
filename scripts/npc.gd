@@ -1,6 +1,8 @@
 class_name NPC
 extends Itemable
 
+@export var current_dialog = "hello_to_hell"
+
 var in_talk_range = false
 var talk_area: Area2D
 
@@ -13,7 +15,9 @@ func _ready() -> void:
 	talk_area.connect("body_exited", _hide_tooltip)
 
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("talk") and Dialogic.current_timeline == null and in_talk_range:
+		Dialogic.start(current_dialog)
+		game_ui.hide_tooltip()
 
 func _show_tooltip(body: Node2D) -> void:
 	if body is not Reki:

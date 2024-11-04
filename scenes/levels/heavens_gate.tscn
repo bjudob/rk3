@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
-[ext_resource type="Script" path="res://scenes/levels/miku.gd" id="3_f01l2"]
+[ext_resource type="Script" path="res://scripts/miku.gd" id="3_f01l2"]
 [ext_resource type="Texture2D" uid="uid://bcumfo5l7ppm3" path="res://characters/miku.png" id="3_um6m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdsbi"]
@@ -27,6 +27,8 @@ position = Vector2(929, 854)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("3_f01l2")
+current_dialog = "miku_hello"
+item_needed = "santa_bag"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Miku"]
 position = Vector2(-1, 0)

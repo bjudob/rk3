@@ -2,8 +2,13 @@ class_name Itemable
 extends StaticBody2D
 
 @export var item_needed: String
+
 @onready var item_follow = get_tree().get_nodes_in_group("item_follow")[0]
 @onready var inventory = get_tree().get_nodes_in_group("inventory")[0]
+@onready var reki = get_tree().get_nodes_in_group("player")[0]
+@onready var game_ui = get_tree().get_nodes_in_group("game_ui")[0]
+@onready var main = get_tree().get_nodes_in_group("main")[0]
+
 var itemable_area: Area2D
 
 func _ready() -> void:
