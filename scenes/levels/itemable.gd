@@ -4,9 +4,13 @@ extends StaticBody2D
 @export var item_needed: String
 @onready var item_follow = get_tree().get_nodes_in_group("item_follow")[0]
 @onready var inventory = get_tree().get_nodes_in_group("inventory")[0]
+var itemable_area: Area2D
 
 func _ready() -> void:
-	pass
+	for child in get_children():
+		if child.name == "ItemableArea":
+			itemable_area = child
+	itemable_area.connect("input_event", _on_itemable_area_input_event)
 
 func _process(delta: float) -> void:
 	pass

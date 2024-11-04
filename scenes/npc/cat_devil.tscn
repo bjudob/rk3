@@ -58,7 +58,3 @@ scale_amount_min = 0.01
 scale_amount_max = 0.1
 hue_variation_min = -0.03
 hue_variation_max = 0.07
-
-[connection signal="body_entered" from="TalkArea" to="." method="_show_tooltip"]
-[connection signal="body_exited" from="TalkArea" to="." method="_hide_tooltip"]
-[connection signal="input_event" from="ItemableArea" to="." method="_on_itemable_area_input_event"]
