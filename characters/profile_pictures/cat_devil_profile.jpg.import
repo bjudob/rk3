@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7pi6f0wuppnv"
-path="res://.godot/imported/cat_devil_profile.jpg-86a3743f903b200926a4b1e5135e73c5.ctex"
+path="res://.godot/imported/cat_devil_profile.jpg-2016ae9ef14a66cc1cf8ac4b9dd2186c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/cat_devil_profile.jpg"
-dest_files=["res://.godot/imported/cat_devil_profile.jpg-86a3743f903b200926a4b1e5135e73c5.ctex"]
+source_file="res://characters/profile_pictures/cat_devil_profile.jpg"
+dest_files=["res://.godot/imported/cat_devil_profile.jpg-2016ae9ef14a66cc1cf8ac4b9dd2186c.ctex"]
 
 [params]
 

@@ -2,22 +2,22 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.675781, 0, 0, 1),
+"color": Color(1, 1, 1, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "Cat Devil",
+"default_portrait": "Miku",
 "description": "",
-"display_name": "A Névtelen",
+"display_name": "miku",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"Cat Devil": {
+"Miku": {
 "export_overrides": {
-"image": "\"res://characters/profile_pictures/cat_devil_profile.jpg\""
+"image": "\"res://characters/profile_pictures/miku_profile.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

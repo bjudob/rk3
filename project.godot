@@ -22,10 +22,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"cat_devil": "res://dialogic/cat_devil.dch"
+"cat_devil": "res://dialogic/cat_devil.dch",
+"miku": "res://dialogic/miku.dch"
 }
 directories/dtl_directory={
-"hello_to_hell": "res://characters/hello_to_hell.dtl"
+"hello_to_hell": "res://characters/hello_to_hell.dtl",
+"miku_hello": "res://dialogic/miku_hello.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]
 layout/default_style="res://dialogic/style.tres"
