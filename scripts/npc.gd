@@ -18,6 +18,8 @@ func _process(delta: float) -> void:
 func _show_tooltip(body: Node2D) -> void:
 	if body is not Reki:
 		return
+	if Dialogic.current_timeline != null:
+		return
 	in_talk_range = true
 	owner.game_ui.show_tooltip("Press E to talk")
 
@@ -27,3 +29,4 @@ func _hide_tooltip(body: Node2D) -> void:
 		return
 	in_talk_range = false
 	owner.game_ui.hide_tooltip()
+	Dialogic.end_timeline()

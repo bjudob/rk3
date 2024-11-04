@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdj2birsloe50"]
 
-[ext_resource type="Script" path="res://hell_rome.gd" id="1_yndm5"]
+[ext_resource type="Script" path="res://scripts/hell_rome.gd" id="1_yndm5"]
 [ext_resource type="Texture2D" uid="uid://dpc26ojy5mdh0" path="res://backgrounds/hell_spiral_2.png" id="2_2ujok"]
 
 [node name="HellRome" type="Node2D"]

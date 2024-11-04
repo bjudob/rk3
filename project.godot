@@ -76,6 +76,7 @@ inventory=""
 itemable=""
 item_follow=""
 game_ui=""
+main=""
 
 [input]
 

@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
-[ext_resource type="PackedScene" uid="uid://bdj2birsloe50" path="res://scripts/hell_rome.tscn" id="6_gqyg1"]
+[ext_resource type="PackedScene" uid="uid://bdj2birsloe50" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
 [ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
-[ext_resource type="Script" path="res://scenes/go_left.gd" id="6_tef7d"]
-[ext_resource type="Script" path="res://scenes/go_right.gd" id="7_77xbi"]
+[ext_resource type="Script" path="res://scripts/go_left.gd" id="6_tef7d"]
+[ext_resource type="Script" path="res://scripts/go_right.gd" id="7_77xbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jgk"]
 size = Vector2(3635.5, 42)
@@ -16,7 +16,7 @@ size = Vector2(3635.5, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6f12"]
 size = Vector2(64, 1066)
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["main"]]
 script = ExtResource("1_euyya")
 
 [node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
@@ -28,15 +28,9 @@ reki = NodePath("../Reki")
 game_ui = NodePath(".")
 main = NodePath("..")
 
-[node name="MainMenu" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("1_x7eno")]
-reki = NodePath("../Reki")
-game_ui = NodePath("../GameUI")
-main = NodePath("..")
+[node name="MainMenu" parent="." instance=ExtResource("1_x7eno")]
 
-[node name="Hell" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("1_ft6hw")]
-reki = NodePath("../Reki")
-game_ui = NodePath("../GameUI")
-main = NodePath("..")
+[node name="Hell" parent="." instance=ExtResource("1_ft6hw")]
 right = 2
 left = 3
 
