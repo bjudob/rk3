@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=14 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
 [ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
+[ext_resource type="AudioStream" uid="uid://br4v1hxgeq7xf" path="res://audio/53 - Town - Necropolis.mp3" id="6_8a1nc"]
 [ext_resource type="PackedScene" uid="uid://bdj2birsloe50" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
 [ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
 [ext_resource type="Script" path="res://scripts/go_left.gd" id="6_tef7d"]
 [ext_resource type="Script" path="res://scripts/go_right.gd" id="7_77xbi"]
+[ext_resource type="AudioStream" uid="uid://bf8jg2f6jwy7o" path="res://audio/54 - Town - Rampart.mp3" id="9_aisht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jgk"]
 size = Vector2(3635.5, 42)
@@ -33,12 +35,15 @@ main = NodePath("..")
 [node name="Hell" parent="." instance=ExtResource("1_ft6hw")]
 right = 2
 left = 3
+background_music = ExtResource("6_8a1nc")
 
 [node name="HellRome" parent="." instance=ExtResource("6_gqyg1")]
 right = 3
+background_music = ExtResource("6_8a1nc")
 
 [node name="HeavensGate" parent="." instance=ExtResource("6_n247f")]
 left = 2
+background_music = ExtResource("9_aisht")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(986, 1099)
@@ -63,5 +68,8 @@ script = ExtResource("7_77xbi")
 position = Vector2(33, -325)
 shape = SubResource("RectangleShape2D_y6f12")
 
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="body_entered" from="GoLeft" to="GoLeft" method="_on_body_entered"]
 [connection signal="body_entered" from="GoRight" to="GoRight" method="_on_body_entered"]
+[connection signal="finished" from="BackgroundMusic" to="." method="_on_background_music_finished"]

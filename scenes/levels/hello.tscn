@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=8 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
-[ext_resource type="AudioStream" uid="uid://ccydnuj4hef3n" path="res://audio/52 - Town - Inferno.mp3" id="2_4ybbx"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="2_jrhig"]
 [ext_resource type="PackedScene" uid="uid://bel8o63enp2y4" path="res://scenes/npc/cat_devil.tscn" id="4_mhwqj"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_rv0h3"]
@@ -11,11 +10,6 @@
 
 [node name="Hell" type="Node2D"]
 script = ExtResource("1_7hytu")
-
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_4ybbx")
-autoplay = true
-parameters/looping = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -3

@@ -17,6 +17,7 @@ enum Level {
 
 @onready var game_ui = $GameUI
 @onready var reki = $Reki
+@onready var background_music = $BackgroundMusic
 
 var current_level = null
 var left_level = null
@@ -31,9 +32,11 @@ func _process(delta: float) -> void:
 func change_scene(level: Main.Level):
 	if not has_child(level_to_node[level]):
 		current_level = level
-		left_level = level_to_node[level].left
-		right_level = level_to_node[level].right
-		add_child(level_to_node[level])
+		var level_scene = level_to_node[level]
+		left_level = level_scene.left
+		right_level = level_scene.right
+		add_child(level_scene)
+		play_music(level_scene)
 	for scene in level_to_node:
 		if scene == level:
 			continue
@@ -53,3 +56,11 @@ func has_child(node: Node):
 		if child == node:
 			return true
 	return false
+	
+func play_music(level_scene):
+	if background_music.stream != level_scene.background_music:
+		background_music.stream = level_scene.background_music
+		background_music.play()
+
+func _on_background_music_finished() -> void:
+	$BackgroundMusic.play()
