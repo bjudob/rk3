@@ -1,4 +1,3 @@
-class_name HeavensGate
 extends Level
 
 var in_talk_range = false

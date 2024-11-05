@@ -8,7 +8,7 @@
 size = Vector2(77, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbo55"]
-size = Vector2(348, 1031)
+size = Vector2(478, 1031)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orsjk"]
 size = Vector2(144, 200)
@@ -29,7 +29,7 @@ shape = SubResource("RectangleShape2D_2sfkr")
 [node name="TalkArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
-position = Vector2(-2, 309.5)
+position = Vector2(-11, 309.5)
 shape = SubResource("RectangleShape2D_kbo55")
 
 [node name="ItemableArea" type="Area2D" parent="." groups=["itemable"]]

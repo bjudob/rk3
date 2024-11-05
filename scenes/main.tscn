@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=15 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
 [ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
+[ext_resource type="Texture2D" uid="uid://ci8koafhy323k" path="res://objects/snowflake.png" id="2_ivmkh"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
 [ext_resource type="AudioStream" uid="uid://br4v1hxgeq7xf" path="res://audio/53 - Town - Necropolis.mp3" id="6_8a1nc"]
-[ext_resource type="PackedScene" uid="uid://bdj2birsloe50" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
+[ext_resource type="PackedScene" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
 [ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
 [ext_resource type="Script" path="res://scripts/go_left.gd" id="6_tef7d"]
 [ext_resource type="Script" path="res://scripts/go_right.gd" id="7_77xbi"]
@@ -20,6 +21,28 @@ size = Vector2(64, 1066)
 
 [node name="Main" type="Node2D" groups=["main"]]
 script = ExtResource("1_euyya")
+
+[node name="Snow" type="CPUParticles2D" parent="."]
+z_index = 20
+position = Vector2(955, -67)
+amount = 400
+lifetime = 30.0
+lifetime_randomness = 0.4
+texture = ExtResource("2_ivmkh")
+emission_shape = 3
+emission_rect_extents = Vector2(1300, 1)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.85
+initial_velocity_max = 118.65
+angular_velocity_min = 10.0
+angular_velocity_max = 100.0
+angle_min = -250.2
+angle_max = 122.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+hue_variation_min = -1.0
+hue_variation_max = 1.0
 
 [node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
 z_index = 1
