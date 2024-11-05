@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=16 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
 [ext_resource type="PackedScene" uid="uid://llhlj4xdimsw" path="res://scenes/levels/main_menu.tscn" id="1_x7eno"]
+[ext_resource type="Texture2D" uid="uid://dko205nlxmu1s" path="res://objects/snow_red.png" id="2_05l1a"]
 [ext_resource type="Texture2D" uid="uid://ci8koafhy323k" path="res://objects/snowflake.png" id="2_ivmkh"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
@@ -23,6 +24,7 @@ size = Vector2(64, 1066)
 script = ExtResource("1_euyya")
 
 [node name="Snow" type="CPUParticles2D" parent="."]
+visible = false
 z_index = 20
 position = Vector2(955, -67)
 amount = 400
@@ -41,6 +43,30 @@ angle_min = -250.2
 angle_max = 122.0
 scale_amount_min = 0.01
 scale_amount_max = 0.05
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="SnowHell" type="CPUParticles2D" parent="."]
+z_index = 20
+position = Vector2(970, 307)
+amount = 50
+lifetime = 5.0
+texture = ExtResource("2_05l1a")
+emission_shape = 3
+emission_rect_extents = Vector2(1200, 1)
+direction = Vector2(1, 1)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+angular_velocity_min = -79.32
+angular_velocity_max = 91.53
+orbit_velocity_min = -0.05
+linear_accel_max = 1.0
+angle_min = -128.3
+angle_max = 109.8
+scale_amount_min = 0.0
+scale_amount_max = 0.02
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
