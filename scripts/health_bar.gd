@@ -5,18 +5,19 @@ extends ProgressBar
 var timer = $Timer
 @onready
 var damage_bar = $DamageBar
-var enemy: EnemyCharacter
+var character: HP
 
 func _ready() -> void:
-	if owner is EnemyCharacter:
-		enemy = owner
-		enemy.health_changed.connect(update_health_bar)
-	update_health_bar()
+	print(owner)
+	if owner is HP:
+		character = owner
+		character.health_changed.connect(update_health_bar)
+	value = 100
 
 func update_health_bar():
 	timer.start()
-	value = enemy.current_hp * 100 / enemy.max_hp
+	value = character.current_hp * 100 / character.max_hp
 
 
 func _on_timer_timeout() -> void:
-	damage_bar.value = enemy.current_hp * 100 / enemy.max_hp
+	damage_bar.value = character.current_hp * 100 / character.max_hp

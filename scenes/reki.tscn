@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bf1d2g66ls4rn"]
+[gd_scene load_steps=15 format=3 uid="uid://bf1d2g66ls4rn"]
 
 [ext_resource type="Script" path="res://scripts/reki.gd" id="1_ht1dx"]
 [ext_resource type="Texture2D" uid="uid://ublyc2w3xh2" path="res://characters/reki/reki_spritesheet.png" id="2_nub2w"]
 [ext_resource type="Texture2D" uid="uid://cokf4rcvr8tqv" path="res://objects/rainbow_sword.png" id="3_vipbu"]
 [ext_resource type="Script" path="res://scripts/hit_box.gd" id="4_0jxc0"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="5_ukk1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ba"]
 size = Vector2(20, 80)
@@ -244,6 +245,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_peev2"]
 size = Vector2(192.25, 149)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuwkw"]
+size = Vector2(32, 113)
+
 [node name="Reki" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ht1dx")
 
@@ -281,4 +285,13 @@ position = Vector2(103.875, -39.5)
 shape = SubResource("RectangleShape2D_peev2")
 disabled = true
 
-[connection signal="area_entered" from="RekiSprites/HitBox" to="." method="_on_hit_box_area_entered"]
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("5_ukk1v")
+coll_layer = 4
+coll_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(2, 11.5)
+shape = SubResource("RectangleShape2D_vuwkw")

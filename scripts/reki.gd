@@ -42,8 +42,3 @@ func _physics_process(delta: float) -> void:
 		play_animation("attack_sword")
 	
 	move_and_slide()
-
-
-func _on_hit_box_area_entered(area: Area2D) -> void:
-	if area.is_in_group("hurtbox"):
-		area.take_damage()
