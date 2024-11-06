@@ -33,10 +33,10 @@ func _physics_process(delta: float) -> void:
 			
 	if direction < 0 and facing_right == true:
 		facing_right = false
-		$RekiSprites.scale.x = $RekiSprites.scale.x * -1
+		scale.x = scale.x * -1
 	elif  direction > 0  and facing_right == false:
 		facing_right = true
-		$RekiSprites.scale.x = $RekiSprites.scale.x * -1
+		scale.x = scale.x * -1
 		
 	if Input.is_action_just_pressed("attack"):
 		play_animation("attack_sword")
