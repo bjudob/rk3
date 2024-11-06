@@ -9,7 +9,7 @@ var facing_right = true
 var animation = $AnimationPlayer
 
 func play_animation(name):
-	if animation.current_animation != "attack_sword":
+	if animation.current_animation != "attack_sword" and animation.current_animation != "hurt":
 		animation.play(name)
 
 func _physics_process(delta: float) -> void:

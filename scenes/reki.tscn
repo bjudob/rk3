@@ -131,7 +131,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RekiSprites/HitBox/HitBoxShape:disabled")
+tracks/3/path = NodePath("HitBox/HitBoxShape:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -236,7 +236,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("RekiSprites/HitBox/HitBoxShape:disabled")
+tracks/3/path = NodePath("HitBox/HitBoxShape:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -259,7 +259,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.2, 0.0]
+"values": [0.9, 0.2, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_korsm"]
@@ -282,8 +282,9 @@ size = Vector2(192.25, 149)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vuwkw"]
 size = Vector2(32, 113)
 
-[node name="Reki" type="CharacterBody2D" groups=["player"]]
+[node name="Reki" type="CharacterBody2D" node_paths=PackedStringArray("animator") groups=["player"]]
 script = ExtResource("1_ht1dx")
+animator = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 28)
@@ -310,12 +311,14 @@ rotation = 1.65533
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_vipbu")
 
-[node name="HitBox" type="Area2D" parent="RekiSprites"]
+[node name="HitBox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("4_0jxc0")
+coll_layer = 2
+coll_mask = 0
 
-[node name="HitBoxShape" type="CollisionShape2D" parent="RekiSprites/HitBox"]
+[node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(103.875, -39.5)
 shape = SubResource("RectangleShape2D_peev2")
 disabled = true
