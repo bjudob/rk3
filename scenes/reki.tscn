@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bf1d2g66ls4rn"]
+[gd_scene load_steps=19 format=3 uid="uid://bf1d2g66ls4rn"]
 
 [ext_resource type="Script" path="res://scripts/reki.gd" id="1_ht1dx"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="2_5tn5e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cokf4rcvr8tqv" path="res://objects/rainbow_sword.png" id="3_vipbu"]
 [ext_resource type="Script" path="res://scripts/hit_box.gd" id="4_0jxc0"]
 [ext_resource type="Script" path="res://scripts/hurt_box.gd" id="5_ukk1v"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="7_y0adt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ba"]
 size = Vector2(20, 80)
@@ -333,3 +334,9 @@ coll_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(2, 11.5)
 shape = SubResource("RectangleShape2D_vuwkw")
+
+[node name="HealthBar" parent="." instance=ExtResource("7_y0adt")]
+offset_left = -76.0
+offset_top = -98.0
+offset_right = 74.0
+offset_bottom = -88.0

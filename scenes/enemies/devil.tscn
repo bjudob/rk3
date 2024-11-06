@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bksp8w60elsxv"]
+[gd_scene load_steps=21 format=3 uid="uid://bksp8w60elsxv"]
 
 [ext_resource type="Script" path="res://scripts/devil.gd" id="1_dkkfo"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="1_gljb1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e0y0r"]
 [ext_resource type="Script" path="res://scripts/state_manager.gd" id="6_wxbu0"]
 [ext_resource type="Script" path="res://scripts/devil_idle.gd" id="7_tq2xx"]
+[ext_resource type="Script" path="res://scenes/enemies/devil_attack.gd" id="8_c2yop"]
 [ext_resource type="Script" path="res://scripts/devil_follow.gd" id="8_fggqt"]
 [ext_resource type="Script" path="res://scripts/hit_box.gd" id="9_gtf7x"]
 [ext_resource type="Texture2D" uid="uid://d34v5kxcs4ul" path="res://objects/attack_swing_1.png" id="10_q0an0"]
@@ -68,6 +69,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.883418]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hitbox/HitBoxShape:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_3l7fn"]
 resource_name = "hurt"
@@ -90,6 +103,7 @@ resource_name = "idle"
 
 [sub_resource type="Animation" id="Animation_ij7ss"]
 resource_name = "attack"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -125,6 +139,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.883418, 1.34497, 1.99966]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hitbox/HitBoxShape:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67jse"]
@@ -179,6 +205,10 @@ move_speed = 20.0
 script = ExtResource("8_fggqt")
 devil = NodePath("../..")
 
+[node name="DevilAttack" type="Node" parent="StateManager" node_paths=PackedStringArray("devil")]
+script = ExtResource("8_c2yop")
+devil = NodePath("../..")
+
 [node name="HurtBox" type="Area2D" parent="."]
 script = ExtResource("3_sd4bx")
 
@@ -189,7 +219,7 @@ shape = SubResource("RectangleShape2D_g7bmu")
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("9_gtf7x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="HitBoxShape" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-1, 50)
 shape = SubResource("RectangleShape2D_ucuyq")
 

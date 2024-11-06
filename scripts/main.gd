@@ -48,7 +48,7 @@ func change_scene(level: Main.Level):
 		add_child(level_scene)
 		play_music(level_scene)
 	for scene in level_to_scene:
-		if scene == level:
+		if scene == level or not has_child(level_to_scene[scene]):
 			continue
 		remove_child(level_to_scene[scene])
 		

@@ -9,4 +9,6 @@ var dmg = 30
 func _ready() -> void:
 	collision_layer = coll_layer
 	coll_mask = coll_mask
+	var coll_shape = get_child(0)
+	coll_shape.disabled = true
 	

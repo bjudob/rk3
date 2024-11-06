@@ -1,4 +1,4 @@
-class_name DevilFollow
+class_name DevilAttack
 extends State
 
 @export
@@ -6,7 +6,7 @@ var devil: CharacterBody2D
 @export
 var move_speed: float = 100
 @export
-var follow_distance: float = 500
+var attack_distance: float = 50
 
 @onready
 var player = get_tree().get_nodes_in_group("player")[0]  
@@ -22,10 +22,8 @@ func update(delta: float) -> void:
 
 func physics_update(delta: float) -> void:
 	var direction = player.global_position - devil.global_position
-	if direction.length() < 50:
-		StateTransition.emit(self, "DevilAttack")
-	elif direction.length() < follow_distance:
-		devil.velocity = direction.normalized() * move_speed
+	if direction.length() < attack_distance:
+		$"../../AnimationPlayer".play("attack")
 	else:
 		devil.velocity = Vector2()
-		StateTransition.emit(self, "DevilIdle")
+		StateTransition.emit(self, "DevilFollow")
