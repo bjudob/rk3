@@ -3,6 +3,7 @@ extends Node2D
 
 @export var right: Main.Level = Main.Level.HELL
 @export var left: Main.Level = Main.Level.HELL
+@export var snow: Main.Snow = Main.Snow.SNOW
 @export var background_music = load("res://audio/54 - Town - Rampart.mp3")
 
 @onready var reki = get_tree().get_nodes_in_group("player")[0]

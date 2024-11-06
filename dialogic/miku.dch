@@ -17,7 +17,7 @@
 "portraits": {
 "Miku": {
 "export_overrides": {
-"image": "\"res://characters/profile_pictures/miku_profile.png\""
+"image": "\"res://characters/profile_pictures/miku_profile_2.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

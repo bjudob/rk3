@@ -23,8 +23,9 @@ size = Vector2(64, 1066)
 [node name="Main" type="Node2D" groups=["main"]]
 script = ExtResource("1_euyya")
 
-[node name="Snow" type="CPUParticles2D" parent="."]
-visible = false
+[node name="Snowy" type="Node2D" parent="."]
+
+[node name="Snow" type="CPUParticles2D" parent="Snowy"]
 z_index = 20
 position = Vector2(955, -67)
 amount = 400
@@ -46,7 +47,8 @@ scale_amount_max = 0.05
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
-[node name="SnowHell" type="CPUParticles2D" parent="."]
+[node name="SnowHell" type="CPUParticles2D" parent="Snowy"]
+visible = false
 z_index = 20
 position = Vector2(781, 250)
 amount = 200
@@ -84,10 +86,12 @@ main = NodePath("..")
 [node name="Hell" parent="." instance=ExtResource("1_ft6hw")]
 right = 2
 left = 3
+snow = 1
 background_music = ExtResource("6_8a1nc")
 
 [node name="HellRome" parent="." instance=ExtResource("6_gqyg1")]
 right = 3
+snow = 1
 background_music = ExtResource("6_8a1nc")
 
 [node name="HeavensGate" parent="." instance=ExtResource("6_n247f")]
