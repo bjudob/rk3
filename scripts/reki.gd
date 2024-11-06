@@ -1,5 +1,5 @@
 class_name Reki
-extends CharacterBody2D
+extends HP
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -900.0
