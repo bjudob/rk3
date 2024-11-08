@@ -32,6 +32,7 @@ image = ExtResource("10_p5srv")
 
 [node name="Item3" parent="." instance=ExtResource("7_jt7wp")]
 position = Vector2(546, 899)
+scale = Vector2(3.36, 3.6704)
 id = "gems"
 image = ExtResource("9_mt5es")
 
