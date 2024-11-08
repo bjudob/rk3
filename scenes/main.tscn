@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=17 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
 [ext_resource type="AudioStream" uid="uid://br4v1hxgeq7xf" path="res://audio/53 - Town - Necropolis.mp3" id="6_8a1nc"]
-[ext_resource type="PackedScene" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
+[ext_resource type="PackedScene" uid="uid://cd0ro8hce85yu" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
 [ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
 [ext_resource type="Script" path="res://scripts/go_left.gd" id="6_tef7d"]
 [ext_resource type="Script" path="res://scripts/go_right.gd" id="7_77xbi"]
 [ext_resource type="AudioStream" uid="uid://bf8jg2f6jwy7o" path="res://audio/54 - Town - Rampart.mp3" id="9_aisht"]
+[ext_resource type="PackedScene" uid="uid://ddax5eydu3hth" path="res://scenes/levels/snow_village.tscn" id="12_asvne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jgk"]
 size = Vector2(3635.5, 42)
@@ -90,13 +91,15 @@ snow = 1
 background_music = ExtResource("6_8a1nc")
 
 [node name="HellRome" parent="." instance=ExtResource("6_gqyg1")]
-right = 3
+right = 4
 snow = 1
 background_music = ExtResource("6_8a1nc")
 
 [node name="HeavensGate" parent="." instance=ExtResource("6_n247f")]
-left = 2
+left = 4
 background_music = ExtResource("9_aisht")
+
+[node name="SnowVillage" parent="." instance=ExtResource("12_asvne")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(986, 1099)

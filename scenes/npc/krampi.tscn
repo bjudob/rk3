@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnwflvpclyj72"]
+
+[ext_resource type="Script" path="res://scenes/levels/krampi.gd" id="1_71xh0"]
+[ext_resource type="Texture2D" uid="uid://dboxthee357ls" path="res://characters/krampi.png" id="2_t1akg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83nb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iosvi"]
+size = Vector2(368, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emc4b"]
+size = Vector2(168, 173)
+
+[node name="Krampi" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_71xh0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.5, -0.5)
+texture = ExtResource("2_t1akg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_83nb2")
+
+[node name="TalkArea" type="Area2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-70, -39.5)
+shape = SubResource("RectangleShape2D_iosvi")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(12, -12.5)
+shape = SubResource("RectangleShape2D_emc4b")

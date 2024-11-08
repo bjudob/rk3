@@ -6,6 +6,7 @@ enum Level {
 	HELL,
 	HELL_ROME,
 	HEAVENS_GATE,
+	SNOW_VILLAGE,
 }
 
 enum Snow {
@@ -18,6 +19,7 @@ enum Snow {
 	Level.HELL: $Hell,
 	Level.HELL_ROME: $HellRome,
 	Level.HEAVENS_GATE: $HeavensGate,
+	Level.SNOW_VILLAGE: $SnowVillage,
 }
 
 @onready var snow_to_scene = {
@@ -40,6 +42,7 @@ func _process(delta: float) -> void:
 	pass
 
 func change_scene(level: Main.Level):
+	print(level)
 	var level_scene = level_to_scene[level]
 	if not has_child(level_to_scene[level]):
 		current_level = level

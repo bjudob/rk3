@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdj2birsloe50"]
+[gd_scene load_steps=10 format=3 uid="uid://cd0ro8hce85yu"]
 
 [ext_resource type="Script" path="res://scripts/hell_rome.gd" id="1_yndm5"]
 [ext_resource type="Texture2D" uid="uid://dpc26ojy5mdh0" path="res://backgrounds/hell_spiral_2.png" id="2_2ujok"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cyuleiaj2pxx2" path="res://objects/well.png" id="4_ew5ca"]
 [ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="4_xl8w5"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_jm2bg"]
+[ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="7_n2j4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wqe5u"]
 size = Vector2(166, 80)
@@ -52,3 +53,7 @@ position = Vector2(915, 595)
 
 [node name="Devil3" parent="." instance=ExtResource("6_jm2bg")]
 position = Vector2(1631, 411)
+
+[node name="Krampi" parent="." instance=ExtResource("7_n2j4t")]
+position = Vector2(723, 992)
+current_dialog = "krampi_hello"

@@ -285,6 +285,7 @@ size = Vector2(32, 113)
 
 [node name="Reki" type="CharacterBody2D" node_paths=PackedStringArray("animator") groups=["player"]]
 script = ExtResource("1_ht1dx")
+max_hp = 500
 animator = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

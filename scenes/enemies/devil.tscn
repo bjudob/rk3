@@ -82,25 +82,6 @@ tracks/4/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_3l7fn"]
-resource_name = "hurt"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_opacity")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.233333, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.8, 0.0, 0.9, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_u4rmj"]
-resource_name = "idle"
-
 [sub_resource type="Animation" id="Animation_ij7ss"]
 resource_name = "attack"
 length = 0.5
@@ -152,6 +133,25 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+
+[sub_resource type="Animation" id="Animation_3l7fn"]
+resource_name = "hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.8, 0.0, 0.9, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_u4rmj"]
+resource_name = "idle"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67jse"]
 _data = {

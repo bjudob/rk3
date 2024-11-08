@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=9 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="2_jrhig"]
 [ext_resource type="PackedScene" uid="uid://bel8o63enp2y4" path="res://scenes/npc/cat_devil.tscn" id="4_mhwqj"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_rv0h3"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_jt7wp"]
+[ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="8_g6ffb"]
 [ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="9_mt5es"]
 [ext_resource type="Texture2D" uid="uid://depxatwglbkb7" path="res://objects/santa_bag.png" id="10_p5srv"]
 
@@ -18,7 +19,7 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_jrhig")
 
 [node name="CatDevil" parent="." instance=ExtResource("4_mhwqj")]
-position = Vector2(964, 860)
+position = Vector2(959, 756)
 item_needed = "fire"
 
 [node name="Item" parent="." instance=ExtResource("7_jt7wp")]
@@ -45,3 +46,7 @@ visible = false
 position = Vector2(1434, 928)
 scale = Vector2(0.549628, 0.390951)
 texture = ExtResource("10_p5srv")
+
+[node name="Krampi" parent="." instance=ExtResource("8_g6ffb")]
+position = Vector2(214, 994)
+current_dialog = "krampi_hello"
