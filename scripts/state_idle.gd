@@ -1,14 +1,11 @@
 class_name StateIdle
 extends State
 
-@export
+var player: CharacterBody2D
 var this: CharacterBody2D
-@export
+var animator: AnimationPlayer
+
 var move_speed: float = 10
-
-@onready
-var player = get_tree().get_nodes_in_group("player")[0]  
-
 var move_direction: Vector2
 var move_time: float
 var follow_distance: float = 500
@@ -19,6 +16,7 @@ func randomize_movement():
 
 func enter() -> void:
 	randomize_movement()
+	animator.play("idle")
 
 func update(delta: float) -> void:
 	if move_time > 0:
@@ -27,7 +25,7 @@ func update(delta: float) -> void:
 		randomize_movement()
 	var direction = player.global_position - this.global_position
 	if direction.length() < follow_distance:
-		StateTransition.emit(self, "DevilFollow")
+		StateTransition.emit(self, Enemy.StateEnum.FOLLOW)
 	
 func physics_update(delta: float) -> void:
 	this.velocity = move_direction * move_speed

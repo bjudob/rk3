@@ -1,15 +1,12 @@
 class_name StateAttack
 extends State
 
-@export
+var player: CharacterBody2D
 var this: CharacterBody2D
-@export
-var move_speed: float = 100
-@export
-var attack_distance: float = 50
+var animator: AnimationPlayer
 
-@onready
-var player = get_tree().get_nodes_in_group("player")[0]  
+var move_speed: float = 100
+var attack_distance: float = 50
 
 func enter() -> void:
 	pass
@@ -23,7 +20,7 @@ func update(delta: float) -> void:
 func physics_update(delta: float) -> void:
 	var direction = player.global_position - this.global_position
 	if direction.length() < attack_distance:
-		$"../../AnimationPlayer".play("attack")
+		animator.play("attack")
 	else:
 		this.velocity = Vector2()
-		StateTransition.emit(self, "DevilFollow")
+		StateTransition.emit(self, Enemy.StateEnum.FOLLOW)
