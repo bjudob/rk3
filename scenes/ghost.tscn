@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://n2uwh5n6us1a"]
+[gd_scene load_steps=14 format=3 uid="uid://n2uwh5n6us1a"]
 
 [ext_resource type="Script" path="res://scripts/ghost.gd" id="1_c0a6m"]
 [ext_resource type="Texture2D" uid="uid://lmprw5j5n8ix" path="res://characters/ghost.png" id="1_wl1is"]
@@ -22,9 +22,37 @@ resource_name = "idle"
 
 [sub_resource type="Animation" id="Animation_6fgvh"]
 resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_o8bqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38yk3"]
 _data = {
+"RESET": SubResource("Animation_o8bqg"),
 "attack": SubResource("Animation_6fgvh"),
 "hurt": SubResource("Animation_cjb4j"),
 "idle": SubResource("Animation_mylt4")
@@ -60,10 +88,12 @@ shape = SubResource("RectangleShape2D_gm0cy")
 
 [node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("5_nqvrg")
+dmg = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-104, -4)
 shape = SubResource("RectangleShape2D_mpa1q")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
