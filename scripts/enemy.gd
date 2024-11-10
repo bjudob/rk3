@@ -7,11 +7,15 @@ enum StateEnum{
 	ATTACK,
 }
 
-@onready
-var player = get_tree().get_nodes_in_group("player")[0]  
 @export var souls = 50
 @export var is_demon = true
 @export var states_list: Array[StateEnum] = [StateEnum.IDLE, StateEnum.FOLLOW, StateEnum.ATTACK]
+
+@export var idle_move_speed: float = 10
+@export var follow_move_speed: float = 100
+@export var follow_distance: float = 500
+@export var attack_distance: float = 50
+
 const initial_state = StateEnum.IDLE
 var current_state: State
 var current_state_enum: StateEnum
@@ -24,12 +28,16 @@ var states_dict = {
 
 var states = {}
 
+@onready
+var player = get_tree().get_nodes_in_group("player")[0]  
+
 func _ready() -> void:
 	for state_enum in states_list:
 		var state = states_dict[state_enum].new()
 		state.this = self
 		state.player = player
 		state.animator = animator
+		_set_optional_attrs(state)
 		add_child(state)
 		states[state_enum] = state
 		state.StateTransition.connect(_change_state)
@@ -56,3 +64,13 @@ func _die():
 	self.queue_free()
 	health_changed.emit()
 	game_ui.add_souls(souls, is_demon)
+
+func _set_optional_attrs(state):
+	if "idle_move_speed" in state:
+		state.idle_move_speed = idle_move_speed
+	if "follow_move_speed" in state:
+		state.follow_move_speed = follow_move_speed
+	if "follow_distance" in state:
+		state.follow_distance = follow_distance
+	if "attack_distance" in state:
+		state.attack_distance = attack_distance

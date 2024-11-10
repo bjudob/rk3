@@ -5,9 +5,8 @@ var player: CharacterBody2D
 var this: CharacterBody2D
 var animator: AnimationPlayer
 
-var move_speed: float = 100
+var follow_move_speed: float = 100
 var follow_distance: float = 500
-
 
 func enter() -> void:
 	pass
@@ -23,7 +22,7 @@ func physics_update(delta: float) -> void:
 	if direction.length() < 50:
 		StateTransition.emit(self, Enemy.StateEnum.ATTACK)
 	elif direction.length() < follow_distance:
-		this.velocity = direction.normalized() * move_speed
+		this.velocity = direction.normalized() * follow_move_speed
 	else:
 		this.velocity = Vector2()
 		StateTransition.emit(self, Enemy.StateEnum.IDLE)

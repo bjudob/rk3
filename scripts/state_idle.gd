@@ -5,10 +5,11 @@ var player: CharacterBody2D
 var this: CharacterBody2D
 var animator: AnimationPlayer
 
-var move_speed: float = 10
+var idle_move_speed: float = 10
+var follow_distance: float = 500
+
 var move_direction: Vector2
 var move_time: float
-var follow_distance: float = 500
 
 func randomize_movement():
 	move_direction = Vector2(randf_range(-1,1), randf_range(-1,1)).normalized()
@@ -28,5 +29,5 @@ func update(delta: float) -> void:
 		StateTransition.emit(self, Enemy.StateEnum.FOLLOW)
 	
 func physics_update(delta: float) -> void:
-	this.velocity = move_direction * move_speed
+	this.velocity = move_direction * idle_move_speed
 	

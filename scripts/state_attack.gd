@@ -5,7 +5,6 @@ var player: CharacterBody2D
 var this: CharacterBody2D
 var animator: AnimationPlayer
 
-var move_speed: float = 100
 var attack_distance: float = 50
 
 func enter() -> void:
