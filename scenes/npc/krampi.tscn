@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnwflvpclyj72"]
 
-[ext_resource type="Script" path="res://scenes/levels/krampi.gd" id="1_71xh0"]
+[ext_resource type="Script" path="res://scripts/krampi.gd" id="1_71xh0"]
 [ext_resource type="Texture2D" uid="uid://dboxthee357ls" path="res://characters/krampi.png" id="2_t1akg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83nb2"]

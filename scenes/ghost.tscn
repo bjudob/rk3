@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://n2uwh5n6us1a"]
+
+[ext_resource type="Script" path="res://scripts/ghost.gd" id="1_c0a6m"]
+[ext_resource type="Texture2D" uid="uid://lmprw5j5n8ix" path="res://characters/ghost.png" id="1_wl1is"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="2_b3ge2"]
+[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="4_62dwg"]
+[ext_resource type="Script" path="res://scripts/hit_box.gd" id="5_nqvrg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fbg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm0cy"]
+size = Vector2(153.5, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpa1q"]
+size = Vector2(90, 72)
+
+[sub_resource type="Animation" id="Animation_cjb4j"]
+resource_name = "hurt"
+
+[sub_resource type="Animation" id="Animation_mylt4"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38yk3"]
+_data = {
+"hurt": SubResource("Animation_cjb4j"),
+"idle": SubResource("Animation_mylt4")
+}
+
+[node name="Ghost" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_c0a6m")
+
+[node name="Ghost" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_wl1is")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_b3ge2")]
+offset_left = -62.0
+offset_top = -108.0
+offset_right = 161.0
+offset_bottom = -98.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5fbg3")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("4_62dwg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(1.25, -2.5)
+shape = SubResource("RectangleShape2D_gm0cy")
+
+[node name="HitBox" type="Area2D" parent="."]
+script = ExtResource("5_nqvrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-104, -4)
+shape = SubResource("RectangleShape2D_mpa1q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_38yk3")
+}

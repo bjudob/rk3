@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://ddax5eydu3hth"]
 
-[ext_resource type="Script" path="res://snow_village.gd" id="1_krrq7"]
+[ext_resource type="Script" path="res://scripts/snow_village.gd" id="1_vpjw8"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_aojs8"]
 [ext_resource type="Texture2D" uid="uid://blhnbv682gjoh" path="res://backgrounds/snow_village.png" id="2_q2dsv"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_am4gd"]
 [ext_resource type="Texture2D" uid="uid://wo4dt10n6skx" path="res://objects/gift.png" id="4_pf5v1"]
 
 [node name="SnowVillage" type="Node2D"]
-script = ExtResource("1_krrq7")
+script = ExtResource("1_vpjw8")
 right = 3
 left = 2
 background_music = ExtResource("2_aojs8")

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e0y0r"]
 [ext_resource type="Script" path="res://scripts/state_manager.gd" id="6_wxbu0"]
 [ext_resource type="Script" path="res://scripts/devil_idle.gd" id="7_tq2xx"]
-[ext_resource type="Script" path="res://scenes/enemies/devil_attack.gd" id="8_c2yop"]
+[ext_resource type="Script" path="res://scripts/devil_attack.gd" id="8_c2yop"]
 [ext_resource type="Script" path="res://scripts/devil_follow.gd" id="8_fggqt"]
 [ext_resource type="Script" path="res://scripts/hit_box.gd" id="9_gtf7x"]
 [ext_resource type="Texture2D" uid="uid://d34v5kxcs4ul" path="res://objects/attack_swing_1.png" id="10_q0an0"]
@@ -18,6 +18,12 @@
 resource_local_to_scene = true
 shader = ExtResource("1_gljb1")
 shader_parameter/hit_opacity = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7bmu"]
+size = Vector2(159, 201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucuyq"]
+size = Vector2(88, 93.5)
 
 [sub_resource type="Animation" id="Animation_jmcpe"]
 length = 0.001
@@ -161,12 +167,6 @@ _data = {
 "idle": SubResource("Animation_u4rmj")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7bmu"]
-size = Vector2(159, 201)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucuyq"]
-size = Vector2(88, 93.5)
-
 [node name="Devil" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
 collision_layer = 0
 collision_mask = 0
@@ -180,11 +180,6 @@ shape = SubResource("RectangleShape2D_h6taa")
 material = SubResource("ShaderMaterial_50nyn")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_ydb40")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_67jse")
-}
 
 [node name="HealthBar" parent="." instance=ExtResource("5_e0y0r")]
 offset_left = -75.0
@@ -228,3 +223,8 @@ visible = false
 position = Vector2(17, 56)
 rotation = 0.883418
 texture = ExtResource("10_q0an0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_67jse")
+}

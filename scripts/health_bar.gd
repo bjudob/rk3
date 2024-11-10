@@ -8,6 +8,7 @@ var damage_bar = $DamageBar
 var character: HP
 
 func _ready() -> void:
+	print(owner)
 	if owner is HP:
 		character = owner
 		character.health_changed.connect(update_health_bar)

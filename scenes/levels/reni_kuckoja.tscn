@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_dejev"]
 [ext_resource type="Texture2D" uid="uid://lqsgneshupmq" path="res://backgrounds/reni_kuckoja.jpg" id="2_w8xfg"]
-[ext_resource type="Script" path="res://reni.gd" id="3_adbbp"]
+[ext_resource type="Script" path="res://scripts/reni.gd" id="3_adbbp"]
 [ext_resource type="Texture2D" uid="uid://irj5jnkiy4h1" path="res://characters/reni.png" id="4_7tm53"]
 [ext_resource type="Texture2D" uid="uid://duwnr3pf37stq" path="res://objects/yinyang.png" id="5_n6p06"]
 

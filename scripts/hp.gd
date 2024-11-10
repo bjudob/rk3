@@ -2,6 +2,7 @@ class_name HP
 extends CharacterBody2D
 
 @export var max_hp = 100
+@export var hp_regen = 0
 @export var animator:AnimationPlayer
 
 @onready var current_hp = max_hp
