@@ -53,3 +53,6 @@ shape = SubResource("RectangleShape2D_hrkxt")
 
 [node name="Ghost" parent="." instance=ExtResource("5_fl28w")]
 position = Vector2(1313, 780)
+
+[node name="Ghost2" parent="." instance=ExtResource("5_fl28w")]
+position = Vector2(456, 440)

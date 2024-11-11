@@ -53,14 +53,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_update(delta)
-	
-	# facing
-	if velocity.x < 0 and facing_right == true:
-		facing_right = false
-		scale.x = scale.x * -1
-	elif  velocity.x > 0  and facing_right == false:
-		facing_right = true
-		scale.x = scale.x * -1
+	_facing()
+
 	move_and_slide()
 
 func _change_state(old_state, new_state_name):
@@ -90,3 +84,12 @@ func _set_optional_attrs(state):
 		state.ranged = ranged
 	if "attack_speed_timer" in state:
 		state.attack_speed_timer = attack_speed_timer
+
+func _facing():
+	var direction = global_position.direction_to(player.global_position)
+	if direction.x < 0 and facing_right == true:
+		facing_right = false
+		scale.x = scale.x * -1
+	elif  direction.x > 0  and facing_right == false:
+		facing_right = true
+		scale.x = scale.x * -1

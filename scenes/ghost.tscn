@@ -72,6 +72,7 @@ ranged = true
 animator = NodePath("AnimationPlayer")
 
 [node name="Ghost" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_wl1is")
 
