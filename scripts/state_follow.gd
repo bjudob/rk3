@@ -7,6 +7,7 @@ var animator: AnimationPlayer
 
 var follow_move_speed: float = 100
 var follow_distance: float = 500
+var attack_distance: float = 50
 
 func enter() -> void:
 	pass
@@ -19,7 +20,7 @@ func update(delta: float) -> void:
 
 func physics_update(delta: float) -> void:
 	var direction = player.global_position - this.global_position
-	if direction.length() < 50:
+	if direction.length() < attack_distance:
 		StateTransition.emit(self, Enemy.StateEnum.ATTACK)
 	elif direction.length() < follow_distance:
 		this.velocity = direction.normalized() * follow_move_speed

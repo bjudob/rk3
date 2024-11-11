@@ -9,12 +9,14 @@ enum StateEnum{
 
 @export var souls = 50
 @export var is_demon = true
+@export var facing_right = true
 @export var states_list: Array[StateEnum] = [StateEnum.IDLE, StateEnum.FOLLOW, StateEnum.ATTACK]
 
 @export var idle_move_speed: float = 10
 @export var follow_move_speed: float = 100
 @export var follow_distance: float = 500
 @export var attack_distance: float = 50
+@export var ranged: bool = false
 
 const initial_state = StateEnum.IDLE
 var current_state: State
@@ -49,6 +51,14 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	current_state.physics_update(delta)
+	
+	# facing
+	if velocity.x < 0 and facing_right == true:
+		facing_right = false
+		scale.x = scale.x * -1
+	elif  velocity.x > 0  and facing_right == false:
+		facing_right = true
+		scale.x = scale.x * -1
 	move_and_slide()
 
 func _change_state(old_state, new_state_name):
@@ -74,3 +84,5 @@ func _set_optional_attrs(state):
 		state.follow_distance = follow_distance
 	if "attack_distance" in state:
 		state.attack_distance = attack_distance
+	if "ranged" in state:
+		state.ranged = ranged

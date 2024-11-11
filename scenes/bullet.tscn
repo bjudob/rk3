@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://btslgviojaqtt"]
+
+[ext_resource type="Texture2D" uid="uid://bomaomsbq5x0x" path="res://objects/snowball.png" id="1_8tanl"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_qmja2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_831av"]
+radius = 20.0998
+
+[node name="Bullet" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_qmja2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8tanl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_831av")

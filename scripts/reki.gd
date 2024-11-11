@@ -1,7 +1,7 @@
 class_name Reki
 extends HP
 
-const SPEED = 300.0
+const SPEED = 500.0
 const JUMP_VELOCITY = -900.0
 var facing_right = true
 

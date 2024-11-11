@@ -42,14 +42,13 @@ func _process(delta: float) -> void:
 	pass
 
 func change_scene(level: Main.Level):
-	print(level)
 	var level_scene = level_to_scene[level]
 	if not has_child(level_to_scene[level]):
 		current_level = level
 		left_level = level_scene.left
 		right_level = level_scene.right
-		add_child(level_scene)
-		play_music(level_scene)
+		add_child.call_deferred(level_scene)
+		play_music.call_deferred(level_scene)
 	for scene in level_to_scene:
 		if scene == level or not has_child(level_to_scene[scene]):
 			continue
