@@ -14,7 +14,8 @@ var can_attack = true
 @onready var bullet = load("res://scenes/bullet.tscn")
 
 func enter() -> void:
-	attack_speed_timer.connect("timeout", _attack_speed_timeout)
+	if not attack_speed_timer.is_connected("timeout", _attack_speed_timeout):
+		attack_speed_timer.connect("timeout", _attack_speed_timeout)
 
 func exit() -> void:
 	pass
