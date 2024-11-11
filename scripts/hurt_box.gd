@@ -10,8 +10,6 @@ func _ready() -> void:
 	connect("area_entered", self._on_area_entered)
 
 func _on_area_entered(hitbox: HitBox):
-	print("entered")
-	print(hitbox.owner)
 	if not hitbox:
 		return
 	owner.take_damage(hitbox.dmg)

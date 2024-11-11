@@ -286,7 +286,6 @@ size = Vector2(32, 113)
 [node name="Reki" type="CharacterBody2D" node_paths=PackedStringArray("animator") groups=["player"]]
 script = ExtResource("1_ht1dx")
 max_hp = 500
-hp_regen = 10
 animator = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -342,3 +341,5 @@ offset_left = -76.0
 offset_top = -98.0
 offset_right = 74.0
 offset_bottom = -88.0
+
+[node name="HpRegenTimer" type="Timer" parent="."]
