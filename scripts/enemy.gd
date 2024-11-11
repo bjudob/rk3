@@ -7,6 +7,7 @@ enum StateEnum{
 	ATTACK,
 }
 
+@export var attack_speed_timer: Timer
 @export var souls = 50
 @export var is_demon = true
 @export var facing_right = true
@@ -41,6 +42,7 @@ func _ready() -> void:
 		state.animator = animator
 		_set_optional_attrs(state)
 		add_child(state)
+		state.enter()
 		states[state_enum] = state
 		state.StateTransition.connect(_change_state)
 	current_state = states[initial_state]
@@ -86,3 +88,5 @@ func _set_optional_attrs(state):
 		state.attack_distance = attack_distance
 	if "ranged" in state:
 		state.ranged = ranged
+	if "attack_speed_timer" in state:
+		state.attack_speed_timer = attack_speed_timer
