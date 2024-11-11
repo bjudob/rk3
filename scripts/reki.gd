@@ -53,7 +53,6 @@ func _regen_hp():
 	var regened_hp = current_hp + hp_regen
 	if regened_hp > max_hp:
 		regened_hp = max_hp
-	print(regened_hp)
 	current_hp = regened_hp
 	health_changed.emit()
 	hp_regen_timer.start()

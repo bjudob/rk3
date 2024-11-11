@@ -15,7 +15,6 @@ func _ready() -> void:
 
 func update_health_bar():
 	timer.start()
-	print(character.current_hp)
 	value = character.current_hp * 100 / character.max_hp
 
 

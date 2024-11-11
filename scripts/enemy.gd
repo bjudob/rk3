@@ -54,7 +54,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	current_state.physics_update(delta)
 	_facing()
-
 	move_and_slide()
 
 func _change_state(old_state, new_state_name):
