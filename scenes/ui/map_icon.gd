@@ -1,6 +1,7 @@
 extends TextureRect
 
 @onready var main = get_tree().get_nodes_in_group("main")[0]
+@onready var sound = $"../../ClickSound"
 
 func _ready() -> void:
 	connect("mouse_entered", _on_mouse_entered)
@@ -15,4 +16,5 @@ func _on_mouse_exited():
 
 func _on_gui_input(event: InputEvent) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
+		sound.play()
 		main.change_scene(main.Level.MAP)

@@ -91,6 +91,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("6_x8mp2")
+expand_mode = 3
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="Map"]
 stream = ExtResource("8_bsv6p")

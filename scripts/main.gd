@@ -60,10 +60,10 @@ func change_scene(level: Main.Level):
 		remove_child(level_to_scene[scene])
 		
 	# do we need GameUI
-	if level == Level.MAIN_MENU and has_child(game_ui):
+	if (level == Level.MAIN_MENU or level == Level.MAP) and has_child(game_ui):
 		remove_child(game_ui)
 		remove_child(reki)
-	if level != Level.MAIN_MENU and not has_child(game_ui):
+	if (level != Level.MAIN_MENU and level != Level.MAP) and not has_child(game_ui):
 		add_child(game_ui)
 		add_child(reki)
 	

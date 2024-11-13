@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://6f51xk42nxsm"]
+[gd_scene load_steps=13 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="2_bi3r5"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bqflgg111trky" path="res://ui/duck_icon.png" id="8_1stc1"]
 [ext_resource type="Script" path="res://scenes/ui/map_icon.gd" id="9_jksr5"]
 [ext_resource type="Texture2D" uid="uid://dbet18b3odofx" path="res://ui/map_icon.png" id="10_lgpdy"]
+[ext_resource type="AudioStream" uid="uid://knto1fh4opug" path="res://audio/menu_button_hover.mp3" id="11_p2usx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2ev"]
 size = Vector2(50, 50)
@@ -378,15 +379,20 @@ texture = ExtResource("8_1stc1")
 expand_mode = 3
 
 [node name="MapIcon" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 166.438
+offset_bottom = 150.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 150
 
 [node name="MapIcon" type="TextureRect" parent="MapIcon"]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("10_lgpdy")
 expand_mode = 3
 script = ExtResource("9_jksr5")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_p2usx")
 
 [connection signal="input_event" from="ItemFollow/Area2D" to="ItemFollow" method="_on_area_2d_input_event"]
 [connection signal="timeout" from="ItemFollow/Timer" to="ItemFollow" method="_on_timer_timeout"]
