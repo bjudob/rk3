@@ -8,6 +8,7 @@ enum Level {
 	HEAVENS_GATE,
 	SNOW_VILLAGE,
 	DUCK_VILLAGE,
+	MAP,
 }
 
 enum Snow {
@@ -17,11 +18,13 @@ enum Snow {
 
 @onready var level_to_scene = {
 	Level.MAIN_MENU: $MainMenu,
+	Level.MAP: $Map,
 	Level.HELL: $Hell,
 	Level.HELL_ROME: $HellRome,
 	Level.HEAVENS_GATE: $HeavensGate,
 	Level.SNOW_VILLAGE: $SnowVillage,
 	Level.DUCK_VILLAGE: $DuckVillage,
+	
 }
 
 @onready var snow_to_scene = {
@@ -79,7 +82,7 @@ func has_child(node: Node):
 	return false
 	
 func play_music(level_scene):
-	if background_music.stream != level_scene.background_music:
+	if level_scene.background_music and background_music.stream != level_scene.background_music:
 		background_music.stream = level_scene.background_music
 		background_music.play()
 

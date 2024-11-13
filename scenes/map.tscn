@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://oxh2s43d88a"]
+
+[ext_resource type="Script" path="res://scenes/map.gd" id="1_n4xyc"]
+[ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_xcmlk"]
+[ext_resource type="Texture2D" uid="uid://blhnbv682gjoh" path="res://backgrounds/snow_village.png" id="2_a3vtm"]
+[ext_resource type="Script" path="res://scenes/map_item.gd" id="2_d4bkg"]
+[ext_resource type="Texture2D" uid="uid://derraqmchilk8" path="res://backgrounds/duck_village.png" id="3_n3xt4"]
+[ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="4_hxtmb"]
+[ext_resource type="Texture2D" uid="uid://dpc26ojy5mdh0" path="res://backgrounds/hell_spiral_2.png" id="5_0e1h5"]
+[ext_resource type="Texture2D" uid="uid://bcex8od5towvy" path="res://ui/map.png" id="6_x8mp2"]
+[ext_resource type="AudioStream" uid="uid://knto1fh4opug" path="res://audio/menu_button_hover.mp3" id="8_bsv6p"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_n4xyc")
+
+[node name="Map" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Map"]
+z_index = 60
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -304.0
+offset_right = 500.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Map/MarginContainer"]
+layout_mode = 2
+
+[node name="Heaven" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="heavans_gate" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Heaven"]
+layout_mode = 2
+texture = ExtResource("1_xcmlk")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 3
+
+[node name="Earth" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="snow_village" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Earth"]
+layout_mode = 2
+texture = ExtResource("2_a3vtm")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 4
+
+[node name="duck_village" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Earth"]
+layout_mode = 2
+texture = ExtResource("3_n3xt4")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 5
+
+[node name="Hell" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="hello" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Hell"]
+z_index = 60
+layout_mode = 2
+texture = ExtResource("4_hxtmb")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 1
+
+[node name="hell_rome" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Hell"]
+layout_mode = 2
+texture = ExtResource("5_0e1h5")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 2
+
+[node name="Background" type="TextureRect" parent="Map"]
+z_index = 50
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("6_x8mp2")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="Map"]
+stream = ExtResource("8_bsv6p")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6f51xk42nxsm"]
+[gd_scene load_steps=12 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="2_bi3r5"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://clhp4wabvkxgh" path="res://ui/soul_black.png" id="6_sbjri"]
 [ext_resource type="Texture2D" uid="uid://dcrlqlqwu13jv" path="res://ui/soul_white.png" id="7_n367u"]
 [ext_resource type="Texture2D" uid="uid://bqflgg111trky" path="res://ui/duck_icon.png" id="8_1stc1"]
+[ext_resource type="Script" path="res://scenes/ui/map_icon.gd" id="9_jksr5"]
+[ext_resource type="Texture2D" uid="uid://dbet18b3odofx" path="res://ui/map_icon.png" id="10_lgpdy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2ev"]
 size = Vector2(50, 50)
@@ -374,6 +376,17 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 texture = ExtResource("8_1stc1")
 expand_mode = 3
+
+[node name="MapIcon" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MapIcon" type="TextureRect" parent="MapIcon"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("10_lgpdy")
+expand_mode = 3
+script = ExtResource("9_jksr5")
 
 [connection signal="input_event" from="ItemFollow/Area2D" to="ItemFollow" method="_on_area_2d_input_event"]
 [connection signal="timeout" from="ItemFollow/Timer" to="ItemFollow" method="_on_timer_timeout"]

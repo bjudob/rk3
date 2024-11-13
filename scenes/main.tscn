@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=20 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ci8koafhy323k" path="res://objects/snowflake.png" id="2_ivmkh"]
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
+[ext_resource type="PackedScene" uid="uid://oxh2s43d88a" path="res://scenes/map.tscn" id="5_6c268"]
 [ext_resource type="AudioStream" uid="uid://br4v1hxgeq7xf" path="res://audio/53 - Town - Necropolis.mp3" id="6_8a1nc"]
 [ext_resource type="PackedScene" uid="uid://cd0ro8hce85yu" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
 [ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
@@ -75,14 +76,16 @@ scale_amount_max = 0.02
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
-[node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
-z_index = 1
-position = Vector2(1677, 957)
-
 [node name="GameUI" parent="." node_paths=PackedStringArray("reki", "game_ui", "main") instance=ExtResource("2_wen8c")]
 reki = NodePath("../Reki")
 game_ui = NodePath(".")
 main = NodePath("..")
+
+[node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
+z_index = 1
+position = Vector2(1677, 957)
+
+[node name="Map" parent="." instance=ExtResource("5_6c268")]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_x7eno")]
 
