@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjicoxhkkxpig"
+path="res://.godot/imported/Undertale OST_ 044 - Tem Shop.mp3-987786432e5fd28b8f47e134131706db.mp3str"
+
+[deps]
+
+source_file="res://audio/Undertale OST_ 044 - Tem Shop.mp3"
+dest_files=["res://.godot/imported/Undertale OST_ 044 - Tem Shop.mp3-987786432e5fd28b8f47e134131706db.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

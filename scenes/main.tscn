@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=19 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -16,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://bf8jg2f6jwy7o" path="res://audio/54 - Town - Rampart.mp3" id="9_aisht"]
 [ext_resource type="PackedScene" uid="uid://ddax5eydu3hth" path="res://scenes/levels/snow_village.tscn" id="12_asvne"]
 [ext_resource type="PackedScene" uid="uid://o223mbuxsi32" path="res://scenes/levels/duck_village.tscn" id="13_f8h2x"]
-[ext_resource type="AudioStream" uid="uid://cimnl4t7apl40" path="res://audio/49 - Town - Conflux.mp3" id="14_4y48p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jgk"]
 size = Vector2(3635.5, 42)
@@ -109,7 +108,6 @@ background_music = ExtResource("9_aisht")
 [node name="DuckVillage" parent="." instance=ExtResource("13_f8h2x")]
 right = 3
 left = 4
-background_music = ExtResource("14_4y48p")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(984, 1090)

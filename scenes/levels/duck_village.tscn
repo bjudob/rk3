@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://o223mbuxsi32"]
+[gd_scene load_steps=9 format=3 uid="uid://o223mbuxsi32"]
 
 [ext_resource type="Script" path="res://scenes/levels/duck_village.gd" id="1_e73i8"]
+[ext_resource type="AudioStream" uid="uid://cjicoxhkkxpig" path="res://audio/Undertale OST_ 044 - Tem Shop.mp3" id="2_02jfo"]
 [ext_resource type="Texture2D" uid="uid://derraqmchilk8" path="res://backgrounds/duck_village.png" id="2_c1yo6"]
 [ext_resource type="Script" path="res://scripts/npc.gd" id="3_un3e2"]
 [ext_resource type="Texture2D" uid="uid://ciogdlnab4fsi" path="res://characters/kacsi.png" id="4_gr7qk"]
@@ -15,6 +16,7 @@ size = Vector2(319, 302)
 
 [node name="DuckVillage" type="Node2D"]
 script = ExtResource("1_e73i8")
+background_music = ExtResource("2_02jfo")
 
 [node name="DuckVillage" type="Sprite2D" parent="."]
 position = Vector2(969, 545)
