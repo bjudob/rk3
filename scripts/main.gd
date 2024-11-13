@@ -7,6 +7,7 @@ enum Level {
 	HELL_ROME,
 	HEAVENS_GATE,
 	SNOW_VILLAGE,
+	DUCK_VILLAGE,
 }
 
 enum Snow {
@@ -20,6 +21,7 @@ enum Snow {
 	Level.HELL_ROME: $HellRome,
 	Level.HEAVENS_GATE: $HeavensGate,
 	Level.SNOW_VILLAGE: $SnowVillage,
+	Level.DUCK_VILLAGE: $DuckVillage,
 }
 
 @onready var snow_to_scene = {

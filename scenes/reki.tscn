@@ -278,7 +278,7 @@ shader = ExtResource("2_5tn5e")
 shader_parameter/hit_opacity = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_peev2"]
-size = Vector2(192.25, 149)
+size = Vector2(168, 189)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vuwkw"]
 size = Vector2(32, 113)
@@ -321,7 +321,7 @@ coll_layer = 2
 coll_mask = 0
 
 [node name="HitBoxShape" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(103.875, -39.5)
+position = Vector2(88, -59.5)
 shape = SubResource("RectangleShape2D_peev2")
 disabled = true
 

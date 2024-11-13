@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://o223mbuxsi32"]
+
+[ext_resource type="Script" path="res://scenes/levels/duck_village.gd" id="1_e73i8"]
+[ext_resource type="Texture2D" uid="uid://derraqmchilk8" path="res://backgrounds/duck_village.png" id="2_c1yo6"]
+[ext_resource type="Script" path="res://scripts/npc.gd" id="3_un3e2"]
+[ext_resource type="Texture2D" uid="uid://ciogdlnab4fsi" path="res://characters/kacsi.png" id="4_gr7qk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ajc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_278pi"]
+size = Vector2(103, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sjpo"]
+size = Vector2(319, 302)
+
+[node name="DuckVillage" type="Node2D"]
+script = ExtResource("1_e73i8")
+
+[node name="DuckVillage" type="Sprite2D" parent="."]
+position = Vector2(969, 545)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("2_c1yo6")
+
+[node name="NPC" type="StaticBody2D" parent="."]
+position = Vector2(1345, 971)
+script = ExtResource("3_un3e2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+shape = SubResource("RectangleShape2D_3ajc1")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_gr7qk")
+
+[node name="ItemableArea" type="Area2D" parent="NPC"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ItemableArea"]
+position = Vector2(-1.5, 3)
+shape = SubResource("RectangleShape2D_278pi")
+
+[node name="TalkArea" type="Area2D" parent="NPC"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TalkArea"]
+position = Vector2(-114.5, -43)
+shape = SubResource("RectangleShape2D_0sjpo")

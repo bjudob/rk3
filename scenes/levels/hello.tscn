@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=10 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="2_jrhig"]
 [ext_resource type="PackedScene" uid="uid://bel8o63enp2y4" path="res://scenes/npc/cat_devil.tscn" id="4_mhwqj"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_rv0h3"]
+[ext_resource type="Texture2D" uid="uid://bksjwx2x2x8fa" path="res://ui/duck.png" id="7_bk40g"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_jt7wp"]
 [ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="8_g6ffb"]
 [ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="9_mt5es"]
@@ -36,6 +37,12 @@ scale = Vector2(3.36, 3.6704)
 id = "gems"
 image = ExtResource("9_mt5es")
 
+[node name="Item4" parent="." instance=ExtResource("7_jt7wp")]
+position = Vector2(1741, 734)
+scale = Vector2(0.5, 0.5)
+id = "duck"
+image = ExtResource("7_bk40g")
+
 [node name="Devil" parent="." instance=ExtResource("6_rv0h3")]
 position = Vector2(270, 785)
 
@@ -49,5 +56,5 @@ scale = Vector2(0.549628, 0.390951)
 texture = ExtResource("10_p5srv")
 
 [node name="Krampi" parent="." instance=ExtResource("8_g6ffb")]
-position = Vector2(214, 994)
+position = Vector2(218, 971)
 current_dialog = "krampi_hello"

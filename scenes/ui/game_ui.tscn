@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6f51xk42nxsm"]
+[gd_scene load_steps=10 format=3 uid="uid://6f51xk42nxsm"]
 
 [ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_wtv2t"]
 [ext_resource type="Script" path="res://scripts/inventory.gd" id="2_bi3r5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/item_follow.gd" id="6_kj5ed"]
 [ext_resource type="Texture2D" uid="uid://clhp4wabvkxgh" path="res://ui/soul_black.png" id="6_sbjri"]
 [ext_resource type="Texture2D" uid="uid://dcrlqlqwu13jv" path="res://ui/soul_white.png" id="7_n367u"]
+[ext_resource type="Texture2D" uid="uid://bqflgg111trky" path="res://ui/duck_icon.png" id="8_1stc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2ev"]
 size = Vector2(50, 50)
@@ -330,6 +331,49 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("7_n367u")
 expand_mode = 4
+
+[node name="Ducks" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 50
+
+[node name="ColorRect" type="ColorRect" parent="Ducks"]
+layout_mode = 2
+color = Color(0.486275, 0.466667, 0.462745, 0.588235)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ducks"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Ducks/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DuckNr" type="Label" parent="Ducks/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(143, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "12"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Ducks/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DuckIcon" type="TextureRect" parent="Ducks/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("8_1stc1")
+expand_mode = 3
 
 [connection signal="input_event" from="ItemFollow/Area2D" to="ItemFollow" method="_on_area_2d_input_event"]
 [connection signal="timeout" from="ItemFollow/Timer" to="ItemFollow" method="_on_timer_timeout"]

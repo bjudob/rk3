@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnwflvpclyj72"]
 
 [ext_resource type="Script" path="res://scripts/krampi.gd" id="1_71xh0"]
-[ext_resource type="Texture2D" uid="uid://dboxthee357ls" path="res://characters/krampi.png" id="2_t1akg"]
+[ext_resource type="Texture2D" uid="uid://dre7o42ws4xe6" path="res://characters/krampi_new.png" id="2_n4qr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83nb2"]
 
@@ -19,7 +19,7 @@ script = ExtResource("1_71xh0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 3.14159
 scale = Vector2(0.5, -0.5)
-texture = ExtResource("2_t1akg")
+texture = ExtResource("2_n4qr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 3.14159

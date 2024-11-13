@@ -1,19 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkcfdiqgsxtqh"]
+[gd_scene load_steps=11 format=3 uid="uid://dkcfdiqgsxtqh"]
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
 [ext_resource type="Script" path="res://scripts/miku.gd" id="3_f01l2"]
 [ext_resource type="Texture2D" uid="uid://bcumfo5l7ppm3" path="res://characters/miku.png" id="3_um6m4"]
 [ext_resource type="PackedScene" uid="uid://n2uwh5n6us1a" path="res://scenes/ghost.tscn" id="5_fl28w"]
+[ext_resource type="Texture2D" uid="uid://b5m7j82u087b6" path="res://characters/santa_creature_3.png" id="5_t2lhe"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_j5ydm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdsbi"]
 size = Vector2(29, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgu4g"]
-size = Vector2(203, 312)
+size = Vector2(223, 595)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrkxt"]
-size = Vector2(350, 469)
+size = Vector2(575, 707)
 
 [node name="HeavensGate" type="Node2D"]
 script = ExtResource("1_6va6e")
@@ -36,23 +38,31 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_gdsbi")
 
 [node name="Miku" type="Sprite2D" parent="Miku"]
-position = Vector2(15, 31)
+position = Vector2(20, -97)
+scale = Vector2(2, 2)
 texture = ExtResource("3_um6m4")
 
 [node name="ItemableArea" type="Area2D" parent="Miku"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Miku/ItemableArea"]
-position = Vector2(-12.5, 9)
+position = Vector2(-22.5, -132.5)
 shape = SubResource("RectangleShape2D_lgu4g")
 
 [node name="TalkArea" type="Area2D" parent="Miku"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Miku/TalkArea"]
-position = Vector2(-14, -2.5)
+position = Vector2(-12.5, -121.5)
 shape = SubResource("RectangleShape2D_hrkxt")
+
+[node name="SantaCreature3" type="Sprite2D" parent="Miku/TalkArea"]
+position = Vector2(722, -23)
+texture = ExtResource("5_t2lhe")
 
 [node name="Ghost" parent="." instance=ExtResource("5_fl28w")]
 position = Vector2(1313, 780)
 
 [node name="Ghost2" parent="." instance=ExtResource("5_fl28w")]
 position = Vector2(456, 440)
+
+[node name="Item" parent="." instance=ExtResource("7_j5ydm")]
+position = Vector2(244, 911)

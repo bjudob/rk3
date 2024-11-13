@@ -8,6 +8,7 @@ size = Vector2(111, 121)
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_iijl1")
+id = "fire"
 image = ExtResource("2_24qe0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

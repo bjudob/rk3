@@ -2,7 +2,7 @@
 class_name Item
 extends Node2D
 
-@export var id = "fire"
+@export var id = "duck"
 @export var image = load("res://objects/fire.png")
 @export var destroy_on_use = true
 
