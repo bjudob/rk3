@@ -9,6 +9,8 @@ extends StaticBody2D
 @onready var game_ui = get_tree().get_nodes_in_group("game_ui")[0]
 @onready var main = get_tree().get_nodes_in_group("main")[0]
 
+@onready var SHADER = preload("res://shaders/itemable_highlight.gdshader")
+
 var itemable_area: Area2D
 var sprite: Sprite2D
 
@@ -47,7 +49,8 @@ func _find_sprite():
 			return
 
 func _highlight():
-	sprite.modulate = Color(0.3, 0.3, 0.3)
+	sprite.material = ShaderMaterial.new()
+	sprite.material.shader = SHADER
 
 func _lowlight():
-	sprite.modulate = Color(1, 1, 1)
+	sprite.material = null

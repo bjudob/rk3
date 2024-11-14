@@ -27,13 +27,13 @@ position = Vector2(1302, 910)
 script = ExtResource("3_qjdy4")
 item_needed = "gems"
 
+[node name="Well" type="Sprite2D" parent="Well"]
+texture = ExtResource("4_ew5ca")
+
 [node name="Gembag" type="Sprite2D" parent="Well"]
 visible = false
 position = Vector2(9, 69)
 texture = ExtResource("4_xl8w5")
-
-[node name="Well" type="Sprite2D" parent="Well"]
-texture = ExtResource("4_ew5ca")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Well"]
 position = Vector2(16, 127)
