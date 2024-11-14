@@ -26,11 +26,13 @@ func select_item(item: Item):
 	scale.x = width/texture.get_width()
 	scale.y = width/texture.get_width()
 	timer.start()
+	_highlight()
 	
 func deselect_item():
 	selected_item = null
 	texture = null
 	area_2d.visible = false
+	_lowlight()
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
@@ -40,3 +42,13 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		
 func _on_timer_timeout() -> void:
 	area_2d.visible = true
+
+func _highlight():
+	var itemables = get_tree().get_nodes_in_group("itemable")
+	for itemable in itemables:
+		itemable._highlight()
+	
+func _lowlight():
+	var itemables = get_tree().get_nodes_in_group("itemable")
+	for itemable in itemables:
+		itemable._lowlight()

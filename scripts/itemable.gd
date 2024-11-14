@@ -10,12 +10,13 @@ extends StaticBody2D
 @onready var main = get_tree().get_nodes_in_group("main")[0]
 
 var itemable_area: Area2D
+var sprite: Sprite2D
 
 func _ready() -> void:
-	for child in get_children():
-		if child.name == "ItemableArea":
-			itemable_area = child
+	_find_itemable_area()
+	_find_sprite()
 	itemable_area.connect("input_event", _on_itemable_area_input_event)
+	add_to_group("itemable")
 
 func _process(delta: float) -> void:
 	pass
@@ -32,3 +33,21 @@ func _on_itemable_area_input_event(viewport: Node, event: InputEvent, shape_idx:
 				
 func _on_item_correct(item):
 	pass
+
+func _find_itemable_area():
+	for child in get_children():
+		if child.name == "ItemableArea":
+			itemable_area = child
+			return
+
+func _find_sprite():
+	for child in get_children():
+		if child is Sprite2D:
+			sprite = child
+			return
+
+func _highlight():
+	sprite.modulate = Color(0.3, 0.3, 0.3)
+
+func _lowlight():
+	sprite.modulate = Color(1, 1, 1)

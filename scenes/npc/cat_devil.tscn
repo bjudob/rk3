@@ -31,7 +31,7 @@ shape = SubResource("RectangleShape2D_2sfkr")
 position = Vector2(-11, 309.5)
 shape = SubResource("RectangleShape2D_kbo55")
 
-[node name="ItemableArea" type="Area2D" parent="." groups=["itemable"]]
+[node name="ItemableArea" type="Area2D" parent="."]
 position = Vector2(3, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
