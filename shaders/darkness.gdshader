@@ -36,9 +36,7 @@ void fragment() {
 		);
 	vec4 screen_color = texture(SCREEN_TEXTURE, SCREEN_UV);
 	
-	noise_color = noise_color + vec4(0.3, 0.3, 0.3, 0);
-	noise_color = noise_color * 2.0;
-	vec4 final_color = (noise_color * 0.5 + texture(TEXTURE, UV).rgba * 0.5);
+	vec4 final_color = (noise_color * texture(TEXTURE, UV).rgba * 3.0);
 	//vec4 final_color = (noise_color * 0.5 + texture(TEXTURE, UV).rgba * 0.5);
 	//final_color.a =  texture(TEXTURE, UV).a;
 	COLOR = final_color;

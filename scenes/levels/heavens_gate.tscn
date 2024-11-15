@@ -1,15 +1,74 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkcfdiqgsxtqh"]
+[gd_scene load_steps=27 format=3 uid="uid://dkcfdiqgsxtqh"]
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
 [ext_resource type="Script" path="res://scripts/miku.gd" id="3_f01l2"]
 [ext_resource type="Texture2D" uid="uid://bcumfo5l7ppm3" path="res://characters/miku.png" id="3_um6m4"]
+[ext_resource type="Shader" path="res://shaders/itemable_highlight.gdshader" id="4_pd8e8"]
 [ext_resource type="PackedScene" uid="uid://n2uwh5n6us1a" path="res://scenes/ghost.tscn" id="5_fl28w"]
 [ext_resource type="Texture2D" uid="uid://b5m7j82u087b6" path="res://characters/santa_creature_3.png" id="5_t2lhe"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_j5ydm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdsbi"]
 size = Vector2(29, 27)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oatyh"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_haytw"]
+noise = SubResource("FastNoiseLite_oatyh")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2ho6i"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_enf1o"]
+noise = SubResource("FastNoiseLite_2ho6i")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vtn52"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5g0d5"]
+noise = SubResource("FastNoiseLite_vtn52")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r8h2o"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8jofg"]
+noise = SubResource("FastNoiseLite_r8h2o")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ksnvb"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r0kcj"]
+noise = SubResource("FastNoiseLite_ksnvb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5j3xp"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sa6gs"]
+noise = SubResource("FastNoiseLite_5j3xp")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lu3qq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ee0d1"]
+noise = SubResource("FastNoiseLite_lu3qq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kde80"]
+shader = ExtResource("4_pd8e8")
+shader_parameter/hit_opacity = 0.5
+shader_parameter/scroll1 = Vector2(0.001, 0.001)
+shader_parameter/scroll2 = Vector2(-0.003, -0.003)
+shader_parameter/scroll3 = Vector2(-0.004, 0.005)
+shader_parameter/scroll4 = Vector2(0.002, 0.025)
+shader_parameter/scroll5 = Vector2(0.002, 0.025)
+shader_parameter/scroll6 = Vector2(0.002, 0.025)
+shader_parameter/scroll7 = Vector2(0.002, 0.025)
+shader_parameter/noise1 = SubResource("NoiseTexture2D_haytw")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_enf1o")
+shader_parameter/noise3 = SubResource("NoiseTexture2D_5g0d5")
+shader_parameter/noise4 = SubResource("NoiseTexture2D_8jofg")
+shader_parameter/noise5 = SubResource("NoiseTexture2D_r0kcj")
+shader_parameter/noise6 = SubResource("NoiseTexture2D_sa6gs")
+shader_parameter/noise7 = SubResource("NoiseTexture2D_ee0d1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgu4g"]
 size = Vector2(223, 595)
@@ -38,6 +97,7 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_gdsbi")
 
 [node name="Miku" type="Sprite2D" parent="Miku"]
+material = SubResource("ShaderMaterial_kde80")
 position = Vector2(20, -97)
 scale = Vector2(2, 2)
 texture = ExtResource("3_um6m4")
