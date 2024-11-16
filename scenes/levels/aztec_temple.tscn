@@ -15,5 +15,5 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_jk4rm")
 
 [node name="PriestFarki" type="Sprite2D" parent="."]
-position = Vector2(1047, 976)
+position = Vector2(822, 915)
 texture = ExtResource("4_ncgrq")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://oxh2s43d88a"]
+[gd_scene load_steps=17 format=3 uid="uid://oxh2s43d88a"]
 
 [ext_resource type="Script" path="res://scenes/map.gd" id="1_n4xyc"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_xcmlk"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bcex8od5towvy" path="res://ui/map.png" id="6_x8mp2"]
 [ext_resource type="Texture2D" uid="uid://cc5wb7uywvfmt" path="res://backgrounds/heaven_4.png" id="7_f4r84"]
 [ext_resource type="AudioStream" uid="uid://knto1fh4opug" path="res://audio/menu_button_hover.mp3" id="8_bsv6p"]
+[ext_resource type="Texture2D" uid="uid://b0kxxo4600ufo" path="res://backgrounds/aztec_temple.png" id="10_p6e0l"]
+[ext_resource type="Texture2D" uid="uid://4ir8gqvh2eom" path="res://backgrounds/hell_altair.png" id="11_w2kj3"]
+[ext_resource type="Texture2D" uid="uid://cj4cowhofhb2l" path="res://backgrounds/hell_gargoyles_gate.png" id="14_2j6s7"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_n4xyc")
@@ -103,6 +106,13 @@ expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 7
 
+[node name="aztec_temple" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
+layout_mode = 2
+texture = ExtResource("10_p6e0l")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 8
+
 [node name="Hell" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 200)
 layout_mode = 2
@@ -111,7 +121,7 @@ theme_override_constants/separation = 20
 [node name="hello" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
 z_index = 60
 layout_mode = 2
-texture = ExtResource("4_hxtmb")
+texture = ExtResource("11_w2kj3")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 9
@@ -122,6 +132,20 @@ texture = ExtResource("5_0e1h5")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 10
+
+[node name="hell_spiral" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
+layout_mode = 2
+texture = ExtResource("4_hxtmb")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 12
+
+[node name="gargoyles_gate" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
+layout_mode = 2
+texture = ExtResource("14_2j6s7")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 13
 
 [node name="Background" type="TextureRect" parent="Map"]
 z_index = 50

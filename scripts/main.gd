@@ -18,6 +18,8 @@ enum Level {
 	HELL,
 	HELL_ROME,
 	HEAVENS_GATE,
+	HELL_SPIRAL,
+	GARGOYLE_GATE,
 }
 
 enum Snow {
@@ -30,6 +32,8 @@ enum Snow {
 	Level.MAP: $Map,
 	Level.HELL: $Hell,
 	Level.HELL_ROME: $HellRome,
+	Level.HELL_SPIRAL: $HellSpiral,
+	Level.GARGOYLE_GATE: $GargoyleGate,
 	Level.HEAVENS_GATE: $HeavensGate,
 	Level.SNOW_VILLAGE: $SnowVillage,
 	Level.DUCK_VILLAGE: $DuckVillage,

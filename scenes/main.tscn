@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=27 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -14,7 +14,9 @@
 [ext_resource type="Script" path="res://scripts/go_left.gd" id="6_tef7d"]
 [ext_resource type="Script" path="res://scripts/go_right.gd" id="7_77xbi"]
 [ext_resource type="AudioStream" uid="uid://bf8jg2f6jwy7o" path="res://audio/54 - Town - Rampart.mp3" id="9_aisht"]
+[ext_resource type="PackedScene" uid="uid://d25oiaeis1oan" path="res://scenes/levels/hell_spiral.tscn" id="11_mi6si"]
 [ext_resource type="PackedScene" uid="uid://ddax5eydu3hth" path="res://scenes/levels/snow_village.tscn" id="12_asvne"]
+[ext_resource type="PackedScene" uid="uid://cwoah35xwqco3" path="res://scenes/levels/gargoyle_gate.tscn" id="12_ij75m"]
 [ext_resource type="PackedScene" uid="uid://byrg5ui1gm0u0" path="res://scenes/levels/aztec_temple.tscn" id="13_ba2n1"]
 [ext_resource type="PackedScene" uid="uid://o223mbuxsi32" path="res://scenes/levels/duck_village.tscn" id="13_f8h2x"]
 [ext_resource type="PackedScene" uid="uid://dv5n3e6fvmgqs" path="res://scenes/levels/heaven_1.tscn" id="16_x172q"]
@@ -96,13 +98,20 @@ position = Vector2(1677, 957)
 
 [node name="Hell" parent="." instance=ExtResource("1_ft6hw")]
 right = 10
-left = 10
+left = 13
 snow = 1
 background_music = ExtResource("6_8a1nc")
 
 [node name="HellRome" parent="." instance=ExtResource("6_gqyg1")]
+right = 12
 snow = 1
 background_music = ExtResource("6_8a1nc")
+
+[node name="HellSpiral" parent="." instance=ExtResource("11_mi6si")]
+right = 13
+
+[node name="GargoyleGate" parent="." instance=ExtResource("12_ij75m")]
+left = 12
 
 [node name="SnowVillage" parent="." instance=ExtResource("12_asvne")]
 right = 8
