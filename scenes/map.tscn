@@ -40,71 +40,84 @@ theme_override_constants/margin_right = 100
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Heaven" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer"]
+[node name="HeavenScroll" type="ScrollContainer" parent="Map/MarginContainer/VBoxContainer"]
+z_index = 120
+custom_minimum_size = Vector2(1500, 250)
+layout_mode = 2
+
+[node name="Heaven" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer/HeavenScroll"]
 custom_minimum_size = Vector2(1000, 200)
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="heavans_gate" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Heaven"]
+[node name="heavans_gate" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/HeavenScroll/Heaven"]
 layout_mode = 2
 texture = ExtResource("1_xcmlk")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 11
 
-[node name="heavans_gate2" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Heaven"]
+[node name="heavans_gate2" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/HeavenScroll/Heaven"]
 layout_mode = 2
 texture = ExtResource("4_4ip8d")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 2
 
-[node name="heavans_gate3" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Heaven"]
+[node name="heavans_gate3" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/HeavenScroll/Heaven"]
 layout_mode = 2
 texture = ExtResource("5_6jlkn")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 3
 
-[node name="heavans_gate4" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Heaven"]
+[node name="heavans_gate4" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/HeavenScroll/Heaven"]
 layout_mode = 2
 texture = ExtResource("6_b144k")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 4
 
-[node name="heavans_gate5" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Heaven"]
+[node name="heavans_gate5" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/HeavenScroll/Heaven"]
 layout_mode = 2
 texture = ExtResource("7_f4r84")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 5
 
-[node name="Earth" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer"]
+[node name="EarthScroll" type="ScrollContainer" parent="Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1500, 250)
+layout_mode = 2
+
+[node name="Earth" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer/EarthScroll"]
 custom_minimum_size = Vector2(1000, 200)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="snow_village" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Earth"]
+[node name="snow_village" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/EarthScroll/Earth"]
 layout_mode = 2
 texture = ExtResource("2_a3vtm")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 6
 
-[node name="duck_village" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Earth"]
+[node name="duck_village" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/EarthScroll/Earth"]
 layout_mode = 2
 texture = ExtResource("3_n3xt4")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 7
 
-[node name="Hell" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer"]
+[node name="HellScroll" type="ScrollContainer" parent="Map/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1500, 250)
+layout_mode = 2
+
+[node name="Hell" type="HBoxContainer" parent="Map/MarginContainer/VBoxContainer/HellScroll"]
 custom_minimum_size = Vector2(1000, 200)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="hello" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Hell"]
+[node name="hello" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/HellScroll/Hell"]
 z_index = 60
 layout_mode = 2
 texture = ExtResource("4_hxtmb")
@@ -112,7 +125,7 @@ expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 9
 
-[node name="hell_rome" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/Hell"]
+[node name="hell_rome" type="TextureRect" parent="Map/MarginContainer/VBoxContainer/HellScroll/Hell"]
 layout_mode = 2
 texture = ExtResource("5_0e1h5")
 expand_mode = 3

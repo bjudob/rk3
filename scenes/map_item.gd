@@ -2,7 +2,7 @@ extends TextureRect
 
 @export var level: Main.Level
 
-@onready var hover_sound = $"../../../../HoverSound"
+@onready var hover_sound = $"../../../../../HoverSound"
 @onready var main = get_tree().get_nodes_in_group("main")[0]
 
 func _ready() -> void:
