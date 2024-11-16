@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=12 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="2_jrhig"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="8_g6ffb"]
 [ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="9_mt5es"]
 [ext_resource type="Texture2D" uid="uid://5k6l5bgh5pnm" path="res://buildings/gargoyle_den_3-removebg-preview.png" id="10_1tc67"]
+[ext_resource type="Script" path="res://scenes/levels/builder.gd" id="10_dym74"]
 [ext_resource type="Texture2D" uid="uid://depxatwglbkb7" path="res://objects/santa_bag.png" id="10_p5srv"]
 
 [node name="Hell" type="Node2D"]
@@ -60,6 +61,10 @@ texture = ExtResource("10_p5srv")
 position = Vector2(218, 971)
 current_dialog = "krampi_hello"
 
-[node name="GargoyleDen3-removebg-preview" type="Sprite2D" parent="."]
+[node name="Builder" type="Node2D" parent="."]
+script = ExtResource("10_dym74")
+
+[node name="GargoyleDen" type="Sprite2D" parent="Builder"]
+visible = false
 position = Vector2(1687, 837)
 texture = ExtResource("10_1tc67")

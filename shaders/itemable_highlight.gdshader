@@ -38,7 +38,7 @@ void fragment() {
 	
 	noise_color = noise_color + vec4(0.3, 0.3, 0.3, 0);
 	noise_color = noise_color;
-	vec4 final_color = (noise_color * texture(TEXTURE, UV).rgba * 7.0);
+	vec4 final_color = (noise_color * texture(TEXTURE, UV).rgba * 2.0);
 	//vec4 final_color = (noise_color * texture(TEXTURE, UV).rgba * 7.0);
 	//vec4 final_color = (noise_color * 0.5 + texture(TEXTURE, UV).rgba * 0.5);
 	//final_color.a =  texture(TEXTURE, UV).a;

@@ -38,6 +38,7 @@ variables={
 "heaven_buildings": {},
 "hell_buildings": {
 "gargoyle_den": false,
+"gargoyle_den_cost": 0,
 "imp_hut": false,
 "money": 0,
 "world_eater": false

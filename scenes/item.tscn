@@ -7,6 +7,7 @@
 size = Vector2(111, 121)
 
 [node name="Item" type="Node2D"]
+z_index = 1
 script = ExtResource("1_iijl1")
 id = "fire"
 image = ExtResource("2_24qe0")

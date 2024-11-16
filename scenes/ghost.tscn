@@ -108,4 +108,4 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
-wait_time = 0.331
+wait_time = 0.651
