@@ -2,12 +2,12 @@ cat_devil: Üdvözletem!
 cat_devil: Ez a pokol
 cat_devil: Hogyan segithetek
 - Imp Hut - 30 souls
-	if {hell_buildings.money} >= 30:
-		set {hell_buildings.imp_hut} = true
+	if {hell_buildings.money} >= {hell_buildings.imp_hut.cost}:
+		set {hell_buildings.imp_hut.is_built} = true
 		cat_devil: You have the money
 	else:
 		cat_devil: no money
 - Gargoyle Den - 50 souls
-	if {hell_buildings.money} >= 50:
-		set {hell_buildings.gargoyle_den} = true
+	if {hell_buildings.money} >= {hell_buildings.gargoyle_den.cost}:
+		set {hell_buildings.gargoyle_den.is_built} = true
 - World Eater - 1000 souls

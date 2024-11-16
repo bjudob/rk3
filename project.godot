@@ -37,9 +37,14 @@ layout/default_style="res://dialogic/style.tres"
 variables={
 "heaven_buildings": {},
 "hell_buildings": {
-"gargoyle_den": false,
-"gargoyle_den_cost": 0,
-"imp_hut": false,
+"gargoyle_den": {
+"cost": 100,
+"is_built": false
+},
+"imp_hut": {
+"cost": 30,
+"is_built": false
+},
 "money": 0,
 "world_eater": false
 }

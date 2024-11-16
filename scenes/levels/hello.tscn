@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=13 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="2_jrhig"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://5k6l5bgh5pnm" path="res://buildings/gargoyle_den_3-removebg-preview.png" id="10_1tc67"]
 [ext_resource type="Script" path="res://scenes/levels/builder.gd" id="10_dym74"]
 [ext_resource type="Texture2D" uid="uid://depxatwglbkb7" path="res://objects/santa_bag.png" id="10_p5srv"]
+[ext_resource type="Texture2D" uid="uid://7jumuyivqwuk" path="res://buildings/imp_hut.png" id="12_ifuui"]
 
 [node name="Hell" type="Node2D"]
 script = ExtResource("1_7hytu")
@@ -68,3 +69,9 @@ script = ExtResource("10_dym74")
 visible = false
 position = Vector2(1687, 837)
 texture = ExtResource("10_1tc67")
+
+[node name="ImpHut" type="Sprite2D" parent="Builder"]
+visible = false
+position = Vector2(1260, 1012)
+scale = Vector2(2.04783, 2.06579)
+texture = ExtResource("12_ifuui")

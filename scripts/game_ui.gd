@@ -11,8 +11,8 @@ extends CanvasLayer
 @onready var angel_souls_display = $AngelSouls/HBoxContainer/MarginContainer2/Label
 @onready var ducks_label = $Ducks/HBoxContainer/MarginContainer/DuckNr
 
-var demon_souls = 0
-var angel_souls = 0
+var demon_souls = 240
+var angel_souls = 250
 var ducks = 0
 
 func _ready() -> void:
@@ -37,6 +37,8 @@ func add_item(item: Item):
 	inventory.add_item(item)
 	
 func add_souls(nr: int, is_demon: bool):
+	print("add souls called with")
+	print(nr)
 	if is_demon:
 		demon_souls+=nr
 		demon_souls_display.text = str(demon_souls)
