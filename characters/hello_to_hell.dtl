@@ -1,5 +1,13 @@
 cat_devil: Üdvözletem!
 cat_devil: Ez a pokol
 cat_devil: Hogyan segithetek
-- Szeretnem latni a mikulast
-- Csak nezelodok
+- Imp Hut - 30 souls
+	if {hell_buildings.money} >= 30:
+		set {hell_buildings.imp_hut} = true
+		cat_devil: You have the money
+	else:
+		cat_devil: no money
+- Gargoyle Den - 50 souls
+	if {hell_buildings.money} >= 50:
+		set {hell_buildings.gargoyle_den} = true
+- World Eater - 1000 souls

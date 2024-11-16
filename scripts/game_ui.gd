@@ -20,6 +20,9 @@ func _ready() -> void:
 	angel_souls_display.text = str(angel_souls)
 	ducks_label.text = str(ducks)
 
+func  _process(delta: float) -> void:
+	Dialogic.VAR.hell_buildings.money = angel_souls
+
 func show_tooltip(text: String):
 	tooltip.show_tooltip(text)
 

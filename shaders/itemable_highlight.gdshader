@@ -9,13 +9,13 @@ uniform sampler2D noise4 : repeat_enable;
 uniform sampler2D noise5 : repeat_enable;
 uniform sampler2D noise6 : repeat_enable;
 uniform sampler2D noise7 : repeat_enable;
-uniform vec2 scroll1 = vec2(0.1, 0.1);
+uniform vec2 scroll1 = vec2(0.01, 0.1);
 uniform vec2 scroll2 = vec2(-0.3, -0.3);
 uniform vec2 scroll3 = vec2(-0.4, 0.05);
-uniform vec2 scroll4 = vec2(0.02, 0.05);
-uniform vec2 scroll5 = vec2(0.02, 0.25);
-uniform vec2 scroll6 = vec2(0.02, 0.25);
-uniform vec2 scroll7 = vec2(0.02, 0.25);
+uniform vec2 scroll4 = vec2(0.05, 0.03);
+uniform vec2 scroll5 = vec2(0.2, 0.25);
+uniform vec2 scroll6 = vec2(0.2, 0.25);
+uniform vec2 scroll7 = vec2(2.0, 0.25);
 
 void fragment() {
 	vec4 noise1_color = texture(noise1, UV + scroll1 * TIME);
@@ -37,8 +37,9 @@ void fragment() {
 	vec4 screen_color = texture(SCREEN_TEXTURE, SCREEN_UV);
 	
 	noise_color = noise_color + vec4(0.3, 0.3, 0.3, 0);
-	noise_color = noise_color * 2.0;
-	vec4 final_color = (noise_color * 0.5 + texture(TEXTURE, UV).rgba * 0.5);
+	noise_color = noise_color;
+	vec4 final_color = (noise_color * texture(TEXTURE, UV).rgba * 7.0);
+	//vec4 final_color = (noise_color * texture(TEXTURE, UV).rgba * 7.0);
 	//vec4 final_color = (noise_color * 0.5 + texture(TEXTURE, UV).rgba * 0.5);
 	//final_color.a =  texture(TEXTURE, UV).a;
 	COLOR = final_color;
