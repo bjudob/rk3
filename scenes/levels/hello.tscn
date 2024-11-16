@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
-[ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="2_jrhig"]
+[ext_resource type="Texture2D" uid="uid://4ir8gqvh2eom" path="res://backgrounds/hell_altair.png" id="2_ogp0g"]
 [ext_resource type="PackedScene" uid="uid://bel8o63enp2y4" path="res://scenes/npc/cat_devil.tscn" id="4_mhwqj"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_rv0h3"]
 [ext_resource type="Texture2D" uid="uid://bksjwx2x2x8fa" path="res://ui/duck.png" id="7_bk40g"]
@@ -20,10 +20,10 @@ script = ExtResource("1_7hytu")
 z_index = -3
 position = Vector2(957, 532)
 scale = Vector2(0.68, 0.68)
-texture = ExtResource("2_jrhig")
+texture = ExtResource("2_ogp0g")
 
 [node name="CatDevil" parent="." instance=ExtResource("4_mhwqj")]
-position = Vector2(959, 756)
+position = Vector2(962, 613)
 item_needed = "fire"
 
 [node name="Item" parent="." instance=ExtResource("7_jt7wp")]
@@ -67,11 +67,11 @@ script = ExtResource("10_dym74")
 
 [node name="GargoyleDen" type="Sprite2D" parent="Builder"]
 visible = false
-position = Vector2(1687, 837)
+position = Vector2(218, 223)
 texture = ExtResource("10_1tc67")
 
 [node name="ImpHut" type="Sprite2D" parent="Builder"]
 visible = false
-position = Vector2(1260, 1012)
+position = Vector2(1707, 783)
 scale = Vector2(2.04783, 2.06579)
 texture = ExtResource("12_ifuui")

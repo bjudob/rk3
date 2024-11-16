@@ -2,13 +2,22 @@ class_name Main
 extends Node2D
 
 enum Level {
+	# ui
 	MAIN_MENU,
+	MAP,
+	# heaven
+	HEAVEN1,
+	HEAVEN2,
+	HEAVEN3,
+	HEAVEN4,
+	# earth
+	SNOW_VILLAGE,
+	DUCK_VILLAGE,
+	AZTEC_TEMPLE,
+	# hell
 	HELL,
 	HELL_ROME,
 	HEAVENS_GATE,
-	SNOW_VILLAGE,
-	DUCK_VILLAGE,
-	MAP,
 }
 
 enum Snow {
@@ -24,7 +33,11 @@ enum Snow {
 	Level.HEAVENS_GATE: $HeavensGate,
 	Level.SNOW_VILLAGE: $SnowVillage,
 	Level.DUCK_VILLAGE: $DuckVillage,
-	
+	Level.AZTEC_TEMPLE: $AztecTemple,
+	Level.HEAVEN1: $Heaven1,
+	Level.HEAVEN2: $Heaven2,
+	Level.HEAVEN3: $Heaven3,
+	Level.HEAVEN4: $Heaven4,
 }
 
 @onready var snow_to_scene = {
