@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2vjqxb1crrnv"]
+[gd_scene load_steps=4 format=3 uid="uid://b2vjqxb1crrnv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_sfas7"]
 [ext_resource type="Texture2D" uid="uid://bjaaeyitp0qqi" path="res://backgrounds/heaven_2.png" id="1_v7kby"]
+[ext_resource type="Texture2D" uid="uid://cqwn6wwnkubv4" path="res://characters/creature_2.png" id="3_52pkt"]
 
 [node name="Heaven2" type="Node2D"]
 script = ExtResource("1_sfas7")
@@ -10,3 +11,8 @@ script = ExtResource("1_sfas7")
 position = Vector2(961, 542)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_v7kby")
+
+[node name="Creature2" type="Sprite2D" parent="."]
+position = Vector2(936, 697)
+scale = Vector2(1.65686, 1.60634)
+texture = ExtResource("3_52pkt")

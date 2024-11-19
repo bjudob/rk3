@@ -119,7 +119,7 @@ left = 7
 
 [node name="DuckVillage" parent="." instance=ExtResource("13_f8h2x")]
 right = 6
-left = 7
+left = 8
 
 [node name="AztecTemple" parent="." instance=ExtResource("13_ba2n1")]
 right = 7

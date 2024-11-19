@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://np38r46qms0q"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_8iews"]
+[ext_resource type="Texture2D" uid="uid://dr302o6yedne2" path="res://characters/pingu.png" id="1_dub7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tbdk"]
+size = Vector2(95.5, 161.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3f4e"]
+size = Vector2(332.25, 281)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rmc0"]
+
+[node name="Pingu" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_8iews")
+item_needed = "fish"
+
+[node name="Pingu" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_dub7n")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-48, -18)
+shape = SubResource("RectangleShape2D_7tbdk")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-61, -75)
+shape = SubResource("RectangleShape2D_x3f4e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5rmc0")
