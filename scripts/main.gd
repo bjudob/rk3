@@ -20,6 +20,10 @@ enum Level {
 	HEAVENS_GATE,
 	HELL_SPIRAL,
 	GARGOYLE_GATE,
+	
+	FOREST1,
+	FOREST2,
+	FOREST3,
 }
 
 enum Snow {
@@ -36,6 +40,9 @@ enum Snow {
 	Level.GARGOYLE_GATE: $GargoyleGate,
 	Level.HEAVENS_GATE: $HeavensGate,
 	Level.SNOW_VILLAGE: $SnowVillage,
+	Level.FOREST1: $Forest1,
+	Level.FOREST2: $Forest2,
+	Level.FOREST3: $Forest3,
 	Level.DUCK_VILLAGE: $DuckVillage,
 	Level.AZTEC_TEMPLE: $AztecTemple,
 	Level.HEAVEN1: $Heaven1,

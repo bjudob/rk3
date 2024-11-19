@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/levels/duck_village.gd" id="1_e73i8"]
 [ext_resource type="AudioStream" uid="uid://cjicoxhkkxpig" path="res://audio/Undertale OST_ 044 - Tem Shop.mp3" id="2_02jfo"]
 [ext_resource type="Texture2D" uid="uid://derraqmchilk8" path="res://backgrounds/duck_village.png" id="2_c1yo6"]
-[ext_resource type="Script" path="res://scripts/npc.gd" id="3_un3e2"]
+[ext_resource type="Script" path="res://scripts/common/npc.gd" id="3_un3e2"]
 [ext_resource type="Texture2D" uid="uid://ciogdlnab4fsi" path="res://characters/kacsi.png" id="4_gr7qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ajc1"]

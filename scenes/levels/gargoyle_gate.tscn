@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwoah35xwqco3"]
 
 [ext_resource type="Texture2D" uid="uid://cj4cowhofhb2l" path="res://backgrounds/hell_gargoyles_gate.png" id="1_1k64g"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_ufj8r"]
+[ext_resource type="Script" path="res://scripts/common/level.gd" id="1_ufj8r"]
 
 [node name="GargoyleGate" type="Node2D"]
 script = ExtResource("1_ufj8r")

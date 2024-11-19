@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://np38r46qms0q"]
 
-[ext_resource type="Script" path="res://scripts/npc.gd" id="1_8iews"]
-[ext_resource type="Texture2D" uid="uid://dr302o6yedne2" path="res://characters/pingu.png" id="1_dub7n"]
+[ext_resource type="Script" path="res://scripts/common/npc.gd" id="1_8iews"]
+[ext_resource type="Texture2D" uid="uid://sm8cirg8ox2n" path="res://characters/pingu1.png" id="2_g7ve4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tbdk"]
 size = Vector2(95.5, 161.5)
@@ -19,7 +19,7 @@ item_needed = "fish"
 
 [node name="Pingu" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_dub7n")
+texture = ExtResource("2_g7ve4")
 
 [node name="ItemableArea" type="Area2D" parent="."]
 

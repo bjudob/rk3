@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=30 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://cwoah35xwqco3" path="res://scenes/levels/gargoyle_gate.tscn" id="12_ij75m"]
 [ext_resource type="PackedScene" uid="uid://byrg5ui1gm0u0" path="res://scenes/levels/aztec_temple.tscn" id="13_ba2n1"]
 [ext_resource type="PackedScene" uid="uid://o223mbuxsi32" path="res://scenes/levels/duck_village.tscn" id="13_f8h2x"]
+[ext_resource type="PackedScene" uid="uid://8rdr6m82ytkk" path="res://scenes/levels/forest_1.tscn" id="14_n3a1x"]
+[ext_resource type="PackedScene" uid="uid://blafsj20eupwb" path="res://scenes/levels/forest_2.tscn" id="15_owoci"]
+[ext_resource type="PackedScene" uid="uid://br583iqs35nd0" path="res://scenes/levels/forest_3.tscn" id="16_8u271"]
 [ext_resource type="PackedScene" uid="uid://dv5n3e6fvmgqs" path="res://scenes/levels/heaven_1.tscn" id="16_x172q"]
 [ext_resource type="PackedScene" uid="uid://b2vjqxb1crrnv" path="res://scenes/levels/heaven_2.tscn" id="17_pd3s3"]
 [ext_resource type="PackedScene" uid="uid://ce8r6n6m0vxf3" path="res://scenes/levels/heaven_3.tscn" id="18_1m2a4"]
@@ -116,6 +119,12 @@ left = 12
 [node name="SnowVillage" parent="." instance=ExtResource("12_asvne")]
 right = 8
 left = 7
+
+[node name="Forest1" parent="." instance=ExtResource("14_n3a1x")]
+
+[node name="Forest2" parent="." instance=ExtResource("15_owoci")]
+
+[node name="Forest3" parent="." instance=ExtResource("16_8u271")]
 
 [node name="DuckVillage" parent="." instance=ExtResource("13_f8h2x")]
 right = 6
