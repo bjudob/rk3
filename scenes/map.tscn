@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://oxh2s43d88a"]
+[gd_scene load_steps=24 format=3 uid="uid://oxh2s43d88a"]
 
 [ext_resource type="Script" path="res://scenes/map.gd" id="1_n4xyc"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_xcmlk"]
@@ -13,9 +13,16 @@
 [ext_resource type="Texture2D" uid="uid://bcex8od5towvy" path="res://ui/map.png" id="6_x8mp2"]
 [ext_resource type="Texture2D" uid="uid://cc5wb7uywvfmt" path="res://backgrounds/heaven_4.png" id="7_f4r84"]
 [ext_resource type="AudioStream" uid="uid://knto1fh4opug" path="res://audio/menu_button_hover.mp3" id="8_bsv6p"]
+[ext_resource type="Texture2D" uid="uid://nvv3n5vhjrsb" path="res://backgrounds/forest_1.png" id="9_ci5kq"]
 [ext_resource type="Texture2D" uid="uid://b0kxxo4600ufo" path="res://backgrounds/aztec_temple.png" id="10_p6e0l"]
+[ext_resource type="Texture2D" uid="uid://0d2sqm8gs1nx" path="res://backgrounds/forest_2.png" id="10_wr1ah"]
+[ext_resource type="Texture2D" uid="uid://c82nk02k2wdip" path="res://backgrounds/snow_town_2.png" id="11_u3834"]
 [ext_resource type="Texture2D" uid="uid://4ir8gqvh2eom" path="res://backgrounds/hell_altair.png" id="11_w2kj3"]
+[ext_resource type="Texture2D" uid="uid://c2oj4ml2q67up" path="res://backgrounds/forest_3.png" id="11_w4icp"]
 [ext_resource type="Texture2D" uid="uid://cj4cowhofhb2l" path="res://backgrounds/hell_gargoyles_gate.png" id="14_2j6s7"]
+[ext_resource type="Texture2D" uid="uid://4nh3jdtoa6pr" path="res://backgrounds/hell_house.png" id="18_l6g5h"]
+[ext_resource type="Texture2D" uid="uid://cuk0hms7bk4ag" path="res://backgrounds/hell_village.png" id="19_hsath"]
+[ext_resource type="Texture2D" uid="uid://djamf20so58qa" path="res://backgrounds/hell_tower.png" id="20_aoiu7"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_n4xyc")
@@ -57,35 +64,35 @@ layout_mode = 2
 texture = ExtResource("1_xcmlk")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 11
+level = 2
 
-[node name="heavans_gate2" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
+[node name="heaven_1" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
 layout_mode = 2
 texture = ExtResource("4_4ip8d")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 2
+level = 3
 
-[node name="heavans_gate3" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
+[node name="heaven_2" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
 layout_mode = 2
 texture = ExtResource("5_6jlkn")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 3
+level = 4
 
-[node name="heavans_gate4" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
+[node name="heaven_3" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
 layout_mode = 2
 texture = ExtResource("6_b144k")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 4
+level = 5
 
-[node name="heavans_gate5" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
+[node name="heaven_4" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Heaven"]
 layout_mode = 2
 texture = ExtResource("7_f4r84")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 5
+level = 6
 
 [node name="Earth" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 200)
@@ -97,21 +104,49 @@ layout_mode = 2
 texture = ExtResource("2_a3vtm")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 6
+level = 7
 
-[node name="duck_village" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
+[node name="forest_1" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
 layout_mode = 2
-texture = ExtResource("3_n3xt4")
+texture = ExtResource("9_ci5kq")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 7
+level = 11
+
+[node name="forest_2" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
+layout_mode = 2
+texture = ExtResource("10_wr1ah")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 12
+
+[node name="snow_city" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
+layout_mode = 2
+texture = ExtResource("11_u3834")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 8
+
+[node name="forest_3" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
+layout_mode = 2
+texture = ExtResource("11_w4icp")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 13
 
 [node name="aztec_temple" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
 layout_mode = 2
 texture = ExtResource("10_p6e0l")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 8
+level = 10
+
+[node name="duck_village" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
+layout_mode = 2
+texture = ExtResource("3_n3xt4")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 9
 
 [node name="Hell" type="HBoxContainer" parent="Map/MarginContainer/ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1000, 200)
@@ -124,28 +159,49 @@ layout_mode = 2
 texture = ExtResource("11_w2kj3")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 9
+level = 14
 
 [node name="hell_rome" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
 layout_mode = 2
 texture = ExtResource("5_0e1h5")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 10
+level = 15
 
 [node name="hell_spiral" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
 layout_mode = 2
 texture = ExtResource("4_hxtmb")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 12
+level = 16
+
+[node name="hell_house" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
+layout_mode = 2
+texture = ExtResource("18_l6g5h")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 19
+
+[node name="hell_village" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
+layout_mode = 2
+texture = ExtResource("19_hsath")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 20
+
+[node name="hell_tower" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
+layout_mode = 2
+texture = ExtResource("20_aoiu7")
+expand_mode = 3
+script = ExtResource("2_d4bkg")
+level = 18
 
 [node name="gargoyles_gate" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Hell"]
 layout_mode = 2
 texture = ExtResource("14_2j6s7")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
-level = 13
+level = 17
 
 [node name="Background" type="TextureRect" parent="Map"]
 z_index = 50

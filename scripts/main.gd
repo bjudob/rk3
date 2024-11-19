@@ -6,24 +6,27 @@ enum Level {
 	MAIN_MENU,
 	MAP,
 	# heaven
+	HEAVENS_GATE,
 	HEAVEN1,
 	HEAVEN2,
 	HEAVEN3,
 	HEAVEN4,
 	# earth
 	SNOW_VILLAGE,
+	SNOW_CITY,
 	DUCK_VILLAGE,
 	AZTEC_TEMPLE,
-	# hell
-	HELL,
-	HELL_ROME,
-	HEAVENS_GATE,
-	HELL_SPIRAL,
-	GARGOYLE_GATE,
-	
 	FOREST1,
 	FOREST2,
 	FOREST3,
+	# hell
+	HELL,
+	HELL_ROME,
+	HELL_SPIRAL,
+	GARGOYLE_GATE,
+	HELL_TOWER,
+	HELL_HOUSE,
+	HELL_VILLAGE,
 }
 
 enum Snow {
@@ -49,6 +52,10 @@ enum Snow {
 	Level.HEAVEN2: $Heaven2,
 	Level.HEAVEN3: $Heaven3,
 	Level.HEAVEN4: $Heaven4,
+	Level.SNOW_CITY: $SnowCity,
+	Level.HELL_TOWER: $HellTower,
+	Level.HELL_HOUSE: $HellHouse,
+	Level.HELL_VILLAGE: $HellVillage,
 }
 
 @onready var snow_to_scene = {
