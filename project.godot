@@ -24,13 +24,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={
 "cat_devil": "res://dialogic/cat_devil.dch",
 "krampi": "res://dialogic/krampi.dch",
-"miku": "res://dialogic/miku.dch"
+"miku": "res://dialogic/miku.dch",
+"spider": "res://dialogic/spider.dch"
 }
 directories/dtl_directory={
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
 "krampi_hello": "res://characters/profile_pictures/krampi_hello.dtl",
 "miku_2": "res://dialogic/miku_2.dtl",
-"miku_hello": "res://dialogic/miku_hello.dtl"
+"miku_hello": "res://dialogic/miku_hello.dtl",
+"spider": "res://dialogic/spider.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]
 layout/default_style="res://dialogic/style.tres"

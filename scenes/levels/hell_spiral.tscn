@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d25oiaeis1oan"]
+[gd_scene load_steps=4 format=3 uid="uid://d25oiaeis1oan"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_ay6my"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="1_ymyxl"]
+[ext_resource type="PackedScene" uid="uid://cmq52b0si5xi6" path="res://scenes/npc/spider.tscn" id="3_e2547"]
 
 [node name="HellSpiral" type="Node2D"]
 script = ExtResource("1_ay6my")
@@ -11,3 +12,6 @@ left = 10
 position = Vector2(974, 536)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_ymyxl")
+
+[node name="Spider" parent="." instance=ExtResource("3_e2547")]
+position = Vector2(1355, 849)

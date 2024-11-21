@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmq52b0si5xi6"]
+
+[ext_resource type="Script" path="res://scripts/spider.gd" id="1_s27u5"]
+[ext_resource type="Texture2D" uid="uid://dyjgcxg2v3tsb" path="res://characters/evil_spider.png" id="2_x1k1n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3x04x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytth1"]
+size = Vector2(552, 442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqupq"]
+size = Vector2(370, 419)
+
+[node name="Spider" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_s27u5")
+current_dialog = "spider"
+
+[node name="Spider" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("2_x1k1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3x04x")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-242, 16)
+shape = SubResource("RectangleShape2D_ytth1")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-13, 31.5)
+shape = SubResource("RectangleShape2D_uqupq")

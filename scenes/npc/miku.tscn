@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn28cajffvi2y"]
+
+[ext_resource type="Script" path="res://scripts/miku.gd" id="1_s2hmc"]
+[ext_resource type="Texture2D" uid="uid://cbwsif2meybu8" path="res://characters/miku_2.png" id="2_whsu2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdsbi"]
+size = Vector2(29, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgu4g"]
+size = Vector2(268, 431)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrkxt"]
+size = Vector2(662, 631)
+
+[node name="Miku" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_s2hmc")
+current_dialog = "miku_hello"
+item_needed = "santa_bag"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_gdsbi")
+
+[node name="Miku" type="Sprite2D" parent="."]
+texture = ExtResource("2_whsu2")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_lgu4g")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-101, -83.5)
+shape = SubResource("RectangleShape2D_hrkxt")

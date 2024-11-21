@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://n2uwh5n6us1a"]
 
 [ext_resource type="Script" path="res://scripts/ghost.gd" id="1_c0a6m"]
-[ext_resource type="Texture2D" uid="uid://lmprw5j5n8ix" path="res://characters/ghost.png" id="1_wl1is"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="2_b3ge2"]
+[ext_resource type="Texture2D" uid="uid://b4nedob1obgo6" path="res://characters/ghost_cool.png" id="2_mwfv3"]
 [ext_resource type="Script" path="res://scripts/hurt_box.gd" id="4_62dwg"]
 [ext_resource type="Script" path="res://scripts/hit_box.gd" id="5_nqvrg"]
 
@@ -12,7 +12,7 @@
 size = Vector2(153.5, 171)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpa1q"]
-size = Vector2(90, 72)
+size = Vector2(84, 295)
 
 [sub_resource type="Animation" id="Animation_o8bqg"]
 length = 0.001
@@ -74,13 +74,13 @@ animator = NodePath("AnimationPlayer")
 [node name="Ghost" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.588235)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_wl1is")
+texture = ExtResource("2_mwfv3")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_b3ge2")]
-offset_left = -62.0
-offset_top = -108.0
-offset_right = 38.0
-offset_bottom = -98.0
+offset_left = -5.0
+offset_top = -176.0
+offset_right = 95.0
+offset_bottom = -166.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5fbg3")
@@ -98,7 +98,7 @@ script = ExtResource("5_nqvrg")
 dmg = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(-104, -4)
+position = Vector2(-51, -0.5)
 shape = SubResource("RectangleShape2D_mpa1q")
 disabled = true
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://btslgviojaqtt"]
 
-[ext_resource type="Texture2D" uid="uid://bomaomsbq5x0x" path="res://objects/snowball.png" id="1_8tanl"]
-[ext_resource type="Script" path="res://bullet.gd" id="1_qmja2"]
-[ext_resource type="Script" path="res://scripts/hit_box.gd" id="3_6od33"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_wrsf3"]
+[ext_resource type="Texture2D" uid="uid://bomaomsbq5x0x" path="res://objects/snowball.png" id="2_7qok1"]
+[ext_resource type="Script" path="res://scripts/hit_box.gd" id="3_ssacs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_831av"]
 radius = 20.0998
@@ -13,11 +13,12 @@ size = Vector2(35, 35)
 [node name="Bullet" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_qmja2")
+script = ExtResource("1_wrsf3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_8tanl")
+texture = ExtResource("2_7qok1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_831av")
@@ -27,7 +28,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="HitBox" type="Area2D" parent="."]
-script = ExtResource("3_6od33")
+script = ExtResource("3_ssacs")
 dmg = 5
 disable_on_start = false
 

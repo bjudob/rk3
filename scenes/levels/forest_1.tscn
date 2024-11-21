@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://8rdr6m82ytkk"]
+[gd_scene load_steps=5 format=3 uid="uid://8rdr6m82ytkk"]
 
 [ext_resource type="Texture2D" uid="uid://nvv3n5vhjrsb" path="res://backgrounds/forest_1.png" id="1_k1h53"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x6d3u"]
+[ext_resource type="Texture2D" uid="uid://cgb3v4o1ndl2o" path="res://buildings/snow_machine.png" id="3_vrei8"]
+[ext_resource type="Texture2D" uid="uid://cbg7lw2q4vcwf" path="res://characters/maci.png" id="4_vy1d7"]
 
 [node name="Forest1" type="Node2D"]
 script = ExtResource("1_x6d3u")
@@ -10,3 +12,12 @@ script = ExtResource("1_x6d3u")
 position = Vector2(965, 545)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_k1h53")
+
+[node name="SnowMachine" type="Sprite2D" parent="."]
+position = Vector2(1436, 872)
+scale = Vector2(2, 2)
+texture = ExtResource("3_vrei8")
+
+[node name="Maci" type="Sprite2D" parent="."]
+position = Vector2(655, 892)
+texture = ExtResource("4_vy1d7")
