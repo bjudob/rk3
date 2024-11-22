@@ -37,8 +37,6 @@ func add_item(item: Item):
 	inventory.add_item(item)
 	
 func add_souls(nr: int, is_demon: bool):
-	print("add souls called with")
-	print(nr)
 	if is_demon:
 		demon_souls+=nr
 		demon_souls_display.text = str(demon_souls)

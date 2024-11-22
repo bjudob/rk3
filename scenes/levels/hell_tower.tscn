@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr2spcq26uki4"]
+[gd_scene load_steps=5 format=3 uid="uid://dr2spcq26uki4"]
 
 [ext_resource type="Texture2D" uid="uid://djamf20so58qa" path="res://backgrounds/hell_tower.png" id="1_33hgl"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_obfiv"]
+[ext_resource type="PackedScene" uid="uid://do1w0a5kpcmww" path="res://scenes/enemies/cuki_devil.tscn" id="3_mhufx"]
+[ext_resource type="PackedScene" uid="uid://g3408igv35bn" path="res://scenes/enemies/hell_dog.tscn" id="4_tlr7w"]
 
 [node name="HellTower" type="Node2D"]
 script = ExtResource("1_obfiv")
@@ -10,3 +12,9 @@ script = ExtResource("1_obfiv")
 position = Vector2(1072, 525)
 scale = Vector2(0.74, 0.74)
 texture = ExtResource("1_33hgl")
+
+[node name="CukiDevil" parent="." instance=ExtResource("3_mhufx")]
+position = Vector2(1678, 471)
+
+[node name="HellDog" parent="." instance=ExtResource("4_tlr7w")]
+position = Vector2(1635, 969)

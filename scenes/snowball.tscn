@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_wrsf3"]
 [ext_resource type="Texture2D" uid="uid://bomaomsbq5x0x" path="res://objects/snowball.png" id="2_7qok1"]
-[ext_resource type="Script" path="res://scripts/hit_box.gd" id="3_ssacs"]
+[ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="3_ssacs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_831av"]
 radius = 20.0998

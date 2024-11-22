@@ -1,0 +1,135 @@
+[gd_scene load_steps=17 format=3 uid="uid://g3408igv35bn"]
+
+[ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_44sf6"]
+[ext_resource type="Texture2D" uid="uid://of5hxm7tm8ig" path="res://characters/hell_dog/hell_dog_1.png" id="2_4e8pv"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="3_0iojc"]
+[ext_resource type="Texture2D" uid="uid://bnes4wsb6o0j6" path="res://characters/hell_dog/hell_dog_2.png" id="3_j33o2"]
+[ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="4_avocu"]
+[ext_resource type="Texture2D" uid="uid://b0xligmxlno3i" path="res://characters/hell_dog/hell_dog_3.png" id="4_rml27"]
+[ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_gore3"]
+[ext_resource type="Texture2D" uid="uid://jfkasovklv1d" path="res://characters/hell_dog/hell_dog_4.png" id="6_prri1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtehk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12yij"]
+size = Vector2(304, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5r07"]
+size = Vector2(216.5, 157)
+
+[sub_resource type="Animation" id="Animation_s3e0a"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HellDog:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_4e8pv")]
+}
+
+[sub_resource type="Animation" id="Animation_ltv7c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HellDog:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_4e8pv")]
+}
+
+[sub_resource type="Animation" id="Animation_u0tg5"]
+resource_name = "follow"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HellDog:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_4e8pv"), ExtResource("3_j33o2"), ExtResource("4_rml27")]
+}
+
+[sub_resource type="Animation" id="Animation_gxsnp"]
+resource_name = "attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HellDog:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_prri1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_br6t5"]
+_data = {
+"RESET": SubResource("Animation_ltv7c"),
+"attack": SubResource("Animation_gxsnp"),
+"follow": SubResource("Animation_u0tg5"),
+"idle": SubResource("Animation_s3e0a")
+}
+
+[node name="HellDog" type="CharacterBody2D" node_paths=PackedStringArray("attack_speed_timer", "animator")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_44sf6")
+attack_speed_timer = NodePath("AttackSpeedTimer")
+idle_move_speed = 5.0
+follow_move_speed = 210.0
+follow_distance = 800.0
+attack_distance = 250.0
+animator = NodePath("AnimationPlayer")
+
+[node name="HellDog" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4e8pv")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_0iojc")]
+offset_left = -63.0
+offset_top = -143.0
+offset_right = 87.0
+offset_bottom = -133.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wtehk")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("4_avocu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-21, -23)
+shape = SubResource("RectangleShape2D_12yij")
+
+[node name="HitBox" type="Area2D" parent="."]
+script = ExtResource("5_gore3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(211.75, -23.5)
+shape = SubResource("RectangleShape2D_d5r07")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_br6t5")
+}
+
+[node name="AttackSpeedTimer" type="Timer" parent="."]

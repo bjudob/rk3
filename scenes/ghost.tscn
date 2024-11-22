@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://n2uwh5n6us1a"]
+[gd_scene load_steps=15 format=3 uid="uid://n2uwh5n6us1a"]
 
 [ext_resource type="Script" path="res://scripts/ghost.gd" id="1_c0a6m"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="2_b3ge2"]
 [ext_resource type="Texture2D" uid="uid://b4nedob1obgo6" path="res://characters/ghost_cool.png" id="2_mwfv3"]
-[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="4_62dwg"]
-[ext_resource type="Script" path="res://scripts/hit_box.gd" id="5_nqvrg"]
+[ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="4_62dwg"]
+[ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_nqvrg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fbg3"]
 
@@ -44,6 +44,9 @@ tracks/0/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_5fqgn"]
+resource_name = "follow"
+
 [sub_resource type="Animation" id="Animation_cjb4j"]
 resource_name = "hurt"
 
@@ -54,6 +57,7 @@ resource_name = "idle"
 _data = {
 "RESET": SubResource("Animation_o8bqg"),
 "attack": SubResource("Animation_6fgvh"),
+"follow": SubResource("Animation_5fqgn"),
 "hurt": SubResource("Animation_cjb4j"),
 "idle": SubResource("Animation_mylt4")
 }

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/imp.gd" id="1_8pl6p"]
 [ext_resource type="Texture2D" uid="uid://bu0fvl4do6y0k" path="res://characters/imp.png" id="2_knj4v"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="2_q8tg4"]
-[ext_resource type="Script" path="res://scripts/hurt_box.gd" id="3_d226n"]
+[ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="3_d226n"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e3cew"]
 [ext_resource type="Script" path="res://scripts/state.gd" id="6_ltdl3"]
 

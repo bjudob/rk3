@@ -10,7 +10,7 @@ var follow_distance: float = 500
 var attack_distance: float = 50
 
 func enter() -> void:
-	pass
+	animator.play("follow")
 
 func exit() -> void:
 	pass
