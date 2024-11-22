@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4e53tqdawnsg"]
+
+[ext_resource type="Script" path="res://scripts/maci.gd" id="1_ew6ff"]
+[ext_resource type="Texture2D" uid="uid://cbg7lw2q4vcwf" path="res://characters/maci.png" id="1_jjctt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew643"]
+size = Vector2(656, 483)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb3f1"]
+size = Vector2(359, 445)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15lj7"]
+
+[node name="Maci" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ew6ff")
+
+[node name="Maci" type="Sprite2D" parent="."]
+texture = ExtResource("1_jjctt")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(149, -9.5)
+shape = SubResource("RectangleShape2D_ew643")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(7.5, -2.5)
+shape = SubResource("RectangleShape2D_nb3f1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_15lj7")

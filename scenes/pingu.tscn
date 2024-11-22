@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://np38r46qms0q"]
 
-[ext_resource type="Script" path="res://scripts/common/npc.gd" id="1_8iews"]
+[ext_resource type="Script" path="res://scripts/pingu.gd" id="1_xwty2"]
 [ext_resource type="Texture2D" uid="uid://sm8cirg8ox2n" path="res://characters/pingu1.png" id="2_g7ve4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tbdk"]
@@ -14,8 +14,7 @@ size = Vector2(332.25, 281)
 [node name="Pingu" type="StaticBody2D"]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_8iews")
-item_needed = "fish"
+script = ExtResource("1_xwty2")
 
 [node name="Pingu" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
