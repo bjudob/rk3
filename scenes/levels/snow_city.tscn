@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm0bcsapfvbu4"]
+[gd_scene load_steps=6 format=3 uid="uid://cm0bcsapfvbu4"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_c83ku"]
 [ext_resource type="Texture2D" uid="uid://c82nk02k2wdip" path="res://backgrounds/snow_town_2.png" id="1_wbomq"]
 [ext_resource type="Texture2D" uid="uid://ba63wj4xbt3wx" path="res://characters/snowman_1.png" id="2_ygfqp"]
 [ext_resource type="Texture2D" uid="uid://825nnvhf48le" path="res://characters/snowman_3.png" id="3_377uu"]
-[ext_resource type="Texture2D" uid="uid://m0rw01te1hgn" path="res://characters/foki.png" id="5_aatw5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihp3f"]
+[ext_resource type="PackedScene" uid="uid://bjbubq82hpm6s" path="res://scenes/npc/foki.tscn" id="5_ei1xq"]
 
 [node name="SnowCity" type="Node2D"]
 script = ExtResource("1_c83ku")
@@ -30,14 +28,5 @@ texture = ExtResource("2_ygfqp")
 position = Vector2(636, 889)
 texture = ExtResource("3_377uu")
 
-[node name="Foki" type="StaticBody2D" parent="."]
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Foki"]
-shape = SubResource("RectangleShape2D_ihp3f")
-
-[node name="Foki" type="Sprite2D" parent="Foki"]
-position = Vector2(1434, 1005)
-scale = Vector2(-0.6, 0.6)
-texture = ExtResource("5_aatw5")
+[node name="Foki" parent="." instance=ExtResource("5_ei1xq")]
+position = Vector2(1314, 974)

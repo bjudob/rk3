@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjbubq82hpm6s"]
+
+[ext_resource type="Texture2D" uid="uid://m0rw01te1hgn" path="res://characters/foki.png" id="1_ioh7u"]
+[ext_resource type="Script" path="res://scripts/foki.gd" id="2_jn632"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihp3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b5in"]
+size = Vector2(448, 423)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuci8"]
+size = Vector2(238, 271)
+
+[node name="Foki" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_jn632")
+current_dialog = "foki_elveszett_barat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ihp3f")
+
+[node name="Foki" type="Sprite2D" parent="."]
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("1_ioh7u")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-177, -93.5)
+shape = SubResource("RectangleShape2D_5b5in")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(1, -24.5)
+shape = SubResource("RectangleShape2D_xuci8")

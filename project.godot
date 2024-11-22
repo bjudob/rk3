@@ -23,6 +23,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "cat_devil": "res://dialogic/cat_devil.dch",
+"foki": "res://dialogic/foki.dch",
 "krampi": "res://dialogic/krampi.dch",
 "maci": "res://dialogic/maci.dch",
 "miku": "res://dialogic/miku.dch",
@@ -30,6 +31,7 @@ directories/dch_directory={
 "spider": "res://dialogic/spider.dch"
 }
 directories/dtl_directory={
+"foki_elveszett_barat": "res://dialogic/foki_elveszett_barat.dtl",
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
 "krampi_hello": "res://characters/profile_pictures/krampi_hello.dtl",
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
