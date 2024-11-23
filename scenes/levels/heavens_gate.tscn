@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
 [ext_resource type="PackedScene" uid="uid://bn28cajffvi2y" path="res://scenes/npc/miku.tscn" id="3_a7qb3"]
-[ext_resource type="PackedScene" uid="uid://n2uwh5n6us1a" path="res://scenes/ghost.tscn" id="5_fl28w"]
+[ext_resource type="PackedScene" uid="uid://n2uwh5n6us1a" path="res://scenes/enemies/ghost.tscn" id="5_fl28w"]
 [ext_resource type="Texture2D" uid="uid://b5m7j82u087b6" path="res://characters/santa_creature_3.png" id="5_t2lhe"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_j5ydm"]
 

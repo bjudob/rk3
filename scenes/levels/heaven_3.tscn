@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce8r6n6m0vxf3"]
+[gd_scene load_steps=4 format=3 uid="uid://ce8r6n6m0vxf3"]
 
 [ext_resource type="Texture2D" uid="uid://dqb0pmfn14y0b" path="res://backgrounds/heaven_3.png" id="1_q1gwu"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="2_3d808"]
+[ext_resource type="PackedScene" uid="uid://p0lhipgoqub" path="res://scenes/enemies/kami_bari.tscn" id="3_gyg1m"]
 
 [node name="Heaven3" type="Node2D"]
 script = ExtResource("2_3d808")
@@ -10,3 +11,9 @@ script = ExtResource("2_3d808")
 position = Vector2(961, 542)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_q1gwu")
+
+[node name="KamiBari" parent="." instance=ExtResource("3_gyg1m")]
+position = Vector2(1665, 390)
+follow_move_speed = 400.0
+follow_distance = 950.0
+attack_distance = 230.0

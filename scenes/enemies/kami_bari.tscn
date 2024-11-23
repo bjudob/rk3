@@ -1,0 +1,206 @@
+[gd_scene load_steps=19 format=3 uid="uid://p0lhipgoqub"]
+
+[ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_y4d3a"]
+[ext_resource type="Texture2D" uid="uid://cws4bvj1kgqy6" path="res://characters/kamibari/kamibari_1.png" id="2_602j3"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="2_j0ym1"]
+[ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="3_cnhfu"]
+[ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_tnt77"]
+[ext_resource type="Texture2D" uid="uid://kpa0yu6nly8o" path="res://characters/kamibari/kamibari_2.png" id="6_2mps1"]
+[ext_resource type="Texture2D" uid="uid://b81mcxdmavodp" path="res://characters/kamibari/kamibari_4.png" id="7_g1tf4"]
+[ext_resource type="Texture2D" uid="uid://d1nsgakatswud" path="res://characters/kamibari/kamibari_5.png" id="8_1ftve"]
+[ext_resource type="Texture2D" uid="uid://c0ja18fxmxut7" path="res://characters/kamibari/kamibari_3.png" id="9_dec1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppa1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpnja"]
+size = Vector2(189, 167)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we43f"]
+radius = 280.302
+
+[sub_resource type="Animation" id="Animation_d84c5"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KamiBari:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_602j3")]
+}
+
+[sub_resource type="Animation" id="Animation_qp3ti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KamiBari:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_602j3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KamiBari:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("KamiBari:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HealthBar:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_how3v"]
+resource_name = "hurt"
+
+[sub_resource type="Animation" id="Animation_vhn6d"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KamiBari:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_2mps1"), ExtResource("7_g1tf4"), ExtResource("8_1ftve")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KamiBari:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("KamiBari:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HealthBar:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wkroe"]
+resource_name = "follow"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KamiBari:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_602j3"), ExtResource("6_2mps1"), ExtResource("9_dec1j")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhgfe"]
+_data = {
+"RESET": SubResource("Animation_qp3ti"),
+"attack": SubResource("Animation_vhn6d"),
+"follow": SubResource("Animation_wkroe"),
+"hurt": SubResource("Animation_how3v"),
+"idle": SubResource("Animation_d84c5")
+}
+
+[node name="KamiBari" type="CharacterBody2D" node_paths=PackedStringArray("attack_speed_timer", "animator")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_y4d3a")
+attack_speed_timer = NodePath("AttackSpeedTimer")
+animator = NodePath("AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ppa1j")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_j0ym1")]
+offset_left = -64.0
+offset_top = -101.0
+offset_right = 86.0
+offset_bottom = -91.0
+
+[node name="KamiBari" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_602j3")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_cnhfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-3.5, -3.5)
+shape = SubResource("RectangleShape2D_cpnja")
+
+[node name="HitBox" type="Area2D" parent="."]
+script = ExtResource("5_tnt77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-11, 0)
+shape = SubResource("CircleShape2D_we43f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vhgfe")
+}
+
+[node name="AttackSpeedTimer" type="Timer" parent="."]

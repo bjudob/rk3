@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://n2uwh5n6us1a"]
 
-[ext_resource type="Script" path="res://scripts/ghost.gd" id="1_c0a6m"]
-[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="2_b3ge2"]
-[ext_resource type="Texture2D" uid="uid://b4nedob1obgo6" path="res://characters/ghost_cool.png" id="2_mwfv3"]
-[ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="4_62dwg"]
-[ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_nqvrg"]
+[ext_resource type="Script" path="res://scripts/ghost.gd" id="1_12ulx"]
+[ext_resource type="Texture2D" uid="uid://b4nedob1obgo6" path="res://characters/ghost_cool.png" id="2_v25eb"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="3_vu10r"]
+[ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="4_gumvb"]
+[ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_obetj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fbg3"]
 
@@ -65,7 +65,7 @@ _data = {
 [node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("attack_speed_timer", "animator")]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_c0a6m")
+script = ExtResource("1_12ulx")
 attack_speed_timer = NodePath("AttackSpeedTimer")
 is_demon = false
 facing_right = false
@@ -78,9 +78,9 @@ animator = NodePath("AnimationPlayer")
 [node name="Ghost" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.588235)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_mwfv3")
+texture = ExtResource("2_v25eb")
 
-[node name="HealthBar" parent="." instance=ExtResource("2_b3ge2")]
+[node name="HealthBar" parent="." instance=ExtResource("3_vu10r")]
 offset_left = -5.0
 offset_top = -176.0
 offset_right = 95.0
@@ -90,7 +90,7 @@ offset_bottom = -166.0
 shape = SubResource("RectangleShape2D_5fbg3")
 
 [node name="HurtBox" type="Area2D" parent="."]
-script = ExtResource("4_62dwg")
+script = ExtResource("4_gumvb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(1.25, -2.5)
@@ -98,7 +98,7 @@ shape = SubResource("RectangleShape2D_gm0cy")
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(95, 6)
-script = ExtResource("5_nqvrg")
+script = ExtResource("5_obetj")
 dmg = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]

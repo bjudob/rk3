@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://g3408igv35bn"]
+[gd_scene load_steps=18 format=3 uid="uid://g3408igv35bn"]
 
 [ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_44sf6"]
 [ext_resource type="Texture2D" uid="uid://of5hxm7tm8ig" path="res://characters/hell_dog/hell_dog_1.png" id="2_4e8pv"]
@@ -81,11 +81,15 @@ tracks/0/keys = {
 "values": [ExtResource("6_prri1")]
 }
 
+[sub_resource type="Animation" id="Animation_12iyv"]
+resource_name = "hurt"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_br6t5"]
 _data = {
 "RESET": SubResource("Animation_ltv7c"),
 "attack": SubResource("Animation_gxsnp"),
 "follow": SubResource("Animation_u0tg5"),
+"hurt": SubResource("Animation_12iyv"),
 "idle": SubResource("Animation_s3e0a")
 }
 
