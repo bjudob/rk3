@@ -10,8 +10,15 @@ extends Node2D
 @onready var game_ui = get_tree().get_nodes_in_group("game_ui")[0]
 @onready var main = get_tree().get_nodes_in_group("main")[0]
 
-func _ready() -> void:
-	pass
+var enemies = []
 
-func _process(delta: float) -> void:
-	pass
+func _ready() -> void:
+	for child in get_children():
+		if child is Enemy:
+			enemies.append(child)
+
+func respawn_enemies():
+	for enemy in enemies:
+		add_child(enemy)
+		enemy.current_hp = enemy.max_hp
+		enemy.health_changed.emit()

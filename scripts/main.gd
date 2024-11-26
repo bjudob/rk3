@@ -85,6 +85,7 @@ func change_scene(level: Main.Level):
 		right_level = level_scene.right
 		add_child.call_deferred(level_scene)
 		play_music.call_deferred(level_scene)
+		level_scene.respawn_enemies()
 	for scene in level_to_scene:
 		if scene == level or not has_child(level_to_scene[scene]):
 			continue

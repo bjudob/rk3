@@ -67,9 +67,9 @@ func _change_state(old_state, new_state_name):
 	current_state = new_state
 
 func _die():
-	self.queue_free()
 	health_changed.emit()
 	game_ui.add_souls(souls, is_demon)
+	get_parent().remove_child(self)
 
 func _set_optional_attrs(state):
 	if "idle_move_speed" in state:
