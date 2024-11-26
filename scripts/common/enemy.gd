@@ -18,6 +18,7 @@ enum StateEnum{
 @export var follow_distance: float = 500
 @export var attack_distance: float = 50
 @export var ranged: bool = false
+@export var grounded: bool = false
 
 const initial_state = StateEnum.IDLE
 var current_state: State
@@ -83,6 +84,8 @@ func _set_optional_attrs(state):
 		state.ranged = ranged
 	if "attack_speed_timer" in state:
 		state.attack_speed_timer = attack_speed_timer
+	if "grounded" in state:
+		state.grounded = grounded
 
 func _facing():
 	var direction = global_position.direction_to(player.global_position)

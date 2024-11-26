@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://g3408igv35bn"]
+[gd_scene load_steps=19 format=3 uid="uid://g3408igv35bn"]
 
 [ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_44sf6"]
 [ext_resource type="Texture2D" uid="uid://of5hxm7tm8ig" path="res://characters/hell_dog/hell_dog_1.png" id="2_4e8pv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b0xligmxlno3i" path="res://characters/hell_dog/hell_dog_3.png" id="4_rml27"]
 [ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_gore3"]
 [ext_resource type="Texture2D" uid="uid://jfkasovklv1d" path="res://characters/hell_dog/hell_dog_4.png" id="6_prri1"]
+[ext_resource type="Texture2D" uid="uid://dfheaqmo4tu6o" path="res://objects/dog_fire.png" id="9_6fq5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtehk"]
 
@@ -15,7 +16,7 @@
 size = Vector2(304, 270)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d5r07"]
-size = Vector2(216.5, 157)
+size = Vector2(311.5, 117)
 
 [sub_resource type="Animation" id="Animation_ltv7c"]
 length = 0.001
@@ -31,10 +32,33 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_4e8pv")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_gxsnp"]
 resource_name = "attack"
-length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -46,6 +70,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("6_prri1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_u0tg5"]
@@ -101,7 +149,8 @@ attack_speed_timer = NodePath("AttackSpeedTimer")
 idle_move_speed = 5.0
 follow_move_speed = 210.0
 follow_distance = 800.0
-attack_distance = 250.0
+attack_distance = 300.0
+grounded = true
 animator = NodePath("AnimationPlayer")
 
 [node name="HellDog" type="Sprite2D" parent="."]
@@ -126,10 +175,12 @@ shape = SubResource("RectangleShape2D_12yij")
 
 [node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("5_gore3")
+dmg = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(211.75, -23.5)
+position = Vector2(259.25, -21.5)
 shape = SubResource("RectangleShape2D_d5r07")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -137,3 +188,18 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(266, -24)
+emitting = false
+lifetime = 0.5
+one_shot = true
+local_coords = true
+texture = ExtResource("9_6fq5n")
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+gravity = Vector2(0, 0)
+angle_min = -90.0
+angle_max = -90.0
+scale_amount_min = 0.7
+scale_amount_max = 0.7

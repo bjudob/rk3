@@ -8,6 +8,7 @@ var animator: AnimationPlayer
 var follow_move_speed: float = 100
 var follow_distance: float = 500
 var attack_distance: float = 50
+var grounded: bool = false
 
 func enter() -> void:
 	animator.play("follow")
@@ -27,3 +28,5 @@ func physics_update(delta: float) -> void:
 	else:
 		this.velocity = Vector2()
 		StateTransition.emit(self, Enemy.StateEnum.IDLE)
+	if grounded:
+		this.velocity = Vector2(this.velocity.x, 0)
