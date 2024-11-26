@@ -1,0 +1,149 @@
+[gd_scene load_steps=20 format=3 uid="uid://bpws0ehds6sm2"]
+
+[ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_jev1y"]
+[ext_resource type="Texture2D" uid="uid://cy74rethskmuw" path="res://characters/mino/mino_1.png" id="2_krqto"]
+[ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="3_tn4no"]
+[ext_resource type="Texture2D" uid="uid://cnviuydbnuhur" path="res://characters/mino/mino_2.png" id="4_mvqjv"]
+[ext_resource type="Texture2D" uid="uid://dtvll0xa70ohe" path="res://characters/mino/mino_3.png" id="5_i3f5i"]
+[ext_resource type="Texture2D" uid="uid://bt3eekdysiog6" path="res://characters/mino/mino_4.png" id="6_hd8xh"]
+[ext_resource type="Texture2D" uid="uid://msjo1kyd8smm" path="res://characters/mino/mino_5.png" id="7_ns0n4"]
+[ext_resource type="Texture2D" uid="uid://bl3p3dkn7jq0e" path="res://characters/mino/mino_6.png" id="8_v5n6v"]
+[ext_resource type="Texture2D" uid="uid://b04sq6t38yny2" path="res://characters/mino/mino_7.png" id="9_av3nc"]
+[ext_resource type="Texture2D" uid="uid://bpcjw12ohk6nh" path="res://characters/mino/mino_8.png" id="10_d4yc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2dsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp4lm"]
+size = Vector2(330, 401)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqjub"]
+
+[sub_resource type="Animation" id="Animation_kr6mb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mino:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_krqto")]
+}
+
+[sub_resource type="Animation" id="Animation_vugwl"]
+resource_name = "attack"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mino:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_ns0n4"), ExtResource("8_v5n6v"), ExtResource("9_av3nc"), ExtResource("10_d4yc7")]
+}
+
+[sub_resource type="Animation" id="Animation_efbqo"]
+resource_name = "follow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mino:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_krqto")]
+}
+
+[sub_resource type="Animation" id="Animation_lhhx5"]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mino:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_krqto")]
+}
+
+[sub_resource type="Animation" id="Animation_78s4a"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mino:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_krqto"), ExtResource("4_mvqjv"), ExtResource("5_i3f5i"), ExtResource("6_hd8xh"), ExtResource("7_ns0n4")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ghob"]
+_data = {
+"RESET": SubResource("Animation_kr6mb"),
+"attack": SubResource("Animation_vugwl"),
+"follow": SubResource("Animation_efbqo"),
+"hurt": SubResource("Animation_lhhx5"),
+"idle": SubResource("Animation_78s4a")
+}
+
+[node name="Mino" type="CharacterBody2D" node_paths=PackedStringArray("attack_speed_timer", "animator")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_jev1y")
+attack_speed_timer = NodePath("AttackSpeedTimer")
+souls = 500
+facing_right = false
+idle_move_speed = 0.0
+follow_move_speed = 0.0
+attack_distance = 500.0
+max_hp = 200
+animator = NodePath("AnimationPlayer")
+
+[node name="Mino" type="Sprite2D" parent="."]
+texture = ExtResource("2_krqto")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e2dsa")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_tn4no")]
+offset_left = -61.0
+offset_top = -215.0
+offset_right = 89.0
+offset_bottom = -205.0
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(21, -11.5)
+shape = SubResource("RectangleShape2D_xp4lm")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_cqjub")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8ghob")
+}
+
+[node name="AttackSpeedTimer" type="Timer" parent="."]
+wait_time = 3.0

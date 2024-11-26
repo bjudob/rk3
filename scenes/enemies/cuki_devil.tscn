@@ -18,29 +18,6 @@ size = Vector2(244, 279)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exry2"]
 size = Vector2(75, 87)
 
-[sub_resource type="Animation" id="Animation_31lir"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CukiDevil:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.46667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("1_5c415"), ExtResource("4_o61p2")]
-}
-
-[sub_resource type="Animation" id="Animation_fvvs2"]
-resource_name = "attack"
-
-[sub_resource type="Animation" id="Animation_qtqcy"]
-resource_name = "hurt"
-
 [sub_resource type="Animation" id="Animation_0ynci"]
 length = 0.001
 tracks/0/type = "value"
@@ -55,6 +32,9 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("1_5c415")]
 }
+
+[sub_resource type="Animation" id="Animation_fvvs2"]
+resource_name = "attack"
 
 [sub_resource type="Animation" id="Animation_m4v0u"]
 resource_name = "follow"
@@ -71,6 +51,26 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("5_mpbor"), ExtResource("6_2n7j8"), ExtResource("7_00rwp")]
+}
+
+[sub_resource type="Animation" id="Animation_qtqcy"]
+resource_name = "hurt"
+
+[sub_resource type="Animation" id="Animation_31lir"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CukiDevil:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_5c415"), ExtResource("4_o61p2")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dfhx3"]
@@ -127,3 +127,4 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
+wait_time = 0.2

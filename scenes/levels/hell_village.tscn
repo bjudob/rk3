@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqk81fk4pqnnn"]
+[gd_scene load_steps=4 format=3 uid="uid://bqk81fk4pqnnn"]
 
 [ext_resource type="Texture2D" uid="uid://cuk0hms7bk4ag" path="res://backgrounds/hell_village.png" id="1_beoki"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_mfri0"]
+[ext_resource type="PackedScene" uid="uid://bpws0ehds6sm2" path="res://scenes/enemies/mino.tscn" id="3_cusmm"]
 
 [node name="HellVillage" type="Node2D"]
 script = ExtResource("1_mfri0")
@@ -10,3 +11,6 @@ script = ExtResource("1_mfri0")
 position = Vector2(946, 553)
 scale = Vector2(0.77, 0.77)
 texture = ExtResource("1_beoki")
+
+[node name="Mino" parent="." instance=ExtResource("3_cusmm")]
+position = Vector2(1275, 905)
