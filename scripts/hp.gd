@@ -21,7 +21,11 @@ func take_damage(dmg: int):
 	current_hp -= dmg
 	animator.play("hurt")
 	health_changed.emit()
-	# also play sound
+	if dmg > 0:
+		play_hit_sound()
 	
 func _die():
+	pass
+
+func play_hit_sound():
 	pass

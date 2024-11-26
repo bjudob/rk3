@@ -19,6 +19,14 @@ func _ready() -> void:
 
 func respawn_enemies():
 	for enemy in enemies:
+		if has_child(enemy):
+			continue
 		add_child(enemy)
 		enemy.current_hp = enemy.max_hp
 		enemy.health_changed.emit()
+
+func has_child(node: Node):
+	for child in get_children():
+		if child == node:
+			return true
+	return false

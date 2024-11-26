@@ -2,16 +2,20 @@ class_name Reki
 extends HP
 
 var hp_regen = 10
-const SPEED = 500.0
-const JUMP_VELOCITY = -900.0
+const SPEED = 550.0
+const JUMP_VELOCITY = -370.0
+const JUMP_HOLD_VELOCITY_ORIGINAL = 33.0
+var JUMP_HOLD_VELOCITY = 33.0
 var facing_right = true
 
 @onready var hp_regen_timer = $HpRegenTimer
 @onready var animation = $AnimationPlayer
+@onready var hit_sound = $HitSound
 
 func _ready() -> void:
 	hp_regen_timer.connect("timeout", _regen_hp)
 	hp_regen_timer.start()
+	JUMP_HOLD_VELOCITY = JUMP_HOLD_VELOCITY_ORIGINAL
 	
 
 func play_animation(name):
@@ -22,10 +26,14 @@ func _physics_process(delta: float) -> void:
 	var is_jumping = not is_on_floor()
 	if is_jumping:
 		velocity += get_gravity() * delta
+		if Input.is_action_pressed("jump"):
+			velocity.y -= JUMP_HOLD_VELOCITY 
+			JUMP_HOLD_VELOCITY = max(JUMP_HOLD_VELOCITY-1, 0)
 		play_animation("Jump")
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		JUMP_HOLD_VELOCITY = JUMP_HOLD_VELOCITY_ORIGINAL
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
@@ -56,3 +64,6 @@ func _regen_hp():
 	current_hp = regened_hp
 	health_changed.emit()
 	hp_regen_timer.start()
+
+func play_hit_sound():
+	hit_sound.play()
