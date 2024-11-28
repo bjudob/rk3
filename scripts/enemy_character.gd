@@ -5,6 +5,7 @@ extends HP
 @export var is_demon = true
 
 func _ready() -> void:
+	super._ready()
 	z_index = 2
 
 func _die():

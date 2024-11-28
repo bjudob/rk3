@@ -1,7 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://blafsj20eupwb"]
+[gd_scene load_steps=12 format=3 uid="uid://blafsj20eupwb"]
 
 [ext_resource type="Texture2D" uid="uid://0d2sqm8gs1nx" path="res://backgrounds/forest_2.png" id="1_gqdy3"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="2_dojb7"]
+[ext_resource type="Script" path="res://scripts/common/itemable.gd" id="3_6uch5"]
+[ext_resource type="Texture2D" uid="uid://dqqfrphrlpgq5" path="res://buildings/hokupac/snow_pile_3.png" id="4_56wmq"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_t0ovb"]
+[ext_resource type="Texture2D" uid="uid://cmny8yp3dpp3l" path="res://objects/shovel.png" id="6_ja6i7"]
+
+[sub_resource type="Animation" id="Animation_oaqhh"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_x1va5"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2b65b"]
+_data = {
+"RESET": SubResource("Animation_x1va5"),
+"idle": SubResource("Animation_oaqhh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxu22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80vwa"]
+size = Vector2(327, 270)
 
 [node name="Forest2" type="Node2D"]
 script = ExtResource("2_dojb7")
@@ -10,3 +33,35 @@ script = ExtResource("2_dojb7")
 position = Vector2(960, 534)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_gqdy3")
+
+[node name="SnowPile" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_6uch5")
+item_needed = "shovel"
+
+[node name="SnowPile" type="Sprite2D" parent="SnowPile"]
+position = Vector2(1449, 938)
+texture = ExtResource("4_56wmq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SnowPile"]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_2b65b")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnowPile"]
+shape = SubResource("RectangleShape2D_fxu22")
+
+[node name="ItemableArea" type="Area2D" parent="SnowPile"]
+position = Vector2(1448, 968)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnowPile/ItemableArea"]
+position = Vector2(22.5, -4)
+shape = SubResource("RectangleShape2D_80vwa")
+
+[node name="Item" parent="." instance=ExtResource("5_t0ovb")]
+position = Vector2(721, 940)
+scale = Vector2(3, 3)
+id = "shovel"
+image = ExtResource("6_ja6i7")

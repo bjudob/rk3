@@ -19,6 +19,7 @@ enum StateEnum{
 @export var attack_distance: float = 50
 @export var ranged: bool = false
 @export var grounded: bool = false
+@export var bullet =  load("res://scenes/snowball.tscn")
 
 const initial_state = StateEnum.IDLE
 var current_state: State
@@ -36,6 +37,7 @@ var states = {}
 var player = get_tree().get_nodes_in_group("player")[0]  
 
 func _ready() -> void:
+	super._ready()
 	for state_enum in states_list:
 		var state = states_dict[state_enum].new()
 		state.this = self
@@ -86,6 +88,8 @@ func _set_optional_attrs(state):
 		state.attack_speed_timer = attack_speed_timer
 	if "grounded" in state:
 		state.grounded = grounded
+	if "bullet" in state:
+		state.bullet = bullet
 
 func _facing():
 	var direction = global_position.direction_to(player.global_position)

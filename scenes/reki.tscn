@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="4_0jxc0"]
 [ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="5_ukk1v"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="7_y0adt"]
-[ext_resource type="AudioStream" uid="uid://diivmfkqdvcfh" path="res://audio/cat_hit.mp3" id="8_u4mh5"]
+[ext_resource type="AudioStream" uid="uid://1xc1k64jnk0n" path="res://audio/sword_sound_2.mp3" id="8_chsgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ba"]
 size = Vector2(20, 80)
@@ -345,6 +345,6 @@ offset_bottom = -88.0
 
 [node name="HpRegenTimer" type="Timer" parent="."]
 
-[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_u4mh5")
+[node name="SwordSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_chsgy")
 volume_db = 10.0

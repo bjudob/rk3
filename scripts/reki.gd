@@ -10,9 +10,10 @@ var facing_right = true
 
 @onready var hp_regen_timer = $HpRegenTimer
 @onready var animation = $AnimationPlayer
-@onready var hit_sound = $HitSound
+@onready var sword_sound = $SwordSound
 
 func _ready() -> void:
+	super._ready()
 	hp_regen_timer.connect("timeout", _regen_hp)
 	hp_regen_timer.start()
 	JUMP_HOLD_VELOCITY = JUMP_HOLD_VELOCITY_ORIGINAL
@@ -20,6 +21,8 @@ func _ready() -> void:
 
 func play_animation(name):
 	if animation.current_animation != "attack_sword" and animation.current_animation != "hurt":
+		if name == "attack_sword":
+			sword_sound.play()
 		animation.play(name)
 
 func _physics_process(delta: float) -> void:
@@ -64,6 +67,3 @@ func _regen_hp():
 	current_hp = regened_hp
 	health_changed.emit()
 	hp_regen_timer.start()
-
-func play_hit_sound():
-	hit_sound.play()

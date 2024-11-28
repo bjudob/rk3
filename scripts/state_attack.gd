@@ -9,9 +9,9 @@ var animator: AnimationPlayer
 var attack_distance: float = 50
 var ranged = false
 var can_attack = true
+var bullet
 
 @onready var main = get_tree().get_nodes_in_group("main")[0]
-@onready var bullet = load("res://scenes/snowball.tscn")
 
 func enter() -> void:
 	if not attack_speed_timer.is_connected("timeout", _attack_speed_timeout):

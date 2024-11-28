@@ -183,7 +183,6 @@ background_music = ExtResource("9_aisht")
 [node name="Heaven2" parent="." instance=ExtResource("17_pd3s3")]
 right = 5
 left = 3
-snow = 0
 background_music = ExtResource("9_aisht")
 
 [node name="Heaven3" parent="." instance=ExtResource("18_1m2a4")]
