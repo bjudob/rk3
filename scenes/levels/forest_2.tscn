@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqqfrphrlpgq5" path="res://buildings/hokupac/snow_pile_3.png" id="4_56wmq"]
 [ext_resource type="Texture2D" uid="uid://be28oith3eb51" path="res://buildings/hokupac/snow_pile_2.png" id="5_dh5px"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_t0ovb"]
-[ext_resource type="Texture2D" uid="uid://cmny8yp3dpp3l" path="res://objects/shovel.png" id="6_ja6i7"]
+[ext_resource type="Texture2D" uid="uid://bkeufnfrpk8ge" path="res://objects/snow_shovel.png" id="7_tyrsm"]
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="8_lera7"]
 [ext_resource type="Texture2D" uid="uid://ciy3cdqwctp1a" path="res://objects/lufi.png" id="9_r5djm"]
 [ext_resource type="Texture2D" uid="uid://bxmyol8np30js" path="res://characters/reni_2.png" id="10_3pf45"]
@@ -185,7 +185,7 @@ autoplay = "idle"
 position = Vector2(225, 644)
 scale = Vector2(3, 3)
 id = "shovel"
-image = ExtResource("6_ja6i7")
+image = ExtResource("7_tyrsm")
 
 [node name="Item2" parent="." instance=ExtResource("5_t0ovb")]
 position = Vector2(1542, 591)

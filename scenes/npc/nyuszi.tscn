@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://qtaad0sp1h8n"]
+
+[ext_resource type="Script" path="res://scripts/nyuszi.gd" id="1_ftdyr"]
+[ext_resource type="Texture2D" uid="uid://bsd5h1jnaoc6t" path="res://characters/nyuszi.png" id="2_4l8yk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_homo1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlvfl"]
+size = Vector2(918, 588)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6es5f"]
+size = Vector2(498, 472)
+
+[node name="Nyuszi" type="StaticBody2D"]
+position = Vector2(1664, 980)
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ftdyr")
+current_dialog = "nyuszi_hello"
+item_needed = "karacsonyi_tojas"
+
+[node name="Nyuszi" type="Sprite2D" parent="."]
+texture = ExtResource("2_4l8yk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_homo1")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-157, -76)
+shape = SubResource("RectangleShape2D_nlvfl")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-23, -28)
+shape = SubResource("RectangleShape2D_6es5f")

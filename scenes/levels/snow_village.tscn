@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddax5eydu3hth"]
+[gd_scene load_steps=14 format=3 uid="uid://ddax5eydu3hth"]
 
 [ext_resource type="Script" path="res://scripts/snow_village.gd" id="1_vpjw8"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_aojs8"]
@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://wo4dt10n6skx" path="res://objects/gift.png" id="4_pf5v1"]
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="6_aiy6p"]
 [ext_resource type="Texture2D" uid="uid://dpng150jwrnt1" path="res://objects/szanko.png" id="7_sqm20"]
-[ext_resource type="Texture2D" uid="uid://bsd5h1jnaoc6t" path="res://characters/nyuszi.png" id="8_fknw2"]
-[ext_resource type="Script" path="res://scripts/nyuszi.gd" id="8_rh40d"]
+[ext_resource type="PackedScene" uid="uid://qtaad0sp1h8n" path="res://scenes/npc/nyuszi.tscn" id="9_qm1ac"]
 [ext_resource type="Texture2D" uid="uid://crmejjxjys48k" path="res://objects/karacsonyi_tojas.png" id="10_dftuh"]
 [ext_resource type="Texture2D" uid="uid://ohkr5t58k6aq" path="res://buildings/fa_1.png" id="11_8vdwm"]
 
@@ -85,14 +84,6 @@ _data = {
 "pingu_szanko": SubResource("Animation_j1mf5")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_homo1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlvfl"]
-size = Vector2(918, 588)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6es5f"]
-size = Vector2(498, 472)
-
 [node name="SnowVillage" type="Node2D"]
 script = ExtResource("1_vpjw8")
 right = 3
@@ -139,32 +130,7 @@ position = Vector2(1786, 1014)
 id = "karacsonyi_tojas"
 image = ExtResource("10_dftuh")
 
-[node name="Nyuszi" type="StaticBody2D" parent="."]
-position = Vector2(1664, 980)
-scale = Vector2(0.5, 0.5)
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("8_rh40d")
-current_dialog = "nyuszi_hello"
-item_needed = "karacsonyi_tojas"
-
-[node name="Nyuszi" type="Sprite2D" parent="Nyuszi"]
-texture = ExtResource("8_fknw2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nyuszi"]
-shape = SubResource("RectangleShape2D_homo1")
-
-[node name="TalkArea" type="Area2D" parent="Nyuszi"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nyuszi/TalkArea"]
-position = Vector2(-157, -76)
-shape = SubResource("RectangleShape2D_nlvfl")
-
-[node name="ItemableArea" type="Area2D" parent="Nyuszi"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nyuszi/ItemableArea"]
-position = Vector2(-23, -28)
-shape = SubResource("RectangleShape2D_6es5f")
+[node name="Nyuszi" parent="." instance=ExtResource("9_qm1ac")]
 
 [node name="Fa1" type="Sprite2D" parent="."]
 position = Vector2(453, 884)

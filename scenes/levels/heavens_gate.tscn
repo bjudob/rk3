@@ -1,11 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkcfdiqgsxtqh"]
+[gd_scene load_steps=10 format=3 uid="uid://dkcfdiqgsxtqh"]
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
 [ext_resource type="PackedScene" uid="uid://bn28cajffvi2y" path="res://scenes/npc/miku.tscn" id="3_a7qb3"]
-[ext_resource type="PackedScene" uid="uid://n2uwh5n6us1a" path="res://scenes/enemies/ghost.tscn" id="5_fl28w"]
 [ext_resource type="Texture2D" uid="uid://b5m7j82u087b6" path="res://characters/santa_creature_3.png" id="5_t2lhe"]
+[ext_resource type="Script" path="res://scripts/santa_66.gd" id="6_7nuu8"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_j5ydm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glowd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r67qw"]
+size = Vector2(964, 504)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jrkt"]
+size = Vector2(374, 503)
 
 [node name="HeavensGate" type="Node2D"]
 script = ExtResource("1_6va6e")
@@ -16,17 +24,32 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_i4iw1")
 
 [node name="Miku" parent="." instance=ExtResource("3_a7qb3")]
-position = Vector2(1012, 840)
-
-[node name="Ghost" parent="." instance=ExtResource("5_fl28w")]
-position = Vector2(1313, 780)
-
-[node name="Ghost2" parent="." instance=ExtResource("5_fl28w")]
-position = Vector2(456, 440)
+position = Vector2(879, 840)
 
 [node name="Item" parent="." instance=ExtResource("7_j5ydm")]
 position = Vector2(244, 911)
 
-[node name="SantaCreature" type="Sprite2D" parent="."]
-position = Vector2(1627, 831)
+[node name="Santa66" type="StaticBody2D" parent="."]
+position = Vector2(1708, 831)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("6_7nuu8")
+current_dialog = "santa66_hello"
+
+[node name="SantaCreature" type="Sprite2D" parent="Santa66"]
 texture = ExtResource("5_t2lhe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Santa66"]
+shape = SubResource("RectangleShape2D_glowd")
+
+[node name="TalkArea" type="Area2D" parent="Santa66"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Santa66/TalkArea"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_r67qw")
+
+[node name="ItemableArea" type="Area2D" parent="Santa66"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Santa66/ItemableArea"]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_0jrkt")
