@@ -1,30 +1,151 @@
-[gd_scene load_steps=12 format=3 uid="uid://blafsj20eupwb"]
+[gd_scene load_steps=22 format=3 uid="uid://blafsj20eupwb"]
 
 [ext_resource type="Texture2D" uid="uid://0d2sqm8gs1nx" path="res://backgrounds/forest_2.png" id="1_gqdy3"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="2_dojb7"]
-[ext_resource type="Script" path="res://scripts/common/itemable.gd" id="3_6uch5"]
+[ext_resource type="Script" path="res://scripts/snow_pile.gd" id="3_ty4b1"]
 [ext_resource type="Texture2D" uid="uid://dqqfrphrlpgq5" path="res://buildings/hokupac/snow_pile_3.png" id="4_56wmq"]
+[ext_resource type="Texture2D" uid="uid://be28oith3eb51" path="res://buildings/hokupac/snow_pile_2.png" id="5_dh5px"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_t0ovb"]
 [ext_resource type="Texture2D" uid="uid://cmny8yp3dpp3l" path="res://objects/shovel.png" id="6_ja6i7"]
-
-[sub_resource type="Animation" id="Animation_oaqhh"]
-resource_name = "idle"
-length = 3.0
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_x1va5"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2b65b"]
-_data = {
-"RESET": SubResource("Animation_x1va5"),
-"idle": SubResource("Animation_oaqhh")
-}
+[ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="8_lera7"]
+[ext_resource type="Texture2D" uid="uid://ciy3cdqwctp1a" path="res://objects/lufi.png" id="9_r5djm"]
+[ext_resource type="Texture2D" uid="uid://bxmyol8np30js" path="res://characters/reni_2.png" id="10_3pf45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxu22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80vwa"]
 size = Vector2(327, 270)
+
+[sub_resource type="Animation" id="Animation_rj32g"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnowPile:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_56wmq"), ExtResource("5_dh5px"), ExtResource("4_56wmq")]
+}
+
+[sub_resource type="Animation" id="Animation_tbcpi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnowPile:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_56wmq")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nly20"]
+_data = {
+"RESET": SubResource("Animation_tbcpi"),
+"idle": SubResource("Animation_rj32g")
+}
+
+[sub_resource type="Animation" id="Animation_e3y8v"]
+resource_name = "pingu_szanko"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PinguLufi/Lufi:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PinguLufi:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1456, 898), Vector2(1553, 347), Vector2(1934, -233)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PinguLufi:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.589921, 0.942478]
+}
+
+[sub_resource type="Animation" id="Animation_4pqw4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PinguLufi/Lufi:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PinguLufi:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1468, 903)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PinguLufi:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctgmv"]
+_data = {
+"RESET": SubResource("Animation_4pqw4"),
+"pingu_szanko": SubResource("Animation_e3y8v")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck50c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xo1c2"]
+size = Vector2(625, 447)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hptfb"]
+size = Vector2(339, 442)
 
 [node name="Forest2" type="Node2D"]
 script = ExtResource("2_dojb7")
@@ -37,18 +158,12 @@ texture = ExtResource("1_gqdy3")
 [node name="SnowPile" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("3_6uch5")
+script = ExtResource("3_ty4b1")
 item_needed = "shovel"
 
 [node name="SnowPile" type="Sprite2D" parent="SnowPile"]
 position = Vector2(1449, 938)
 texture = ExtResource("4_56wmq")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SnowPile"]
-root_node = NodePath("")
-libraries = {
-"": SubResource("AnimationLibrary_2b65b")
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SnowPile"]
 shape = SubResource("RectangleShape2D_fxu22")
@@ -60,8 +175,64 @@ position = Vector2(1448, 968)
 position = Vector2(22.5, -4)
 shape = SubResource("RectangleShape2D_80vwa")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SnowPile"]
+libraries = {
+"": SubResource("AnimationLibrary_nly20")
+}
+autoplay = "idle"
+
 [node name="Item" parent="." instance=ExtResource("5_t0ovb")]
-position = Vector2(721, 940)
+position = Vector2(225, 644)
 scale = Vector2(3, 3)
 id = "shovel"
 image = ExtResource("6_ja6i7")
+
+[node name="Item2" parent="." instance=ExtResource("5_t0ovb")]
+position = Vector2(1542, 591)
+id = "lufi"
+image = ExtResource("9_r5djm")
+
+[node name="PinguLufi" type="Node2D" parent="."]
+position = Vector2(1468, 903)
+
+[node name="Pingu" parent="PinguLufi" node_paths=PackedStringArray("animation_player") instance=ExtResource("8_lera7")]
+visible = false
+position = Vector2(7, 121)
+rotation = 3.14159
+scale = Vector2(1, -1)
+animation_player = NodePath("../../AnimationPlayer")
+current_dialog = "pingu_snowpile"
+item_needed = "lufi"
+
+[node name="Lufi" type="Sprite2D" parent="PinguLufi"]
+visible = false
+position = Vector2(34, -47)
+texture = ExtResource("9_r5djm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ctgmv")
+}
+
+[node name="Reni" type="StaticBody2D" parent="."]
+position = Vector2(472, 891)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reni"]
+shape = SubResource("RectangleShape2D_ck50c")
+
+[node name="Reni" type="Sprite2D" parent="Reni"]
+texture = ExtResource("10_3pf45")
+
+[node name="TalkArea" type="Area2D" parent="Reni"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reni/TalkArea"]
+position = Vector2(65.5, -33.5)
+shape = SubResource("RectangleShape2D_xo1c2")
+
+[node name="ItemableArea" type="Area2D" parent="Reni"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reni/ItemableArea"]
+position = Vector2(-17.5, -24)
+shape = SubResource("RectangleShape2D_hptfb")

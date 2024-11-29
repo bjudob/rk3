@@ -27,6 +27,7 @@ directories/dch_directory={
 "krampi": "res://dialogic/krampi.dch",
 "maci": "res://dialogic/maci.dch",
 "miku": "res://dialogic/miku.dch",
+"nyuszi": "res://dialogic/nyuszi.dch",
 "pingu": "res://dialogic/pingu.dch",
 "spider": "res://dialogic/spider.dch"
 }
@@ -37,7 +38,10 @@ directories/dtl_directory={
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
 "miku_2": "res://dialogic/miku_2.dtl",
 "miku_hello": "res://dialogic/miku_hello.dtl",
+"nyuszi_hello": "res://dialogic/nyuszi_hello.dtl",
+"nyuszi_tojas_found": "res://dialogic/nyuszi_tojas_found.dtl",
 "pingu_eltunt_barat": "res://dialogic/pingu_eltunt_barat.dtl",
+"pingu_snowpile": "res://dialogic/pingu_snowpile.dtl",
 "spider": "res://dialogic/spider.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]
