@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ddax5eydu3hth"]
+[gd_scene load_steps=18 format=3 uid="uid://ddax5eydu3hth"]
 
 [ext_resource type="Script" path="res://scripts/snow_village.gd" id="1_vpjw8"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_aojs8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bsd5h1jnaoc6t" path="res://characters/nyuszi.png" id="8_fknw2"]
 [ext_resource type="Script" path="res://scripts/nyuszi.gd" id="8_rh40d"]
 [ext_resource type="Texture2D" uid="uid://crmejjxjys48k" path="res://objects/karacsonyi_tojas.png" id="10_dftuh"]
+[ext_resource type="Texture2D" uid="uid://ohkr5t58k6aq" path="res://buildings/fa_1.png" id="11_8vdwm"]
 
 [sub_resource type="Animation" id="Animation_hoyt8"]
 length = 5.0
@@ -164,3 +165,7 @@ shape = SubResource("RectangleShape2D_nlvfl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nyuszi/ItemableArea"]
 position = Vector2(-23, -28)
 shape = SubResource("RectangleShape2D_6es5f")
+
+[node name="Fa1" type="Sprite2D" parent="."]
+position = Vector2(453, 884)
+texture = ExtResource("11_8vdwm")
