@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://blafsj20eupwb"]
+[gd_scene load_steps=29 format=3 uid="uid://blafsj20eupwb"]
 
 [ext_resource type="Texture2D" uid="uid://0d2sqm8gs1nx" path="res://backgrounds/forest_2.png" id="1_gqdy3"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="2_dojb7"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="8_lera7"]
 [ext_resource type="Texture2D" uid="uid://ciy3cdqwctp1a" path="res://objects/lufi.png" id="9_r5djm"]
 [ext_resource type="Texture2D" uid="uid://bxmyol8np30js" path="res://characters/reni_2.png" id="10_3pf45"]
+[ext_resource type="Script" path="res://scripts/cloud_baby.gd" id="11_0bv2r"]
+[ext_resource type="Texture2D" uid="uid://lpq71vgm55ak" path="res://characters/baby_cloud.png" id="12_xpqff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxu22"]
 
@@ -147,6 +149,49 @@ size = Vector2(625, 447)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hptfb"]
 size = Vector2(339, 442)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk6vu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ig"]
+size = Vector2(198, 157)
+
+[sub_resource type="Animation" id="Animation_yosm4"]
+resource_name = "idle"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(252, 202), Vector2(560, 285), Vector2(912, 147), Vector2(1232, 318), Vector2(1726, 285), Vector2(1093, 487), Vector2(763, 268), Vector2(505, 140), Vector2(252, 202)]
+}
+
+[sub_resource type="Animation" id="Animation_jxyn0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(252, 202)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vdhg3"]
+_data = {
+"RESET": SubResource("Animation_jxyn0"),
+"idle": SubResource("Animation_yosm4")
+}
+
 [node name="Forest2" type="Node2D"]
 script = ExtResource("2_dojb7")
 
@@ -236,3 +281,29 @@ shape = SubResource("RectangleShape2D_xo1c2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Reni/ItemableArea"]
 position = Vector2(-17.5, -24)
 shape = SubResource("RectangleShape2D_hptfb")
+
+[node name="CloudBaby" type="StaticBody2D" parent="."]
+position = Vector2(252, 202)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("11_0bv2r")
+
+[node name="BabyCloud" type="Sprite2D" parent="CloudBaby"]
+modulate = Color(1, 1, 1, 0.784314)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_xpqff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudBaby"]
+shape = SubResource("RectangleShape2D_sk6vu")
+
+[node name="ItemableArea" type="Area2D" parent="CloudBaby"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudBaby/ItemableArea"]
+position = Vector2(2, -5.5)
+shape = SubResource("RectangleShape2D_d21ig")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CloudBaby"]
+libraries = {
+"": SubResource("AnimationLibrary_vdhg3")
+}
+autoplay = "idle"

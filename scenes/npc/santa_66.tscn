@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr8jowx4md80f"]
+
+[ext_resource type="Script" path="res://scripts/santa_66.gd" id="1_5mdut"]
+[ext_resource type="Texture2D" uid="uid://b5m7j82u087b6" path="res://characters/santa_creature_3.png" id="2_3onlr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glowd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r67qw"]
+size = Vector2(843, 504)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jrkt"]
+size = Vector2(374, 503)
+
+[node name="Santa66" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_5mdut")
+current_dialog = "santa66_hello"
+
+[node name="SantaCreature" type="Sprite2D" parent="."]
+texture = ExtResource("2_3onlr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_glowd")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(60.5, -5)
+shape = SubResource("RectangleShape2D_r67qw")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_0jrkt")

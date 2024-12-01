@@ -1,6 +1,10 @@
 class_name Main
 extends Node2D
 
+enum GameEvents {
+	GIFTED_PINGU,
+}
+
 enum Level {
 	# ui
 	MAIN_MENU,
@@ -71,6 +75,8 @@ var current_level = null
 var left_level = null
 var right_level = null
 
+var events = []
+
 func _ready() -> void:
 	change_scene(Level.MAIN_MENU)
 
@@ -120,3 +126,15 @@ func play_music(level_scene):
 
 func _on_background_music_finished() -> void:
 	$BackgroundMusic.play()
+
+func add_event(event):
+	events.append(event)
+
+func event_happened(event):
+	var i = 0
+	for e in events:
+		if e == event:
+			events.remove_at(i)
+			return true
+		i += 1
+	return false

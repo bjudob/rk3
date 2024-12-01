@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn28cajffvi2y"]
+[gd_scene load_steps=8 format=3 uid="uid://bn28cajffvi2y"]
 
 [ext_resource type="Script" path="res://scripts/miku.gd" id="1_s2hmc"]
 [ext_resource type="Texture2D" uid="uid://cbwsif2meybu8" path="res://characters/miku_2.png" id="2_whsu2"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_aeym4"]
+[ext_resource type="Texture2D" uid="uid://chhbofm42tawb" path="res://objects/gift_pingu.png" id="4_0m68x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdsbi"]
 size = Vector2(29, 27)
@@ -10,7 +12,7 @@ size = Vector2(29, 27)
 size = Vector2(268, 431)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrkxt"]
-size = Vector2(662, 631)
+size = Vector2(728, 631)
 
 [node name="Miku" type="StaticBody2D"]
 collision_layer = 0
@@ -24,6 +26,7 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_gdsbi")
 
 [node name="Miku" type="Sprite2D" parent="."]
+scale = Vector2(-1, 1)
 texture = ExtResource("2_whsu2")
 
 [node name="ItemableArea" type="Area2D" parent="."]
@@ -35,5 +38,10 @@ shape = SubResource("RectangleShape2D_lgu4g")
 [node name="TalkArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
-position = Vector2(-101, -83.5)
+position = Vector2(-68, -83.5)
 shape = SubResource("RectangleShape2D_hrkxt")
+
+[node name="Item" parent="." instance=ExtResource("3_aeym4")]
+visible = false
+id = "gift_pingu"
+image = ExtResource("4_0m68x")

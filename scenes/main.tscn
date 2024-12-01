@@ -95,7 +95,7 @@ game_ui = NodePath(".")
 main = NodePath("..")
 
 [node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
-z_index = 1
+z_index = 5
 position = Vector2(1677, 957)
 
 [node name="Map" parent="." instance=ExtResource("5_6c268")]
