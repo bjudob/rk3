@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://8rdr6m82ytkk"]
+[gd_scene load_steps=14 format=3 uid="uid://8rdr6m82ytkk"]
 
 [ext_resource type="Texture2D" uid="uid://nvv3n5vhjrsb" path="res://backgrounds/forest_1.png" id="1_k1h53"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x6d3u"]
 [ext_resource type="Script" path="res://scripts/snow_machine.gd" id="3_buvrb"]
 [ext_resource type="Texture2D" uid="uid://cgb3v4o1ndl2o" path="res://buildings/snow_machine.png" id="3_vrei8"]
+[ext_resource type="Texture2D" uid="uid://ci8koafhy323k" path="res://objects/snowflake.png" id="4_h715d"]
 [ext_resource type="PackedScene" uid="uid://d4e53tqdawnsg" path="res://scenes/npc/maci.tscn" id="4_pth6p"]
 [ext_resource type="Texture2D" uid="uid://uq087tvbn5o" path="res://buildings/snow_wall.png" id="5_pdjod"]
+[ext_resource type="AudioStream" uid="uid://e1cpolj1upuy" path="res://audio/sewing-machine.mp3" id="6_ey1hv"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_wtyx0"]
 [ext_resource type="Texture2D" uid="uid://cmhgsoe7aptnw" path="res://objects/csavarhuzo.png" id="8_u1cfo"]
 
@@ -44,6 +46,28 @@ texture = ExtResource("3_vrei8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SnowMachine/ItemableArea"]
 position = Vector2(977, 880.5)
 shape = SubResource("RectangleShape2D_ian2e")
+
+[node name="Timer" type="Timer" parent="SnowMachine"]
+wait_time = 7.0
+one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="SnowMachine"]
+visible = false
+position = Vector2(934, 488)
+amount = 40
+texture = ExtResource("4_h715d")
+direction = Vector2(1, -1)
+gravity = Vector2(0, -800)
+angle_min = -36.6
+angle_max = 91.5
+scale_amount_min = 0.01
+scale_amount_max = 0.2
+hue_variation_min = -0.27
+hue_variation_max = 0.17
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SnowMachine"]
+stream = ExtResource("6_ey1hv")
+parameters/looping = true
 
 [node name="Maci" parent="." instance=ExtResource("4_pth6p")]
 position = Vector2(341, 867)

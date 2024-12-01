@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://byrg5ui1gm0u0"]
+[gd_scene load_steps=6 format=3 uid="uid://byrg5ui1gm0u0"]
 
 [ext_resource type="Texture2D" uid="uid://b0kxxo4600ufo" path="res://backgrounds/aztec_temple.png" id="1_jk4rm"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x31b4"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_s8uu8"]
-[ext_resource type="Texture2D" uid="uid://coug0oj1wvcye" path="res://characters/priest_farki.png" id="4_ncgrq"]
+[ext_resource type="Texture2D" uid="uid://dx1hariq481ok" path="res://characters/aztec_priestess.png" id="4_yplss"]
+[ext_resource type="Texture2D" uid="uid://c620wgmd7w2xu" path="res://characters/aztec_bug.png" id="5_avynw"]
 
 [node name="AztecTemple" type="Node2D"]
 script = ExtResource("1_x31b4")
@@ -14,6 +15,11 @@ position = Vector2(966, 555)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_jk4rm")
 
-[node name="PriestFarki" type="Sprite2D" parent="."]
-position = Vector2(822, 915)
-texture = ExtResource("4_ncgrq")
+[node name="AztecPriestess" type="Sprite2D" parent="."]
+position = Vector2(1052, 919)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_yplss")
+
+[node name="AztecBug" type="Sprite2D" parent="."]
+position = Vector2(1569, 783)
+texture = ExtResource("5_avynw")
