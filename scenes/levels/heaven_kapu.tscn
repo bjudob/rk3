@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://5lv7t2uhwox0"]
+
+[ext_resource type="Script" path="res://scripts/common/level.gd" id="1_4jtkp"]
+[ext_resource type="Texture2D" uid="uid://coc6k2n2jqlt8" path="res://backgrounds/heaven_kapu.png" id="2_na475"]
+
+[node name="HeavenKapu" type="Node2D"]
+script = ExtResource("1_4jtkp")
+
+[node name="HeavenKapu" type="Sprite2D" parent="."]
+position = Vector2(965, 531)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("2_na475")

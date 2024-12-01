@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkcfdiqgsxtqh"]
+[gd_scene load_steps=7 format=3 uid="uid://dkcfdiqgsxtqh"]
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
 [ext_resource type="PackedScene" uid="uid://bn28cajffvi2y" path="res://scenes/npc/miku.tscn" id="3_a7qb3"]
 [ext_resource type="PackedScene" uid="uid://cr8jowx4md80f" path="res://scenes/npc/santa_66.tscn" id="5_x0iic"]
+[ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="6_mkq8t"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_j5ydm"]
 
 [node name="HeavensGate" type="Node2D"]
@@ -22,3 +23,7 @@ position = Vector2(244, 911)
 
 [node name="Santa66" parent="." instance=ExtResource("5_x0iic")]
 position = Vector2(1692, 828)
+
+[node name="Krampi" parent="." instance=ExtResource("6_mkq8t")]
+position = Vector2(138, 959)
+current_dialog = "krampi_miku"

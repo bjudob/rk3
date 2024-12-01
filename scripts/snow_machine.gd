@@ -15,3 +15,4 @@ func _on_item_correct(item):
 func _on_timer_ends():
 	$"../SnowWall".visible = false
 	$"../SnowWall/CollisionShape2D".disabled = true
+	$"../Maci"._on_repaired()

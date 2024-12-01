@@ -1,6 +1,8 @@
 class_name Main
 extends Node2D
 
+signal LevelTransition
+
 enum GameEvents {
 	GIFTED_PINGU,
 }
@@ -31,6 +33,15 @@ enum Level {
 	HELL_TOWER,
 	HELL_HOUSE,
 	HELL_VILLAGE,
+	
+	HOLGARMESTERI_HIVATAL,
+	SNOW_CITY_HOUSES,
+	HELL_CAVE_1,
+	HELL_CAVE_2,
+	JAPAN_LAKE,
+	HEAVEN_KAPU,
+	HEAVEN_HOUSE,
+	HEAVEN_JAPAN,
 }
 
 enum Snow {
@@ -60,6 +71,14 @@ enum Snow {
 	Level.HELL_TOWER: $HellTower,
 	Level.HELL_HOUSE: $HellHouse,
 	Level.HELL_VILLAGE: $HellVillage,
+	Level.HOLGARMESTERI_HIVATAL: $HolgarmesteriHivatal,
+	Level.SNOW_CITY_HOUSES: $SnowCityHouses,
+	Level.HELL_CAVE_1: $HellCave,
+	Level.HELL_CAVE_2: $HellCave2,
+	Level.JAPAN_LAKE: $JapanLake,
+	Level.HEAVEN_KAPU: $HeavenKapu,
+	Level.HEAVEN_HOUSE: $HeavenHouse,
+	Level.HEAVEN_JAPAN: $HeavenJapan,
 }
 
 @onready var snow_to_scene = {
@@ -86,6 +105,7 @@ func _process(delta: float) -> void:
 func change_scene(level: Main.Level):
 	var level_scene = level_to_scene[level]
 	if not has_child(level_to_scene[level]):
+		LevelTransition.emit()
 		current_level = level
 		left_level = level_scene.left
 		right_level = level_scene.right

@@ -12,7 +12,7 @@ size = Vector2(29, 27)
 size = Vector2(268, 431)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrkxt"]
-size = Vector2(728, 631)
+size = Vector2(592, 631)
 
 [node name="Miku" type="StaticBody2D"]
 collision_layer = 0
@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_lgu4g")
 [node name="TalkArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
-position = Vector2(-68, -83.5)
+position = Vector2(0, -83.5)
 shape = SubResource("RectangleShape2D_hrkxt")
 
 [node name="Item" parent="." instance=ExtResource("3_aeym4")]
