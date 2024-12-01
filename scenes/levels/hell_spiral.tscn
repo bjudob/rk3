@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://d25oiaeis1oan"]
+[gd_scene load_steps=9 format=3 uid="uid://d25oiaeis1oan"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_ay6my"]
 [ext_resource type="Texture2D" uid="uid://dqis62bop8hex" path="res://backgrounds/hell_spiral.png" id="1_ymyxl"]
 [ext_resource type="PackedScene" uid="uid://cmq52b0si5xi6" path="res://scenes/npc/spider.tscn" id="3_e2547"]
+[ext_resource type="Texture2D" uid="uid://4lecu7fg4ue8" path="res://buildings/prison_cell_full.png" id="4_mb0qn"]
+[ext_resource type="PackedScene" uid="uid://bgtakd5dcer5k" path="res://scenes/npc/jezi.tscn" id="5_usoi1"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="6_lul1q"]
+[ext_resource type="Texture2D" uid="uid://nhlnkax4pu06" path="res://objects/water.png" id="7_gono3"]
+[ext_resource type="Texture2D" uid="uid://bksjwx2x2x8fa" path="res://objects/duck.png" id="8_baxoi"]
 
 [node name="HellSpiral" type="Node2D"]
 script = ExtResource("1_ay6my")
@@ -14,4 +19,21 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_ymyxl")
 
 [node name="Spider" parent="." instance=ExtResource("3_e2547")]
-position = Vector2(1355, 849)
+position = Vector2(1034, 834)
+
+[node name="PrisonCellFull" type="Sprite2D" parent="."]
+position = Vector2(1589, 893)
+texture = ExtResource("4_mb0qn")
+
+[node name="Jezi" parent="." instance=ExtResource("5_usoi1")]
+position = Vector2(1599, 881)
+
+[node name="Item" parent="." instance=ExtResource("6_lul1q")]
+position = Vector2(646, 891)
+id = "water"
+image = ExtResource("7_gono3")
+
+[node name="Item2" parent="." instance=ExtResource("6_lul1q")]
+position = Vector2(369, 989)
+id = "duck"
+image = ExtResource("8_baxoi")

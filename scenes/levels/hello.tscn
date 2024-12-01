@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4ir8gqvh2eom" path="res://backgrounds/hell_altair.png" id="2_ogp0g"]
 [ext_resource type="PackedScene" uid="uid://bel8o63enp2y4" path="res://scenes/npc/cat_devil.tscn" id="4_mhwqj"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_rv0h3"]
-[ext_resource type="Texture2D" uid="uid://bksjwx2x2x8fa" path="res://ui/duck.png" id="7_bk40g"]
+[ext_resource type="Texture2D" uid="uid://bksjwx2x2x8fa" path="res://objects/duck.png" id="7_bk40g"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_jt7wp"]
 [ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="8_g6ffb"]
 [ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="9_mt5es"]

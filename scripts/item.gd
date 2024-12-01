@@ -3,7 +3,7 @@ class_name Item
 extends Node2D
 
 @export var id = "duck"
-@export var image = load("res://objects/fire.png")
+@export var image = load("res://objects/duck.png")
 @export var destroy_on_use = true
 
 @onready var default_cursor = load("res://ui/cursor_dudu.png")

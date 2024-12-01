@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgtakd5dcer5k"]
+
+[ext_resource type="Texture2D" uid="uid://bpycay53lwjbu" path="res://characters/jezi.png" id="1_7p1mi"]
+[ext_resource type="Script" path="res://scripts/jezi.gd" id="1_tw1r6"]
+[ext_resource type="Texture2D" uid="uid://dkvb88gbhld1s" path="res://characters/jezi_2.png" id="2_t41yf"]
+[ext_resource type="Texture2D" uid="uid://cepnxudwhmm0t" path="res://objects/wine_pohar.png" id="4_52t4j"]
+[ext_resource type="Texture2D" uid="uid://dnr2oktg03sv1" path="res://objects/wine_uveg.png" id="5_oa8qt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1k0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaf0q"]
+size = Vector2(574, 296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y520r"]
+size = Vector2(188, 244)
+
+[node name="Jezi" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_tw1r6")
+current_dialog = "jezi_szomjas"
+item_needed = "water"
+
+[node name="Jezi" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_7p1mi")
+
+[node name="JeziDrunk" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 34)
+texture = ExtResource("2_t41yf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jw1k0")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(1, -13)
+shape = SubResource("RectangleShape2D_gaf0q")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-7, 3)
+shape = SubResource("RectangleShape2D_y520r")
+
+[node name="Wine" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(100, -92)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_52t4j")
+
+[node name="WineUveg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-94, -138)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_oa8qt")

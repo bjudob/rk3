@@ -28,11 +28,13 @@ directories/dch_directory={
 "felho_szellem": "res://dialogic/felho_szellem.dch",
 "feny_szellem": "res://dialogic/feny_szellem.dch",
 "foki": "res://dialogic/foki.dch",
+"jezi": "res://dialogic/jezi.dch",
 "krampi": "res://dialogic/krampi.dch",
 "maci": "res://dialogic/maci.dch",
 "miku": "res://dialogic/miku.dch",
 "nyuszi": "res://dialogic/nyuszi.dch",
 "pingu": "res://dialogic/pingu.dch",
+"reni": "res://dialogic/reni.dch",
 "santa66": "res://dialogic/santa66.dch",
 "spider": "res://dialogic/spider.dch"
 }
@@ -41,6 +43,7 @@ directories/dtl_directory={
 "feny_szellem_hello": "res://dialogic/feny_szellem_hello.dtl",
 "foki_elveszett_barat": "res://dialogic/foki_elveszett_barat.dtl",
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
+"jezi_szomjas": "res://dialogic/jezi_szomjas.dtl",
 "krampi_hello": "res://characters/profile_pictures/krampi_hello.dtl",
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
 "miku_2": "res://dialogic/miku_2.dtl",
@@ -51,6 +54,7 @@ directories/dtl_directory={
 "pingu_eltunt_barat": "res://dialogic/pingu_eltunt_barat.dtl",
 "pingu_gift": "res://dialogic/pingu_gift.dtl",
 "pingu_snowpile": "res://dialogic/pingu_snowpile.dtl",
+"reni_hokupac": "res://dialogic/reni_hokupac.dtl",
 "santa66_hello": "res://dialogic/santa66_hello.dtl",
 "spider": "res://dialogic/spider.dtl"
 }

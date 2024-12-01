@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bksjwx2x2x8fa"
-path="res://.godot/imported/duck.png-ab9e02c2b87047684533087010ea4e05.ctex"
+uid="uid://c1i1wtd2wno4p"
+path="res://.godot/imported/reni_profile_2.png-37da3cc4f24fd7a59db3d7aa709c1a43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/duck.png"
-dest_files=["res://.godot/imported/duck.png-ab9e02c2b87047684533087010ea4e05.ctex"]
+source_file="res://characters/profile_pictures/reni_profile_2.png"
+dest_files=["res://.godot/imported/reni_profile_2.png-37da3cc4f24fd7a59db3d7aa709c1a43.ctex"]
 
 [params]
 
