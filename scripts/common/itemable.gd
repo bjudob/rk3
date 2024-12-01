@@ -28,6 +28,8 @@ func _on_itemable_area_input_event(viewport: Node, event: InputEvent, shape_idx:
 		if not item_follow.is_active() or not item_follow.selected_item:
 			return
 		var item = item_follow.selected_item
+		print(item.id)
+		print(item_needed)
 		if item.id == item_needed:
 			_on_item_correct(item)
 			if item.destroy_on_use:

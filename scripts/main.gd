@@ -5,6 +5,7 @@ signal LevelTransition
 
 enum GameEvents {
 	GIFTED_PINGU,
+	GIFTED_NYUSZI,
 }
 
 enum Level {

@@ -8,25 +8,16 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "jezi",
+"default_portrait": "havas_jani",
 "description": "",
-"display_name": "Jézi",
+"display_name": "Havas János",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"jezi": {
+"havas_jani": {
 "export_overrides": {
-"image": "\"res://characters/profile_pictures/jezi_profile.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"jezi_bor": {
-"export_overrides": {
-"image": "\"res://characters/profile_pictures/jezi_profile_bor.png\""
+"image": "\"res://characters/profile_pictures/havas_jani_profile.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

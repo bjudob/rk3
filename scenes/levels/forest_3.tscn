@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://br583iqs35nd0"]
+[gd_scene load_steps=12 format=3 uid="uid://br583iqs35nd0"]
 
 [ext_resource type="Texture2D" uid="uid://c2oj4ml2q67up" path="res://backgrounds/forest_3.png" id="1_oen8f"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_osrrw"]
 [ext_resource type="Texture2D" uid="uid://cmggsu1wf7qgk" path="res://buildings/fa_4.png" id="3_1ge5q"]
 [ext_resource type="PackedScene" uid="uid://bjbubq82hpm6s" path="res://scenes/npc/foki.tscn" id="4_jdpnq"]
+[ext_resource type="Script" path="res://scripts/fenyo.gd" id="5_d4sbt"]
+[ext_resource type="Texture2D" uid="uid://b6wdonaibf7ay" path="res://buildings/fenyo_3.png" id="6_fqsxq"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_avbh8"]
+[ext_resource type="Texture2D" uid="uid://ba23wnsa01byw" path="res://objects/cross_branches.png" id="8_nwsui"]
+[ext_resource type="Texture2D" uid="uid://ccok5pufugrch" path="res://objects/branch.png" id="8_ykpgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqgxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fufkr"]
 
 [node name="Forest3" type="Node2D"]
 script = ExtResource("1_osrrw")
@@ -18,4 +27,33 @@ position = Vector2(750, 850)
 texture = ExtResource("3_1ge5q")
 
 [node name="Foki" parent="." instance=ExtResource("4_jdpnq")]
-position = Vector2(1210, 967)
+position = Vector2(1143, 962)
+
+[node name="Fenyo" type="StaticBody2D" parent="."]
+position = Vector2(1680, 691)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("5_d4sbt")
+item_needed = "branch"
+
+[node name="Fenyo" type="Sprite2D" parent="Fenyo"]
+scale = Vector2(2, 2)
+texture = ExtResource("6_fqsxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fenyo"]
+shape = SubResource("RectangleShape2D_gqgxq")
+
+[node name="Item" parent="Fenyo" instance=ExtResource("7_avbh8")]
+position = Vector2(-1680, -691)
+id = "cross_branches"
+image = ExtResource("8_nwsui")
+
+[node name="ItemableArea" type="Area2D" parent="Fenyo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fenyo/ItemableArea"]
+shape = SubResource("RectangleShape2D_fufkr")
+
+[node name="Item" parent="." instance=ExtResource("7_avbh8")]
+position = Vector2(549, 1016)
+id = "branch"
+image = ExtResource("8_ykpgk")

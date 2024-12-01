@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm0bcsapfvbu4"]
+[gd_scene load_steps=7 format=3 uid="uid://cm0bcsapfvbu4"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_c83ku"]
 [ext_resource type="Texture2D" uid="uid://c82nk02k2wdip" path="res://backgrounds/snow_town_2.png" id="1_wbomq"]
 [ext_resource type="Texture2D" uid="uid://ba63wj4xbt3wx" path="res://characters/snowman_1.png" id="2_ygfqp"]
-[ext_resource type="Texture2D" uid="uid://825nnvhf48le" path="res://characters/snowman_3.png" id="3_377uu"]
-[ext_resource type="PackedScene" uid="uid://d4e53tqdawnsg" path="res://scenes/npc/maci.tscn" id="5_kfr3y"]
+[ext_resource type="Texture2D" uid="uid://825nnvhf48le" path="res://characters/snowman_3.png" id="4_ie8f0"]
+[ext_resource type="Texture2D" uid="uid://ddgg2q43iu0tc" path="res://characters/snowman_7.png" id="5_1fsvq"]
+[ext_resource type="PackedScene" uid="uid://btdq7ofkruk6a" path="res://scenes/npc/havas_jani.tscn" id="6_635n4"]
 
 [node name="SnowCity" type="Node2D"]
 script = ExtResource("1_c83ku")
@@ -19,15 +20,15 @@ position = Vector2(1113, 710)
 scale = Vector2(0.204119, 0.171804)
 texture = ExtResource("2_ygfqp")
 
-[node name="Snowman2" type="Sprite2D" parent="."]
-position = Vector2(1199.8, 865.1)
-scale = Vector2(0.344165, 0.329597)
-texture = ExtResource("2_ygfqp")
-
 [node name="Snowman3" type="Sprite2D" parent="."]
-position = Vector2(636, 889)
-texture = ExtResource("3_377uu")
+position = Vector2(993, 805)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ie8f0")
 
-[node name="Maci" parent="." instance=ExtResource("5_kfr3y")]
-position = Vector2(1514, 846)
-scale = Vector2(-1, 1)
+[node name="Snowman7" type="Sprite2D" parent="."]
+position = Vector2(1274, 818)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_1fsvq")
+
+[node name="HavasJani" parent="." instance=ExtResource("6_635n4")]
+position = Vector2(733, 926)

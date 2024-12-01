@@ -12,7 +12,6 @@ size = Vector2(918, 588)
 size = Vector2(498, 472)
 
 [node name="Nyuszi" type="StaticBody2D"]
-position = Vector2(1664, 980)
 scale = Vector2(0.5, 0.5)
 collision_layer = 0
 collision_mask = 0
