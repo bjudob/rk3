@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://bgtakd5dcer5k"]
 
-[ext_resource type="Texture2D" uid="uid://bpycay53lwjbu" path="res://characters/jezi.png" id="1_7p1mi"]
+[ext_resource type="Texture2D" uid="uid://bpycay53lwjbu" path="res://characters/jezi/jezi.png" id="1_7p1mi"]
 [ext_resource type="Script" path="res://scripts/jezi.gd" id="1_tw1r6"]
-[ext_resource type="Texture2D" uid="uid://dkvb88gbhld1s" path="res://characters/jezi_2.png" id="2_t41yf"]
+[ext_resource type="Texture2D" uid="uid://dkvb88gbhld1s" path="res://characters/jezi/jezi_2.png" id="2_t41yf"]
 [ext_resource type="Texture2D" uid="uid://cepnxudwhmm0t" path="res://objects/wine_pohar.png" id="4_52t4j"]
 [ext_resource type="Texture2D" uid="uid://dnr2oktg03sv1" path="res://objects/wine_uveg.png" id="5_oa8qt"]
-[ext_resource type="Texture2D" uid="uid://c7i0apn2boaj5" path="res://characters/jezi_kereszten.png" id="6_tl064"]
+[ext_resource type="Texture2D" uid="uid://oixatcihvexi" path="res://characters/jezi/jezi_kereszten_2.png" id="6_i6b6v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1k0"]
 
@@ -60,6 +60,6 @@ texture = ExtResource("5_oa8qt")
 
 [node name="JeziKereszten" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1, 3)
+position = Vector2(1, 15)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("6_tl064")
+texture = ExtResource("6_i6b6v")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkvb88gbhld1s"
-path="res://.godot/imported/jezi_2.png-fb48e7352df1d5ecf68e816ff8654006.ctex"
+uid="uid://oixatcihvexi"
+path="res://.godot/imported/jezi_kereszten_2.png-bfdb2573826d7fffc9fa2339f8ba2c2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/jezi_2.png"
-dest_files=["res://.godot/imported/jezi_2.png-fb48e7352df1d5ecf68e816ff8654006.ctex"]
+source_file="res://characters/jezi/jezi_kereszten_2.png"
+dest_files=["res://.godot/imported/jezi_kereszten_2.png-bfdb2573826d7fffc9fa2339f8ba2c2b.ctex"]
 
 [params]
 

@@ -51,6 +51,7 @@ directories/dtl_directory={
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
 "holgarmester_hello": "res://dialogic/holgarmester_hello.dtl",
 "holgarmester_igy_jo": "res://dialogic/holgarmester_igy_jo.dtl",
+"jezi_heaven": "res://dialogic/jezi_heaven.dtl",
 "jezi_keresztes": "res://dialogic/jezi_keresztes.dtl",
 "jezi_szomjas": "res://dialogic/jezi_szomjas.dtl",
 "kacsi_hello": "res://dialogic/kacsi_hello.dtl",

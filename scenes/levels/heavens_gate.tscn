@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkcfdiqgsxtqh"]
+[gd_scene load_steps=9 format=3 uid="uid://dkcfdiqgsxtqh"]
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="6_mkq8t"]
 [ext_resource type="Texture2D" uid="uid://de7skm2x5o0ps" path="res://objects/miku_cipo.png" id="7_7wtbj"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_j5ydm"]
+[ext_resource type="Texture2D" uid="uid://bberf3jf45xwo" path="res://objects/ollo.png" id="8_wsob5"]
 
 [node name="HeavensGate" type="Node2D"]
 script = ExtResource("1_6va6e")
@@ -18,12 +19,13 @@ texture = ExtResource("1_i4iw1")
 
 [node name="Miku" parent="." instance=ExtResource("3_a7qb3")]
 position = Vector2(844, 803)
+item_needed = "ollo"
 
 [node name="Santa66" parent="." instance=ExtResource("5_x0iic")]
 position = Vector2(1692, 828)
 
 [node name="Krampi" parent="." instance=ExtResource("6_mkq8t")]
-position = Vector2(138, 959)
+position = Vector2(183, 942)
 current_dialog = "krampi_miku"
 
 [node name="Item" parent="." instance=ExtResource("7_j5ydm")]
@@ -34,3 +36,8 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(1079, 980)
 id = "miku_cipo"
 image = ExtResource("7_7wtbj")
+
+[node name="Item3" parent="." instance=ExtResource("7_j5ydm")]
+position = Vector2(1229, 829)
+id = "ollo"
+image = ExtResource("8_wsob5")

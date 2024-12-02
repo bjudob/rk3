@@ -17,16 +17,17 @@ func _process(delta: float) -> void:
 		current_dialog = "miku_gift_3"
 
 func _on_item_correct(item):
-	pass
+	if item.id == "ollo":
+		inventory.add_item($ItemMikuSzakall)
 
 func _on_dialogic(arg):
 	if arg == "miku_gift_pingu" and not gift_pingu_given:
 		gift_pingu_given = true
-		inventory.add_item($Item)
+		inventory.add_item($ItemGiftPingu)
 	if arg == "miku_gift_carrot_cake" and not gift_nyuszi_given:
 		gift_nyuszi_given = true
-		inventory.add_item($Item2)
+		inventory.add_item($ItemCarrotCake)
 	if arg == "miku_gift_finished" and not gifts_finished:
 		gifts_finished = true
-		inventory.add_item($Item3)
+		inventory.add_item($ItemSzantaZsak)
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://5lv7t2uhwox0"]
+[gd_scene load_steps=4 format=3 uid="uid://5lv7t2uhwox0"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_4jtkp"]
 [ext_resource type="Texture2D" uid="uid://coc6k2n2jqlt8" path="res://backgrounds/heaven_kapu.png" id="2_na475"]
+[ext_resource type="PackedScene" uid="uid://bgit5i7b6b0bh" path="res://scenes/npc/jezi_heaven.tscn" id="3_uso3j"]
 
 [node name="HeavenKapu" type="Node2D"]
 script = ExtResource("1_4jtkp")
@@ -10,3 +11,6 @@ script = ExtResource("1_4jtkp")
 position = Vector2(965, 531)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_na475")
+
+[node name="JeziHeaven" parent="." instance=ExtResource("3_uso3j")]
+position = Vector2(1408, 760)
