@@ -46,11 +46,12 @@ func _find_itemable_area():
 
 func _find_sprite():
 	for child in get_children():
-		if child is Sprite2D:
+		if child is Sprite2D and child.visible:
 			sprite = child
 			return
 
 func _highlight():
+	_find_sprite()
 	sprite.material = ShaderMaterial.new()
 	sprite.material.shader = SHADER
 

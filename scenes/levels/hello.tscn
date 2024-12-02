@@ -22,7 +22,8 @@ texture = ExtResource("2_ogp0g")
 
 [node name="CatDevil" parent="." instance=ExtResource("4_mhwqj")]
 position = Vector2(962, 613)
-item_needed = "fire"
+current_dialog = "cica_hello"
+item_needed = "miku_cipo"
 
 [node name="Item" parent="." instance=ExtResource("7_jt7wp")]
 position = Vector2(1625, 930)
@@ -49,7 +50,7 @@ scale = Vector2(0.549628, 0.390951)
 texture = ExtResource("10_p5srv")
 
 [node name="Krampi" parent="." instance=ExtResource("8_g6ffb")]
-position = Vector2(195, 959)
+position = Vector2(282, 930)
 current_dialog = "krampi_hello"
 
 [node name="Builder" type="Node2D" parent="."]

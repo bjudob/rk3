@@ -13,6 +13,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqgxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fufkr"]
+size = Vector2(497, 876)
 
 [node name="Forest3" type="Node2D"]
 script = ExtResource("1_osrrw")
@@ -51,9 +52,10 @@ image = ExtResource("8_nwsui")
 [node name="ItemableArea" type="Area2D" parent="Fenyo"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fenyo/ItemableArea"]
+position = Vector2(-48.5, -102)
 shape = SubResource("RectangleShape2D_fufkr")
 
-[node name="Item" parent="." instance=ExtResource("7_avbh8")]
+[node name="ItemBranch" parent="." instance=ExtResource("7_avbh8")]
 position = Vector2(549, 1016)
 id = "branch"
 image = ExtResource("8_ykpgk")
