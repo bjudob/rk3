@@ -60,6 +60,6 @@ texture = ExtResource("5_oa8qt")
 
 [node name="JeziKereszten" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1, 15)
-scale = Vector2(1.3, 1.3)
+position = Vector2(1, 23)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("6_i6b6v")

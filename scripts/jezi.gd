@@ -14,3 +14,5 @@ func _on_item_correct(item):
 		$JeziDrunk.visible = false
 		$Wine.visible = false
 		$WineUveg.visible = false
+		$ItemableArea/CollisionShape2D.disabled = true
+		$TalkArea/CollisionShape2D.disabled = true
