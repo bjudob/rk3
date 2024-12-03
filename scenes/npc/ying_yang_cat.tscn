@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct3237i34ud60"]
+
+[ext_resource type="Texture2D" uid="uid://u7q0do1jf07v" path="res://characters/ying_yang_cat.png" id="1_f02w7"]
+[ext_resource type="Script" path="res://scripts/ying_yang_cat.gd" id="1_gtlcv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1exj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vjq2"]
+size = Vector2(520, 392)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5465u"]
+size = Vector2(179, 229)
+
+[node name="YingYangCat" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_gtlcv")
+
+[node name="YingYangCat" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_f02w7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i1exj")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-179, 78)
+shape = SubResource("RectangleShape2D_7vjq2")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-3.5, -11.5)
+shape = SubResource("RectangleShape2D_5465u")

@@ -39,7 +39,8 @@ directories/dch_directory={
 "pingu": "res://dialogic/pingu.dch",
 "reni": "res://dialogic/reni.dch",
 "santa66": "res://dialogic/santa66.dch",
-"spider": "res://dialogic/spider.dch"
+"spider": "res://dialogic/spider.dch",
+"ying_yang_cat": "res://dialogic/ying_yang_cat.dch"
 }
 directories/dtl_directory={
 "cica_hello": "res://dialogic/cica_hello.dtl",
@@ -73,7 +74,8 @@ directories/dtl_directory={
 "pingu_snowpile": "res://dialogic/pingu_snowpile.dtl",
 "reni_hokupac": "res://dialogic/reni_hokupac.dtl",
 "santa66_hello": "res://dialogic/santa66_hello.dtl",
-"spider": "res://dialogic/spider.dtl"
+"spider": "res://dialogic/spider.dtl",
+"yin_yang_hello": "res://dialogic/yin_yang_hello.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]
 layout/default_style="res://dialogic/style.tres"

@@ -16,3 +16,4 @@ func _on_item_correct(item):
 		$WineUveg.visible = false
 		$ItemableArea/CollisionShape2D.disabled = true
 		$TalkArea/CollisionShape2D.disabled = true
+		main.add_event(Main.GameEvents.JEZI_RESPAWN)

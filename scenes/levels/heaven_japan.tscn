@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://6wjlpo7oi5gk"]
+[gd_scene load_steps=6 format=3 uid="uid://6wjlpo7oi5gk"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_8voge"]
 [ext_resource type="Texture2D" uid="uid://dw3i0obislihp" path="res://backgrounds/heaven_japan.png" id="2_8dgig"]
+[ext_resource type="PackedScene" uid="uid://ct3237i34ud60" path="res://scenes/npc/ying_yang_cat.tscn" id="3_ser6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0wvx"]
+size = Vector2(861.199, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_peweb"]
+size = Vector2(121, 756)
 
 [node name="HeavenJapan" type="Node2D"]
 script = ExtResource("1_8voge")
@@ -10,3 +17,20 @@ script = ExtResource("1_8voge")
 position = Vector2(958, 541)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_8dgig")
+
+[node name="YingYangCat" parent="." instance=ExtResource("3_ser6h")]
+position = Vector2(1271, 582)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1154, 771)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-23.9766, 150.393)
+rotation = -0.666716
+shape = SubResource("RectangleShape2D_d0wvx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1475, 372)
+shape = SubResource("RectangleShape2D_peweb")
