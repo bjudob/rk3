@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2ogkycckei3d"]
+
+[ext_resource type="Texture2D" uid="uid://c4d8eiejkoiw0" path="res://characters/foxi.png" id="1_3m8c8"]
+[ext_resource type="Script" path="res://scripts/foxi.gd" id="1_x03k1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pqxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otnlp"]
+size = Vector2(624, 353)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjmdw"]
+size = Vector2(307, 320)
+
+[node name="Foxi" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_x03k1")
+
+[node name="Foxi" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_3m8c8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3pqxd")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-29, -23.5)
+shape = SubResource("RectangleShape2D_otnlp")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(4.5, 0)
+shape = SubResource("RectangleShape2D_cjmdw")

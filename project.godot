@@ -28,6 +28,7 @@ directories/dch_directory={
 "felho_szellem": "res://dialogic/felho_szellem.dch",
 "feny_szellem": "res://dialogic/feny_szellem.dch",
 "foki": "res://dialogic/foki.dch",
+"foxi": "res://dialogic/foxi.dch",
 "havas_jani": "res://dialogic/havas_jani.dch",
 "holgarmester": "res://dialogic/holgarmester.dch",
 "jezi": "res://dialogic/jezi.dch",
@@ -40,6 +41,7 @@ directories/dch_directory={
 "reni": "res://dialogic/reni.dch",
 "santa66": "res://dialogic/santa66.dch",
 "spider": "res://dialogic/spider.dch",
+"suni": "res://dialogic/suni.dch",
 "ying_yang_cat": "res://dialogic/ying_yang_cat.dch"
 }
 directories/dtl_directory={
@@ -48,6 +50,7 @@ directories/dtl_directory={
 "felho_szellem_hello": "res://dialogic/felho_szellem_hello.dtl",
 "feny_szellem_hello": "res://dialogic/feny_szellem_hello.dtl",
 "foki_elveszett_barat": "res://dialogic/foki_elveszett_barat.dtl",
+"foxi_hello": "res://dialogic/foxi_hello.dtl",
 "havas_jani_polgarmester": "res://dialogic/havas_jani_polgarmester.dtl",
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
 "holgarmester_hello": "res://dialogic/holgarmester_hello.dtl",
@@ -75,6 +78,7 @@ directories/dtl_directory={
 "reni_hokupac": "res://dialogic/reni_hokupac.dtl",
 "santa66_hello": "res://dialogic/santa66_hello.dtl",
 "spider": "res://dialogic/spider.dtl",
+"suni_hello": "res://dialogic/suni_hello.dtl",
 "yin_yang_hello": "res://dialogic/yin_yang_hello.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]

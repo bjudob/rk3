@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bganjg5fu6n3h" path="res://backgrounds/house_2.png" id="1_0tebu"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_js5os"]
-[ext_resource type="Texture2D" uid="uid://c4d8eiejkoiw0" path="res://characters/foxi.png" id="3_e1f0q"]
+[ext_resource type="PackedScene" uid="uid://d2ogkycckei3d" path="res://scenes/npc/foxi.tscn" id="3_ck3e7"]
 
 [node name="SnowCityHouses" type="Node2D"]
 script = ExtResource("1_js5os")
@@ -12,7 +12,6 @@ position = Vector2(962, 510)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_0tebu")
 
-[node name="Foxi" type="Sprite2D" parent="."]
-position = Vector2(1405, 917)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_e1f0q")
+[node name="Foxi" parent="." instance=ExtResource("3_ck3e7")]
+position = Vector2(1300, 898)
+current_dialog = "foxi_hello"
