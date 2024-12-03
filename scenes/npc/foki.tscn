@@ -9,7 +9,7 @@
 size = Vector2(448, 423)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xuci8"]
-size = Vector2(238, 271)
+size = Vector2(347, 333)
 
 [node name="Foki" type="StaticBody2D"]
 collision_layer = 0
@@ -21,7 +21,7 @@ current_dialog = "foki_elveszett_barat"
 shape = SubResource("RectangleShape2D_ihp3f")
 
 [node name="Foki" type="Sprite2D" parent="."]
-scale = Vector2(-0.6, 0.6)
+scale = Vector2(-0.8, 0.8)
 texture = ExtResource("1_ioh7u")
 
 [node name="TalkArea" type="Area2D" parent="."]
@@ -33,5 +33,5 @@ shape = SubResource("RectangleShape2D_5b5in")
 [node name="ItemableArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
-position = Vector2(1, -24.5)
+position = Vector2(-5.5, -5.5)
 shape = SubResource("RectangleShape2D_xuci8")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br583iqs35nd0"]
+[gd_scene load_steps=13 format=3 uid="uid://br583iqs35nd0"]
 
 [ext_resource type="Texture2D" uid="uid://c2oj4ml2q67up" path="res://backgrounds/forest_3.png" id="1_oen8f"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_osrrw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_avbh8"]
 [ext_resource type="Texture2D" uid="uid://ba23wnsa01byw" path="res://objects/cross_branches.png" id="8_nwsui"]
 [ext_resource type="Texture2D" uid="uid://ccok5pufugrch" path="res://objects/branch.png" id="8_ykpgk"]
+[ext_resource type="Texture2D" uid="uid://bdxy01a2xw5l8" path="res://characters/suni.png" id="10_64jua"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqgxq"]
 
@@ -28,7 +29,7 @@ position = Vector2(750, 850)
 texture = ExtResource("3_1ge5q")
 
 [node name="Foki" parent="." instance=ExtResource("4_jdpnq")]
-position = Vector2(1143, 962)
+position = Vector2(1167, 925)
 
 [node name="Fenyo" type="StaticBody2D" parent="."]
 position = Vector2(1680, 691)
@@ -59,3 +60,8 @@ shape = SubResource("RectangleShape2D_fufkr")
 position = Vector2(549, 1016)
 id = "branch"
 image = ExtResource("8_ykpgk")
+
+[node name="Suni" type="Sprite2D" parent="."]
+position = Vector2(385, 949)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_64jua")

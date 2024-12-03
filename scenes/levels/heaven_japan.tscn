@@ -20,6 +20,7 @@ texture = ExtResource("2_8dgig")
 
 [node name="YingYangCat" parent="." instance=ExtResource("3_ser6h")]
 position = Vector2(1271, 582)
+current_dialog = "yin_yang_hello"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1154, 771)
