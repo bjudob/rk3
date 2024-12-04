@@ -60,5 +60,6 @@ id = "santa_zsak"
 image = ExtResource("6_xv5hx")
 
 [node name="ItemMikuSzakall" parent="." instance=ExtResource("3_aeym4")]
+visible = false
 id = "miku_szakall"
 image = ExtResource("7_o78rv")

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x31b4"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_s8uu8"]
 [ext_resource type="Texture2D" uid="uid://dx1hariq481ok" path="res://characters/aztec_priestess.png" id="4_yplss"]
-[ext_resource type="Texture2D" uid="uid://c620wgmd7w2xu" path="res://characters/aztec_bug.png" id="5_avynw"]
+[ext_resource type="Texture2D" uid="uid://meo1hajrox3" path="res://buildings/cica_szobor.png" id="5_al8ru"]
 
 [node name="AztecTemple" type="Node2D"]
 script = ExtResource("1_x31b4")
@@ -16,10 +16,11 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_jk4rm")
 
 [node name="AztecPriestess" type="Sprite2D" parent="."]
-position = Vector2(1052, 919)
+position = Vector2(1010, 904)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_yplss")
 
-[node name="AztecBug" type="Sprite2D" parent="."]
-position = Vector2(1569, 783)
-texture = ExtResource("5_avynw")
+[node name="CicaSzobor" type="Sprite2D" parent="."]
+position = Vector2(1631, 660)
+scale = Vector2(-2, 2)
+texture = ExtResource("5_al8ru")
