@@ -53,6 +53,8 @@ func refresh_ui():
 		if i < items.size():
 			item = items[i]
 		item_slot.set_item(item)
-		if i >= items.size() and i >= 10:
+		if i >= items.size() and i >= 5:
 			item_slot.visible = false
+		else:
+			item_slot.visible = true
 		i+=1
