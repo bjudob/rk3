@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://br583iqs35nd0"]
+[gd_scene load_steps=14 format=3 uid="uid://br583iqs35nd0"]
 
 [ext_resource type="Texture2D" uid="uid://c2oj4ml2q67up" path="res://backgrounds/forest_3.png" id="1_oen8f"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_osrrw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ba23wnsa01byw" path="res://objects/cross_branches.png" id="8_nwsui"]
 [ext_resource type="Texture2D" uid="uid://ccok5pufugrch" path="res://objects/branch.png" id="8_ykpgk"]
 [ext_resource type="PackedScene" uid="uid://b1ls6vx5255mx" path="res://scenes/npc/suni.tscn" id="10_s7ptj"]
+[ext_resource type="Texture2D" uid="uid://dperyywcxq6fj" path="res://objects/alma.png" id="11_kgqtg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqgxq"]
 
@@ -65,3 +66,8 @@ image = ExtResource("8_ykpgk")
 position = Vector2(306, 947)
 current_dialog = "suni_hello"
 item_needed = "alma"
+
+[node name="Item" parent="." instance=ExtResource("7_avbh8")]
+position = Vector2(857, 839)
+id = "alma"
+image = ExtResource("11_kgqtg")

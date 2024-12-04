@@ -186,7 +186,7 @@ left = 21
 
 [node name="Forest3" parent="." instance=ExtResource("16_8u271")]
 right = 25
-left = 8
+left = 22
 
 [node name="JapanLake" parent="." instance=ExtResource("25_rwrdn")]
 right = 10

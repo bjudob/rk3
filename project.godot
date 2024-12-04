@@ -79,6 +79,7 @@ directories/dtl_directory={
 "santa66_hello": "res://dialogic/santa66_hello.dtl",
 "spider": "res://dialogic/spider.dtl",
 "suni_hello": "res://dialogic/suni_hello.dtl",
+"suni_koszonom": "res://dialogic/suni_koszonom.dtl",
 "yin_yang_hello": "res://dialogic/yin_yang_hello.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]
