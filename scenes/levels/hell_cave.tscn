@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://5ssc7kdyc424"]
+[gd_scene load_steps=5 format=3 uid="uid://5ssc7kdyc424"]
 
 [ext_resource type="Texture2D" uid="uid://b4ecav7fbfm08" path="res://backgrounds/hell_cave.png" id="1_k5o8m"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_r6x80"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_2m5j6"]
+[ext_resource type="Texture2D" uid="uid://b8s6j2vcsv1nu" path="res://objects/lava.png" id="4_cfaiq"]
 
 [node name="HellCave" type="Node2D"]
 script = ExtResource("1_r6x80")
@@ -10,3 +12,9 @@ script = ExtResource("1_r6x80")
 position = Vector2(953, 538)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_k5o8m")
+
+[node name="Item" parent="." instance=ExtResource("3_2m5j6")]
+position = Vector2(955, 1054)
+scale = Vector2(1.5, 1.5)
+id = "lava"
+image = ExtResource("4_cfaiq")

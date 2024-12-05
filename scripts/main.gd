@@ -7,6 +7,7 @@ enum GameEvents {
 	GIFTED_PINGU,
 	GIFTED_NYUSZI,
 	JEZI_RESPAWN,
+	SABOTATED,
 }
 
 enum Level {

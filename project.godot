@@ -54,6 +54,7 @@ directories/dtl_directory={
 "foki_elveszett_barat": "res://dialogic/foki_elveszett_barat.dtl",
 "foxi_hello": "res://dialogic/foxi_hello.dtl",
 "havas_jani_polgarmester": "res://dialogic/havas_jani_polgarmester.dtl",
+"havas_jani_sabot": "res://dialogic/havas_jani_sabot.dtl",
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
 "holgarmester_hello": "res://dialogic/holgarmester_hello.dtl",
 "holgarmester_igy_jo": "res://dialogic/holgarmester_igy_jo.dtl",

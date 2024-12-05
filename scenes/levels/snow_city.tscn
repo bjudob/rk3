@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm0bcsapfvbu4"]
+[gd_scene load_steps=14 format=3 uid="uid://cm0bcsapfvbu4"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_c83ku"]
 [ext_resource type="Texture2D" uid="uid://c82nk02k2wdip" path="res://backgrounds/snow_town_2.png" id="1_wbomq"]
@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://825nnvhf48le" path="res://characters/snowman_3.png" id="4_ie8f0"]
 [ext_resource type="Texture2D" uid="uid://ddgg2q43iu0tc" path="res://characters/snowman_7.png" id="5_1fsvq"]
 [ext_resource type="PackedScene" uid="uid://btdq7ofkruk6a" path="res://scenes/npc/havas_jani.tscn" id="6_635n4"]
+[ext_resource type="Script" path="res://scripts/halozat.gd" id="7_00onf"]
+[ext_resource type="Texture2D" uid="uid://dnvv5mrfwvjet" path="res://buildings/snow_machine_1.png" id="7_tdw0w"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="9_kyov2"]
+[ext_resource type="Texture2D" uid="uid://vjol52yo6brn" path="res://objects/smoke.png" id="9_tt2le"]
+[ext_resource type="Texture2D" uid="uid://sg026vrx3wi8" path="res://objects/poison.png" id="10_fqllf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vdb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mrlv"]
+size = Vector2(136, 172)
 
 [node name="SnowCity" type="Node2D"]
 script = ExtResource("1_c83ku")
@@ -32,3 +42,43 @@ texture = ExtResource("5_1fsvq")
 
 [node name="HavasJani" parent="." instance=ExtResource("6_635n4")]
 position = Vector2(733, 926)
+
+[node name="Halozat" type="StaticBody2D" parent="."]
+position = Vector2(1806, 679)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("7_00onf")
+
+[node name="SnowMachine1" type="Sprite2D" parent="Halozat"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_tdw0w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Halozat"]
+shape = SubResource("RectangleShape2D_0vdb7")
+
+[node name="ItemableArea" type="Area2D" parent="Halozat"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Halozat/ItemableArea"]
+position = Vector2(-5, 4)
+shape = SubResource("RectangleShape2D_4mrlv")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Halozat"]
+visible = false
+position = Vector2(-3, -78)
+amount = 100
+texture = ExtResource("9_tt2le")
+direction = Vector2(0, -1)
+spread = 46.59
+gravity = Vector2(0, -200)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angle_min = -125.5
+angle_max = 207.5
+scale_amount_min = 0.01
+scale_amount_max = 0.1
+color = Color(1, 1, 1, 0.313726)
+
+[node name="Item" parent="." instance=ExtResource("9_kyov2")]
+position = Vector2(568, 1054)
+id = "poison"
+image = ExtResource("10_fqllf")
