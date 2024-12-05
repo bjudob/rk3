@@ -24,6 +24,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"aztec": "res://dialogic/aztec.dch",
 "cat_devil": "res://dialogic/cat_devil.dch",
 "felho_szellem": "res://dialogic/felho_szellem.dch",
 "feny_szellem": "res://dialogic/feny_szellem.dch",
@@ -45,6 +46,7 @@ directories/dch_directory={
 "ying_yang_cat": "res://dialogic/ying_yang_cat.dch"
 }
 directories/dtl_directory={
+"aztec_hello": "res://dialogic/aztec_hello.dtl",
 "cica_hello": "res://dialogic/cica_hello.dtl",
 "cica_something": "res://dialogic/cica_something.dtl",
 "felho_szellem_hello": "res://dialogic/felho_szellem_hello.dtl",

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b0kxxo4600ufo" path="res://backgrounds/aztec_temple.png" id="1_jk4rm"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x31b4"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_s8uu8"]
-[ext_resource type="Texture2D" uid="uid://dx1hariq481ok" path="res://characters/aztec_priestess.png" id="4_yplss"]
 [ext_resource type="Texture2D" uid="uid://meo1hajrox3" path="res://buildings/cica_szobor.png" id="5_al8ru"]
+[ext_resource type="PackedScene" uid="uid://beijgm83b518e" path="res://scenes/npc/azura.tscn" id="5_vknpn"]
 
 [node name="AztecTemple" type="Node2D"]
 script = ExtResource("1_x31b4")
@@ -15,12 +15,11 @@ position = Vector2(966, 555)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_jk4rm")
 
-[node name="AztecPriestess" type="Sprite2D" parent="."]
-position = Vector2(1010, 904)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_yplss")
-
 [node name="CicaSzobor" type="Sprite2D" parent="."]
 position = Vector2(1631, 660)
 scale = Vector2(-2, 2)
 texture = ExtResource("5_al8ru")
+
+[node name="Azura" parent="." instance=ExtResource("5_vknpn")]
+position = Vector2(1127, 918)
+current_dialog = "aztec_hello"
