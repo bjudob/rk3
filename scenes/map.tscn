@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://oxh2s43d88a"]
+[gd_scene load_steps=31 format=3 uid="uid://oxh2s43d88a"]
 
 [ext_resource type="Script" path="res://scenes/map.gd" id="1_n4xyc"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_xcmlk"]
@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://ccw6hj68utxmk" path="res://backgrounds/winter_house.png" id="12_8jkfp"]
 [ext_resource type="Texture2D" uid="uid://bganjg5fu6n3h" path="res://backgrounds/house_2.png" id="13_ldvcf"]
 [ext_resource type="Texture2D" uid="uid://cj4cowhofhb2l" path="res://backgrounds/hell_gargoyles_gate.png" id="14_2j6s7"]
-[ext_resource type="Texture2D" uid="uid://ckn5dp01io1xk" path="res://backgrounds/japan_lake.png" id="15_6nx5u"]
 [ext_resource type="Texture2D" uid="uid://4nh3jdtoa6pr" path="res://backgrounds/hell_house.png" id="18_l6g5h"]
 [ext_resource type="Texture2D" uid="uid://cuk0hms7bk4ag" path="res://backgrounds/hell_village.png" id="19_hsath"]
 [ext_resource type="Texture2D" uid="uid://djamf20so58qa" path="res://backgrounds/hell_tower.png" id="20_aoiu7"]
@@ -176,13 +175,6 @@ texture = ExtResource("11_w4icp")
 expand_mode = 3
 script = ExtResource("2_d4bkg")
 level = 13
-
-[node name="japan_lake" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
-layout_mode = 2
-texture = ExtResource("15_6nx5u")
-expand_mode = 3
-script = ExtResource("2_d4bkg")
-level = 25
 
 [node name="aztec_temple" type="TextureRect" parent="Map/MarginContainer/ScrollContainer/VBoxContainer/Earth"]
 layout_mode = 2

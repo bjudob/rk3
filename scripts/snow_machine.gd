@@ -9,6 +9,7 @@ func _ready() -> void:
 func _on_item_correct(item):
 	unlocked = true
 	$CPUParticles2D.visible = true
+	# $CPUParticles2D2.visible = true
 	$AudioStreamPlayer2D.play()
 	$Timer.start()
 

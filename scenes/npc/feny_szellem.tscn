@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxxiak0tm6xqx"]
+[gd_scene load_steps=8 format=3 uid="uid://dxxiak0tm6xqx"]
 
 [ext_resource type="Script" path="res://scripts/feny_szellem.gd" id="1_fynxq"]
 [ext_resource type="Texture2D" uid="uid://dqvgw1kfxcpfk" path="res://characters/feny_szellem.png" id="2_ga8y7"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_4rdfi"]
+[ext_resource type="Texture2D" uid="uid://cg36e6kddfj3v" path="res://objects/gold_bag.png" id="4_ab2oq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w2tr"]
 
@@ -15,6 +17,7 @@ size = Vector2(613.5, 725)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_fynxq")
+item_needed = "scroll"
 
 [node name="Creature" type="Sprite2D" parent="."]
 scale = Vector2(1.65686, 1.60634)
@@ -34,3 +37,8 @@ shape = SubResource("RectangleShape2D_jhgbu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
 position = Vector2(12, 16)
 shape = SubResource("RectangleShape2D_5h2hh")
+
+[node name="ItemGoldbag" parent="." instance=ExtResource("3_4rdfi")]
+visible = false
+id = "gold_bag"
+image = ExtResource("4_ab2oq")

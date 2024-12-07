@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=40 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -33,7 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://cweuqxhu0exd2" path="res://scenes/levels/heaven_4.tscn" id="19_yomhj"]
 [ext_resource type="PackedScene" uid="uid://bga5e06n3e3a0" path="res://scenes/levels/holgarmesteri_hivatal.tscn" id="22_rvs6r"]
 [ext_resource type="PackedScene" uid="uid://bg5dlhgsaeh1c" path="res://scenes/levels/snow_city_houses.tscn" id="23_1cefj"]
-[ext_resource type="PackedScene" uid="uid://b5imse24ku1wn" path="res://scenes/levels/japan_lake.tscn" id="25_rwrdn"]
 [ext_resource type="PackedScene" uid="uid://cm0bcsapfvbu4" path="res://scenes/levels/snow_city.tscn" id="31_7w7dv"]
 [ext_resource type="PackedScene" uid="uid://5lv7t2uhwox0" path="res://scenes/levels/heaven_kapu.tscn" id="34_noymh"]
 [ext_resource type="PackedScene" uid="uid://cffxfddov7qvu" path="res://scenes/levels/heaven_house.tscn" id="35_0mbue"]
@@ -185,16 +184,12 @@ right = 13
 left = 21
 
 [node name="Forest3" parent="." instance=ExtResource("16_8u271")]
-right = 25
-left = 22
-
-[node name="JapanLake" parent="." instance=ExtResource("25_rwrdn")]
 right = 10
-left = 13
+left = 22
 
 [node name="AztecTemple" parent="." instance=ExtResource("13_ba2n1")]
 right = 9
-left = 25
+left = 13
 
 [node name="DuckVillage" parent="." instance=ExtResource("13_f8h2x")]
 right = 7

@@ -20,6 +20,8 @@ texture = ExtResource("1_v7kby")
 
 [node name="FenySzellem" parent="." instance=ExtResource("3_er5an")]
 position = Vector2(966, 499)
+current_dialog = "feny_szellem_hello"
+item_needed = "scroll"
 
 [node name="Item" parent="." instance=ExtResource("4_gbxpi")]
 position = Vector2(1400, 749)

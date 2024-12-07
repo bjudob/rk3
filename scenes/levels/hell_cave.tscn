@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://5ssc7kdyc424"]
+[gd_scene load_steps=9 format=3 uid="uid://5ssc7kdyc424"]
 
 [ext_resource type="Texture2D" uid="uid://b4ecav7fbfm08" path="res://backgrounds/hell_cave.png" id="1_k5o8m"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_r6x80"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_2m5j6"]
 [ext_resource type="Texture2D" uid="uid://b8s6j2vcsv1nu" path="res://objects/lava.png" id="4_cfaiq"]
+[ext_resource type="Script" path="res://scripts/lava.gd" id="5_lw3ag"]
+[ext_resource type="Texture2D" uid="uid://drtpc378kem7i" path="res://objects/sult_chicken.png" id="6_lmhca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wrji"]
+size = Vector2(36, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch8ui"]
+size = Vector2(436, 152)
 
 [node name="HellCave" type="Node2D"]
 script = ExtResource("1_r6x80")
@@ -13,8 +21,33 @@ position = Vector2(953, 538)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_k5o8m")
 
-[node name="Item" parent="." instance=ExtResource("3_2m5j6")]
-position = Vector2(955, 1054)
+[node name="ItemChicken" parent="." instance=ExtResource("3_2m5j6")]
+position = Vector2(890, 1054)
 scale = Vector2(1.5, 1.5)
 id = "lava"
 image = ExtResource("4_cfaiq")
+
+[node name="Lava" type="StaticBody2D" parent="."]
+position = Vector2(1018, 1042)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("5_lw3ag")
+item_needed = "chicken"
+
+[node name="Lava" type="Sprite2D" parent="Lava"]
+texture = ExtResource("4_cfaiq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_2wrji")
+
+[node name="ItemableArea" type="Area2D" parent="Lava"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava/ItemableArea"]
+position = Vector2(44, -14)
+shape = SubResource("RectangleShape2D_ch8ui")
+
+[node name="ItemSultChicken" parent="." instance=ExtResource("3_2m5j6")]
+visible = false
+id = "sult_chicken"
+image = ExtResource("6_lmhca")

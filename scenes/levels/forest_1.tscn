@@ -58,10 +58,30 @@ amount = 40
 texture = ExtResource("4_h715d")
 direction = Vector2(1, -1)
 gravity = Vector2(0, -800)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
 angle_min = -36.6
 angle_max = 91.5
 scale_amount_min = 0.01
 scale_amount_max = 0.2
+hue_variation_min = -0.27
+hue_variation_max = 0.17
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="SnowMachine"]
+visible = false
+position = Vector2(1960, 959)
+amount = 100
+lifetime = 1.3
+texture = ExtResource("4_h715d")
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 600.0
+angle_min = -36.6
+angle_max = 91.5
+scale_amount_min = 0.01
+scale_amount_max = 0.05
 hue_variation_min = -0.27
 hue_variation_max = 0.17
 

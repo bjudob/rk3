@@ -78,7 +78,6 @@ enum Snow {
 	Level.SNOW_CITY_HOUSES: $SnowCityHouses,
 	Level.HELL_CAVE_1: $HellCave,
 	Level.HELL_CAVE_2: $HellCave2,
-	Level.JAPAN_LAKE: $JapanLake,
 	Level.HEAVEN_KAPU: $HeavenKapu,
 	Level.HEAVEN_HOUSE: $HeavenHouse,
 	Level.HEAVEN_JAPAN: $HeavenJapan,
