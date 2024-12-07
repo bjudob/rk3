@@ -49,6 +49,7 @@ directories/dtl_directory={
 "aztec_hello": "res://dialogic/aztec_hello.dtl",
 "cica_hello": "res://dialogic/cica_hello.dtl",
 "cica_something": "res://dialogic/cica_something.dtl",
+"felho_szellem_baby": "res://dialogic/felho_szellem_baby.dtl",
 "felho_szellem_hello": "res://dialogic/felho_szellem_hello.dtl",
 "feny_szellem_hello": "res://dialogic/feny_szellem_hello.dtl",
 "feny_szellem_penz": "res://dialogic/feny_szellem_penz.dtl",

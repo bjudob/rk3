@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://2nnpqgtfpxcy"]
+[gd_scene load_steps=9 format=3 uid="uid://2nnpqgtfpxcy"]
 
 [ext_resource type="Script" path="res://scenes/npc/felho_szellem.gd" id="1_g721i"]
 [ext_resource type="Texture2D" uid="uid://c6l72bp65kehr" path="res://characters/creature_1.png" id="2_mwul4"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_cr00c"]
+[ext_resource type="Texture2D" uid="uid://c56n3kvj6icrb" path="res://objects/chalice.png" id="4_5io37"]
+[ext_resource type="Texture2D" uid="uid://722cl1t8dxhv" path="res://objects/pee.png" id="5_2kdwg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dbs5"]
 
@@ -36,3 +39,15 @@ shape = SubResource("RectangleShape2D_6j3n1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
 position = Vector2(13, 15.5)
 shape = SubResource("RectangleShape2D_ipaiq")
+
+[node name="ItemChalice" parent="." instance=ExtResource("3_cr00c")]
+visible = false
+id = "chalice"
+image = ExtResource("4_5io37")
+
+[node name="ItemPee" parent="." instance=ExtResource("3_cr00c")]
+visible = false
+position = Vector2(-924, 325)
+scale = Vector2(3, 3)
+id = "pisi"
+image = ExtResource("5_2kdwg")

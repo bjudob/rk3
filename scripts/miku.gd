@@ -19,6 +19,10 @@ func _process(delta: float) -> void:
 func _on_item_correct(item):
 	if item.id == "ollo":
 		inventory.add_item($ItemMikuSzakall)
+		item_needed = "chalice"
+	if item.id == "chalice":
+		$"../AnimationPlayer".play("pisi")
+		main.add_event(Main.GameEvents.PISI)
 
 func _on_dialogic(arg):
 	if arg == "miku_gift_pingu" and not gift_pingu_given:

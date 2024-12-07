@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkcfdiqgsxtqh"]
+[gd_scene load_steps=12 format=3 uid="uid://dkcfdiqgsxtqh"]
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
@@ -8,6 +8,67 @@
 [ext_resource type="Texture2D" uid="uid://de7skm2x5o0ps" path="res://objects/miku_cipo.png" id="7_7wtbj"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_j5ydm"]
 [ext_resource type="Texture2D" uid="uid://bberf3jf45xwo" path="res://objects/ollo.png" id="8_wsob5"]
+
+[sub_resource type="Animation" id="Animation_1kth5"]
+resource_name = "pisi"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Miku:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(844, 803), Vector2(2133, 846), Vector2(2133, 846), Vector2(862, 803)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Miku:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 8.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(-1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j1ivg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Miku:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(844, 803)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Miku:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fues5"]
+_data = {
+"RESET": SubResource("Animation_j1ivg"),
+"pisi": SubResource("Animation_1kth5")
+}
 
 [node name="HeavensGate" type="Node2D"]
 script = ExtResource("1_6va6e")
@@ -41,3 +102,8 @@ image = ExtResource("7_7wtbj")
 position = Vector2(1229, 829)
 id = "ollo"
 image = ExtResource("8_wsob5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fues5")
+}

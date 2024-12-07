@@ -16,6 +16,7 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("3_d64l1")
 
 [node name="FelhoSzellem" parent="." instance=ExtResource("4_5t432")]
+item_needed = "baby_cloud"
 
 [node name="CloudKemeny" type="Sprite2D" parent="."]
 position = Vector2(718, 824)

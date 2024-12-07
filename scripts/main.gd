@@ -8,6 +8,7 @@ enum GameEvents {
 	GIFTED_NYUSZI,
 	JEZI_RESPAWN,
 	SABOTATED,
+	PISI,
 }
 
 enum Level {

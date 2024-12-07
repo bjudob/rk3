@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://blafsj20eupwb"]
+[gd_scene load_steps=28 format=3 uid="uid://blafsj20eupwb"]
 
 [ext_resource type="Texture2D" uid="uid://0d2sqm8gs1nx" path="res://backgrounds/forest_2.png" id="1_gqdy3"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="2_dojb7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_t0ovb"]
 [ext_resource type="Texture2D" uid="uid://bkeufnfrpk8ge" path="res://objects/snow_shovel.png" id="7_tyrsm"]
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="8_lera7"]
+[ext_resource type="Texture2D" uid="uid://bop6a8yh00i3d" path="res://objects/cloud_plush.png" id="9_hcnct"]
 [ext_resource type="Texture2D" uid="uid://ciy3cdqwctp1a" path="res://objects/lufi.png" id="9_r5djm"]
 [ext_resource type="PackedScene" uid="uid://djf7dhyqg2ydh" path="res://scenes/npc/reni.tscn" id="10_lnimw"]
 [ext_resource type="Script" path="res://scripts/cloud_baby.gd" id="11_0bv2r"]
@@ -160,6 +161,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(252, 202)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("CloudPlush:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BabyCloud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_yosm4"]
 resource_name = "idle"
@@ -177,11 +202,78 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(252, 202), Vector2(560, 285), Vector2(912, 147), Vector2(1232, 318), Vector2(1726, 285), Vector2(1093, 487), Vector2(763, 268), Vector2(505, 140), Vector2(252, 202)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloudPlush:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5rmkc"]
+resource_name = "plusi"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CloudPlush:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(252, 202)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BabyCloud:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(333, 35), Vector2(514, 131), Vector2(346, 379), Vector2(771, 589), Vector2(701, 700)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.96667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_plusi"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vdhg3"]
 _data = {
 "RESET": SubResource("Animation_jxyn0"),
-"idle": SubResource("Animation_yosm4")
+"idle": SubResource("Animation_yosm4"),
+"plusi": SubResource("Animation_5rmkc")
 }
 
 [node name="Forest2" type="Node2D"]
@@ -218,16 +310,21 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="Item" parent="." instance=ExtResource("5_t0ovb")]
+[node name="ItemShovel" parent="." instance=ExtResource("5_t0ovb")]
 position = Vector2(225, 644)
 scale = Vector2(3, 3)
 id = "shovel"
 image = ExtResource("7_tyrsm")
 
-[node name="Item2" parent="." instance=ExtResource("5_t0ovb")]
+[node name="ItemLufi" parent="." instance=ExtResource("5_t0ovb")]
 position = Vector2(1542, 591)
 id = "lufi"
 image = ExtResource("9_r5djm")
+
+[node name="ItemCloudPlush" parent="." instance=ExtResource("5_t0ovb")]
+position = Vector2(1784, 976)
+id = "cloud_plush"
+image = ExtResource("9_hcnct")
 
 [node name="PinguLufi" type="Node2D" parent="."]
 position = Vector2(1468, 903)
@@ -258,6 +355,7 @@ position = Vector2(252, 202)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("11_0bv2r")
+item_needed = "cloud_plush"
 
 [node name="BabyCloud" type="Sprite2D" parent="CloudBaby"]
 modulate = Color(1, 1, 1, 0.784314)
@@ -266,6 +364,12 @@ texture = ExtResource("12_xpqff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloudBaby"]
 shape = SubResource("RectangleShape2D_sk6vu")
+
+[node name="CloudPlush" type="Sprite2D" parent="CloudBaby"]
+visible = false
+position = Vector2(756, 763)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_hcnct")
 
 [node name="ItemableArea" type="Area2D" parent="CloudBaby"]
 
@@ -278,3 +382,8 @@ libraries = {
 "": SubResource("AnimationLibrary_vdhg3")
 }
 autoplay = "idle"
+
+[node name="ItemBabyCloud" parent="CloudBaby" instance=ExtResource("5_t0ovb")]
+visible = false
+id = "baby_cloud"
+image = ExtResource("12_xpqff")
