@@ -11,13 +11,28 @@ var facing_right = true
 @onready var hp_regen_timer = $HpRegenTimer
 @onready var animation = $AnimationPlayer
 @onready var sword_sound = $SwordSound
+@onready var main = get_tree().get_nodes_in_group("main")[0]
+
+var has_enemies = true
 
 func _ready() -> void:
 	super._ready()
 	hp_regen_timer.connect("timeout", _regen_hp)
 	hp_regen_timer.start()
 	JUMP_HOLD_VELOCITY = JUMP_HOLD_VELOCITY_ORIGINAL
-	
+
+func _process(delta: float) -> void:
+	super._process(delta)
+	var has_enemies_new = main.level_scene.has_enemies()
+	if has_enemies == has_enemies_new:
+		return
+	has_enemies = has_enemies_new
+	if has_enemies_new:
+		$RekiSprites/RainbowSword.visible = true
+		$HealthBar.visible = true
+	else:
+		$RekiSprites/RainbowSword.visible = false
+		$HealthBar.visible = false
 
 func play_animation(name):
 	if animation.current_animation != "attack_sword" and animation.current_animation != "hurt":
@@ -55,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		facing_right = true
 		scale.x = scale.x * -1
 		
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and has_enemies:
 		play_animation("attack_sword")
 	
 	move_and_slide()
