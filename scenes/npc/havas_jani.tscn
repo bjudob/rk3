@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://btdq7ofkruk6a"]
+
+[ext_resource type="Script" path="res://scripts/havas_jani.gd" id="1_3senc"]
+[ext_resource type="Texture2D" uid="uid://dleumsi6mnxtj" path="res://characters/snowman_6.png" id="1_pj26w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf6ex"]
+size = Vector2(31, 759)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3614"]
+size = Vector2(827, 408)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mympp"]
+size = Vector2(184, 325)
+
+[node name="HavasJani" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_3senc")
+current_dialog = "havas_jani_polgarmester"
+
+[node name="HavasJani" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_pj26w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1210, -194)
+shape = SubResource("RectangleShape2D_sf6ex")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(71.5, -37)
+shape = SubResource("RectangleShape2D_b3614")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-5, -11.5)
+shape = SubResource("RectangleShape2D_mympp")

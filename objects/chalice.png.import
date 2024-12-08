@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bksjwx2x2x8fa"
-path="res://.godot/imported/duck.png-ab9e02c2b87047684533087010ea4e05.ctex"
+uid="uid://c56n3kvj6icrb"
+path="res://.godot/imported/chalice.png-2eb061fee68f71b155d81d3172e1296f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/duck.png"
-dest_files=["res://.godot/imported/duck.png-ab9e02c2b87047684533087010ea4e05.ctex"]
+source_file="res://objects/chalice.png"
+dest_files=["res://.godot/imported/chalice.png-2eb061fee68f71b155d81d3172e1296f.ctex"]
 
 [params]
 

@@ -347,4 +347,4 @@ offset_bottom = -88.0
 
 [node name="SwordSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_chsgy")
-volume_db = 10.0
+volume_db = 5.0

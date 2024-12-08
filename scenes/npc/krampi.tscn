@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83nb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iosvi"]
-size = Vector2(368, 247)
+size = Vector2(312, 247)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emc4b"]
 size = Vector2(168, 173)
@@ -31,7 +31,7 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
-position = Vector2(-70, -39.5)
+position = Vector2(-42, -39.5)
 shape = SubResource("RectangleShape2D_iosvi")
 
 [node name="ItemableArea" type="Area2D" parent="."]

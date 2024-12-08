@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 func _load_item_slots():
 	item_slots = []
-	for item_slot in $ItemsSlots.get_children():
+	for item_slot in $ScrollContainer/ItemsSlots.get_children():
 		item_slots.append(item_slot)
 
 func add_item(item: Item):
@@ -53,4 +53,8 @@ func refresh_ui():
 		if i < items.size():
 			item = items[i]
 		item_slot.set_item(item)
+		if i >= items.size() and i >= 10:
+			item_slot.visible = false
+		else:
+			item_slot.visible = true
 		i+=1

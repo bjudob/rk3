@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgit5i7b6b0bh"]
+
+[ext_resource type="Script" path="res://scripts/jezi_heaven.gd" id="1_3pamk"]
+[ext_resource type="Texture2D" uid="uid://cg6u65xly34i6" path="res://characters/jezi/jezi_heaven.png" id="1_es28y"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_85fym"]
+[ext_resource type="Texture2D" uid="uid://ff4mcttefp10" path="res://objects/nail.png" id="4_t2xy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaacw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m14xy"]
+size = Vector2(676, 517)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mw2k"]
+size = Vector2(360, 433)
+
+[node name="JeziHeaven" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_3pamk")
+current_dialog = "jezi_heaven"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gaacw")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-171, 36.5)
+shape = SubResource("RectangleShape2D_m14xy")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-57, 73.5)
+shape = SubResource("RectangleShape2D_2mw2k")
+
+[node name="JeziHeaven" type="Sprite2D" parent="."]
+position = Vector2(0, 47)
+texture = ExtResource("1_es28y")
+
+[node name="ItemNail" parent="." instance=ExtResource("3_85fym")]
+position = Vector2(-48, 257)
+rotation = 1.45386
+scale = Vector2(2, 2)
+id = "nail"
+image = ExtResource("4_t2xy8")

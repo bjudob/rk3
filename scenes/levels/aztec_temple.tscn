@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://byrg5ui1gm0u0"]
+[gd_scene load_steps=8 format=3 uid="uid://byrg5ui1gm0u0"]
 
 [ext_resource type="Texture2D" uid="uid://b0kxxo4600ufo" path="res://backgrounds/aztec_temple.png" id="1_jk4rm"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x31b4"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_s8uu8"]
-[ext_resource type="Texture2D" uid="uid://coug0oj1wvcye" path="res://characters/priest_farki.png" id="4_ncgrq"]
+[ext_resource type="Texture2D" uid="uid://meo1hajrox3" path="res://buildings/cica_szobor.png" id="5_al8ru"]
+[ext_resource type="PackedScene" uid="uid://beijgm83b518e" path="res://scenes/npc/azura.tscn" id="5_vknpn"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="6_h8xnr"]
+[ext_resource type="Texture2D" uid="uid://dic7ui4de62us" path="res://objects/chicken.png" id="7_td1ag"]
 
 [node name="AztecTemple" type="Node2D"]
 script = ExtResource("1_x31b4")
@@ -14,6 +17,17 @@ position = Vector2(966, 555)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_jk4rm")
 
-[node name="PriestFarki" type="Sprite2D" parent="."]
-position = Vector2(822, 915)
-texture = ExtResource("4_ncgrq")
+[node name="CicaSzobor" type="Sprite2D" parent="."]
+position = Vector2(1631, 660)
+scale = Vector2(-2, 2)
+texture = ExtResource("5_al8ru")
+
+[node name="Azura" parent="." instance=ExtResource("5_vknpn")]
+position = Vector2(1127, 918)
+current_dialog = "aztec_hello"
+
+[node name="Item" parent="." instance=ExtResource("6_h8xnr")]
+position = Vector2(687, 996)
+scale = Vector2(2, 2)
+id = "chicken"
+image = ExtResource("7_td1ag")

@@ -13,6 +13,8 @@ config_version=5
 config/name="rk3"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0.8, 0.960784, 0.984314, 1)
+boot_splash/image="res://backgrounds/bubududu_hoember.png"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,23 +24,69 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"aztec": "res://dialogic/aztec.dch",
 "cat_devil": "res://dialogic/cat_devil.dch",
+"felho_szellem": "res://dialogic/felho_szellem.dch",
+"feny_szellem": "res://dialogic/feny_szellem.dch",
 "foki": "res://dialogic/foki.dch",
+"foxi": "res://dialogic/foxi.dch",
+"havas_jani": "res://dialogic/havas_jani.dch",
+"holgarmester": "res://dialogic/holgarmester.dch",
+"jezi": "res://dialogic/jezi.dch",
+"kacsi": "res://dialogic/kacsi.dch",
 "krampi": "res://dialogic/krampi.dch",
 "maci": "res://dialogic/maci.dch",
 "miku": "res://dialogic/miku.dch",
+"nyuszi": "res://dialogic/nyuszi.dch",
 "pingu": "res://dialogic/pingu.dch",
-"spider": "res://dialogic/spider.dch"
+"reni": "res://dialogic/reni.dch",
+"santa66": "res://dialogic/santa66.dch",
+"spider": "res://dialogic/spider.dch",
+"suni": "res://dialogic/suni.dch",
+"ying_yang_cat": "res://dialogic/ying_yang_cat.dch"
 }
 directories/dtl_directory={
+"aztec_hello": "res://dialogic/aztec_hello.dtl",
+"cica_hello": "res://dialogic/cica_hello.dtl",
+"cica_something": "res://dialogic/cica_something.dtl",
+"felho_szellem_baby": "res://dialogic/felho_szellem_baby.dtl",
+"felho_szellem_hello": "res://dialogic/felho_szellem_hello.dtl",
+"feny_szellem_hello": "res://dialogic/feny_szellem_hello.dtl",
+"feny_szellem_penz": "res://dialogic/feny_szellem_penz.dtl",
 "foki_elveszett_barat": "res://dialogic/foki_elveszett_barat.dtl",
+"foxi_csirke": "res://dialogic/foxi_csirke.dtl",
+"foxi_hello": "res://dialogic/foxi_hello.dtl",
+"havas_jani_polgarmester": "res://dialogic/havas_jani_polgarmester.dtl",
+"havas_jani_sabot": "res://dialogic/havas_jani_sabot.dtl",
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
+"holgarmester_hello": "res://dialogic/holgarmester_hello.dtl",
+"holgarmester_igy_jo": "res://dialogic/holgarmester_igy_jo.dtl",
+"jezi_heaven": "res://dialogic/jezi_heaven.dtl",
+"jezi_keresztes": "res://dialogic/jezi_keresztes.dtl",
+"jezi_szomjas": "res://dialogic/jezi_szomjas.dtl",
+"kacsi_hello": "res://dialogic/kacsi_hello.dtl",
+"krampi_cica": "res://dialogic/krampi_cica.dtl",
 "krampi_hello": "res://characters/profile_pictures/krampi_hello.dtl",
+"krampi_miku": "res://dialogic/krampi_miku.dtl",
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
+"maci_holgarmester": "res://dialogic/maci_holgarmester.dtl",
+"maci_repaired": "res://dialogic/maci_repaired.dtl",
 "miku_2": "res://dialogic/miku_2.dtl",
+"miku_gift_2": "res://dialogic/miku_gift_2.dtl",
+"miku_gift_3": "res://dialogic/miku_gift_3.dtl",
 "miku_hello": "res://dialogic/miku_hello.dtl",
+"nyuszi_hello": "res://dialogic/nyuszi_hello.dtl",
+"nyuszi_nyami": "res://dialogic/nyuszi_nyami.dtl",
+"nyuszi_tojas_found": "res://dialogic/nyuszi_tojas_found.dtl",
 "pingu_eltunt_barat": "res://dialogic/pingu_eltunt_barat.dtl",
-"spider": "res://dialogic/spider.dtl"
+"pingu_gift": "res://dialogic/pingu_gift.dtl",
+"pingu_snowpile": "res://dialogic/pingu_snowpile.dtl",
+"reni_hokupac": "res://dialogic/reni_hokupac.dtl",
+"santa66_hello": "res://dialogic/santa66_hello.dtl",
+"spider": "res://dialogic/spider.dtl",
+"suni_hello": "res://dialogic/suni_hello.dtl",
+"suni_koszonom": "res://dialogic/suni_koszonom.dtl",
+"yin_yang_hello": "res://dialogic/yin_yang_hello.dtl"
 }
 layout/style_list=["res://dialogic/style.tres"]
 layout/default_style="res://dialogic/style.tres"

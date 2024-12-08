@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=40 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -25,11 +25,18 @@
 [ext_resource type="PackedScene" uid="uid://8rdr6m82ytkk" path="res://scenes/levels/forest_1.tscn" id="14_n3a1x"]
 [ext_resource type="PackedScene" uid="uid://blafsj20eupwb" path="res://scenes/levels/forest_2.tscn" id="15_owoci"]
 [ext_resource type="PackedScene" uid="uid://br583iqs35nd0" path="res://scenes/levels/forest_3.tscn" id="16_8u271"]
+[ext_resource type="PackedScene" uid="uid://5ssc7kdyc424" path="res://scenes/levels/hell_cave.tscn" id="16_bxyg5"]
 [ext_resource type="PackedScene" uid="uid://dv5n3e6fvmgqs" path="res://scenes/levels/heaven_1.tscn" id="16_x172q"]
+[ext_resource type="PackedScene" uid="uid://bxeq1vvtrrbql" path="res://scenes/levels/hell_cave_2.tscn" id="17_euqv3"]
 [ext_resource type="PackedScene" uid="uid://b2vjqxb1crrnv" path="res://scenes/levels/heaven_2.tscn" id="17_pd3s3"]
 [ext_resource type="PackedScene" uid="uid://ce8r6n6m0vxf3" path="res://scenes/levels/heaven_3.tscn" id="18_1m2a4"]
 [ext_resource type="PackedScene" uid="uid://cweuqxhu0exd2" path="res://scenes/levels/heaven_4.tscn" id="19_yomhj"]
+[ext_resource type="PackedScene" uid="uid://bga5e06n3e3a0" path="res://scenes/levels/holgarmesteri_hivatal.tscn" id="22_rvs6r"]
+[ext_resource type="PackedScene" uid="uid://bg5dlhgsaeh1c" path="res://scenes/levels/snow_city_houses.tscn" id="23_1cefj"]
 [ext_resource type="PackedScene" uid="uid://cm0bcsapfvbu4" path="res://scenes/levels/snow_city.tscn" id="31_7w7dv"]
+[ext_resource type="PackedScene" uid="uid://5lv7t2uhwox0" path="res://scenes/levels/heaven_kapu.tscn" id="34_noymh"]
+[ext_resource type="PackedScene" uid="uid://cffxfddov7qvu" path="res://scenes/levels/heaven_house.tscn" id="35_0mbue"]
+[ext_resource type="PackedScene" uid="uid://6wjlpo7oi5gk" path="res://scenes/levels/heaven_japan.tscn" id="36_ky0kp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jgk"]
 size = Vector2(3635.5, 42)
@@ -95,7 +102,7 @@ game_ui = NodePath(".")
 main = NodePath("..")
 
 [node name="Reki" parent="." instance=ExtResource("2_p5x3j")]
-z_index = 1
+z_index = 5
 position = Vector2(1677, 957)
 
 [node name="Map" parent="." instance=ExtResource("5_6c268")]
@@ -138,9 +145,19 @@ snow = 1
 background_music = ExtResource("6_8a1nc")
 
 [node name="GargoyleGate" parent="." instance=ExtResource("12_ij75m")]
+right = 23
 left = 18
 snow = 1
 background_music = ExtResource("6_8a1nc")
+
+[node name="HellCave" parent="." instance=ExtResource("16_bxyg5")]
+right = 24
+left = 17
+snow = 1
+
+[node name="HellCave2" parent="." instance=ExtResource("17_euqv3")]
+left = 23
+snow = 1
 
 [node name="SnowVillage" parent="." instance=ExtResource("12_asvne")]
 right = 11
@@ -155,12 +172,20 @@ right = 8
 left = 11
 
 [node name="SnowCity" parent="." instance=ExtResource("31_7w7dv")]
-right = 13
+right = 21
 left = 12
+
+[node name="HolgarmesteriHivatal" parent="." instance=ExtResource("22_rvs6r")]
+right = 22
+left = 8
+
+[node name="SnowCityHouses" parent="." instance=ExtResource("23_1cefj")]
+right = 13
+left = 21
 
 [node name="Forest3" parent="." instance=ExtResource("16_8u271")]
 right = 10
-left = 8
+left = 22
 
 [node name="AztecTemple" parent="." instance=ExtResource("13_ba2n1")]
 right = 9
@@ -191,9 +216,21 @@ left = 4
 background_music = ExtResource("9_aisht")
 
 [node name="Heaven4" parent="." instance=ExtResource("19_yomhj")]
-right = 2
+right = 26
 left = 5
 background_music = ExtResource("9_aisht")
+
+[node name="HeavenKapu" parent="." instance=ExtResource("34_noymh")]
+right = 27
+left = 6
+
+[node name="HeavenHouse" parent="." instance=ExtResource("35_0mbue")]
+right = 28
+left = 26
+
+[node name="HeavenJapan" parent="." instance=ExtResource("36_ky0kp")]
+right = 2
+left = 27
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(984, 1095)

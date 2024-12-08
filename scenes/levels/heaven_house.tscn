@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cffxfddov7qvu"]
+
+[ext_resource type="Script" path="res://scripts/common/level.gd" id="1_opuwr"]
+[ext_resource type="Texture2D" uid="uid://cpub28d5gp4d3" path="res://backgrounds/heaven_house.png" id="2_kcudt"]
+[ext_resource type="PackedScene" uid="uid://dwuwh4spi5x1b" path="res://scenes/npc/karacsonyfa_szellem.tscn" id="3_7w2f7"]
+
+[node name="HeavenHouse" type="Node2D"]
+script = ExtResource("1_opuwr")
+
+[node name="HeavenHouse" type="Sprite2D" parent="."]
+position = Vector2(965, 549)
+scale = Vector2(0.689, 0.689)
+texture = ExtResource("2_kcudt")
+
+[node name="KaracsonyfaSzellem" parent="." instance=ExtResource("3_7w2f7")]
+position = Vector2(1152, 880)

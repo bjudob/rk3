@@ -1,10 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=11 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://4ir8gqvh2eom" path="res://backgrounds/hell_altair.png" id="2_ogp0g"]
 [ext_resource type="PackedScene" uid="uid://bel8o63enp2y4" path="res://scenes/npc/cat_devil.tscn" id="4_mhwqj"]
-[ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_rv0h3"]
-[ext_resource type="Texture2D" uid="uid://bksjwx2x2x8fa" path="res://ui/duck.png" id="7_bk40g"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_jt7wp"]
 [ext_resource type="PackedScene" uid="uid://cnwflvpclyj72" path="res://scenes/npc/krampi.tscn" id="8_g6ffb"]
 [ext_resource type="Texture2D" uid="uid://bspb7f4y31xje" path="res://objects/gembag.png" id="9_mt5es"]
@@ -24,7 +22,8 @@ texture = ExtResource("2_ogp0g")
 
 [node name="CatDevil" parent="." instance=ExtResource("4_mhwqj")]
 position = Vector2(962, 613)
-item_needed = "fire"
+current_dialog = "cica_hello"
+item_needed = "miku_cipo"
 
 [node name="Item" parent="." instance=ExtResource("7_jt7wp")]
 position = Vector2(1625, 930)
@@ -43,14 +42,6 @@ image = ExtResource("9_mt5es")
 [node name="Item4" parent="." instance=ExtResource("7_jt7wp")]
 position = Vector2(1741, 734)
 scale = Vector2(0.5, 0.5)
-id = "duck"
-image = ExtResource("7_bk40g")
-
-[node name="Devil" parent="." instance=ExtResource("6_rv0h3")]
-position = Vector2(270, 785)
-
-[node name="Devil2" parent="." instance=ExtResource("6_rv0h3")]
-position = Vector2(1645, 499)
 
 [node name="SantaBag" type="Sprite2D" parent="."]
 visible = false
@@ -59,7 +50,7 @@ scale = Vector2(0.549628, 0.390951)
 texture = ExtResource("10_p5srv")
 
 [node name="Krampi" parent="." instance=ExtResource("8_g6ffb")]
-position = Vector2(218, 971)
+position = Vector2(282, 930)
 current_dialog = "krampi_hello"
 
 [node name="Builder" type="Node2D" parent="."]

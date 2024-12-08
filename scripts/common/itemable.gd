@@ -28,6 +28,8 @@ func _on_itemable_area_input_event(viewport: Node, event: InputEvent, shape_idx:
 		if not item_follow.is_active() or not item_follow.selected_item:
 			return
 		var item = item_follow.selected_item
+		print(item.id)
+		print(item_needed)
 		if item.id == item_needed:
 			_on_item_correct(item)
 			if item.destroy_on_use:
@@ -44,11 +46,12 @@ func _find_itemable_area():
 
 func _find_sprite():
 	for child in get_children():
-		if child is Sprite2D:
+		if child is Sprite2D and child.visible:
 			sprite = child
 			return
 
 func _highlight():
+	_find_sprite()
 	sprite.material = ShaderMaterial.new()
 	sprite.material.shader = SHADER
 

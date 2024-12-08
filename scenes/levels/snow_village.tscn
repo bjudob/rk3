@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddax5eydu3hth"]
+[gd_scene load_steps=14 format=3 uid="uid://ddax5eydu3hth"]
 
 [ext_resource type="Script" path="res://scripts/snow_village.gd" id="1_vpjw8"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_aojs8"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://wo4dt10n6skx" path="res://objects/gift.png" id="4_pf5v1"]
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="6_aiy6p"]
 [ext_resource type="Texture2D" uid="uid://dpng150jwrnt1" path="res://objects/szanko.png" id="7_sqm20"]
+[ext_resource type="PackedScene" uid="uid://qtaad0sp1h8n" path="res://scenes/npc/nyuszi.tscn" id="9_qm1ac"]
+[ext_resource type="Texture2D" uid="uid://crmejjxjys48k" path="res://objects/karacsonyi_tojas.png" id="10_dftuh"]
+[ext_resource type="Texture2D" uid="uid://ohkr5t58k6aq" path="res://buildings/fa_1.png" id="11_8vdwm"]
 
 [sub_resource type="Animation" id="Animation_hoyt8"]
 length = 5.0
@@ -119,5 +122,19 @@ texture = ExtResource("7_sqm20")
 [node name="Pingu" parent="PinguSzanko" node_paths=PackedStringArray("animation_player") instance=ExtResource("6_aiy6p")]
 position = Vector2(878, 1010)
 animation_player = NodePath("../../AnimationPlayer")
-current_dialog = "pingu_eltunt_barat"
-item_needed = "szanko"
+current_dialog = "pingu_gift"
+item_needed = "gift_pingu"
+
+[node name="Item" parent="." instance=ExtResource("3_am4gd")]
+position = Vector2(552, 917)
+scale = Vector2(0.7, 0.7)
+id = "karacsonyi_tojas"
+image = ExtResource("10_dftuh")
+
+[node name="Nyuszi" parent="." instance=ExtResource("9_qm1ac")]
+position = Vector2(1668, 972)
+
+[node name="Fa1" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(453, 884)
+texture = ExtResource("11_8vdwm")

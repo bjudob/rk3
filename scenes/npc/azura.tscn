@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://beijgm83b518e"]
+
+[ext_resource type="Script" path="res://scripts/azura.gd" id="1_afq4i"]
+[ext_resource type="Texture2D" uid="uid://dx1hariq481ok" path="res://characters/aztec_priestess.png" id="1_cio1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3d8j1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyd4t"]
+size = Vector2(666, 371)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtghv"]
+size = Vector2(184, 299)
+
+[node name="Azura" type="StaticBody2D"]
+script = ExtResource("1_afq4i")
+
+[node name="AztecPriestess" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_cio1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3d8j1")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-3, -25.5)
+shape = SubResource("RectangleShape2D_iyd4t")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-2, 6.5)
+shape = SubResource("RectangleShape2D_dtghv")

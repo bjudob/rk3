@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bga5e06n3e3a0"]
+
+[ext_resource type="Script" path="res://scripts/common/level.gd" id="1_b88uc"]
+[ext_resource type="Texture2D" uid="uid://ccw6hj68utxmk" path="res://backgrounds/winter_house.png" id="1_tmm1p"]
+[ext_resource type="PackedScene" uid="uid://d4e53tqdawnsg" path="res://scenes/npc/maci.tscn" id="3_vavo8"]
+[ext_resource type="Texture2D" uid="uid://b5w5kfwjpcskx" path="res://characters/snowman_fat.png" id="4_5776x"]
+[ext_resource type="PackedScene" uid="uid://ct0og2h67hd2x" path="res://scenes/npc/holgarmester.tscn" id="6_88lh1"]
+[ext_resource type="Texture2D" uid="uid://mtbdl225dowq" path="res://characters/snowman_4.png" id="6_ml5lm"]
+
+[node name="HolgarmesteriHivatal" type="Node2D"]
+script = ExtResource("1_b88uc")
+
+[node name="WinterHouse" type="Sprite2D" parent="."]
+position = Vector2(959, 547)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("1_tmm1p")
+
+[node name="Maci" parent="." instance=ExtResource("3_vavo8")]
+position = Vector2(1562, 849)
+scale = Vector2(-1, 1)
+current_dialog = "maci_holgarmester"
+
+[node name="SnowmanFat" type="Sprite2D" parent="."]
+position = Vector2(550, 770)
+texture = ExtResource("4_5776x")
+
+[node name="Snowman4" type="Sprite2D" parent="."]
+position = Vector2(349, 764)
+texture = ExtResource("6_ml5lm")
+
+[node name="Holgarmester" parent="." instance=ExtResource("6_88lh1")]
+position = Vector2(729, 861)

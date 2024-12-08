@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cahpofhknpg63"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_iijl1"]
-[ext_resource type="Texture2D" uid="uid://clx6lvekle6nv" path="res://objects/fire.png" id="2_24qe0"]
+[ext_resource type="Texture2D" uid="uid://bksjwx2x2x8fa" path="res://objects/duck.png" id="2_5a3xf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htxgr"]
 size = Vector2(111, 121)
@@ -9,12 +9,11 @@ size = Vector2(111, 121)
 [node name="Item" type="Node2D"]
 z_index = 1
 script = ExtResource("1_iijl1")
-id = "fire"
-image = ExtResource("2_24qe0")
+image = ExtResource("2_5a3xf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.257317, 0.231319)
-texture = ExtResource("2_24qe0")
+texture = ExtResource("2_5a3xf")
 
 [node name="Area2D" type="Area2D" parent="."]
 

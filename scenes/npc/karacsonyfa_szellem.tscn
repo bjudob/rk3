@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwuwh4spi5x1b"]
+
+[ext_resource type="Texture2D" uid="uid://bi0iycvj4opfg" path="res://characters/karacsonyfa_szellem.png" id="1_6toi0"]
+[ext_resource type="Script" path="res://scripts/karacsonyfa_szellem.gd" id="1_w6ci0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6n7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct3fe"]
+size = Vector2(618, 397)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04wfs"]
+size = Vector2(176, 290)
+
+[node name="KaracsonyfaSzellem" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_w6ci0")
+
+[node name="KaracsonyfaSzellem" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+texture = ExtResource("1_6toi0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y6n7b")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-71, -48.5)
+shape = SubResource("RectangleShape2D_ct3fe")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-6, -3)
+shape = SubResource("RectangleShape2D_04wfs")

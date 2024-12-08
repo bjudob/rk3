@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://sm8cirg8ox2n" path="res://characters/pingu1.png" id="2_g7ve4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tbdk"]
-size = Vector2(95.5, 161.5)
+size = Vector2(154.75, 182.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3f4e"]
-size = Vector2(332.25, 281)
+size = Vector2(421, 281)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rmc0"]
 
@@ -23,13 +23,13 @@ texture = ExtResource("2_g7ve4")
 [node name="ItemableArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
-position = Vector2(-48, -18)
+position = Vector2(-18.375, -28.625)
 shape = SubResource("RectangleShape2D_7tbdk")
 
 [node name="TalkArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
-position = Vector2(-61, -75)
+position = Vector2(24.5, -76)
 shape = SubResource("RectangleShape2D_x3f4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

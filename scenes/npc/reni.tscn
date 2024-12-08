@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://djf7dhyqg2ydh"]
+
+[ext_resource type="Texture2D" uid="uid://bxmyol8np30js" path="res://characters/reni_2.png" id="1_dq76k"]
+[ext_resource type="Script" path="res://scripts/reni.gd" id="1_ises8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck50c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xo1c2"]
+size = Vector2(625, 447)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hptfb"]
+size = Vector2(339, 442)
+
+[node name="Reni" type="StaticBody2D"]
+position = Vector2(472, 891)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ises8")
+current_dialog = "reni_hokupac"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ck50c")
+
+[node name="Reni" type="Sprite2D" parent="."]
+texture = ExtResource("1_dq76k")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(65.5, -33.5)
+shape = SubResource("RectangleShape2D_xo1c2")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-17.5, -24)
+shape = SubResource("RectangleShape2D_hptfb")

@@ -24,6 +24,12 @@ func respawn_enemies():
 		add_child(enemy)
 		enemy.current_hp = enemy.max_hp
 		enemy.health_changed.emit()
+		
+func has_enemies():
+	for enemy in enemies:
+		if has_child(enemy):
+			return true
+	return false
 
 func has_child(node: Node):
 	for child in get_children():

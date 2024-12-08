@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxxiak0tm6xqx"]
+
+[ext_resource type="Script" path="res://scripts/feny_szellem.gd" id="1_fynxq"]
+[ext_resource type="Texture2D" uid="uid://dqvgw1kfxcpfk" path="res://characters/feny_szellem.png" id="2_ga8y7"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_4rdfi"]
+[ext_resource type="Texture2D" uid="uid://cg36e6kddfj3v" path="res://objects/gold_bag.png" id="4_ab2oq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w2tr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhgbu"]
+size = Vector2(1283, 1215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h2hh"]
+size = Vector2(613.5, 725)
+
+[node name="FenySzellem" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_fynxq")
+item_needed = "scroll"
+
+[node name="Creature" type="Sprite2D" parent="."]
+scale = Vector2(1.65686, 1.60634)
+texture = ExtResource("2_ga8y7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5w2tr")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(11.5, 174.5)
+shape = SubResource("RectangleShape2D_jhgbu")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(12, 16)
+shape = SubResource("RectangleShape2D_5h2hh")
+
+[node name="ItemGoldbag" parent="." instance=ExtResource("3_4rdfi")]
+visible = false
+id = "gold_bag"
+image = ExtResource("4_ab2oq")
