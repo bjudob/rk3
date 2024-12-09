@@ -5,6 +5,8 @@ var gift_pingu_given = false
 var gift_nyuszi_given = false
 var gifts_finished = false
 
+@export var miku_head: Node2D
+
 func _ready() -> void:
 	super._ready()
 	Dialogic.signal_event.connect(_on_dialogic)
@@ -15,6 +17,9 @@ func _process(delta: float) -> void:
 		current_dialog = "miku_gift_2"
 	if main.event_happened(Main.GameEvents.GIFTED_NYUSZI):
 		current_dialog = "miku_gift_3"
+	if main.event_happened(Main.GameEvents.RITUAL):
+		miku_head.visible = true
+		queue_free()
 
 func _on_item_correct(item):
 	if item.id == "ollo":
