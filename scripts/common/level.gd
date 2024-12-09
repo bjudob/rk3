@@ -36,3 +36,9 @@ func has_child(node: Node):
 		if child == node:
 			return true
 	return false
+
+func hide_ui():
+	main.hide_ui()
+	
+func show_ui():
+	main.show_ui()

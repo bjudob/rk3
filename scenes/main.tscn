@@ -154,10 +154,12 @@ background_music = ExtResource("6_8a1nc")
 right = 24
 left = 17
 snow = 1
+background_music = ExtResource("6_8a1nc")
 
 [node name="HellCave2" parent="." instance=ExtResource("17_euqv3")]
 left = 23
 snow = 1
+background_music = ExtResource("6_8a1nc")
 
 [node name="SnowVillage" parent="." instance=ExtResource("12_asvne")]
 right = 11

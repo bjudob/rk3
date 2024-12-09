@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn28cajffvi2y"]
+[gd_scene load_steps=12 format=3 uid="uid://bn28cajffvi2y"]
 
 [ext_resource type="Script" path="res://scripts/miku.gd" id="1_s2hmc"]
 [ext_resource type="Texture2D" uid="uid://cbwsif2meybu8" path="res://characters/miku_2.png" id="2_whsu2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvtglc0hmwpwl" path="res://objects/carrot_cake.png" id="5_o7q8y"]
 [ext_resource type="Texture2D" uid="uid://dvwjdok8noxky" path="res://objects/santa_zsak.png" id="6_xv5hx"]
 [ext_resource type="Texture2D" uid="uid://crq8gc4ufe5dj" path="res://objects/miku_szakall.png" id="7_o78rv"]
+[ext_resource type="Texture2D" uid="uid://c3qrsrip7vem" path="res://objects/miku_head.png" id="8_4g687"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdsbi"]
 size = Vector2(29, 27)
@@ -63,3 +64,7 @@ image = ExtResource("6_xv5hx")
 visible = false
 id = "miku_szakall"
 image = ExtResource("7_o78rv")
+
+[node name="ItemMikuHead" parent="." instance=ExtResource("3_aeym4")]
+position = Vector2(6, 161)
+image = ExtResource("8_4g687")

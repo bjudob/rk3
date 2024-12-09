@@ -9,6 +9,7 @@ enum GameEvents {
 	JEZI_RESPAWN,
 	SABOTATED,
 	PISI,
+	RITUAL,
 }
 
 enum Level {
@@ -162,3 +163,9 @@ func event_happened(event):
 			return true
 		i += 1
 	return false
+
+func hide_ui():
+	remove_child(game_ui)
+	
+func show_ui():
+	add_child(game_ui)

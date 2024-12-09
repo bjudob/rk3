@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=16 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://4ir8gqvh2eom" path="res://backgrounds/hell_altair.png" id="2_ogp0g"]
@@ -9,7 +9,101 @@
 [ext_resource type="Texture2D" uid="uid://5k6l5bgh5pnm" path="res://buildings/gargoyle_den_3-removebg-preview.png" id="10_1tc67"]
 [ext_resource type="Script" path="res://scenes/levels/builder.gd" id="10_dym74"]
 [ext_resource type="Texture2D" uid="uid://depxatwglbkb7" path="res://objects/santa_bag.png" id="10_p5srv"]
+[ext_resource type="AudioStream" uid="uid://c6fj5kfhhqmk0" path="res://audio/Epic, Intense Horror Music - Ritual [GCYFaQ4zOAo] (mp3cut.net).mp3" id="11_8u2o7"]
+[ext_resource type="Texture2D" uid="uid://ckerprcunoarh" path="res://backgrounds/ritual.png" id="12_g4pnq"]
 [ext_resource type="Texture2D" uid="uid://7jumuyivqwuk" path="res://buildings/imp_hut.png" id="12_ifuui"]
+
+[sub_resource type="Animation" id="Animation_epd0i"]
+resource_name = "ritual"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ritual:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 19.9667, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CatDevil")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_ritual_ended"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"hide_ui"
+}, {
+"args": [],
+"method": &"show_ui"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ab1ub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ritual:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5b6p"]
+_data = {
+"RESET": SubResource("Animation_ab1ub"),
+"ritual": SubResource("Animation_epd0i")
+}
 
 [node name="Hell" type="Node2D"]
 script = ExtResource("1_7hytu")
@@ -20,8 +114,9 @@ position = Vector2(957, 532)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_ogp0g")
 
-[node name="CatDevil" parent="." instance=ExtResource("4_mhwqj")]
+[node name="CatDevil" parent="." node_paths=PackedStringArray("anim") instance=ExtResource("4_mhwqj")]
 position = Vector2(962, 613)
+anim = NodePath("../AnimationPlayer")
 current_dialog = "cica_hello"
 item_needed = "miku_cipo"
 
@@ -66,3 +161,19 @@ visible = false
 position = Vector2(1707, 783)
 scale = Vector2(2.04783, 2.06579)
 texture = ExtResource("12_ifuui")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_f5b6p")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource("11_8u2o7")
+
+[node name="Ritual" type="Sprite2D" parent="."]
+visible = false
+z_index = 999
+position = Vector2(965, 535)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("12_g4pnq")
