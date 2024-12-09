@@ -1,12 +1,14 @@
 extends Level
 
-var test_mode = false
+var test_mode = true
 
 var exceptions = [
 	Main.Level.HELL,
 	Main.Level.HEAVENS_GATE,
 	Main.Level.SNOW_VILLAGE,
 ]
+
+var current_level = Main.Level.SNOW_VILLAGE
 
 @onready var level_to_scene = {
 	Main.Level.HELL: $Map/MarginContainer/ScrollContainer/VBoxContainer/Hell/hello,
@@ -46,7 +48,16 @@ func _ready() -> void:
 			continue
 		level_to_scene[level].visible=false
 	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):
+		main.change_scene(current_level)
+		reki.position = Vector2(500, reki.position.y)
+	
+
 func show_level(level):
-	if level not in level_to_scene or level_to_scene[level].visible == true:
+	if level not in level_to_scene:
+		return
+	current_level = level
+	if level_to_scene[level].visible == true:
 		return
 	level_to_scene[level].visible = true
