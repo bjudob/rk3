@@ -93,6 +93,7 @@ enum Snow {
 @onready var game_ui = $GameUI
 @onready var reki = $Reki
 @onready var background_music = $BackgroundMusic
+@onready var map = $Map
 
 var level_scene
 var current_level = null
@@ -108,6 +109,7 @@ func _process(delta: float) -> void:
 	pass
 
 func change_scene(level: Main.Level):
+	map.show_level(level)
 	level_scene = level_to_scene[level]
 	if not has_child(level_to_scene[level]):
 		LevelTransition.emit()
