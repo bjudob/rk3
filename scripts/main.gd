@@ -10,6 +10,7 @@ enum GameEvents {
 	SABOTATED,
 	PISI,
 	RITUAL,
+	MIKU_HEAD,
 }
 
 enum Level {

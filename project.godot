@@ -47,6 +47,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "aztec_hello": "res://dialogic/aztec_hello.dtl",
+"aztec_miku": "res://dialogic/aztec_miku.dtl",
+"cica_head": "res://dialogic/cica_head.dtl",
 "cica_hello": "res://dialogic/cica_hello.dtl",
 "cica_ritual": "res://dialogic/cica_ritual.dtl",
 "cica_something": "res://dialogic/cica_something.dtl",

@@ -111,6 +111,7 @@ libraries = {
 }
 
 [node name="ItemMikuHead" parent="." instance=ExtResource("7_j5ydm")]
+visible = false
 position = Vector2(948, 1008)
 scale = Vector2(2, 2)
 id = "miku_head"

@@ -2,6 +2,15 @@ extends NPC
 
 @export var anim: AnimationPlayer
 
+func _process(delta: float) -> void:
+	super._process(delta)
+	if main.event_happened(Main.GameEvents.MIKU_HEAD):
+		current_dialog = "cica_head"
+		Dialogic.start(current_dialog)
+		game_ui.hide_tooltip()
+		$ItemCicaHead.visible = true
+		
+		
 func _on_item_correct(item):
 	anim.play("ritual")
 	return
