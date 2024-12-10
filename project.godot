@@ -78,6 +78,8 @@ directories/dtl_directory={
 "miku_gift_2": "res://dialogic/miku_gift_2.dtl",
 "miku_gift_3": "res://dialogic/miku_gift_3.dtl",
 "miku_hello": "res://dialogic/miku_hello.dtl",
+"nyuszi_beteg": "res://dialogic/nyuszi_beteg.dtl",
+"nyuszi_gyogyul": "res://dialogic/nyuszi_gyogyul.dtl",
 "nyuszi_hello": "res://dialogic/nyuszi_hello.dtl",
 "nyuszi_nyami": "res://dialogic/nyuszi_nyami.dtl",
 "nyuszi_tojas_found": "res://dialogic/nyuszi_tojas_found.dtl",

@@ -11,6 +11,9 @@ enum GameEvents {
 	PISI,
 	RITUAL,
 	MIKU_HEAD,
+	PINGU_BETEG,
+	NYUSZI_BETEG,
+	HOEMBER_BETEG,
 }
 
 enum Level {

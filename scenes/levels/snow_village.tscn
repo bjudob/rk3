@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddax5eydu3hth"]
+[gd_scene load_steps=15 format=3 uid="uid://ddax5eydu3hth"]
 
 [ext_resource type="Script" path="res://scripts/snow_village.gd" id="1_vpjw8"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_aojs8"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://qtaad0sp1h8n" path="res://scenes/npc/nyuszi.tscn" id="9_qm1ac"]
 [ext_resource type="Texture2D" uid="uid://crmejjxjys48k" path="res://objects/karacsonyi_tojas.png" id="10_dftuh"]
 [ext_resource type="Texture2D" uid="uid://ohkr5t58k6aq" path="res://buildings/fa_1.png" id="11_8vdwm"]
+[ext_resource type="Texture2D" uid="uid://5t78803nihpi" path="res://objects/adrenaline.png" id="11_yq6e8"]
 
 [sub_resource type="Animation" id="Animation_hoyt8"]
 length = 5.0
@@ -138,3 +139,9 @@ position = Vector2(1668, 972)
 z_index = 3
 position = Vector2(453, 884)
 texture = ExtResource("11_8vdwm")
+
+[node name="ItemAdrenaline" parent="." instance=ExtResource("3_am4gd")]
+position = Vector2(1055, 938)
+id = "adrenaline"
+image = ExtResource("11_yq6e8")
+destroy_on_use = false
