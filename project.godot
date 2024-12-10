@@ -62,6 +62,8 @@ directories/dtl_directory={
 "havas_jani_polgarmester": "res://dialogic/havas_jani_polgarmester.dtl",
 "havas_jani_sabot": "res://dialogic/havas_jani_sabot.dtl",
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
+"hoember_beteg": "res://dialogic/hoember_beteg.dtl",
+"hoember_gyogyul": "res://dialogic/hoember_gyogyul.dtl",
 "holgarmester_hello": "res://dialogic/holgarmester_hello.dtl",
 "holgarmester_igy_jo": "res://dialogic/holgarmester_igy_jo.dtl",
 "jezi_heaven": "res://dialogic/jezi_heaven.dtl",
