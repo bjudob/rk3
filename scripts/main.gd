@@ -14,6 +14,7 @@ enum GameEvents {
 	PINGU_BETEG,
 	NYUSZI_BETEG,
 	HOEMBER_BETEG,
+	FOKI_BETEG,
 }
 
 enum Level {

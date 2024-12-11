@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://br583iqs35nd0"]
+[gd_scene load_steps=15 format=3 uid="uid://br583iqs35nd0"]
 
 [ext_resource type="Texture2D" uid="uid://c2oj4ml2q67up" path="res://backgrounds/forest_3.png" id="1_oen8f"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_osrrw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ccok5pufugrch" path="res://objects/branch.png" id="8_ykpgk"]
 [ext_resource type="PackedScene" uid="uid://b1ls6vx5255mx" path="res://scenes/npc/suni.tscn" id="10_s7ptj"]
 [ext_resource type="Texture2D" uid="uid://dperyywcxq6fj" path="res://objects/alma.png" id="11_kgqtg"]
+[ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="12_5pkuk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqgxq"]
 
@@ -71,3 +72,8 @@ item_needed = "alma"
 position = Vector2(857, 839)
 id = "alma"
 image = ExtResource("11_kgqtg")
+
+[node name="Pingu" parent="." node_paths=PackedStringArray("foki") instance=ExtResource("12_5pkuk")]
+position = Vector2(977, 1001)
+foki = NodePath("../Foki")
+item_needed = "adrenaline"

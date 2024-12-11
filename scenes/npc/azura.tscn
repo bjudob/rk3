@@ -13,6 +13,8 @@ size = Vector2(184, 299)
 
 [node name="Azura" type="StaticBody2D"]
 script = ExtResource("1_afq4i")
+current_dialog = null
+item_needed = null
 
 [node name="AztecPriestess" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
