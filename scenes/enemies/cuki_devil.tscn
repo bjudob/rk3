@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://do1w0a5kpcmww"]
+[gd_scene load_steps=20 format=3 uid="uid://do1w0a5kpcmww"]
 
 [ext_resource type="Texture2D" uid="uid://2fkl6um3xmfe" path="res://characters/cuki_devil/cuki_devil_1.png" id="1_5c415"]
 [ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_6n8nc"]
+[ext_resource type="Texture2D" uid="uid://cnoqf7vbhdxy6" path="res://objects/fireball.png" id="2_igets"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="2_semk2"]
 [ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="4_8s57q"]
 [ext_resource type="Texture2D" uid="uid://bldfwqp1ytacv" path="res://characters/cuki_devil/cuki_devil_2.png" id="4_o61p2"]
@@ -92,6 +93,7 @@ facing_right = false
 follow_distance = 600.0
 attack_distance = 250.0
 ranged = true
+bullet_texture = ExtResource("2_igets")
 animator = NodePath("AnimationPlayer")
 
 [node name="CukiDevil" type="Sprite2D" parent="."]

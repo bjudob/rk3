@@ -9,7 +9,9 @@ var animator: AnimationPlayer
 var attack_distance: float = 50
 var ranged = false
 var can_attack = true
-var bullet
+@onready
+var bullet = load("res://scenes/snowball.tscn")
+var bullet_texture
 
 @onready var main = get_tree().get_nodes_in_group("main")[0]
 
@@ -44,6 +46,7 @@ func _attack():
 func _ranged_attack():
 	var direction = this.global_position.direction_to(player.global_position)
 	var new_bullet = bullet.instantiate()
+	new_bullet.bullet_texture = bullet_texture
 	new_bullet.direction = direction
 	new_bullet.spawn_pos = this.global_position
 	main.add_child.call_deferred(new_bullet)
