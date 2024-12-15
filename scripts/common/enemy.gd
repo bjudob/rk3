@@ -99,3 +99,6 @@ func _facing():
 	elif  direction.x > 0  and facing_right == false:
 		facing_right = true
 		scale.x = scale.x * -1
+		
+func suicide():
+	get_parent().remove_child(self)

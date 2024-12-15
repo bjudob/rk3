@@ -91,7 +91,7 @@ attack_speed_timer = NodePath("AttackSpeedTimer")
 souls = 100
 facing_right = false
 follow_distance = 600.0
-attack_distance = 250.0
+attack_distance = 350.0
 ranged = true
 bullet_texture = ExtResource("2_igets")
 animator = NodePath("AnimationPlayer")
@@ -118,6 +118,7 @@ shape = SubResource("RectangleShape2D_l5adt")
 
 [node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("5_xkwxk")
+dmg = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-2.5, 3.5)
@@ -129,4 +130,4 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.5
