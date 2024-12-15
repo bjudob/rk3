@@ -36,6 +36,7 @@ directories/dch_directory={
 "kacsi": "res://dialogic/kacsi.dch",
 "krampi": "res://dialogic/krampi.dch",
 "maci": "res://dialogic/maci.dch",
+"merchant_heaven": "res://characters/merchant_heaven.dch",
 "miku": "res://dialogic/miku.dch",
 "nyuszi": "res://dialogic/nyuszi.dch",
 "pingu": "res://dialogic/pingu.dch",
@@ -78,6 +79,7 @@ directories/dtl_directory={
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
 "maci_holgarmester": "res://dialogic/maci_holgarmester.dtl",
 "maci_repaired": "res://dialogic/maci_repaired.dtl",
+"merchant_heaven": "res://dialogic/merchant_heaven.dtl",
 "miku_2": "res://dialogic/miku_2.dtl",
 "miku_gift_2": "res://dialogic/miku_gift_2.dtl",
 "miku_gift_3": "res://dialogic/miku_gift_3.dtl",
@@ -102,6 +104,10 @@ layout/default_style="res://dialogic/style.tres"
 variables={
 "heaven_buildings": {},
 "heaven_items": {
+"cloud_plush": {
+"bought": false,
+"cost": 500
+},
 "money": 0
 },
 "hell_buildings": {

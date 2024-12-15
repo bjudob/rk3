@@ -2,11 +2,12 @@ spider: Szépen beszél a Messiás
 spider: Szívesen megenném
 spider: De több baj van vele halva mint élve
 spider: Valami más ételt kell találnom
-- 242t3w5t4w
 if {hell_items.csavarhuzo.bought} == false:
-- Csavarhúzó - 30 soul
-	if {hell_items.csavarhuzo.cost} > {hell_items.money} == true:
-		spider: Nem elég hogy kielégítse étvágyam
-	else:
-		set {hell_items.csavarhuzo.bought} = true
-- Suni - 50 souls
+	- Csavarhúzó - 150 souls
+		if {hell_items.csavarhuzo.cost} > {hell_items.money} == true:
+			spider: Nem elég hogy kielégítse étvágyam
+		else:
+			set {hell_items.csavarhuzo.bought} = true
+else:
+- Hamarosan elhozom
+spider: gerg
