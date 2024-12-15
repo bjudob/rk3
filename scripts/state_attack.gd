@@ -31,7 +31,8 @@ func physics_update(delta: float) -> void:
 		_attack()
 	else:
 		this.velocity = Vector2()
-		StateTransition.emit(self, Enemy.StateEnum.FOLLOW)
+		if animator.current_animation != "attack":
+			StateTransition.emit(self, Enemy.StateEnum.FOLLOW)
 
 func _attack():
 	if not can_attack:
