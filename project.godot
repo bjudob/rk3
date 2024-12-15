@@ -101,6 +101,9 @@ layout/style_list=["res://dialogic/style.tres"]
 layout/default_style="res://dialogic/style.tres"
 variables={
 "heaven_buildings": {},
+"heaven_items": {
+"money": 0
+},
 "hell_buildings": {
 "gargoyle_den": {
 "cost": 100,
@@ -112,6 +115,13 @@ variables={
 },
 "money": 0,
 "world_eater": false
+},
+"hell_items": {
+"csavarhuzo": {
+"bought": false,
+"cost": 100
+},
+"money": 0
 }
 }
 extensions_folder="res://addons/dialogic_additions"

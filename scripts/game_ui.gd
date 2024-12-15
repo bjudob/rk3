@@ -22,6 +22,8 @@ func _ready() -> void:
 
 func  _process(delta: float) -> void:
 	Dialogic.VAR.hell_buildings.money = angel_souls
+	Dialogic.VAR.hell_items.money = angel_souls
+	Dialogic.VAR.heaven_items.money = demon_souls
 
 func show_tooltip(text: String):
 	tooltip.show_tooltip(text)
