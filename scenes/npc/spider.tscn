@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmq52b0si5xi6"]
+[gd_scene load_steps=8 format=3 uid="uid://cmq52b0si5xi6"]
 
 [ext_resource type="Script" path="res://scripts/spider.gd" id="1_s27u5"]
 [ext_resource type="Texture2D" uid="uid://dyjgcxg2v3tsb" path="res://characters/evil_spider.png" id="2_x1k1n"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_t634d"]
+[ext_resource type="Texture2D" uid="uid://cmhgsoe7aptnw" path="res://objects/csavarhuzo.png" id="4_8a1pd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3x04x"]
 
@@ -36,3 +38,8 @@ shape = SubResource("RectangleShape2D_ytth1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
 position = Vector2(-13, 31.5)
 shape = SubResource("RectangleShape2D_uqupq")
+
+[node name="ItemCsavarhuzo" parent="." instance=ExtResource("3_t634d")]
+visible = false
+id = "csavarhuzo"
+image = ExtResource("4_8a1pd")

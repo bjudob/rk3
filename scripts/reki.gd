@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -370.0
 const JUMP_HOLD_VELOCITY_ORIGINAL = 33.0
 var JUMP_HOLD_VELOCITY = 33.0
 var facing_right = true
+var dead = false
 
 @onready var hp_regen_timer = $HpRegenTimer
 @onready var animation = $AnimationPlayer
@@ -41,6 +42,8 @@ func play_animation(name):
 		animation.play(name)
 
 func _physics_process(delta: float) -> void:
+	if dead:
+		return
 	var is_jumping = not is_on_floor()
 	if is_jumping:
 		velocity += get_gravity() * delta
@@ -82,3 +85,12 @@ func _regen_hp():
 	current_hp = regened_hp
 	health_changed.emit()
 	hp_regen_timer.start()
+
+func _die():
+	dead = true
+	$"../AnimationPlayer".play("you_died")
+
+func respawn():
+	dead = false
+	visible = true
+	current_hp = max_hp

@@ -18,8 +18,9 @@ enum StateEnum{
 @export var follow_distance: float = 500
 @export var attack_distance: float = 50
 @export var ranged: bool = false
+@export var ranged_dmg = 40
 @export var grounded: bool = false
-@export var bullet =  load("res://scenes/snowball.tscn")
+@export var bullet_texture =  load("res://objects/snowball.png")
 
 const initial_state = StateEnum.IDLE
 var current_state: State
@@ -89,13 +90,20 @@ func _set_optional_attrs(state):
 	if "grounded" in state:
 		state.grounded = grounded
 	if "bullet" in state:
-		state.bullet = bullet
+		state.bullet_texture = bullet_texture
+	if "ranged_dmg" in state:
+		state.ranged_dmg = ranged_dmg
 
 func _facing():
 	var direction = global_position.direction_to(player.global_position)
+	if animator.current_animation == "attack":
+		return
 	if direction.x < 0 and facing_right == true:
 		facing_right = false
 		scale.x = scale.x * -1
 	elif  direction.x > 0  and facing_right == false:
 		facing_right = true
 		scale.x = scale.x * -1
+		
+func suicide():
+	get_parent().remove_child(self)

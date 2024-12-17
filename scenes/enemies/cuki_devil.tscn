@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://do1w0a5kpcmww"]
+[gd_scene load_steps=21 format=3 uid="uid://do1w0a5kpcmww"]
 
 [ext_resource type="Texture2D" uid="uid://2fkl6um3xmfe" path="res://characters/cuki_devil/cuki_devil_1.png" id="1_5c415"]
 [ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_6n8nc"]
+[ext_resource type="Texture2D" uid="uid://cnoqf7vbhdxy6" path="res://objects/fireball.png" id="2_igets"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="2_semk2"]
 [ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="4_8s57q"]
 [ext_resource type="Texture2D" uid="uid://bldfwqp1ytacv" path="res://characters/cuki_devil/cuki_devil_2.png" id="4_o61p2"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_xkwxk"]
 [ext_resource type="Texture2D" uid="uid://c6sytawmvbohc" path="res://characters/cuki_devil/cuki_devil_4.png" id="6_2n7j8"]
 [ext_resource type="Texture2D" uid="uid://x222njsyr8qi" path="res://characters/cuki_devil/cuki_devil_5.png" id="7_00rwp"]
+[ext_resource type="AudioStream" uid="uid://n10fhswruk0f" path="res://audio/fire-sound-effects-224089 (mp3cut.net).mp3" id="11_72n26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_behrc"]
 
@@ -32,9 +34,33 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("1_5c415")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fvvs2"]
 resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_m4v0u"]
 resource_name = "follow"
@@ -90,8 +116,11 @@ attack_speed_timer = NodePath("AttackSpeedTimer")
 souls = 100
 facing_right = false
 follow_distance = 600.0
-attack_distance = 250.0
+attack_distance = 350.0
 ranged = true
+ranged_dmg = 110
+bullet_texture = ExtResource("2_igets")
+max_hp = 200
 animator = NodePath("AnimationPlayer")
 
 [node name="CukiDevil" type="Sprite2D" parent="."]
@@ -116,6 +145,7 @@ shape = SubResource("RectangleShape2D_l5adt")
 
 [node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("5_xkwxk")
+dmg = 150
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-2.5, 3.5)
@@ -127,4 +157,8 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_72n26")
+pitch_scale = 2.0

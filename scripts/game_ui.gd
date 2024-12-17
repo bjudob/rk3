@@ -11,8 +11,8 @@ extends CanvasLayer
 @onready var angel_souls_display = $AngelSouls/HBoxContainer/MarginContainer2/Label
 @onready var ducks_label = $Ducks/HBoxContainer/MarginContainer/DuckNr
 
-var demon_souls = 240
-var angel_souls = 250
+var demon_souls = 11240
+var angel_souls = 11250
 var ducks = 0
 
 func _ready() -> void:
@@ -22,6 +22,8 @@ func _ready() -> void:
 
 func  _process(delta: float) -> void:
 	Dialogic.VAR.hell_buildings.money = angel_souls
+	Dialogic.VAR.hell_items.money = angel_souls
+	Dialogic.VAR.heaven_items.money = demon_souls
 
 func show_tooltip(text: String):
 	tooltip.show_tooltip(text)

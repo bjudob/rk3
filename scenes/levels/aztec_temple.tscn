@@ -25,6 +25,7 @@ texture = ExtResource("5_al8ru")
 [node name="Azura" parent="." instance=ExtResource("5_vknpn")]
 position = Vector2(1127, 918)
 current_dialog = "aztec_hello"
+item_needed = "miku_head"
 
 [node name="Item" parent="." instance=ExtResource("6_h8xnr")]
 position = Vector2(687, 996)

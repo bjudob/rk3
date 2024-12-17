@@ -9,6 +9,12 @@ enum GameEvents {
 	JEZI_RESPAWN,
 	SABOTATED,
 	PISI,
+	RITUAL,
+	MIKU_HEAD,
+	PINGU_BETEG,
+	NYUSZI_BETEG,
+	HOEMBER_BETEG,
+	FOKI_BETEG,
 }
 
 enum Level {
@@ -92,6 +98,7 @@ enum Snow {
 @onready var game_ui = $GameUI
 @onready var reki = $Reki
 @onready var background_music = $BackgroundMusic
+@onready var map = $Map
 
 var level_scene
 var current_level = null
@@ -107,6 +114,7 @@ func _process(delta: float) -> void:
 	pass
 
 func change_scene(level: Main.Level):
+	map.show_level(level)
 	level_scene = level_to_scene[level]
 	if not has_child(level_to_scene[level]):
 		LevelTransition.emit()
@@ -162,3 +170,14 @@ func event_happened(event):
 			return true
 		i += 1
 	return false
+
+func hide_ui():
+	remove_child(game_ui)
+	
+func show_ui():
+	add_child(game_ui)
+	
+func die():
+	change_scene(Level.SNOW_VILLAGE)
+	game_ui.add_souls(-game_ui.demon_souls, true)
+	game_ui.add_souls(-game_ui.angel_souls, false)

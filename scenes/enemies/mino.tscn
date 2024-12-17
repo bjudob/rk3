@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bpws0ehds6sm2"]
+[gd_scene load_steps=24 format=3 uid="uid://bpws0ehds6sm2"]
 
 [ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_jev1y"]
 [ext_resource type="Texture2D" uid="uid://cy74rethskmuw" path="res://characters/mino/mino_1.png" id="2_krqto"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bl3p3dkn7jq0e" path="res://characters/mino/mino_6.png" id="8_v5n6v"]
 [ext_resource type="Texture2D" uid="uid://b04sq6t38yny2" path="res://characters/mino/mino_7.png" id="9_av3nc"]
 [ext_resource type="Texture2D" uid="uid://bpcjw12ohk6nh" path="res://characters/mino/mino_8.png" id="10_d4yc7"]
+[ext_resource type="Texture2D" uid="uid://dhh3ufsywwom7" path="res://objects/fire2.png" id="13_2xjha"]
+[ext_resource type="AudioStream" uid="uid://ooq8fmdm06o1" path="res://audio/rock-cinematic-161648.mp3" id="14_vapv4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2dsa"]
 
@@ -35,10 +37,46 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_krqto")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_vugwl"]
 resource_name = "attack"
-length = 1.2
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,6 +88,42 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("7_ns0n4"), ExtResource("8_v5n6v"), ExtResource("9_av3nc"), ExtResource("10_d4yc7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.76667, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_efbqo"]
@@ -117,7 +191,7 @@ facing_right = false
 idle_move_speed = 0.0
 follow_move_speed = 0.0
 attack_distance = 500.0
-max_hp = 200
+max_hp = 600
 animator = NodePath("AnimationPlayer")
 
 [node name="Mino" type="Sprite2D" parent="."]
@@ -141,10 +215,12 @@ shape = SubResource("RectangleShape2D_xp4lm")
 
 [node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("5_p10s4")
+dmg = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(8.5, 126)
 shape = SubResource("RectangleShape2D_cqjub")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -152,4 +228,20 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 125)
+emitting = false
+amount = 100
+one_shot = true
+texture = ExtResource("13_2xjha")
+emission_shape = 3
+emission_rect_extents = Vector2(3000, 5)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.3
+scale_amount_max = 3.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_vapv4")
+pitch_scale = 2.0

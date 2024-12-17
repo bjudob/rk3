@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://g3408igv35bn"]
+[gd_scene load_steps=20 format=3 uid="uid://g3408igv35bn"]
 
 [ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_44sf6"]
 [ext_resource type="Texture2D" uid="uid://of5hxm7tm8ig" path="res://characters/hell_dog/hell_dog_1.png" id="2_4e8pv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/common/hit_box.gd" id="5_gore3"]
 [ext_resource type="Texture2D" uid="uid://jfkasovklv1d" path="res://characters/hell_dog/hell_dog_4.png" id="6_prri1"]
 [ext_resource type="Texture2D" uid="uid://dfheaqmo4tu6o" path="res://objects/dog_fire.png" id="9_6fq5n"]
+[ext_resource type="AudioStream" uid="uid://n10fhswruk0f" path="res://audio/fire-sound-effects-224089 (mp3cut.net).mp3" id="10_s1vkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtehk"]
 
@@ -56,6 +57,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_gxsnp"]
 resource_name = "attack"
@@ -91,6 +104,18 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -146,11 +171,12 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_44sf6")
 attack_speed_timer = NodePath("AttackSpeedTimer")
-idle_move_speed = 5.0
+idle_move_speed = 0.0
 follow_move_speed = 210.0
 follow_distance = 800.0
 attack_distance = 300.0
 grounded = true
+max_hp = 150
 animator = NodePath("AnimationPlayer")
 
 [node name="HellDog" type="Sprite2D" parent="."]
@@ -203,3 +229,6 @@ angle_min = -90.0
 angle_max = -90.0
 scale_amount_min = 0.7
 scale_amount_max = 0.7
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_s1vkp")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dni0ejf6jeocy"
+path="res://.godot/imported/Instrumental Christmas Music - Silent Night - Christmas Music.mp3-c4e525aa11cc5bbc8fd7985927bd4291.mp3str"
+
+[deps]
+
+source_file="res://audio/Instrumental Christmas Music - Silent Night - Christmas Music.mp3"
+dest_files=["res://.godot/imported/Instrumental Christmas Music - Silent Night - Christmas Music.mp3-c4e525aa11cc5bbc8fd7985927bd4291.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -4,7 +4,7 @@ extends Node2D
 @export var right: Main.Level = Main.Level.HELL
 @export var left: Main.Level = Main.Level.HELL
 @export var snow: Main.Snow = Main.Snow.SNOW
-@export var background_music = load("res://audio/Xmas_Christmas_Song_Loop.wav")
+@export var background_music = load("res://audio/Dark Christmas Soundtrack [No Copyright Sound] [ FREE USE MUSIC ] - Myuu - Santa's Tricks.mp3")
 
 @onready var reki = get_tree().get_nodes_in_group("player")[0]
 @onready var game_ui = get_tree().get_nodes_in_group("game_ui")[0]
@@ -36,3 +36,9 @@ func has_child(node: Node):
 		if child == node:
 			return true
 	return false
+
+func hide_ui():
+	main.hide_ui()
+	
+func show_ui():
+	main.show_ui()

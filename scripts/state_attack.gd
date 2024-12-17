@@ -9,7 +9,10 @@ var animator: AnimationPlayer
 var attack_distance: float = 50
 var ranged = false
 var can_attack = true
-var bullet
+@onready
+var bullet = load("res://scenes/snowball.tscn")
+var bullet_texture
+var ranged_dmg
 
 @onready var main = get_tree().get_nodes_in_group("main")[0]
 
@@ -29,7 +32,8 @@ func physics_update(delta: float) -> void:
 		_attack()
 	else:
 		this.velocity = Vector2()
-		StateTransition.emit(self, Enemy.StateEnum.FOLLOW)
+		if animator.current_animation != "attack":
+			StateTransition.emit(self, Enemy.StateEnum.FOLLOW)
 
 func _attack():
 	if not can_attack:
@@ -44,8 +48,10 @@ func _attack():
 func _ranged_attack():
 	var direction = this.global_position.direction_to(player.global_position)
 	var new_bullet = bullet.instantiate()
+	new_bullet.bullet_texture = bullet_texture
 	new_bullet.direction = direction
 	new_bullet.spawn_pos = this.global_position
+	new_bullet.ranged_dmg = ranged_dmg
 	main.add_child.call_deferred(new_bullet)
 
 func _attack_speed_timeout():

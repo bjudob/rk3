@@ -36,6 +36,7 @@ directories/dch_directory={
 "kacsi": "res://dialogic/kacsi.dch",
 "krampi": "res://dialogic/krampi.dch",
 "maci": "res://dialogic/maci.dch",
+"merchant_heaven": "res://characters/merchant_heaven.dch",
 "miku": "res://dialogic/miku.dch",
 "nyuszi": "res://dialogic/nyuszi.dch",
 "pingu": "res://dialogic/pingu.dch",
@@ -47,18 +48,25 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "aztec_hello": "res://dialogic/aztec_hello.dtl",
+"aztec_miku": "res://dialogic/aztec_miku.dtl",
+"cica_head": "res://dialogic/cica_head.dtl",
 "cica_hello": "res://dialogic/cica_hello.dtl",
+"cica_ritual": "res://dialogic/cica_ritual.dtl",
 "cica_something": "res://dialogic/cica_something.dtl",
 "felho_szellem_baby": "res://dialogic/felho_szellem_baby.dtl",
 "felho_szellem_hello": "res://dialogic/felho_szellem_hello.dtl",
 "feny_szellem_hello": "res://dialogic/feny_szellem_hello.dtl",
 "feny_szellem_penz": "res://dialogic/feny_szellem_penz.dtl",
 "foki_elveszett_barat": "res://dialogic/foki_elveszett_barat.dtl",
+"foki_pingu": "res://dialogic/foki_pingu.dtl",
+"foki_pingu_beteg": "res://dialogic/foki_pingu_beteg.dtl",
 "foxi_csirke": "res://dialogic/foxi_csirke.dtl",
 "foxi_hello": "res://dialogic/foxi_hello.dtl",
 "havas_jani_polgarmester": "res://dialogic/havas_jani_polgarmester.dtl",
 "havas_jani_sabot": "res://dialogic/havas_jani_sabot.dtl",
 "hello_to_hell": "res://characters/hello_to_hell.dtl",
+"hoember_beteg": "res://dialogic/hoember_beteg.dtl",
+"hoember_gyogyul": "res://dialogic/hoember_gyogyul.dtl",
 "holgarmester_hello": "res://dialogic/holgarmester_hello.dtl",
 "holgarmester_igy_jo": "res://dialogic/holgarmester_igy_jo.dtl",
 "jezi_heaven": "res://dialogic/jezi_heaven.dtl",
@@ -71,10 +79,13 @@ directories/dtl_directory={
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
 "maci_holgarmester": "res://dialogic/maci_holgarmester.dtl",
 "maci_repaired": "res://dialogic/maci_repaired.dtl",
+"merchant_heaven": "res://dialogic/merchant_heaven.dtl",
 "miku_2": "res://dialogic/miku_2.dtl",
 "miku_gift_2": "res://dialogic/miku_gift_2.dtl",
 "miku_gift_3": "res://dialogic/miku_gift_3.dtl",
 "miku_hello": "res://dialogic/miku_hello.dtl",
+"nyuszi_beteg": "res://dialogic/nyuszi_beteg.dtl",
+"nyuszi_gyogyul": "res://dialogic/nyuszi_gyogyul.dtl",
 "nyuszi_hello": "res://dialogic/nyuszi_hello.dtl",
 "nyuszi_nyami": "res://dialogic/nyuszi_nyami.dtl",
 "nyuszi_tojas_found": "res://dialogic/nyuszi_tojas_found.dtl",
@@ -92,6 +103,17 @@ layout/style_list=["res://dialogic/style.tres"]
 layout/default_style="res://dialogic/style.tres"
 variables={
 "heaven_buildings": {},
+"heaven_items": {
+"cloud_plush": {
+"bought": false,
+"cost": 500
+},
+"money": 0,
+"ollo": {
+"bought": false,
+"cost": "3999"
+}
+},
 "hell_buildings": {
 "gargoyle_den": {
 "cost": 100,
@@ -103,6 +125,13 @@ variables={
 },
 "money": 0,
 "world_eater": false
+},
+"hell_items": {
+"csavarhuzo": {
+"bought": false,
+"cost": 100
+},
+"money": 0
 }
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -189,5 +218,10 @@ attack={
 talk={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+esc={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }

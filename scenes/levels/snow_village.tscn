@@ -4,12 +4,12 @@
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_aojs8"]
 [ext_resource type="Texture2D" uid="uid://blhnbv682gjoh" path="res://backgrounds/snow_village.png" id="2_q2dsv"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_am4gd"]
-[ext_resource type="Texture2D" uid="uid://wo4dt10n6skx" path="res://objects/gift.png" id="4_pf5v1"]
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="6_aiy6p"]
 [ext_resource type="Texture2D" uid="uid://dpng150jwrnt1" path="res://objects/szanko.png" id="7_sqm20"]
 [ext_resource type="PackedScene" uid="uid://qtaad0sp1h8n" path="res://scenes/npc/nyuszi.tscn" id="9_qm1ac"]
 [ext_resource type="Texture2D" uid="uid://crmejjxjys48k" path="res://objects/karacsonyi_tojas.png" id="10_dftuh"]
 [ext_resource type="Texture2D" uid="uid://ohkr5t58k6aq" path="res://buildings/fa_1.png" id="11_8vdwm"]
+[ext_resource type="Texture2D" uid="uid://5t78803nihpi" path="res://objects/adrenaline.png" id="11_yq6e8"]
 
 [sub_resource type="Animation" id="Animation_hoyt8"]
 length = 5.0
@@ -95,16 +95,6 @@ position = Vector2(958, 536)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_q2dsv")
 
-[node name="ItemGift" parent="." instance=ExtResource("3_am4gd")]
-position = Vector2(331, 922)
-id = "gift"
-image = ExtResource("4_pf5v1")
-
-[node name="Szanko" parent="." instance=ExtResource("3_am4gd")]
-position = Vector2(1229, 932)
-id = "szanko"
-image = ExtResource("7_sqm20")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_h1oh1")
@@ -138,3 +128,9 @@ position = Vector2(1668, 972)
 z_index = 3
 position = Vector2(453, 884)
 texture = ExtResource("11_8vdwm")
+
+[node name="ItemAdrenaline" parent="." instance=ExtResource("3_am4gd")]
+position = Vector2(1055, 938)
+id = "adrenaline"
+image = ExtResource("11_yq6e8")
+destroy_on_use = false

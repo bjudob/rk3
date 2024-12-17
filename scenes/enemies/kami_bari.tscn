@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://p0lhipgoqub"]
+[gd_scene load_steps=21 format=3 uid="uid://p0lhipgoqub"]
 
 [ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_y4d3a"]
 [ext_resource type="Texture2D" uid="uid://cws4bvj1kgqy6" path="res://characters/kamibari/kamibari_1.png" id="2_602j3"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b81mcxdmavodp" path="res://characters/kamibari/kamibari_4.png" id="7_g1tf4"]
 [ext_resource type="Texture2D" uid="uid://d1nsgakatswud" path="res://characters/kamibari/kamibari_5.png" id="8_1ftve"]
 [ext_resource type="Texture2D" uid="uid://c0ja18fxmxut7" path="res://characters/kamibari/kamibari_3.png" id="9_dec1j"]
+[ext_resource type="AudioStream" uid="uid://cewfighbpsvnt" path="res://audio/sheep-bleating-223324.mp3" id="10_0gvy0"]
+[ext_resource type="Texture2D" uid="uid://vhqhy542r8ml" path="res://objects/wool.png" id="11_qv5xe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppa1j"]
 
@@ -47,22 +49,46 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("KamiBari:visible")
+tracks/2/path = NodePath("HitBox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HealthBar:visible")
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("KamiBari:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -71,6 +97,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_vhn6d"]
 resource_name = "attack"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,10 +105,10 @@ tracks/0/path = NodePath("KamiBari:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.5, 1.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("6_2mps1"), ExtResource("7_g1tf4"), ExtResource("8_1ftve")]
+"values": [ExtResource("2_602j3"), ExtResource("7_g1tf4"), ExtResource("8_1ftve"), ExtResource("2_602j3")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -90,34 +117,72 @@ tracks/1/path = NodePath("KamiBari:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.5, 1.13333, 1.93333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.4, 0.4), Vector2(2, 2)]
+"values": [Vector2(0.4, 0.4), Vector2(1.5, 1.5), Vector2(1.5, 1.5), Vector2(0.4, 0.4)]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("KamiBari:visible")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.9),
+"times": PackedFloat32Array(2),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [{
+"args": [],
+"method": &"_die"
+}]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HealthBar:visible")
+tracks/3/path = NodePath("HitBox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.666667),
+"times": PackedFloat32Array(0, 1.06667, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CPUParticles2D:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.06667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("KamiBari:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_wkroe"]
@@ -169,6 +234,7 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_y4d3a")
 attack_speed_timer = NodePath("AttackSpeedTimer")
+is_demon = false
 animator = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -193,6 +259,7 @@ shape = SubResource("RectangleShape2D_cpnja")
 
 [node name="HitBox" type="Area2D" parent="."]
 script = ExtResource("5_tnt77")
+dmg = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-11, 0)
@@ -204,3 +271,23 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_0gvy0")
+volume_db = 5.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+lifetime = 2.0
+one_shot = true
+texture = ExtResource("11_qv5xe")
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 50.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05

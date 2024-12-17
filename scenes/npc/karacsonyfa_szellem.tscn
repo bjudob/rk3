@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwuwh4spi5x1b"]
+[gd_scene load_steps=9 format=3 uid="uid://dwuwh4spi5x1b"]
 
 [ext_resource type="Texture2D" uid="uid://bi0iycvj4opfg" path="res://characters/karacsonyfa_szellem.png" id="1_6toi0"]
 [ext_resource type="Script" path="res://scripts/karacsonyfa_szellem.gd" id="1_w6ci0"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_wqrvw"]
+[ext_resource type="Texture2D" uid="uid://bop6a8yh00i3d" path="res://objects/cloud_plush.png" id="4_ko67t"]
+[ext_resource type="Texture2D" uid="uid://bberf3jf45xwo" path="res://objects/ollo.png" id="5_w7s6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6n7b"]
 
@@ -15,6 +18,7 @@ size = Vector2(176, 290)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_w6ci0")
+current_dialog = "merchant_heaven"
 
 [node name="KaracsonyfaSzellem" type="Sprite2D" parent="."]
 rotation = 3.14159
@@ -35,3 +39,13 @@ shape = SubResource("RectangleShape2D_ct3fe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
 position = Vector2(-6, -3)
 shape = SubResource("RectangleShape2D_04wfs")
+
+[node name="ItemCloudPlush" parent="." instance=ExtResource("3_wqrvw")]
+visible = false
+id = "cloud_plush"
+image = ExtResource("4_ko67t")
+
+[node name="ItemOllo" parent="." instance=ExtResource("3_wqrvw")]
+visible = false
+id = "ollo"
+image = ExtResource("5_w7s6i")
