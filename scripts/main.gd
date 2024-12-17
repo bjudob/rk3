@@ -176,3 +176,8 @@ func hide_ui():
 	
 func show_ui():
 	add_child(game_ui)
+	
+func die():
+	change_scene(Level.SNOW_VILLAGE)
+	game_ui.add_souls(-game_ui.demon_souls, true)
+	game_ui.add_souls(-game_ui.angel_souls, false)

@@ -191,7 +191,7 @@ facing_right = false
 idle_move_speed = 0.0
 follow_move_speed = 0.0
 attack_distance = 500.0
-max_hp = 400
+max_hp = 600
 animator = NodePath("AnimationPlayer")
 
 [node name="Mino" type="Sprite2D" parent="."]
@@ -228,7 +228,7 @@ libraries = {
 }
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, 125)
