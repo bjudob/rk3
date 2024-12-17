@@ -108,7 +108,11 @@ variables={
 "bought": false,
 "cost": 500
 },
-"money": 0
+"money": 0,
+"ollo": {
+"bought": false,
+"cost": "3999"
+}
 },
 "hell_buildings": {
 "gargoyle_den": {

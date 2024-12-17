@@ -2,6 +2,12 @@ merchant_heaven: Mivel szolgálhatok
 if {heaven_items.cloud_plush.bought} == false:
 	- Plüsi - 500 souls
 		if {heaven_items.cloud_plush.cost} > {heaven_items.money} == true:
-			merchant_heaven: ???
+			merchant_heaven: $$$
 		else:
 			set {heaven_items.cloud_plush.bought} = true
+if {heaven_items.ollo.bought} == false:
+	- Praktikus Olló - 3999 souls
+		if {heaven_items.ollo.cost}  > {heaven_items.money} == true:
+			merchant_heaven: $$$
+		else:
+			set {heaven_items.ollo.bought} = true

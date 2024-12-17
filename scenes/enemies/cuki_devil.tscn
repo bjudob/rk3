@@ -118,6 +118,7 @@ facing_right = false
 follow_distance = 600.0
 attack_distance = 350.0
 ranged = true
+ranged_dmg = 110
 bullet_texture = ExtResource("2_igets")
 max_hp = 200
 animator = NodePath("AnimationPlayer")

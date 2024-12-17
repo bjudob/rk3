@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8rdr6m82ytkk"]
+[gd_scene load_steps=12 format=3 uid="uid://8rdr6m82ytkk"]
 
 [ext_resource type="Texture2D" uid="uid://nvv3n5vhjrsb" path="res://backgrounds/forest_1.png" id="1_k1h53"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x6d3u"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://d4e53tqdawnsg" path="res://scenes/npc/maci.tscn" id="4_pth6p"]
 [ext_resource type="Texture2D" uid="uid://uq087tvbn5o" path="res://buildings/snow_wall.png" id="5_pdjod"]
 [ext_resource type="AudioStream" uid="uid://e1cpolj1upuy" path="res://audio/sewing-machine.mp3" id="6_ey1hv"]
-[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_wtyx0"]
-[ext_resource type="Texture2D" uid="uid://cmhgsoe7aptnw" path="res://objects/csavarhuzo.png" id="8_u1cfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pybwi"]
 
@@ -104,8 +102,3 @@ texture = ExtResource("5_pdjod")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SnowWall"]
 position = Vector2(-157.25, 23.75)
 shape = SubResource("RectangleShape2D_klptr")
-
-[node name="Item" parent="." instance=ExtResource("7_wtyx0")]
-position = Vector2(1457, 963)
-id = "csavarhuzo"
-image = ExtResource("8_u1cfo")

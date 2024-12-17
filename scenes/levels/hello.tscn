@@ -134,8 +134,8 @@ scale = Vector2(0.549628, 0.390951)
 texture = ExtResource("10_p5srv")
 
 [node name="Krampi" parent="." instance=ExtResource("8_g6ffb")]
-position = Vector2(282, 930)
-current_dialog = "krampi_hello"
+position = Vector2(1589, 923)
+current_dialog = "krampi_cica"
 
 [node name="Builder" type="Node2D" parent="."]
 script = ExtResource("10_dym74")

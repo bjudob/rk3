@@ -33,4 +33,9 @@ id = "water"
 image = ExtResource("7_gono3")
 
 [node name="Item2" parent="." instance=ExtResource("6_lul1q")]
-position = Vector2(369, 989)
+position = Vector2(322, 1011)
+scale = Vector2(0.1, 0.1)
+
+[node name="Item3" parent="." instance=ExtResource("6_lul1q")]
+position = Vector2(1890, 1057)
+scale = Vector2(0.1, 0.1)
