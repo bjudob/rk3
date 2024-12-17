@@ -27,7 +27,8 @@ func _process(delta: float) -> void:
 
 func take_damage(dmg: int):
 	current_hp -= dmg
-	animator.play("hurt")
+	if animator.current_animation!="attack":
+		animator.play("hurt")
 	health_changed.emit()
 	if dmg > 0:
 		play_hit_sound()

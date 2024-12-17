@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cjpuj2oo4aydb"]
+[gd_scene load_steps=41 format=3 uid="uid://cjpuj2oo4aydb"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_euyya"]
 [ext_resource type="PackedScene" uid="uid://begl8pmauyax2" path="res://scenes/levels/hello.tscn" id="1_ft6hw"]
@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bf1d2g66ls4rn" path="res://scenes/reki.tscn" id="2_p5x3j"]
 [ext_resource type="PackedScene" uid="uid://6f51xk42nxsm" path="res://scenes/ui/game_ui.tscn" id="2_wen8c"]
 [ext_resource type="PackedScene" uid="uid://oxh2s43d88a" path="res://scenes/map.tscn" id="5_6c268"]
-[ext_resource type="AudioStream" uid="uid://br4v1hxgeq7xf" path="res://audio/53 - Town - Necropolis.mp3" id="6_8a1nc"]
 [ext_resource type="PackedScene" uid="uid://cd0ro8hce85yu" path="res://scenes/hell_rome.tscn" id="6_gqyg1"]
 [ext_resource type="PackedScene" uid="uid://dkcfdiqgsxtqh" path="res://scenes/levels/heavens_gate.tscn" id="6_n247f"]
 [ext_resource type="Script" path="res://scripts/go_left.gd" id="6_tef7d"]
 [ext_resource type="Script" path="res://scripts/go_right.gd" id="7_77xbi"]
-[ext_resource type="AudioStream" uid="uid://bf8jg2f6jwy7o" path="res://audio/54 - Town - Rampart.mp3" id="9_aisht"]
+[ext_resource type="AudioStream" uid="uid://bbxqfnu7e0bfg" path="res://audio/karacsony.mp3" id="8_ggkss"]
+[ext_resource type="AudioStream" uid="uid://crpbiywbdch7j" path="res://audio/Dark Christmas Soundtrack [No Copyright Sound] [ FREE USE MUSIC ] - Myuu - Santa's Tricks.mp3" id="8_yv1q6"]
+[ext_resource type="AudioStream" uid="uid://br4v1hxgeq7xf" path="res://audio/53 - Town - Necropolis.mp3" id="10_l7nog"]
 [ext_resource type="PackedScene" uid="uid://d25oiaeis1oan" path="res://scenes/levels/hell_spiral.tscn" id="11_mi6si"]
 [ext_resource type="PackedScene" uid="uid://ddax5eydu3hth" path="res://scenes/levels/snow_village.tscn" id="12_asvne"]
 [ext_resource type="PackedScene" uid="uid://f0tbq4wpp1gt" path="res://scenes/levels/hell_house.tscn" id="12_byb2b"]
@@ -108,90 +109,99 @@ position = Vector2(1677, 957)
 [node name="Map" parent="." instance=ExtResource("5_6c268")]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_x7eno")]
+background_music = ExtResource("8_ggkss")
 
 [node name="Hell" parent="." instance=ExtResource("1_ft6hw")]
 right = 15
 left = 17
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="HellRome" parent="." instance=ExtResource("6_gqyg1")]
 right = 16
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="HellSpiral" parent="." instance=ExtResource("11_mi6si")]
 right = 19
 left = 15
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="HellHouse" parent="." instance=ExtResource("12_byb2b")]
 right = 20
 left = 16
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="HellVillage" parent="." instance=ExtResource("13_lejxm")]
 right = 18
 left = 19
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="HellTower" parent="." instance=ExtResource("14_cuwex")]
 right = 17
 left = 20
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="GargoyleGate" parent="." instance=ExtResource("12_ij75m")]
 right = 23
 left = 18
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="HellCave" parent="." instance=ExtResource("16_bxyg5")]
 right = 24
 left = 17
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="HellCave2" parent="." instance=ExtResource("17_euqv3")]
 left = 23
 snow = 1
-background_music = ExtResource("6_8a1nc")
+background_music = ExtResource("10_l7nog")
 
 [node name="SnowVillage" parent="." instance=ExtResource("12_asvne")]
 right = 11
 left = 9
+background_music = ExtResource("8_ggkss")
 
 [node name="Forest1" parent="." instance=ExtResource("14_n3a1x")]
 right = 12
 left = 7
+background_music = ExtResource("8_ggkss")
 
 [node name="Forest2" parent="." instance=ExtResource("15_owoci")]
 right = 8
 left = 11
+background_music = ExtResource("8_ggkss")
 
 [node name="SnowCity" parent="." instance=ExtResource("31_7w7dv")]
 right = 21
 left = 12
+background_music = ExtResource("8_ggkss")
 
 [node name="HolgarmesteriHivatal" parent="." instance=ExtResource("22_rvs6r")]
 right = 22
 left = 8
+background_music = ExtResource("8_ggkss")
 
 [node name="SnowCityHouses" parent="." instance=ExtResource("23_1cefj")]
 right = 13
 left = 21
+background_music = ExtResource("8_ggkss")
 
 [node name="Forest3" parent="." instance=ExtResource("16_8u271")]
 right = 10
 left = 22
+background_music = ExtResource("8_ggkss")
 
 [node name="AztecTemple" parent="." instance=ExtResource("13_ba2n1")]
 right = 9
 left = 13
+background_music = ExtResource("8_ggkss")
 
 [node name="DuckVillage" parent="." instance=ExtResource("13_f8h2x")]
 right = 7
@@ -200,39 +210,42 @@ left = 10
 [node name="HeavensGate" parent="." instance=ExtResource("6_n247f")]
 right = 3
 left = 6
-background_music = ExtResource("9_aisht")
+background_music = ExtResource("8_yv1q6")
 
 [node name="Heaven1" parent="." instance=ExtResource("16_x172q")]
 right = 4
 left = 2
-background_music = ExtResource("9_aisht")
+background_music = ExtResource("8_yv1q6")
 
 [node name="Heaven2" parent="." instance=ExtResource("17_pd3s3")]
 right = 5
 left = 3
-background_music = ExtResource("9_aisht")
+background_music = ExtResource("8_yv1q6")
 
 [node name="Heaven3" parent="." instance=ExtResource("18_1m2a4")]
 right = 6
 left = 4
-background_music = ExtResource("9_aisht")
+background_music = ExtResource("8_yv1q6")
 
 [node name="Heaven4" parent="." instance=ExtResource("19_yomhj")]
 right = 26
 left = 5
-background_music = ExtResource("9_aisht")
+background_music = ExtResource("8_yv1q6")
 
 [node name="HeavenKapu" parent="." instance=ExtResource("34_noymh")]
 right = 27
 left = 6
+background_music = ExtResource("8_yv1q6")
 
 [node name="HeavenHouse" parent="." instance=ExtResource("35_0mbue")]
 right = 28
 left = 26
+background_music = ExtResource("8_yv1q6")
 
 [node name="HeavenJapan" parent="." instance=ExtResource("36_ky0kp")]
 right = 2
 left = 27
+background_music = ExtResource("8_yv1q6")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(984, 1095)
@@ -258,6 +271,7 @@ position = Vector2(33, -325)
 shape = SubResource("RectangleShape2D_y6f12")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+volume_db = 5.0
 
 [connection signal="body_entered" from="GoLeft" to="GoLeft" method="_on_body_entered"]
 [connection signal="body_entered" from="GoRight" to="GoRight" method="_on_body_entered"]

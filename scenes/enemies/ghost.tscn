@@ -67,6 +67,7 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_12ulx")
 attack_speed_timer = NodePath("AttackSpeedTimer")
+souls = 70
 is_demon = false
 facing_right = false
 follow_move_speed = 400.0

@@ -27,6 +27,7 @@ func _ready() -> void:
 	error_audioplayer = AudioStreamPlayer2D.new()
 	success_audioplayer.stream = success_sound
 	error_audioplayer.stream = error_sound
+	error_audioplayer.volume_db = 7
 	add_child(error_audioplayer)
 	add_child(success_audioplayer)
 	
@@ -38,7 +39,7 @@ func _on_itemable_area_input_event(viewport: Node, event: InputEvent, shape_idx:
 	if (event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
 		if not item_follow.is_active() or not item_follow.selected_item:
 			return
-		var item = item_follow.selected_itemd
+		var item = item_follow.selected_item
 		print(item.id)
 		print(item_needed)
 		if item.id == item_needed:
