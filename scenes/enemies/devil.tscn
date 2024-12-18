@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bksp8w60elsxv"]
 
-[ext_resource type="Script" path="res://scripts/devil.gd" id="1_dkkfo"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="1_gljb1"]
+[ext_resource type="Script" path="res://scripts/common/enemy.gd" id="1_lrd16"]
 [ext_resource type="Texture2D" uid="uid://bu0fvl4do6y0k" path="res://characters/imp.png" id="2_ydb40"]
 [ext_resource type="Script" path="res://scripts/common/hurt_box.gd" id="3_sd4bx"]
 [ext_resource type="PackedScene" uid="uid://b0uamnj77oxpi" path="res://scenes/health_bar.tscn" id="5_e0y0r"]
@@ -171,10 +171,13 @@ _data = {
 "idle": SubResource("Animation_u4rmj")
 }
 
-[node name="Devil" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
+[node name="Devil" type="CharacterBody2D" node_paths=PackedStringArray("attack_speed_timer", "animator")]
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_dkkfo")
+script = ExtResource("1_lrd16")
+attack_speed_timer = NodePath("AttackSpeedTimer")
+facing_right = false
+attack_distance = 100.0
 animator = NodePath("AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -232,3 +235,5 @@ texture = ExtResource("10_q0an0")
 libraries = {
 "": SubResource("AnimationLibrary_67jse")
 }
+
+[node name="AttackSpeedTimer" type="Timer" parent="."]

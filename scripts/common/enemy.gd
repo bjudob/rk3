@@ -25,6 +25,7 @@ enum StateEnum{
 const initial_state = StateEnum.IDLE
 var current_state: State
 var current_state_enum: StateEnum
+var original_position
 
 var states_dict = {
 	StateEnum.IDLE: StateIdle,
@@ -39,6 +40,7 @@ var player = get_tree().get_nodes_in_group("player")[0]
 
 func _ready() -> void:
 	super._ready()
+	original_position = position
 	for state_enum in states_list:
 		var state = states_dict[state_enum].new()
 		state.this = self
@@ -107,3 +109,6 @@ func _facing():
 		
 func suicide():
 	get_parent().remove_child(self)
+
+func reset_position():
+	position = original_position

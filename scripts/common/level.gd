@@ -22,6 +22,7 @@ func respawn_enemies():
 		if has_child(enemy):
 			continue
 		add_child(enemy)
+		enemy.reset_position()
 		enemy.current_hp = enemy.max_hp
 		enemy.health_changed.emit()
 		
