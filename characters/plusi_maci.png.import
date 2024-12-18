@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yl7q8sykn6k2"
-path="res://.godot/imported/plusi_maci.png-4139e24b8df51769149f6a2e239e960a.ctex"
+path="res://.godot/imported/plusi_maci.png-6b594b4a6e99facd3ca132052aa7e5f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/plusi_maci.png"
-dest_files=["res://.godot/imported/plusi_maci.png-4139e24b8df51769149f6a2e239e960a.ctex"]
+source_file="res://characters/plusi_maci.png"
+dest_files=["res://.godot/imported/plusi_maci.png-6b594b4a6e99facd3ca132052aa7e5f3.ctex"]
 
 [params]
 

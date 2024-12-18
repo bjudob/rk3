@@ -316,11 +316,6 @@ scale = Vector2(3, 3)
 id = "shovel"
 image = ExtResource("7_tyrsm")
 
-[node name="ItemCloudPlush" parent="." instance=ExtResource("5_t0ovb")]
-position = Vector2(1784, 976)
-id = "cloud_plush"
-image = ExtResource("9_hcnct")
-
 [node name="PinguLufi" type="Node2D" parent="."]
 position = Vector2(1468, 903)
 

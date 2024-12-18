@@ -12,8 +12,6 @@ func _process(delta: float) -> void:
 		
 		
 func _on_item_correct(item):
-	anim.play("ritual")
-	return
 	if item.id == "miku_cipo":
 		current_dialog = "cica_something"
 		Dialogic.start(current_dialog)

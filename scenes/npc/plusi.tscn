@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyxpjxpk52bnu"]
+
+[ext_resource type="Script" path="res://scripts/plusi.gd" id="1_g1i3b"]
+[ext_resource type="Texture2D" uid="uid://yl7q8sykn6k2" path="res://characters/plusi_maci.png" id="2_rryfj"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_25f7i"]
+[ext_resource type="Texture2D" uid="uid://bop6a8yh00i3d" path="res://objects/cloud_plush.png" id="4_kwwyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ap15i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhcmd"]
+size = Vector2(614, 350)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te4t2"]
+size = Vector2(205, 233)
+
+[node name="Plusi" type="StaticBody2D"]
+position = Vector2(1484, 975)
+script = ExtResource("1_g1i3b")
+current_dialog = "plusi_hello"
+item_needed = "cloud"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ap15i")
+
+[node name="PlusiMaci" type="Sprite2D" parent="."]
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("2_rryfj")
+
+[node name="ItemCloudBaby" parent="." instance=ExtResource("3_25f7i")]
+visible = false
+id = "cloud_plush"
+image = ExtResource("4_kwwyy")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-220, -69)
+shape = SubResource("RectangleShape2D_yhcmd")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-7.5, -12.5)
+shape = SubResource("RectangleShape2D_te4t2")

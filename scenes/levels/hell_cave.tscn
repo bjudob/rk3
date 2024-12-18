@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5ssc7kdyc424"]
+[gd_scene load_steps=10 format=3 uid="uid://5ssc7kdyc424"]
 
 [ext_resource type="Texture2D" uid="uid://b4ecav7fbfm08" path="res://backgrounds/hell_cave.png" id="1_k5o8m"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_r6x80"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8s6j2vcsv1nu" path="res://objects/lava.png" id="4_cfaiq"]
 [ext_resource type="Script" path="res://scripts/lava.gd" id="5_lw3ag"]
 [ext_resource type="Texture2D" uid="uid://drtpc378kem7i" path="res://objects/sult_chicken.png" id="6_lmhca"]
+[ext_resource type="PackedScene" uid="uid://dyxpjxpk52bnu" path="res://scenes/npc/plusi.tscn" id="7_h6fsm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wrji"]
 size = Vector2(36, 20)
@@ -45,3 +46,5 @@ shape = SubResource("RectangleShape2D_ch8ui")
 visible = false
 id = "sult_chicken"
 image = ExtResource("6_lmhca")
+
+[node name="Plusi" parent="." instance=ExtResource("7_h6fsm")]
