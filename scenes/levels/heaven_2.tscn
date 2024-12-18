@@ -1,15 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2vjqxb1crrnv"]
+[gd_scene load_steps=11 format=3 uid="uid://b2vjqxb1crrnv"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_sfas7"]
 [ext_resource type="Texture2D" uid="uid://bjaaeyitp0qqi" path="res://backgrounds/heaven_2.png" id="1_v7kby"]
 [ext_resource type="PackedScene" uid="uid://dxxiak0tm6xqx" path="res://scenes/npc/feny_szellem.tscn" id="3_er5an"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="4_gbxpi"]
+[ext_resource type="Script" path="res://scripts/heavens_wall.gd" id="4_k12j4"]
 [ext_resource type="Texture2D" uid="uid://b3o3n2gyiv03p" path="res://objects/cloud_hammer.png" id="5_3ouny"]
 [ext_resource type="Texture2D" uid="uid://cgv3xxa32f7de" path="res://buildings/cloud_brickwall.png" id="6_ynk21"]
 [ext_resource type="Texture2D" uid="uid://dpng150jwrnt1" path="res://objects/szanko.png" id="7_ytyr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imd11"]
 size = Vector2(80, 506)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f0ag"]
+size = Vector2(119, 500)
 
 [node name="Heaven2" type="Node2D"]
 script = ExtResource("1_sfas7")
@@ -25,6 +29,8 @@ current_dialog = "feny_szellem_hello"
 
 [node name="HeavensWall" type="StaticBody2D" parent="."]
 position = Vector2(1718, 857)
+script = ExtResource("4_k12j4")
+item_needed = "cloud_hammer"
 
 [node name="CloudBrickwall" type="Sprite2D" parent="HeavensWall"]
 texture = ExtResource("6_ynk21")
@@ -32,6 +38,12 @@ texture = ExtResource("6_ynk21")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeavensWall"]
 position = Vector2(-5, -5)
 shape = SubResource("RectangleShape2D_imd11")
+
+[node name="ItemableArea" type="Area2D" parent="HeavensWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeavensWall/ItemableArea"]
+position = Vector2(-8.5, -15)
+shape = SubResource("RectangleShape2D_5f0ag")
 
 [node name="ItemSzanko" parent="." instance=ExtResource("4_gbxpi")]
 position = Vector2(1622, 1039)
