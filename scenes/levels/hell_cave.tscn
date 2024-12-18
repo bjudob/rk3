@@ -21,12 +21,6 @@ position = Vector2(953, 538)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("1_k5o8m")
 
-[node name="ItemChicken" parent="." instance=ExtResource("3_2m5j6")]
-position = Vector2(890, 1054)
-scale = Vector2(1.5, 1.5)
-id = "lava"
-image = ExtResource("4_cfaiq")
-
 [node name="Lava" type="StaticBody2D" parent="."]
 position = Vector2(1018, 1042)
 collision_layer = 0

@@ -69,6 +69,7 @@ directories/dtl_directory={
 "hoember_gyogyul": "res://dialogic/hoember_gyogyul.dtl",
 "holgarmester_hello": "res://dialogic/holgarmester_hello.dtl",
 "holgarmester_igy_jo": "res://dialogic/holgarmester_igy_jo.dtl",
+"holgarmester_penz": "res://dialogic/holgarmester_penz.dtl",
 "jezi_heaven": "res://dialogic/jezi_heaven.dtl",
 "jezi_keresztes": "res://dialogic/jezi_keresztes.dtl",
 "jezi_szomjas": "res://dialogic/jezi_szomjas.dtl",
@@ -76,6 +77,7 @@ directories/dtl_directory={
 "krampi_cica": "res://dialogic/krampi_cica.dtl",
 "krampi_hello": "res://characters/profile_pictures/krampi_hello.dtl",
 "krampi_miku": "res://dialogic/krampi_miku.dtl",
+"maci_befogadva": "res://dialogic/maci_befogadva.dtl",
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
 "maci_holgarmester": "res://dialogic/maci_holgarmester.dtl",
 "maci_repaired": "res://dialogic/maci_repaired.dtl",
@@ -111,7 +113,7 @@ variables={
 "money": 0,
 "ollo": {
 "bought": false,
-"cost": "3999"
+"cost": 3999
 }
 },
 "hell_buildings": {

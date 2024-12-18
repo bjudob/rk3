@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://4bwoq5sqwgx0"]
+
+[ext_resource type="Script" path="res://scripts/well.gd" id="1_lb3oj"]
+[ext_resource type="Texture2D" uid="uid://cyuleiaj2pxx2" path="res://objects/well.png" id="2_uwa4d"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_w88a6"]
+[ext_resource type="Texture2D" uid="uid://nhlnkax4pu06" path="res://objects/water.png" id="4_dysl5"]
+[ext_resource type="Texture2D" uid="uid://b8s6j2vcsv1nu" path="res://objects/lava.png" id="5_0px2s"]
+[ext_resource type="Texture2D" uid="uid://c1n7lpf5l5w7w" path="res://objects/cloud.png" id="6_8tcwm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqe5u"]
+size = Vector2(166, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nswt"]
+size = Vector2(285, 328)
+
+[node name="Well" type="StaticBody2D"]
+position = Vector2(1302, 910)
+script = ExtResource("1_lb3oj")
+item_needed = "bucket"
+
+[node name="Well" type="Sprite2D" parent="."]
+texture = ExtResource("2_uwa4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 127)
+shape = SubResource("RectangleShape2D_wqe5u")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(7.5, 15)
+shape = SubResource("RectangleShape2D_7nswt")
+
+[node name="ItemWater" parent="." instance=ExtResource("3_w88a6")]
+visible = false
+id = "water"
+image = ExtResource("4_dysl5")
+
+[node name="ItemLava" parent="." instance=ExtResource("3_w88a6")]
+visible = false
+id = "lava"
+image = ExtResource("5_0px2s")
+
+[node name="ItemCloud" parent="." instance=ExtResource("3_w88a6")]
+visible = false
+id = "cloud"
+image = ExtResource("6_8tcwm")

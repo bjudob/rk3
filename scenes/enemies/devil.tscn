@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bksp8w60elsxv"]
+[gd_scene load_steps=22 format=3 uid="uid://bksp8w60elsxv"]
 
 [ext_resource type="Script" path="res://scripts/devil.gd" id="1_dkkfo"]
 [ext_resource type="Shader" path="res://shaders/hurt.gdshader" id="1_gljb1"]
@@ -159,10 +159,14 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_u4rmj"]
 resource_name = "idle"
 
+[sub_resource type="Animation" id="Animation_xub1q"]
+resource_name = "folow"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67jse"]
 _data = {
 "RESET": SubResource("Animation_jmcpe"),
 "attack": SubResource("Animation_ij7ss"),
+"folow": SubResource("Animation_xub1q"),
 "hurt": SubResource("Animation_3l7fn"),
 "idle": SubResource("Animation_u4rmj")
 }

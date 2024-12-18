@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://br583iqs35nd0"]
+[gd_scene load_steps=14 format=3 uid="uid://br583iqs35nd0"]
 
 [ext_resource type="Texture2D" uid="uid://c2oj4ml2q67up" path="res://backgrounds/forest_3.png" id="1_oen8f"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_osrrw"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://b6wdonaibf7ay" path="res://buildings/fenyo_3.png" id="6_fqsxq"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="7_avbh8"]
 [ext_resource type="Texture2D" uid="uid://ba23wnsa01byw" path="res://objects/cross_branches.png" id="8_nwsui"]
-[ext_resource type="Texture2D" uid="uid://ccok5pufugrch" path="res://objects/branch.png" id="8_ykpgk"]
 [ext_resource type="PackedScene" uid="uid://b1ls6vx5255mx" path="res://scenes/npc/suni.tscn" id="10_s7ptj"]
 [ext_resource type="Texture2D" uid="uid://dperyywcxq6fj" path="res://objects/alma.png" id="11_kgqtg"]
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="12_5pkuk"]
@@ -57,11 +56,6 @@ image = ExtResource("8_nwsui")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fenyo/ItemableArea"]
 position = Vector2(-48.5, -102)
 shape = SubResource("RectangleShape2D_fufkr")
-
-[node name="ItemBranch" parent="." instance=ExtResource("7_avbh8")]
-position = Vector2(549, 1016)
-id = "branch"
-image = ExtResource("8_ykpgk")
 
 [node name="Suni" parent="." instance=ExtResource("10_s7ptj")]
 position = Vector2(306, 947)

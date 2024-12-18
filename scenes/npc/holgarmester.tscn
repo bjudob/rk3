@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct0og2h67hd2x"]
+[gd_scene load_steps=8 format=3 uid="uid://ct0og2h67hd2x"]
 
 [ext_resource type="Texture2D" uid="uid://ct8di7ycwqmny" path="res://characters/holgarmester_ur.png" id="1_63gts"]
 [ext_resource type="Script" path="res://scripts/holgarmester.gd" id="1_riuot"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_61lkr"]
+[ext_resource type="Texture2D" uid="uid://ccok5pufugrch" path="res://objects/branch.png" id="4_hk056"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb6by"]
 
@@ -35,3 +37,8 @@ shape = SubResource("RectangleShape2D_7eayk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
 position = Vector2(-2, -3)
 shape = SubResource("RectangleShape2D_exx67")
+
+[node name="ItemBranch" parent="." instance=ExtResource("3_61lkr")]
+visible = false
+id = "branch"
+image = ExtResource("4_hk056")

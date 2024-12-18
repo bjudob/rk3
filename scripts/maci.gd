@@ -6,3 +6,6 @@ func _on_repaired():
 	
 func _on_level_transition():
 	queue_free()
+
+func on_holgarmester():
+	current_dialog = "maci_befogadva"
