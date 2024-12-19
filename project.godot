@@ -48,6 +48,7 @@ directories/dch_directory={
 "ying_yang_cat": "res://dialogic/ying_yang_cat.dch"
 }
 directories/dtl_directory={
+"aztec_cica": "res://dialogic/aztec_cica.dtl",
 "aztec_hello": "res://dialogic/aztec_hello.dtl",
 "aztec_miku": "res://dialogic/aztec_miku.dtl",
 "cica_head": "res://dialogic/cica_head.dtl",

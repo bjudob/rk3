@@ -15,3 +15,7 @@ func _on_item_correct(item):
 		current_dialog = "aztec_miku"
 		Dialogic.start(current_dialog)
 		game_ui.hide_tooltip()
+	if item.id == "cica_head":
+		current_dialog = "aztec_cica"
+		Dialogic.start(current_dialog)
+		game_ui.hide_tooltip()
