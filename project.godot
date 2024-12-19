@@ -138,6 +138,17 @@ variables={
 "cost": 100
 },
 "money": 0
+},
+"kacsa_items": {
+"adrenaline": {
+"bought": true,
+"cost": 0
+},
+"kacsa": {
+"bought": false,
+"cost": 15
+},
+"money": 0
 }
 }
 extensions_folder="res://addons/dialogic_additions"

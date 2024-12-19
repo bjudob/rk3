@@ -1,18 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://o223mbuxsi32"]
+[gd_scene load_steps=6 format=3 uid="uid://o223mbuxsi32"]
 
 [ext_resource type="Script" path="res://scenes/levels/duck_village.gd" id="1_e73i8"]
 [ext_resource type="AudioStream" uid="uid://cjicoxhkkxpig" path="res://audio/Undertale OST_ 044 - Tem Shop.mp3" id="2_02jfo"]
 [ext_resource type="Texture2D" uid="uid://b8mgwjfm1gs3j" path="res://backgrounds/duck_village_2.png" id="3_po25j"]
-[ext_resource type="Script" path="res://scripts/common/npc.gd" id="3_un3e2"]
-[ext_resource type="Texture2D" uid="uid://ciogdlnab4fsi" path="res://characters/kacsi.png" id="4_gr7qk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ajc1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_278pi"]
-size = Vector2(103, 124)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sjpo"]
-size = Vector2(319, 302)
+[ext_resource type="PackedScene" uid="uid://doqxx8a2b7438" path="res://scenes/npc/kacsi.tscn" id="4_qib2i"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_0fgf3"]
 
 [node name="DuckVillage" type="Node2D"]
 script = ExtResource("1_e73i8")
@@ -23,26 +15,23 @@ position = Vector2(969, 545)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("3_po25j")
 
-[node name="NPC" type="StaticBody2D" parent="."]
-position = Vector2(1430, 999)
-script = ExtResource("3_un3e2")
-current_dialog = "kacsi_hello"
+[node name="Kacsi" parent="." instance=ExtResource("4_qib2i")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
-shape = SubResource("RectangleShape2D_3ajc1")
+[node name="ItemDuck" parent="." instance=ExtResource("5_0fgf3")]
+position = Vector2(1002, 847)
+scale = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="NPC"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_gr7qk")
+[node name="ItemDuck2" parent="." instance=ExtResource("5_0fgf3")]
+position = Vector2(877, 879)
+scale = Vector2(0.5, 0.5)
 
-[node name="ItemableArea" type="Area2D" parent="NPC"]
+[node name="ItemDuck3" parent="." instance=ExtResource("5_0fgf3")]
+position = Vector2(1921, 488)
+scale = Vector2(0.5, 0.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/ItemableArea"]
-position = Vector2(-1.5, 3)
-shape = SubResource("RectangleShape2D_278pi")
+[node name="ItemDuck4" parent="." instance=ExtResource("5_0fgf3")]
+position = Vector2(1794, 304)
+scale = Vector2(0.5, 0.5)
 
-[node name="TalkArea" type="Area2D" parent="NPC"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/TalkArea"]
-position = Vector2(-114.5, -43)
-shape = SubResource("RectangleShape2D_0sjpo")
+[node name="ItemDuck5" parent="." instance=ExtResource("5_0fgf3")]
+position = Vector2(391, 264)

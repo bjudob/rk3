@@ -24,6 +24,7 @@ func  _process(delta: float) -> void:
 	Dialogic.VAR.hell_buildings.money = angel_souls
 	Dialogic.VAR.hell_items.money = angel_souls
 	Dialogic.VAR.heaven_items.money = demon_souls
+	Dialogic.VAR.kacsa_items.money = ducks
 
 func show_tooltip(text: String):
 	tooltip.show_tooltip(text)
@@ -45,3 +46,7 @@ func add_souls(nr: int, is_demon: bool):
 	else:
 		angel_souls+=nr
 		angel_souls_display.text = str(angel_souls)
+
+func add_ducks(nr):
+	ducks += nr
+	ducks_label.text = str(ducks)

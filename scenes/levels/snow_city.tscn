@@ -79,7 +79,19 @@ scale_amount_min = 0.01
 scale_amount_max = 0.1
 color = Color(1, 1, 1, 0.313726)
 
-[node name="Item" parent="." instance=ExtResource("9_kyov2")]
+[node name="ItemPoison" parent="." instance=ExtResource("9_kyov2")]
 position = Vector2(568, 1054)
 id = "poison"
 image = ExtResource("10_fqllf")
+
+[node name="ItemDuck" parent="." instance=ExtResource("9_kyov2")]
+position = Vector2(1133, 671)
+scale = Vector2(0.25, 0.25)
+
+[node name="ItemDuck2" parent="." instance=ExtResource("9_kyov2")]
+position = Vector2(385, 204)
+scale = Vector2(0.3, 0.3)
+
+[node name="ItemDuck3" parent="." instance=ExtResource("9_kyov2")]
+position = Vector2(1530, 849)
+scale = Vector2(0.4, 0.4)

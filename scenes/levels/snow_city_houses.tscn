@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg5dlhgsaeh1c"]
+[gd_scene load_steps=6 format=3 uid="uid://bg5dlhgsaeh1c"]
 
 [ext_resource type="Texture2D" uid="uid://bganjg5fu6n3h" path="res://backgrounds/house_2.png" id="1_0tebu"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_js5os"]
 [ext_resource type="PackedScene" uid="uid://d2ogkycckei3d" path="res://scenes/npc/foxi.tscn" id="3_ck3e7"]
 [ext_resource type="PackedScene" uid="uid://4bwoq5sqwgx0" path="res://scenes/well.tscn" id="4_p8pvk"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_k1yuf"]
 
 [node name="SnowCityHouses" type="Node2D"]
 script = ExtResource("1_js5os")
@@ -21,3 +22,19 @@ item_needed = "sult_chicken"
 [node name="Well" parent="." instance=ExtResource("4_p8pvk")]
 position = Vector2(1472, 898)
 location = 2
+
+[node name="ItemDuck" parent="." instance=ExtResource("5_k1yuf")]
+position = Vector2(428, 516)
+scale = Vector2(0.3, 0.3)
+
+[node name="ItemDuck2" parent="." instance=ExtResource("5_k1yuf")]
+position = Vector2(1568, 431)
+scale = Vector2(0.3, 0.3)
+
+[node name="ItemDuck3" parent="." instance=ExtResource("5_k1yuf")]
+position = Vector2(1749, 1012)
+scale = Vector2(0.3, 0.3)
+
+[node name="ItemDuck4" parent="." instance=ExtResource("5_k1yuf")]
+position = Vector2(262, 945)
+scale = Vector2(0.3, 0.3)

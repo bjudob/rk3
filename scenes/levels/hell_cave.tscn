@@ -48,3 +48,11 @@ id = "sult_chicken"
 image = ExtResource("6_lmhca")
 
 [node name="Plusi" parent="." instance=ExtResource("7_h6fsm")]
+
+[node name="ItemDuck" parent="." instance=ExtResource("3_2m5j6")]
+position = Vector2(505, 1030)
+scale = Vector2(-0.2, -0.2)
+
+[node name="ItemDuck2" parent="." instance=ExtResource("3_2m5j6")]
+position = Vector2(1757, 758)
+scale = Vector2(-0.2, -0.2)

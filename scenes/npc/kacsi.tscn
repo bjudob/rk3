@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://doqxx8a2b7438"]
+
+[ext_resource type="Script" path="res://scripts/kacsi.gd" id="1_1175m"]
+[ext_resource type="Texture2D" uid="uid://ciogdlnab4fsi" path="res://characters/kacsi.png" id="1_ybvke"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_iv8mc"]
+[ext_resource type="Texture2D" uid="uid://d1ohps2q58b3t" path="res://objects/kacsa.png" id="4_cfus7"]
+[ext_resource type="Texture2D" uid="uid://5t78803nihpi" path="res://objects/adrenaline.png" id="5_o2oih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ajc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_278pi"]
+size = Vector2(103, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sjpo"]
+size = Vector2(319, 302)
+
+[node name="Kacsi" type="StaticBody2D"]
+position = Vector2(1430, 999)
+script = ExtResource("1_1175m")
+current_dialog = "kacsi_hello"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3ajc1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ybvke")
+
+[node name="ItemableArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemableArea"]
+position = Vector2(-1.5, 3)
+shape = SubResource("RectangleShape2D_278pi")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+position = Vector2(-114.5, -43)
+shape = SubResource("RectangleShape2D_0sjpo")
+
+[node name="ItemKacsa" parent="." instance=ExtResource("3_iv8mc")]
+visible = false
+id = "kacsa"
+image = ExtResource("4_cfus7")
+
+[node name="ItemAdrenaline" parent="." instance=ExtResource("3_iv8mc")]
+visible = false
+id = "adrenaline"
+image = ExtResource("5_o2oih")

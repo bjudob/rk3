@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://blafsj20eupwb"]
+[gd_scene load_steps=27 format=3 uid="uid://blafsj20eupwb"]
 
 [ext_resource type="Texture2D" uid="uid://0d2sqm8gs1nx" path="res://backgrounds/forest_2.png" id="1_gqdy3"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="2_dojb7"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dqqfrphrlpgq5" path="res://buildings/hokupac/snow_pile_3.png" id="4_56wmq"]
 [ext_resource type="Texture2D" uid="uid://be28oith3eb51" path="res://buildings/hokupac/snow_pile_2.png" id="5_dh5px"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_t0ovb"]
-[ext_resource type="Texture2D" uid="uid://bkeufnfrpk8ge" path="res://objects/snow_shovel.png" id="7_tyrsm"]
 [ext_resource type="PackedScene" uid="uid://np38r46qms0q" path="res://scenes/pingu.tscn" id="8_lera7"]
 [ext_resource type="Texture2D" uid="uid://bop6a8yh00i3d" path="res://objects/cloud_plush.png" id="9_hcnct"]
 [ext_resource type="Texture2D" uid="uid://ciy3cdqwctp1a" path="res://objects/lufi.png" id="9_r5djm"]
@@ -309,12 +308,6 @@ libraries = {
 "": SubResource("AnimationLibrary_nly20")
 }
 autoplay = "idle"
-
-[node name="ItemShovel" parent="." instance=ExtResource("5_t0ovb")]
-position = Vector2(225, 644)
-scale = Vector2(3, 3)
-id = "shovel"
-image = ExtResource("7_tyrsm")
 
 [node name="PinguLufi" type="Node2D" parent="."]
 position = Vector2(1468, 903)

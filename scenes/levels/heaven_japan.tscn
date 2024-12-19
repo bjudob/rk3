@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://6wjlpo7oi5gk"]
+[gd_scene load_steps=7 format=3 uid="uid://6wjlpo7oi5gk"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_8voge"]
 [ext_resource type="Texture2D" uid="uid://dw3i0obislihp" path="res://backgrounds/heaven_japan.png" id="2_8dgig"]
 [ext_resource type="PackedScene" uid="uid://ct3237i34ud60" path="res://scenes/npc/ying_yang_cat.tscn" id="3_ser6h"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="4_ieavv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0wvx"]
 size = Vector2(861.199, 192)
@@ -35,3 +36,10 @@ shape = SubResource("RectangleShape2D_d0wvx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(1475, 372)
 shape = SubResource("RectangleShape2D_peweb")
+
+[node name="ItemDuck" parent="." instance=ExtResource("4_ieavv")]
+position = Vector2(738, 719)
+scale = Vector2(0.3, 0.3)
+
+[node name="ItemDuck2" parent="." instance=ExtResource("4_ieavv")]
+position = Vector2(1259, 136)

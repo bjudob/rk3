@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://byrg5ui1gm0u0"]
+[gd_scene load_steps=9 format=3 uid="uid://byrg5ui1gm0u0"]
 
 [ext_resource type="Texture2D" uid="uid://b0kxxo4600ufo" path="res://backgrounds/aztec_temple.png" id="1_jk4rm"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_x31b4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://beijgm83b518e" path="res://scenes/npc/azura.tscn" id="5_vknpn"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="6_h8xnr"]
 [ext_resource type="Texture2D" uid="uid://dic7ui4de62us" path="res://objects/chicken.png" id="7_td1ag"]
+[ext_resource type="Texture2D" uid="uid://c620wgmd7w2xu" path="res://characters/aztec_bug.png" id="8_ekyen"]
 
 [node name="AztecTemple" type="Node2D"]
 script = ExtResource("1_x31b4")
@@ -32,3 +33,8 @@ position = Vector2(687, 996)
 scale = Vector2(2, 2)
 id = "chicken"
 image = ExtResource("7_td1ag")
+
+[node name="AztecBug" type="Sprite2D" parent="."]
+position = Vector2(1030, 505)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_ekyen")

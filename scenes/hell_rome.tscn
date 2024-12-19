@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd0ro8hce85yu"]
+[gd_scene load_steps=6 format=3 uid="uid://cd0ro8hce85yu"]
 
 [ext_resource type="Script" path="res://scripts/hell_rome.gd" id="1_yndm5"]
 [ext_resource type="Texture2D" uid="uid://dpc26ojy5mdh0" path="res://backgrounds/hell_spiral_2.png" id="2_2ujok"]
 [ext_resource type="PackedScene" uid="uid://4bwoq5sqwgx0" path="res://scenes/well.tscn" id="3_rlmws"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_2a2dr"]
 [ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="6_jm2bg"]
 
 [node name="HellRome" type="Node2D"]
@@ -25,3 +26,7 @@ position = Vector2(915, 595)
 
 [node name="Devil3" parent="." instance=ExtResource("6_jm2bg")]
 position = Vector2(1631, 411)
+
+[node name="ItemDuck" parent="." instance=ExtResource("5_2a2dr")]
+position = Vector2(1453, 1050)
+scale = Vector2(0.3, 0.3)

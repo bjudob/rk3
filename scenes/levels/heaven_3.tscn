@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce8r6n6m0vxf3"]
+[gd_scene load_steps=6 format=3 uid="uid://ce8r6n6m0vxf3"]
 
 [ext_resource type="Texture2D" uid="uid://dqb0pmfn14y0b" path="res://backgrounds/heaven_3.png" id="1_q1gwu"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="2_3d808"]
 [ext_resource type="PackedScene" uid="uid://p0lhipgoqub" path="res://scenes/enemies/kami_bari.tscn" id="3_gyg1m"]
 [ext_resource type="PackedScene" uid="uid://n2uwh5n6us1a" path="res://scenes/enemies/ghost.tscn" id="4_yc443"]
+[ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_dcb74"]
 
 [node name="Heaven3" type="Node2D"]
 script = ExtResource("2_3d808")
@@ -21,3 +22,7 @@ attack_distance = 230.0
 
 [node name="Ghost" parent="." instance=ExtResource("4_yc443")]
 position = Vector2(792, 600)
+
+[node name="Item" parent="." instance=ExtResource("5_dcb74")]
+position = Vector2(1714, 1030)
+scale = Vector2(0.2, 0.2)

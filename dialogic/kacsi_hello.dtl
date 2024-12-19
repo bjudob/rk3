@@ -1,3 +1,12 @@
 kacsi: Ez itt Kacsafalva
 kacsi: A kacsák rejtett otthona
 kacsi: Szeretnél vásárolni valami kacsasztikusat?
+if {kacsa_items.kacsa.bought} == false:
+	- Igazi Kacsa - 15 gumikacsa
+		if {kacsa_items.kacsa.cost} > {kacsa_items.money} == true:
+			kacsi: Több kacsa kell
+		else:
+			set {kacsa_items.kacsa.bought} = true
+if {kacsa_items.adrenaline.bought} == false:
+	- Csodadrenalin
+		set {kacsa_items.adrenaline.bought} = true
