@@ -18,6 +18,10 @@ enum GameEvents {
 	MACI_BETEG,
 	KACSA_ADRENALIN,
 	HOLGARMESTER_BETEG,
+	PINGU_GYOGYUL,
+	NYUSZI_GYOGYUL,
+	HOEMBER_GYOGYUL,
+	MACI_GYOGYUL,
 }
 
 enum Level {
@@ -107,14 +111,21 @@ var level_scene
 var current_level = null
 var left_level = null
 var right_level = null
-
+var ended = false
 var events = []
 
 func _ready() -> void:
 	change_scene(Level.MAIN_MENU)
+	$EndTimer.connect("timeout", _ending)
+	
+func _ending():
+	$GameUI.visible = false
+	$Ending.visible = true
 
 func _process(delta: float) -> void:
-	pass
+	if not ended and GameEvents.NYUSZI_GYOGYUL in events and GameEvents.PINGU_GYOGYUL in events and GameEvents.HOEMBER_GYOGYUL in events and GameEvents.MACI_GYOGYUL in events:	
+		ended = true
+		$EndTimer.start()
 
 func change_scene(level: Main.Level):
 	map.show_level(level)

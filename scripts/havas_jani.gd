@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 		
 func _on_item_correct(item):
 	if item.id == "adrenaline":
+		main.add_event(Main.GameEvents.HOEMBER_GYOGYUL)
 		$HavasJani.texture = original_texture
 		current_dialog = "hoember_gyogyul"
 		Dialogic.start(current_dialog)

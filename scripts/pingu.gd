@@ -30,6 +30,7 @@ func _on_item_correct(item):
 		main.add_event(Main.GameEvents.GIFTED_PINGU)
 		return
 	if item.id == "adrenaline":
+		main.add_event(Main.GameEvents.PINGU_GYOGYUL)
 		$Pingu.texture = original_texture
 		current_dialog = "pingu_gyogyul"
 		Dialogic.start(current_dialog)

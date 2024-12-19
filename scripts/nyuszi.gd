@@ -24,6 +24,7 @@ func _on_item_correct(item):
 		game_ui.hide_tooltip()
 		main.add_event(Main.GameEvents.GIFTED_NYUSZI)
 	if item.id == "adrenaline":
+		main.add_event(Main.GameEvents.NYUSZI_GYOGYUL)
 		$Nyuszi.texture = original_texture
 		current_dialog = "nyuszi_gyogyul"
 		Dialogic.start(current_dialog)

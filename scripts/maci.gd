@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_item_correct(item):
 	if item.id == "adrenaline":
+		main.add_event(Main.GameEvents.MACI_GYOGYUL)
 		$Maci.texture = original_texture
 		current_dialog = "maci_gyogyul"
 		game_ui.hide_tooltip()
