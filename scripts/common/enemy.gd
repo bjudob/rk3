@@ -40,6 +40,7 @@ var player = get_tree().get_nodes_in_group("player")[0]
 
 func _ready() -> void:
 	super._ready()
+	animator.play("idle")
 	original_position = position
 	for state_enum in states_list:
 		var state = states_dict[state_enum].new()
@@ -52,6 +53,7 @@ func _ready() -> void:
 		states[state_enum] = state
 		state.StateTransition.connect(_change_state)
 	current_state = states[initial_state]
+	current_state.enter()
 
 func _process(delta: float) -> void:
 	super._process(delta)

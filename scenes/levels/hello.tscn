@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://begl8pmauyax2"]
+[gd_scene load_steps=16 format=3 uid="uid://begl8pmauyax2"]
 
 [ext_resource type="Script" path="res://scripts/hello.gd" id="1_7hytu"]
 [ext_resource type="Texture2D" uid="uid://4ir8gqvh2eom" path="res://backgrounds/hell_altair.png" id="2_ogp0g"]
@@ -104,6 +104,9 @@ _data = {
 "ritual": SubResource("Animation_epd0i")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o23p"]
+size = Vector2(69, 1105)
+
 [node name="Hell" type="Node2D"]
 script = ExtResource("1_7hytu")
 
@@ -166,3 +169,9 @@ z_index = 999
 position = Vector2(965, 535)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("12_g4pnq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 547)
+shape = SubResource("RectangleShape2D_5o23p")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkcfdiqgsxtqh"]
+[gd_scene load_steps=14 format=3 uid="uid://dkcfdiqgsxtqh"]
 
 [ext_resource type="Script" path="res://scripts/heavens_gate.gd" id="1_6va6e"]
 [ext_resource type="Texture2D" uid="uid://b5wf07hk748oi" path="res://backgrounds/gates_of_heaven.png" id="1_i4iw1"]
@@ -71,6 +71,9 @@ _data = {
 "pisi": SubResource("Animation_1kth5")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx410"]
+size = Vector2(59, 1093)
+
 [node name="HeavensGate" type="Node2D"]
 script = ExtResource("1_6va6e")
 
@@ -117,3 +120,10 @@ position = Vector2(1771, 198)
 scale = Vector2(2, 2)
 id = "miku_head"
 image = ExtResource("9_4vu75")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(44, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-26.5, 549.5)
+shape = SubResource("RectangleShape2D_lx410")

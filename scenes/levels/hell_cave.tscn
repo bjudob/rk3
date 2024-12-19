@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5ssc7kdyc424"]
+[gd_scene load_steps=11 format=3 uid="uid://5ssc7kdyc424"]
 
 [ext_resource type="Texture2D" uid="uid://b4ecav7fbfm08" path="res://backgrounds/hell_cave.png" id="1_k5o8m"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_r6x80"]
@@ -13,6 +13,9 @@ size = Vector2(36, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ch8ui"]
 size = Vector2(436, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmgap"]
+size = Vector2(43, 1102)
 
 [node name="HellCave" type="Node2D"]
 script = ExtResource("1_r6x80")
@@ -56,3 +59,10 @@ scale = Vector2(-0.2, -0.2)
 [node name="ItemDuck2" parent="." instance=ExtResource("3_2m5j6")]
 position = Vector2(1757, 758)
 scale = Vector2(-0.2, -0.2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1861, 606)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(34, -61)
+shape = SubResource("RectangleShape2D_kmgap")

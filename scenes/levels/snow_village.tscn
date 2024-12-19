@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddax5eydu3hth"]
+[gd_scene load_steps=15 format=3 uid="uid://ddax5eydu3hth"]
 
 [ext_resource type="Script" path="res://scripts/snow_village.gd" id="1_vpjw8"]
 [ext_resource type="AudioStream" uid="uid://bxs2o51xqydui" path="res://audio/Xmas_Christmas_Song_Loop.wav" id="2_aojs8"]
@@ -84,6 +84,9 @@ _data = {
 "pingu_szanko": SubResource("Animation_j1mf5")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlnp0"]
+size = Vector2(52, 1110)
+
 [node name="SnowVillage" type="Node2D"]
 script = ExtResource("1_vpjw8")
 right = 3
@@ -134,3 +137,9 @@ position = Vector2(552, 917)
 scale = Vector2(0.7, 0.7)
 id = "karacsonyi_tojas"
 image = ExtResource("10_dftuh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 542)
+shape = SubResource("RectangleShape2D_rlnp0")

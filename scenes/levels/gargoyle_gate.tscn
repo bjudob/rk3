@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwoah35xwqco3"]
+[gd_scene load_steps=4 format=3 uid="uid://cwoah35xwqco3"]
 
 [ext_resource type="Texture2D" uid="uid://cj4cowhofhb2l" path="res://backgrounds/hell_gargoyles_gate.png" id="1_1k64g"]
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_ufj8r"]
+[ext_resource type="PackedScene" uid="uid://do1w0a5kpcmww" path="res://scenes/enemies/cuki_devil.tscn" id="3_r4rms"]
 
 [node name="GargoyleGate" type="Node2D"]
 script = ExtResource("1_ufj8r")
@@ -10,3 +11,15 @@ script = ExtResource("1_ufj8r")
 position = Vector2(961, 539)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_1k64g")
+
+[node name="CukiDevil" parent="." instance=ExtResource("3_r4rms")]
+position = Vector2(1113, 542)
+
+[node name="CukiDevil2" parent="." instance=ExtResource("3_r4rms")]
+position = Vector2(360, 323)
+
+[node name="CukiDevil3" parent="." instance=ExtResource("3_r4rms")]
+position = Vector2(1712, 508)
+
+[node name="CukiDevil4" parent="." instance=ExtResource("3_r4rms")]
+position = Vector2(975, 212)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://f0tbq4wpp1gt"]
+[gd_scene load_steps=5 format=3 uid="uid://f0tbq4wpp1gt"]
 
 [ext_resource type="Script" path="res://scripts/common/level.gd" id="1_ukdyl"]
 [ext_resource type="Texture2D" uid="uid://4nh3jdtoa6pr" path="res://backgrounds/hell_house.png" id="2_ddlvk"]
+[ext_resource type="PackedScene" uid="uid://g3408igv35bn" path="res://scenes/enemies/hell_dog.tscn" id="3_s5ylq"]
+[ext_resource type="PackedScene" uid="uid://bksp8w60elsxv" path="res://scenes/enemies/devil.tscn" id="4_mjngl"]
 
 [node name="HellHouse" type="Node2D"]
 script = ExtResource("1_ukdyl")
@@ -10,3 +12,12 @@ script = ExtResource("1_ukdyl")
 position = Vector2(955, 540)
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_ddlvk")
+
+[node name="HellDog" parent="." instance=ExtResource("3_s5ylq")]
+position = Vector2(1437, 967)
+
+[node name="Devil" parent="." instance=ExtResource("4_mjngl")]
+position = Vector2(1450, 289)
+
+[node name="Devil2" parent="." instance=ExtResource("4_mjngl")]
+position = Vector2(570, 421)

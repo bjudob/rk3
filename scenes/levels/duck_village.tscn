@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://o223mbuxsi32"]
+[gd_scene load_steps=7 format=3 uid="uid://o223mbuxsi32"]
 
 [ext_resource type="Script" path="res://scenes/levels/duck_village.gd" id="1_e73i8"]
 [ext_resource type="AudioStream" uid="uid://cjicoxhkkxpig" path="res://audio/Undertale OST_ 044 - Tem Shop.mp3" id="2_02jfo"]
 [ext_resource type="Texture2D" uid="uid://b8mgwjfm1gs3j" path="res://backgrounds/duck_village_2.png" id="3_po25j"]
 [ext_resource type="PackedScene" uid="uid://doqxx8a2b7438" path="res://scenes/npc/kacsi.tscn" id="4_qib2i"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="5_0fgf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31kv0"]
+size = Vector2(86, 1127)
 
 [node name="DuckVillage" type="Node2D"]
 script = ExtResource("1_e73i8")
@@ -35,3 +38,10 @@ scale = Vector2(0.5, 0.5)
 
 [node name="ItemDuck5" parent="." instance=ExtResource("5_0fgf3")]
 position = Vector2(391, 264)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1946, 660)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-47, -101)
+shape = SubResource("RectangleShape2D_31kv0")
