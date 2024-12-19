@@ -5,14 +5,14 @@ extends CanvasLayer
 @export var game_ui: GameUI
 @export var main: Main
 
-@onready var tooltip = $MarginContainer/Tooltip
+@onready var tooltip = $Tooltip
 @onready var inventory = $Inventory
 @onready var demon_souls_display = $DemonSouls/HBoxContainer/MarginContainer2/Label
 @onready var angel_souls_display = $AngelSouls/HBoxContainer/MarginContainer2/Label
 @onready var ducks_label = $Ducks/HBoxContainer/MarginContainer/DuckNr
 
-var demon_souls = 11240
-var angel_souls = 11250
+var demon_souls = 0
+var angel_souls = 0
 var ducks = 0
 
 func _ready() -> void:

@@ -46,7 +46,7 @@ texture = ExtResource("6_fqsxq")
 shape = SubResource("RectangleShape2D_gqgxq")
 
 [node name="Item" parent="Fenyo" instance=ExtResource("7_avbh8")]
-position = Vector2(-1788, -748)
+position = Vector2(-1888, -794)
 id = "cross_branches"
 image = ExtResource("8_nwsui")
 

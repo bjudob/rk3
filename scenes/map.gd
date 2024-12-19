@@ -1,6 +1,6 @@
 extends Level
 
-var test_mode = true
+var test_mode = false
 
 var exceptions = [
 	Main.Level.HELL,

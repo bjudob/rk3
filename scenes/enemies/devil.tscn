@@ -140,6 +140,9 @@ tracks/3/keys = {
 "values": [true, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_t2yeh"]
+resource_name = "follow"
+
 [sub_resource type="Animation" id="Animation_xub1q"]
 resource_name = "folow"
 
@@ -162,9 +165,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_u4rmj"]
 resource_name = "idle"
 
-[sub_resource type="Animation" id="Animation_t2yeh"]
-resource_name = "follow"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_67jse"]
 _data = {
 "RESET": SubResource("Animation_jmcpe"),
@@ -180,6 +180,7 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_lrd16")
 attack_speed_timer = NodePath("AttackSpeedTimer")
+souls = 100
 facing_right = false
 attack_distance = 100.0
 animator = NodePath("AnimationPlayer")

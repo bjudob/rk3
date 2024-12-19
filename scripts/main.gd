@@ -193,5 +193,5 @@ func show_ui():
 	
 func die():
 	change_scene(Level.SNOW_VILLAGE)
-	game_ui.add_souls(-game_ui.demon_souls, true)
-	game_ui.add_souls(-game_ui.angel_souls, false)
+	game_ui.add_souls(-game_ui.demon_souls/2, true)
+	game_ui.add_souls(-game_ui.angel_souls/2, false)

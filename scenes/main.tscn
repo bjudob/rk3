@@ -362,6 +362,7 @@ position = Vector2(33, -325)
 shape = SubResource("RectangleShape2D_y6f12")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ggkss")
 volume_db = 5.0
 
 [node name="YouDied" type="Sprite2D" parent="."]
