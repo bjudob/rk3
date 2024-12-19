@@ -13,13 +13,10 @@ scale = Vector2(0.72, 0.72)
 texture = ExtResource("1_1k64g")
 
 [node name="CukiDevil" parent="." instance=ExtResource("3_r4rms")]
-position = Vector2(1113, 542)
+position = Vector2(1207, 266)
 
 [node name="CukiDevil2" parent="." instance=ExtResource("3_r4rms")]
-position = Vector2(360, 323)
+position = Vector2(623, 360)
 
 [node name="CukiDevil3" parent="." instance=ExtResource("3_r4rms")]
 position = Vector2(1712, 508)
-
-[node name="CukiDevil4" parent="." instance=ExtResource("3_r4rms")]
-position = Vector2(975, 212)
