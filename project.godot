@@ -81,6 +81,7 @@ directories/dtl_directory={
 "maci_befogadva": "res://dialogic/maci_befogadva.dtl",
 "maci_beteg": "res://dialogic/maci_beteg.dtl",
 "maci_elromlott": "res://dialogic/maci_elromlott.dtl",
+"maci_gyogyul": "res://dialogic/maci_gyogyul.dtl",
 "maci_holgarmester": "res://dialogic/maci_holgarmester.dtl",
 "maci_repaired": "res://dialogic/maci_repaired.dtl",
 "merchant_heaven": "res://dialogic/merchant_heaven.dtl",

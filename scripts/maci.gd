@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func _on_item_correct(item):
 	if item.id == "adrenaline":
 		$Maci.texture = original_texture
-		current_dialog = "maci_beteg"
+		current_dialog = "maci_gyogyul"
 		game_ui.hide_tooltip()
 		Dialogic.start(current_dialog)
 		

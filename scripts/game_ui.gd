@@ -5,7 +5,7 @@ extends CanvasLayer
 @export var game_ui: GameUI
 @export var main: Main
 
-@onready var tooltip = $Tooltip
+@onready var tooltip = $MarginContainer/Tooltip
 @onready var inventory = $Inventory
 @onready var demon_souls_display = $DemonSouls/HBoxContainer/MarginContainer2/Label
 @onready var angel_souls_display = $AngelSouls/HBoxContainer/MarginContainer2/Label
