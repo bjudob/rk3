@@ -47,3 +47,4 @@ image = ExtResource("4_cfus7")
 visible = false
 id = "adrenaline"
 image = ExtResource("5_o2oih")
+destroy_on_use = false
