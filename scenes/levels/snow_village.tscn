@@ -116,12 +116,6 @@ animation_player = NodePath("../../AnimationPlayer")
 current_dialog = "pingu_gift"
 item_needed = "gift_pingu"
 
-[node name="Item" parent="." instance=ExtResource("3_am4gd")]
-position = Vector2(552, 917)
-scale = Vector2(0.7, 0.7)
-id = "karacsonyi_tojas"
-image = ExtResource("10_dftuh")
-
 [node name="Nyuszi" parent="." instance=ExtResource("9_qm1ac")]
 position = Vector2(1668, 972)
 
@@ -136,8 +130,14 @@ id = "adrenaline"
 image = ExtResource("11_yq6e8")
 destroy_on_use = false
 
-[node name="Item2" parent="." instance=ExtResource("3_am4gd")]
-position = Vector2(338, 892)
-scale = Vector2(0.3, 0.3)
+[node name="ItemAlma" parent="." instance=ExtResource("3_am4gd")]
+position = Vector2(193, 1037)
+scale = Vector2(0.7, 0.7)
 id = "alma"
 image = ExtResource("11_x53nj")
+
+[node name="ItemKaracsinyiTojas" parent="." instance=ExtResource("3_am4gd")]
+position = Vector2(552, 917)
+scale = Vector2(0.7, 0.7)
+id = "karacsonyi_tojas"
+image = ExtResource("10_dftuh")

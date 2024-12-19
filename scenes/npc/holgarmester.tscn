@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct0og2h67hd2x"]
+[gd_scene load_steps=9 format=3 uid="uid://ct0og2h67hd2x"]
 
 [ext_resource type="Texture2D" uid="uid://ct8di7ycwqmny" path="res://characters/holgarmester_ur.png" id="1_63gts"]
 [ext_resource type="Script" path="res://scripts/holgarmester.gd" id="1_riuot"]
 [ext_resource type="PackedScene" uid="uid://cahpofhknpg63" path="res://scenes/item.tscn" id="3_61lkr"]
 [ext_resource type="Texture2D" uid="uid://ccok5pufugrch" path="res://objects/branch.png" id="4_hk056"]
+[ext_resource type="Texture2D" uid="uid://dxy5qcewvyl6b" path="res://objects/blood_pool.png" id="5_336rm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb6by"]
 
@@ -42,3 +43,10 @@ shape = SubResource("RectangleShape2D_exx67")
 visible = false
 id = "branch"
 image = ExtResource("4_hk056")
+
+[node name="BloodPool" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-5.99999, 183)
+rotation = 2.63834
+skew = -0.870919
+texture = ExtResource("5_336rm")

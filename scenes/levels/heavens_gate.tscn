@@ -115,5 +115,5 @@ image = ExtResource("9_34x2f")
 [node name="ItemLufi" parent="." instance=ExtResource("7_j5ydm")]
 position = Vector2(1771, 198)
 scale = Vector2(2, 2)
-id = "lufi"
+id = "miku_head"
 image = ExtResource("9_4vu75")

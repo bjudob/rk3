@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	if main.event_happened(Main.GameEvents.HOEMBER_BETEG):
+	if main.event_happened(Main.GameEvents.PINGU_BETEG):
 		visible = true
 		$ItemableArea/CollisionShape2D.disabled = false
 		$Pingu.texture = pingu_beteg
