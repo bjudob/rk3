@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="rk3"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.8, 0.960784, 0.984314, 1)
 boot_splash/image="res://backgrounds/bubududu_hoember.png"
 config/icon="res://gift.svg"
@@ -178,6 +182,8 @@ glossary/default_case_sensitive=true
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://ui/cursor_dudu.png"
 
 [editor]
